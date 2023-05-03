@@ -1,23 +1,11 @@
 {
   "hotline": "Service hotline",
   "navbar": {
-    "home": {
-      "name": "Home"
-    },
-    "about": {
-      "name": "About"
-    },
-    "news": {
-      "name": "News"
-    },
-    "product": {
-      "name": "Product"
-    },
-    "customerCenter": {
-      "name": "Customer Center"
-    },
-    "contact": {
-      "name": "Contact"
-    }
+    "home": "Home",
+    "about": "About",
+    "news": "News",
+    "product": "Product",
+    "customerCenter": "Customer Center",
+    "contact": "Contact"
   }
 }

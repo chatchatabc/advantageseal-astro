@@ -1,23 +1,11 @@
 {
   "hotline": "服务热线",
   "navbar": {
-    "home": {
-      "name": "首页"
-    },
-    "about": {
-      "name": "关于我们"
-    },
-    "news": {
-      "name": "新闻资讯"
-    },
-    "product": {
-      "name": "产品展示"
-    },
-    "customerCenter": {
-      "name": "客户中心"
-    },
-    "contact": {
-      "name": "联系我们"
-    }
+    "home": "首页",
+    "about": "关于我们",
+    "news": "新闻资讯",
+    "product": "产品展示",
+    "customerCenter": "客户中心",
+    "contact": "联系我们"
   }
 }
