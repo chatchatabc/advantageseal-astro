@@ -1,0 +1,34 @@
+{
+  "links": [
+    {
+      "name": "home",
+      "link": "/",
+      "children": []
+    },
+    {
+      "name": "about",
+      "link": "/About",
+      "children": []
+    },
+    {
+      "name": "news",
+      "link": "/News",
+      "children": []
+    },
+    {
+      "name": "product",
+      "link": "/Product",
+      "children": []
+    },
+    {
+      "name": "customerCenter",
+      "link": "/Customer__Center",
+      "children": []
+    },
+    {
+      "name": "contact",
+      "link": "/Contact",
+      "children": []
+    }
+  ]
+}

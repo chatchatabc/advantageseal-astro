@@ -1,14 +1,17 @@
 ---
 import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
+import navBarJson from "@data/navbar.json";
+type link = { name: string; link: string; children: Array<link> };
+const { links }: any = navBarJson;
 ---
 
-<header class="pt-[1.25rem]">
+<header class="">
   <!--logo section -->
-  <section class="container w-full bg-white">
+  <section class="container w-full bg-white py-[1.25rem]">
     <div class="w-9/12 px-4 flex justify-between mx-auto">
       <div class="company-logo">
-        <a href="{{ $page->baseUrl }}">
+        <a href="/">
           <Picture
             src="/images/company-logo.png"
             alt="AdvantageSeal logo"
@@ -59,6 +62,23 @@ import i18next, { t } from "i18next";
   </section>
   <!-- nav menu section -->
   <section class="bg-[#f1f1f1] w-full container">
-    <div class="w-9/12 mx-auto flex flex-row"></div>
+    <div class="w-9/12 mx-auto">
+      <ul class="flex flex-row">
+        {
+          links.map((link: link) => {
+            return (
+              <li>
+                <a
+                  class="px-[42px] py-[21px] block text-[14px]"
+                  href={link.link}
+                >
+                  {t("navigation:navbar." + link.name)}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
   </section>
 </header>
