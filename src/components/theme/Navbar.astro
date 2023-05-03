@@ -67,11 +67,8 @@ const { links }: any = navBarJson;
         {
           links.map((link: link) => {
             return (
-              <li>
-                <a
-                  class="px-[42px] py-[21px] block text-[14px]"
-                  href={link.link}
-                >
+              <li class="px-[42px] py-[18px] pb-[21px] border-t-[3px] border-t-[#019cdf00] block text-[14px] hover:border-t-[#019cdf] hover:bg-white">
+                <a class="" href={link.link}>
                   {t("navigation:navbar." + link.name)}
                 </a>
               </li>
