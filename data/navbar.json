@@ -2,32 +2,42 @@
   "links": [
     {
       "name": "home",
-      "link": "/",
       "children": []
     },
     {
       "name": "about",
-      "link": "/About",
-      "children": []
+      "children": [
+        {
+          "name": "companyProfile"
+        },
+        {
+          "name": "researchAndInnovation"
+        },
+        {
+          "name": "productionAbility"
+        },
+        {
+          "name": "qualificationHonor"
+        },
+        {
+          "name": "enterpriseCulture"
+        }
+      ]
     },
     {
       "name": "news",
-      "link": "/News",
       "children": []
     },
     {
       "name": "product",
-      "link": "/Product",
       "children": []
     },
     {
       "name": "customerCenter",
-      "link": "/Customer__Center",
       "children": []
     },
     {
       "name": "contact",
-      "link": "/Contact",
       "children": []
     }
   ]

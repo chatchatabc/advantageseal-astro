@@ -1,11 +1,51 @@
 {
   "hotline": "Service hotline",
   "navbar": {
-    "home": "Home",
-    "about": "About",
-    "news": "News",
-    "product": "Product",
-    "customerCenter": "Customer Center",
-    "contact": "Contact"
+    "home": {
+      "name": "Home",
+      "link": "/en/"
+    },
+    "about": {
+      "name": "About",
+      "link": "/en/About"
+    },
+    "news": {
+      "name": "News",
+      "link": "/en/News"
+    },
+    "product": {
+      "name": "Product",
+      "link": "/en/Product"
+    },
+    "customerCenter": {
+      "name": "Customer Center",
+      "link": "/en/Customer__Center"
+    },
+    "contact": {
+      "name": "Contact",
+      "link": "/en/Contact"
+    }
+  },
+  "aboutSublinks": {
+    "companyProfile": {
+      "name": "Company Profile",
+      "link": "/en/Company__Profile"
+    },
+    "researchAndInnovation": {
+      "name": "Research and Innovation",
+      "link": "/en/Research__and__Innovation"
+    },
+    "productionAbility": {
+      "name": "Production Ability",
+      "link": "/en/Production__Ability"
+    },
+    "qualificationHonor": {
+      "name": "Qualification Honor",
+      "link": "/en/Qualification__Honor"
+    },
+    "enterpriseCulture": {
+      "name": "Enterprise Culture",
+      "link": "/en/Enterprise__Culture"
+    }
   }
 }

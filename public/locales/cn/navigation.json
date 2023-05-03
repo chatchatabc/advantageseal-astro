@@ -1,11 +1,51 @@
 {
   "hotline": "服务热线",
   "navbar": {
-    "home": "首页",
-    "about": "关于我们",
-    "news": "新闻资讯",
-    "product": "产品展示",
-    "customerCenter": "客户中心",
-    "contact": "联系我们"
+    "home": {
+      "name": "首页",
+      "url": "/"
+    },
+    "about": {
+      "name": "关于我们",
+      "url": "/about"
+    },
+    "news": {
+      "name": "新闻资讯",
+      "url": "/news"
+    },
+    "product": {
+      "name": "产品展示",
+      "url": "/product"
+    },
+    "customerCenter": {
+      "name": "客户中心",
+      "url": "/customerCenter"
+    },
+    "contact": {
+      "name": "联系我们",
+      "url": "/contact"
+    }
+  },
+  "aboutSublinks": {
+    "companyProfile": {
+      "name": "公司概况",
+      "link": "/Company__Profile"
+    },
+    "researchAndInnovation": {
+      "name": "研发创新",
+      "link": "/Research__and__Innovation"
+    },
+    "productionAbility": {
+      "name": "生产实力",
+      "link": "/Production__Ability"
+    },
+    "qualificationHonor": {
+      "name": "资质荣誉",
+      "link": "/Qualification__Honor"
+    },
+    "enterpriseCulture": {
+      "name": "企业文化",
+      "link": "/Enterprise__Culture"
+    }
   }
 }

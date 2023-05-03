@@ -3,6 +3,7 @@ import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
 import navBarJson from "@data/navbar.json";
 type link = { name: string; link: string; children: Array<link> };
+type sublink = { name: string; link: string };
 const { links }: any = navBarJson;
 ---
 
@@ -67,10 +68,41 @@ const { links }: any = navBarJson;
         {
           links.map((link: link) => {
             return (
-              <li class="px-[42px] py-[18px] pb-[21px] border-t-[3px] border-t-[#019cdf00] block text-[14px] hover:border-t-[#019cdf] hover:bg-white">
-                <a class="" href={link.link}>
-                  {t("navigation:navbar." + link.name)}
+              <li class="group">
+                <a
+                  class="px-[42px] py-[18px] pb-[21px] border-t-[3px] border-t-[#019cdf00] block text-[14px] hover:border-t-[#019cdf] hover:bg-white"
+                  href={t("navigation:navbar." + link.name + ".link")}
+                >
+                  {t("navigation:navbar." + link.name + ".name")}
                 </a>
+                {link.children.length > 0 && (
+                  <div class="sub-nav flex-1 absolute hidden min-w-[300px] group-hover:flex">
+                    <div class="sub-nav-list">
+                      <ul class=" divide-y-2 p-[0.5rem]">
+                        {link.children.map((sublink: sublink) => {
+                          return (
+                            <li class="block py-[1rem]">
+                              <a
+                                href={t(
+                                  "navigation:aboutSublinks." +
+                                    sublink.name +
+                                    ".link"
+                                )}
+                              >
+                                {t(
+                                  "navigation:aboutSublinks." +
+                                    sublink.name +
+                                    ".name"
+                                )}
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                    <div class="sub-nav-details" />
+                  </div>
+                )}
               </li>
             );
           })
