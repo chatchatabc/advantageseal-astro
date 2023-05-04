@@ -2,9 +2,28 @@
 import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
 import navBarJson from "@data/navbar.json";
-type link = { name: string; link: string; children: Array<link> };
-type sublink = { name: string; link: string };
+import SubMenu from "@components/theme/navbar/SubMenu.svelte";
+type Link = { name: string; link: string; children: Array<Sublink> };
+type Sublink = { name: string; link: string };
 const { links }: any = navBarJson;
+//process the entire thing includidng the translation
+var processedLinks: Link[] = [];
+links.map((link: Link) => {
+  var processedLink: Link = { name: "", link: "", children: [] };
+  processedLink.name = t("navigation:navbar." + link.name + ".name");
+  processedLink.link = t("navigation:navbar." + link.name + ".link");
+  link.children.map((sublink: Sublink) => {
+    var processedSublink: Sublink = { name: "", link: "" };
+    processedSublink.name = t(
+      "navigation:" + link.name + "Sublinks." + sublink.name + ".name"
+    );
+    processedSublink.link = t(
+      "navigation:" + link.name + "Sublinks." + sublink.name + ".link"
+    );
+    processedLink.children.push(processedSublink);
+  });
+  processedLinks.push(processedLink);
+});
 ---
 
 <header class="">
@@ -66,44 +85,21 @@ const { links }: any = navBarJson;
     <div class="w-9/12 mx-auto">
       <ul class="flex flex-row">
         {
-          links.map((link: link) => {
+          processedLinks.map((processedLink: Link) => {
             return (
-              <li class="group border-t-[3px] border-t-[#019cdf00]  text-[14px] hover:border-t-[#019cdf]">
-                <a
-                  class="block px-[42px] py-[18px] pb-[21px] group-hover:bg-white"
-                  href={t("navigation:navbar." + link.name + ".link")}
-                >
-                  {t("navigation:navbar." + link.name + ".name")}
-                </a>
-                {link.children.length > 0 && (
-                  <div class="sub-nav flex-1 absolute hidden min-w-[300px] bg-blue-500 group-hover:flex group-hover:justify-stretch">
-                    <div class="sub-nav-list">
-                      <ul class=" divide-y-2 p-[0.5rem]">
-                        {link.children.map((sublink: sublink) => {
-                          return (
-                            <li class="block py-[1rem]">
-                              <a
-                                href={t(
-                                  "navigation:aboutSublinks." +
-                                    sublink.name +
-                                    ".link"
-                                )}
-                              >
-                                {t(
-                                  "navigation:aboutSublinks." +
-                                    sublink.name +
-                                    ".name"
-                                )}
-                              </a>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                    <div class="sub-nav-details" />
-                  </div>
-                )}
-              </li>
+              <>
+                <li class="group border-t-[3px] border-t-[#019cdf00]  text-[14px] hover:border-t-[#019cdf]">
+                  <a
+                    class="block px-[42px] py-[18px] pb-[21px] group-hover:bg-white"
+                    href={processedLink.link}
+                  >
+                    {processedLink.name}
+                  </a>
+                  {processedLink.children.length > 0 && (
+                    <SubMenu client:load links={processedLink.children!} />
+                  )}
+                </li>
+              </>
             );
           })
         }
