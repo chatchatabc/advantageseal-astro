@@ -68,15 +68,15 @@ const { links }: any = navBarJson;
         {
           links.map((link: link) => {
             return (
-              <li class="group">
+              <li class="group border-t-[3px] border-t-[#019cdf00]  text-[14px] hover:border-t-[#019cdf]">
                 <a
-                  class="px-[42px] py-[18px] pb-[21px] border-t-[3px] border-t-[#019cdf00] block text-[14px] hover:border-t-[#019cdf] hover:bg-white"
+                  class="block px-[42px] py-[18px] pb-[21px] group-hover:bg-white"
                   href={t("navigation:navbar." + link.name + ".link")}
                 >
                   {t("navigation:navbar." + link.name + ".name")}
                 </a>
                 {link.children.length > 0 && (
-                  <div class="sub-nav flex-1 absolute hidden min-w-[300px] group-hover:flex">
+                  <div class="sub-nav flex-1 absolute hidden min-w-[300px] bg-blue-500 group-hover:flex group-hover:justify-stretch">
                     <div class="sub-nav-list">
                       <ul class=" divide-y-2 p-[0.5rem]">
                         {link.children.map((sublink: sublink) => {
