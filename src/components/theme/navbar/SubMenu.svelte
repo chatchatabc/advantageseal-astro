@@ -5,9 +5,9 @@
 </script>
 
 <div
-  class="sub-nav flex-1 absolute hidden min-w-[300px] bg-blue-500 group-hover:flex group-hover:justify-stretch"
+  class="sub-nav flex-1 absolute hidden bg-blue-500 group-hover:flex group-hover:justify-stretch"
 >
-  <div class="sub-nav-list">
+  <div class="sub-nav-list min-w-[300px]">
     <ul class=" divide-y-2 p-[0.5rem]">
       {#each links as sublink}
         <li class="block py-[1rem]">
@@ -18,5 +18,5 @@
       {/each}
     </ul>
   </div>
-  <div class="sub-nav-details" />
+  <div class="sub-nav-details min-w-[300px]" />
 </div>
