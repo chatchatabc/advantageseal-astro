@@ -3,49 +3,54 @@
   "navbar": {
     "home": {
       "name": "Home",
-      "link": "/en/"
+      "link": "/en/",
+      "sublinks": {}
     },
     "about": {
       "name": "About",
-      "link": "/en/About"
+      "link": "/en/About",
+      "sublinks": {
+        "companyProfile": {
+          "name": "Company Profile",
+          "link": "/en/Company__Profile"
+        },
+        "researchAndInnovation": {
+          "name": "Research and Innovation",
+          "link": "/en/Research__and__Innovation"
+        },
+        "productionAbility": {
+          "name": "Production Ability",
+          "link": "/en/Production__Ability"
+        },
+        "qualificationHonor": {
+          "name": "Qualification Honor",
+          "link": "/en/Qualification__Honor"
+        },
+        "enterpriseCulture": {
+          "name": "Enterprise Culture",
+          "link": "/en/Enterprise__Culture"
+        }
+      }
     },
     "news": {
       "name": "News",
-      "link": "/en/News"
+      "link": "/en/News",
+      "sublinks": {}
     },
     "product": {
       "name": "Product",
-      "link": "/en/Product"
+      "link": "/en/Product",
+      "sublinks": {}
     },
     "customerCenter": {
       "name": "Customer Center",
-      "link": "/en/Customer__Center"
+      "link": "/en/Customer__Center",
+      "sublinks": {}
     },
     "contact": {
       "name": "Contact",
-      "link": "/en/Contact"
-    }
-  },
-  "aboutSublinks": {
-    "companyProfile": {
-      "name": "Company Profile",
-      "link": "/en/Company__Profile"
-    },
-    "researchAndInnovation": {
-      "name": "Research and Innovation",
-      "link": "/en/Research__and__Innovation"
-    },
-    "productionAbility": {
-      "name": "Production Ability",
-      "link": "/en/Production__Ability"
-    },
-    "qualificationHonor": {
-      "name": "Qualification Honor",
-      "link": "/en/Qualification__Honor"
-    },
-    "enterpriseCulture": {
-      "name": "Enterprise Culture",
-      "link": "/en/Enterprise__Culture"
+      "link": "/en/Contact",
+      "sublinks": {}
     }
   }
 }
