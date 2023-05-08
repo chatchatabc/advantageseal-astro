@@ -35,7 +35,24 @@
     "news": {
       "name": "News",
       "link": "/en/News",
-      "sublinks": {}
+      "sublinks": {
+        "industryInformation": {
+          "name": "Industry Information",
+          "link": "/en/Industry_information/"
+        },
+        "companyAnnouncements": {
+          "name": "Company Announcements",
+          "link": "/en/Company_Announcements/"
+        },
+        "newProductRelease": {
+          "name": "New Product Release",
+          "link": "/en/New_Product_Release/"
+        },
+        "videos": {
+          "name": "Videos",
+          "link": "/en/Videos/"
+        }
+      }
     },
     "product": {
       "name": "Product",
