@@ -30,7 +30,7 @@
         { "name": "industryInformation" },
         { "name": "companyAnnouncements" },
         { "name": "newProductReleases" },
-        { "name": "video" }
+        { "name": "videos" }
       ]
     },
     {
@@ -50,9 +50,6 @@
         },
         {
           "name": "sealSeriesForRotorPump"
-        },
-        {
-          "name": "modularMechanicalSealsSeries"
         },
         {
           "name": "sealSeriesForMetalBellows"
