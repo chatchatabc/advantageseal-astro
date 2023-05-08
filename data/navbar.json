@@ -26,19 +26,75 @@
     },
     {
       "name": "news",
-      "children": []
+      "children": [
+        { "name": "industryInformation" },
+        { "name": "companyAnnouncements" },
+        { "name": "newProductReleases" },
+        { "name": "video" }
+      ]
     },
     {
-      "name": "product",
-      "children": []
+      "name": "products",
+      "children": [
+        {
+          "name": "sealSeriesForPoolAndSpaPump"
+        },
+        {
+          "name": "sealSeriesForVerticalMultiStagePump"
+        },
+        {
+          "name": "sealSeriesForSanitaryPump"
+        },
+        {
+          "name": "sealSeriesForFlyptPump"
+        },
+        {
+          "name": "sealSeriesForRotorPump"
+        },
+        {
+          "name": "modularMechanicalSealsSeries"
+        },
+        {
+          "name": "sealSeriesForMetalBellows"
+        },
+        {
+          "name": "universalStandardSealSeries"
+        },
+        {
+          "name": "staticRingSeries"
+        },
+        {
+          "name": "sealMaterialCode"
+        },
+        {
+          "name": "productSubstitutionForm"
+        }
+      ]
     },
     {
       "name": "customerCenter",
-      "children": []
+      "children": [
+        {
+          "name": "concreteCase"
+        },
+        {
+          "name": "solutions"
+        }
+      ]
     },
     {
       "name": "contact",
-      "children": []
+      "children": [
+        {
+          "name": "talentStrategy"
+        },
+        {
+          "name": "contactInformation"
+        },
+        {
+          "name": "digitalMap"
+        }
+      ]
     }
   ]
 }
