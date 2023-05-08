@@ -3,33 +3,43 @@ import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
 import navBarJson from "@data/navbar.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
-type Link = { name: string; link: string; children: Array<Sublink> };
+type Link = { name: string; link: string; children: Sublink[] };
 type Sublink = { name: string; link: string };
 const { links }: any = navBarJson;
 //process the entire thing includidng the translation
 var processedLinks: Link[] = [];
-links.map((link: Link) => {
+links.map((link: any) => {
   var processedLink: Link = { name: "", link: "", children: [] };
   processedLink.name = t("navigation:navbar." + link.name + ".name");
   processedLink.link = t("navigation:navbar." + link.name + ".link");
-  link.children.map((sublink: Sublink) => {
+
+  link.children.map((navbarJsonSublink: { name: string }) => {
     var processedSublink: Sublink = { name: "", link: "" };
     processedSublink.name = t(
-      "navigation:" + link.name + "Sublinks." + sublink.name + ".name"
+      "navigation:navbar." +
+        link.name +
+        ".sublinks." +
+        navbarJsonSublink.name +
+        ".name"
     );
     processedSublink.link = t(
-      "navigation:" + link.name + "Sublinks." + sublink.name + ".link"
+      "navigation:navbar." +
+        link.name +
+        ".sublinks." +
+        navbarJsonSublink.name +
+        ".link"
     );
     processedLink.children.push(processedSublink);
   });
   processedLinks.push(processedLink);
 });
+//error in code does not properly filterout children when other navs in the future will have children
 ---
 
 <header class="">
   <!--logo section -->
-  <section class="container w-full bg-white py-[1.25rem]">
-    <div class="w-9/12 px-4 flex justify-between mx-auto">
+  <section class="w-full bg-white py-[1.25rem]">
+    <div class="w-9/12 px-4 flex justify-between mx-auto container">
       <div class="company-logo">
         <a href="/">
           <Picture
@@ -81,8 +91,8 @@ links.map((link: Link) => {
     </div>
   </section>
   <!-- nav menu section -->
-  <section class="bg-[#f1f1f1] w-full container">
-    <div class="w-9/12 mx-auto">
+  <section class="bg-[#f1f1f1] w-full">
+    <div class="w-9/12 mx-auto container">
       <ul class="flex flex-row">
         {
           processedLinks.map((processedLink: Link) => {
