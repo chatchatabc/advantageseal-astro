@@ -13,31 +13,31 @@
         "companyProfile": {
           "name": "Company Profile",
           "link": "/en/company-profile",
-          "imageRef": "/images/about-company-profile.jpg",
+          "alt": "Company Profile",
           "subText": ""
         },
         "researchAndInnovation": {
           "name": "Research and Innovation",
           "link": "/en/research-and-innovation",
-          "imageRef": "/images/about-research-and-innovation.jpg",
+          "alt": "Research and Innovation",
           "subText": ""
         },
         "productionAbility": {
           "name": "Production Ability",
           "link": "/en/production-ability",
-          "imageRef": "/images/about-production-ability.jpg",
+          "alt": "Production Ability",
           "subText": ""
         },
         "qualificationHonor": {
           "name": "Qualification Honor",
           "link": "/en/qualification-honor",
-          "imageRef": "/images/about-qualification-honor.jpg",
+          "alt": "Qualification Honor",
           "subText": ""
         },
         "enterpriseCulture": {
           "name": "Enterprise Culture",
           "link": "/en/enterprise-culture",
-          "imageRef": "/images/about-enterprise-culture.jpg",
+          "alt": "Enterprise Culture",
           "subText": ""
         }
       }
@@ -49,24 +49,25 @@
         "industryInformation": {
           "name": "Industry Information",
           "link": "/en/industry-information/",
-          "imageRef": "/images/news-industry-information.jpg",
+          "alt": "Industry Information",
           "subText": ""
         },
         "companyAnnouncements": {
           "name": "Company Announcements",
           "link": "/en/company-announcements/",
-          "imageRef": "/images/news-company-announcements.jpg",
+          "alt": "Company Announcements",
           "subText": ""
         },
         "newProductReleases": {
           "name": "New Product Release",
           "link": "/en/new-product-releases/",
-          "imageRef": "/images/news-new-product-releases.jpg",
+          "alt": "New Product Release",
           "subText": ""
         },
         "videos": {
           "name": "Videos",
-          "link": "/en/Videos/"
+          "link": "/en/Videos/",
+          "alt": "Videos"
         }
       }
     },
@@ -77,61 +78,61 @@
         "sealSeriesForPoolAndSpaPump": {
           "name": "Seal Series for Pool and Spa Pump",
           "link": "/en/seal-series-for-pool-and-spa-pump/",
-          "imageRef": "/images/products-seal-series-for-pool-and-spa-pump.jpg",
+          "alt": "Seal Series for Pool and Spa Pump",
           "subText": ""
         },
         "sealSeriesForVerticalMultiStagePump": {
           "name": "Seal Series for Vertical Multi-stage Pump",
           "link": "/en/seal-series-for-vertical-multi-stage-pump/",
-          "imageRef": "/images/products-seal-series-for-vertical-multi-stage-pump.jpg",
+          "alt": "Seal Series for Vertical Multi-stage Pump",
           "subText": ""
         },
         "sealSeriesForSanitaryPump": {
           "name": "Seal Series for Sanitary Pump",
           "link": "/en/seal-series-for-sanitary-pump/",
-          "imageRef": "/images/products-seal-series-for-sanitary-pump.jpg",
+          "alt": "Seal Series for Sanitary Pump",
           "subText": ""
         },
         "sealSeriesForFlyptPump": {
           "name": "Seal Series for Flypt Pump",
           "link": "/en/sealing-series-for-flypt-pump/",
-          "imageRef": "/images/products-seal-series-for-flypt-pump.jpg",
+          "alt": "Seal Series for Flypt Pump",
           "subText": ""
         },
         "sealSeriesForRotorPump": {
           "name": "Seal Series for Rotor Pump",
           "link": "/en/seal-series-for-rotor-pump/",
-          "imageRef": "/images/products-seal-series-for-rotor-pump.jpg",
+          "alt": "Seal Series for Rotor Pump",
           "subText": ""
         },
         "sealSeriesForMetalBellows": {
           "name": "Seal Series for Metal Bellows",
           "link": "/en/seal-series-for-metal-bellows/",
-          "imageRef": "/images/products-seal-series-for-metal-bellows.jpg",
+          "alt": "Seal Series for Metal Bellows",
           "subText": ""
         },
         "universalStandardSealSeries": {
           "name": "Universal Standard Seal Series",
           "link": "/en/universal-standard-seal-series/",
-          "imageRef": "/images/products-universal-standard-seal-series.jpg",
+          "alt": "Universal Standard Seal Series",
           "subText": ""
         },
         "staticRingSeries": {
           "name": "Static Ring Series",
           "link": "/en/static-ring-series/",
-          "imageRef": "/images/products-static-ring-series.jpg",
+          "alt": "Static Ring Series",
           "subText": ""
         },
         "sealMaterialCode": {
           "name": "Seal Material Code",
           "link": "/en/seal-material-code/",
-          "imageRef": null,
+          "alt": "",
           "subText": null
         },
         "productSubstitutionForm": {
           "name": "Product Substitution Form",
           "link": "/en/product/product-substitution-form/",
-          "imageRef": null,
+          "alt": "",
           "subText": null
         }
       }
@@ -143,11 +144,15 @@
       "sublinks": {
         "concreateCase": {
           "name": "Concrete Case",
-          "link": "/en/concrete-case/"
+          "link": "/en/concrete-case/",
+          "alt": "",
+          "subText": null
         },
         "solutions": {
           "name": "Solutions",
-          "link": "/en/solutions/"
+          "link": "/en/solutions/",
+          "alt": "",
+          "subText": null
         }
       }
     },
@@ -157,15 +162,21 @@
       "sublinks": {
         "talentStrategy": {
           "name": "Talent Strategy",
-          "link": "/en/talent-strategy/"
+          "link": "/en/talent-strategy/",
+          "alt": "",
+          "subText": null
         },
         "contactInformation": {
           "name": "Contact Information",
-          "link": "/en/contact-information/"
+          "link": "/en/contact-information/",
+          "alt": "",
+          "subText": null
         },
         "digitalMap": {
           "name": "Digital Map",
-          "link": "/en/digital-map/"
+          "link": "/en/digital-map/",
+          "alt": "",
+          "subText": null
         }
       }
     }
