@@ -164,19 +164,19 @@
           "name": "人才战略",
           "link": "/talent-strategy",
           "alt": "人才战略",
-          "subText": null
+          "subText": "为梦想者提供舞台，携手共进，共创未来"
         },
         "contactInformation": {
           "name": "联系方式",
           "link": "/contact-information",
           "alt": "联系方式",
-          "subText": null
+          "subText": "电话:+086(574)87500883 \n 邮箱:admin@advantageseal.cn"
         },
         "digitalMap": {
           "name": "电子地图",
           "link": "/digital-map",
           "alt": "电子地图",
-          "subText": null
+          "subText": "一键导航，为您提供地图服务"
         }
       }
     }

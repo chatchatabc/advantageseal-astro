@@ -110,15 +110,15 @@
       "children": [
         {
           "name": "talentStrategy",
-          "imageRef": ""
+          "imageRef": "/images/contact-talent-strategy.jpg"
         },
         {
           "name": "contactInformation",
-          "imageRef": ""
+          "imageRef": "/images/contact-information.jpg"
         },
         {
           "name": "digitalMap",
-          "imageRef": ""
+          "imageRef": "/images/contact-digital-map.jpg"
         }
       ]
     }
