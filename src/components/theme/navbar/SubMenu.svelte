@@ -23,13 +23,18 @@
 </script>
 
 <div
-  class="sub-nav flex-1 absolute hidden bg-blue-500 group-hover:flex group-hover:justify-stretch"
+  class="sub-nav flex-1 absolute hidden border-b-[5px] border-b-[#0ba0e1] group-hover:flex group-hover:justify-stretch"
 >
-  <div class="sub-nav-list min-w-[300px] max-w-[300px]">
+  <div
+    class="sub-nav-list min-w-[300px] max-w-[300px] border-r-[1px] text-[#777]"
+  >
     <ul class="subLinks divide-y-2 p-[0.5rem]">
       {#each links as sublink}
         <li class="block">
-          <a class="py-[1rem] block" href={sublink.link}>
+          <a
+            class="py-[1rem] block text-[#777] hover:text-[#0ba0e1]"
+            href={sublink.link}
+          >
             {sublink.name}
           </a>
         </li>

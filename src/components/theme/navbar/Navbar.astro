@@ -135,7 +135,10 @@ links.map((link: any) => {
 
                   {processedLink.children.length > 0 && (
                     <SubMenu client:load links={processedLink.children!}>
-                      <div slot="description" class="descriptionCollection">
+                      <div
+                        slot="description"
+                        class="descriptionCollection p-[20px]"
+                      >
                         {processedLink.children.map((sublink) => {
                           if (sublink.imageRef !== "") {
                             return (
@@ -144,7 +147,7 @@ links.map((link: any) => {
                                   src={sublink.imageRef}
                                   alt={sublink.alt}
                                 />
-                                <div>{sublink.subText}</div>
+                                <div class="mt-[20px]">{sublink.subText}</div>
                               </div>
                             );
                           } else {
