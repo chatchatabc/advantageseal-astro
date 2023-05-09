@@ -4,7 +4,13 @@ import i18next, { t } from "i18next";
 import navBarJson from "@data/navbar.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
 type Link = { name: string; link: string; children: Sublink[] };
-type Sublink = { name: string; link: string };
+type Sublink = {
+  name: string;
+  link: string;
+  imageRef: string;
+  alt: string;
+  subText: string;
+};
 const { links }: any = navBarJson;
 //process the entire thing includidng the translation
 var processedLinks: Link[] = [];
@@ -13,8 +19,14 @@ links.map((link: any) => {
   processedLink.name = t("navigation:navbar." + link.name + ".name");
   processedLink.link = t("navigation:navbar." + link.name + ".link");
 
-  link.children.map((navbarJsonSublink: { name: string }) => {
-    var processedSublink: Sublink = { name: "", link: "" };
+  link.children.map((navbarJsonSublink: { name: string; imageRef: string }) => {
+    var processedSublink: Sublink = {
+      name: "",
+      link: "",
+      imageRef: "",
+      alt: "",
+      subText: "",
+    };
     processedSublink.name = t(
       "navigation:navbar." +
         link.name +
@@ -28,6 +40,21 @@ links.map((link: any) => {
         ".sublinks." +
         navbarJsonSublink.name +
         ".link"
+    );
+    processedSublink.imageRef = navbarJsonSublink.imageRef;
+    processedSublink.alt = t(
+      "navigation:navbar." +
+        link.name +
+        ".sublinks." +
+        navbarJsonSublink.name +
+        ".alt"
+    );
+    processedSublink.subText = t(
+      "navigation:navbar." +
+        link.name +
+        ".sublinks." +
+        navbarJsonSublink.name +
+        ".subText"
     );
     processedLink.children.push(processedSublink);
   });
@@ -105,8 +132,27 @@ links.map((link: any) => {
                   >
                     {processedLink.name}
                   </a>
+
                   {processedLink.children.length > 0 && (
-                    <SubMenu client:load links={processedLink.children!} />
+                    <SubMenu client:load links={processedLink.children!}>
+                      <div slot="description" class="descriptionCollection">
+                        {processedLink.children.map((sublink) => {
+                          if (sublink.imageRef !== "") {
+                            return (
+                              <div class="descriptionItem hidden">
+                                <Picture
+                                  src={sublink.imageRef}
+                                  alt={sublink.alt}
+                                />
+                                <div>{sublink.subText}</div>
+                              </div>
+                            );
+                          } else {
+                            return <div class="descriptionItem hidden" />;
+                          }
+                        })}
+                      </div>
+                    </SubMenu>
                   )}
                 </li>
               </>
