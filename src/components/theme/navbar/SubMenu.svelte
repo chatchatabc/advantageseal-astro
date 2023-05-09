@@ -10,13 +10,13 @@
     const descriptionItems = document.querySelectorAll(
       ".descriptionCollection .descriptionItem"
     );
-    descriptionItems[0].classList.toggle("hidden");
+    descriptionItems[0].classList.remove("hidden");
     currentDescription = descriptionItems[0] as HTMLDivElement;
     subLinks.forEach((link, index) => {
       link.addEventListener("mouseover", (e) => {
-        currentDescription.classList.toggle("hidden");
+        currentDescription.classList.add("hidden");
         currentDescription = descriptionItems[index] as HTMLDivElement;
-        currentDescription.classList.toggle("hidden");
+        currentDescription.classList.remove("hidden");
       });
     });
   });

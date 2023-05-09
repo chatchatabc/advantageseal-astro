@@ -146,13 +146,13 @@
           "name": "具体案例",
           "link": "/concrete-case",
           "alt": "具体案例",
-          "subText": null
+          "subText": "展示客户案例，遇有合作，请第一时间联系我们"
         },
         "solutions": {
           "name": "解决方案",
           "link": "/solutions",
           "alt": "解决方案",
-          "subText": null
+          "subText": "为适应各种复杂工况，爱得万有针对性的提出解决方案"
         }
       }
     },

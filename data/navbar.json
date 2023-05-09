@@ -97,11 +97,11 @@
       "children": [
         {
           "name": "concreteCase",
-          "imageRef": ""
+          "imageRef": "/images/customer-center-concrete-case.jpg"
         },
         {
           "name": "solutions",
-          "imageRef": ""
+          "imageRef": "/images/customer-center-solutions.jpg"
         }
       ]
     },
