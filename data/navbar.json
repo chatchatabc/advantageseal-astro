@@ -8,63 +8,87 @@
       "name": "about",
       "children": [
         {
-          "name": "companyProfile"
+          "name": "companyProfile",
+          "imageRef": "/images/about-company-profile.jpg"
         },
         {
-          "name": "researchAndInnovation"
+          "name": "researchAndInnovation",
+          "imageRef": "/images/about-research-and-innovation.jpg"
         },
         {
-          "name": "productionAbility"
+          "name": "productionAbility",
+          "imageRef": "/images/about-production-ability.jpg"
         },
         {
-          "name": "qualificationHonor"
+          "name": "qualificationHonor",
+          "imageRef": "/images/about-qualification-honor.jpg"
         },
         {
-          "name": "enterpriseCulture"
+          "name": "enterpriseCulture",
+          "imageRef": "/images/about-enterprise-culture.jpg"
         }
       ]
     },
     {
       "name": "news",
       "children": [
-        { "name": "industryInformation" },
-        { "name": "companyAnnouncements" },
-        { "name": "newProductReleases" },
-        { "name": "videos" }
+        {
+          "name": "industryInformation",
+          "imageRef": "/images/news-industry-information.jpg"
+        },
+        {
+          "name": "companyAnnouncements",
+          "imageRef": "/images/news-company-announcements.jpg"
+        },
+        {
+          "name": "newProductReleases",
+          "imageRef": "/images/news-new-product-releases.jpg"
+        },
+        { "name": "videos", "imageRef": "/images/news-videos.jpg" }
       ]
     },
     {
       "name": "products",
       "children": [
         {
-          "name": "sealSeriesForPoolAndSpaPump"
+          "name": "sealSeriesForPoolAndSpaPump",
+          "imageRef": "/images/products-seal-series-for-pool-and-spa-pump.jpg"
         },
         {
-          "name": "sealSeriesForVerticalMultiStagePump"
+          "name": "sealSeriesForVerticalMultiStagePump",
+          "imageRef": "/images/products-seal-series-for-vertical-multi-stage-pump.jpg"
         },
         {
-          "name": "sealSeriesForSanitaryPump"
+          "name": "sealSeriesForSanitaryPump",
+          "imageRef": "/images/products-seal-series-for-sanitary-pump.jpg"
         },
         {
-          "name": "sealSeriesForFlyptPump"
+          "name": "sealSeriesForFlyptPump",
+          "imageRef": "/images/products-seal-series-for-flypt-pump.jpg"
         },
         {
-          "name": "sealSeriesForRotorPump"
+          "name": "sealSeriesForRotorPump",
+          "imageRef": "/images/products-seal-series-for-rotor-pump.jpg"
         },
         {
-          "name": "sealSeriesForMetalBellows"
+          "name": "sealSeriesForMetalBellows",
+          "imageRef": "/images/products-seal-series-for-metal-bellows.jpg"
         },
         {
-          "name": "universalStandardSealSeries"
+          "name": "universalStandardSealSeries",
+          "imageRef": "/images/products-universal-standard-seal-series.jpg"
         },
         {
-          "name": "staticRingSeries"
+          "name": "staticRingSeries",
+          "imageRef": "/images/products-static-ring-series.jpg"
         },
         {
-          "name": "sealMaterialCode"
+          "name": "sealMaterialCode",
+          "imageRef": ""
         },
         {
-          "name": "productSubstitutionForm"
+          "name": "productSubstitutionForm",
+          "imageRef": ""
         }
       ]
     },
@@ -72,10 +96,12 @@
       "name": "customerCenter",
       "children": [
         {
-          "name": "concreteCase"
+          "name": "concreteCase",
+          "imageRef": ""
         },
         {
-          "name": "solutions"
+          "name": "solutions",
+          "imageRef": ""
         }
       ]
     },
@@ -83,13 +109,16 @@
       "name": "contact",
       "children": [
         {
-          "name": "talentStrategy"
+          "name": "talentStrategy",
+          "imageRef": ""
         },
         {
-          "name": "contactInformation"
+          "name": "contactInformation",
+          "imageRef": ""
         },
         {
-          "name": "digitalMap"
+          "name": "digitalMap",
+          "imageRef": ""
         }
       ]
     }
