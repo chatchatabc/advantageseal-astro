@@ -66,7 +66,9 @@ links.map((link: any) => {
 <header class="">
   <!--logo section -->
   <section class="w-full bg-white py-[1.25rem]">
-    <div class="w-9/12 px-4 flex justify-between mx-auto container">
+    <div
+      class="w-full px-4 flex justify-between mx-auto container lg:w-11/12 xl:w-9/12"
+    >
       <div class="company-logo">
         <a href="/">
           <Picture
@@ -78,7 +80,7 @@ links.map((link: any) => {
       </div>
       <div class="flex flex-row">
         <!--hotline -->
-        <div class="flex flex-1 items-center pr-[2rem]">
+        <div class="flex-1 items-center pr-[2rem] hidden lg:flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
@@ -117,52 +119,158 @@ links.map((link: any) => {
       </div>
     </div>
   </section>
-  <!-- nav menu section -->
-  <section class="bg-[#f1f1f1] w-full">
-    <div class="w-9/12 mx-auto container">
-      <ul class="flex flex-row">
-        {
-          processedLinks.map((processedLink: Link) => {
-            return (
-              <>
-                <li class="group border-t-[3px] border-t-[#019cdf00]  text-[14px] hover:border-t-[#019cdf]">
-                  <a
-                    class="block px-[42px] py-[18px] pb-[21px] group-hover:bg-white"
-                    href={processedLink.link}
-                  >
-                    {processedLink.name}
-                  </a>
-
-                  {processedLink.children.length > 0 && (
-                    <SubMenu client:load links={processedLink.children!}>
-                      <div
-                        slot="description"
-                        class="descriptionCollection p-[20px]"
+  <!--Navigation Section-->
+  <section>
+    <nav>
+      <!-- Desktop Menu -->
+      <div class="bg-[#f1f1f1] w-full hidden lg:block">
+        <div class="w-full mx-auto container lg:w-11/12 xl:w-9/12">
+          <ul class="flex flex-row">
+            {
+              processedLinks.map((processedLink: Link) => {
+                return (
+                  <>
+                    <li class="group border-t-[3px] border-t-[#019cdf00]  text-[14px] hover:border-t-[#019cdf]">
+                      <a
+                        class="block px-[42px] py-[18px] pb-[21px] group-hover:bg-white"
+                        href={processedLink.link}
                       >
-                        {processedLink.children.map((sublink) => {
-                          if (sublink.imageRef !== "") {
-                            return (
-                              <div class="descriptionItem hidden">
-                                <Picture
-                                  src={sublink.imageRef}
-                                  alt={sublink.alt}
-                                />
-                                <div class="mt-[20px]">{sublink.subText}</div>
-                              </div>
-                            );
-                          } else {
-                            return <div class="descriptionItem hidden" />;
-                          }
-                        })}
+                        {processedLink.name}
+                      </a>
+
+                      {processedLink.children.length > 0 && (
+                        <SubMenu client:load links={processedLink.children!}>
+                          <div
+                            slot="description"
+                            class="descriptionCollection p-[20px]"
+                          >
+                            {processedLink.children.map((sublink) => {
+                              if (sublink.imageRef !== "") {
+                                return (
+                                  <div class="descriptionItem hidden">
+                                    <Picture
+                                      src={sublink.imageRef}
+                                      alt={sublink.alt}
+                                    />
+                                    <div class="mt-[20px]">
+                                      {sublink.subText}
+                                    </div>
+                                  </div>
+                                );
+                              } else {
+                                return <div class="descriptionItem hidden" />;
+                              }
+                            })}
+                          </div>
+                        </SubMenu>
+                      )}
+                    </li>
+                  </>
+                );
+              })
+            }
+          </ul>
+        </div>
+      </div>
+      <!--Mobile Menu Button -->
+      <div class="bg-[#f1f1f1] w-full flex justify-end lg:hidden">
+        <button
+          aria-label="menu button"
+          id="nav-menu-btn"
+          class="p-[15px] w-[50px] h-[50px] lg:hidden"
+        >
+          <div id="burger" class="space-y-1">
+            <div
+              id="burger-1"
+              class="w-6 h-1 origin-top-left transition rounded-full bg-black"
+            >
+            </div>
+            <div id="burger-2" class="w-6 h-1 transition rounded-full bg-black">
+            </div>
+            <div
+              id="burger-3"
+              class="w-6 h-1 origin-bottom-left transition rounded-full bg-black"
+            >
+            </div>
+          </div>
+        </button>
+      </div>
+      <!--Mobile Menu -->
+      <div id="nav-menu" class="hidden lg:hidden">
+        <ul class="bg-[#f1f1f1]">
+          {
+            processedLinks.map((processedLink, index) => {
+              return (
+                <li
+                  class={`w-full ${
+                    index !== processedLinks.length - 1 && "border-b-[1px]"
+                  } hover:border-b-[#0ba0e1] `}
+                >
+                  <div class="flex justify-between items-center">
+                    <a
+                      class="px-[42px] w-full h-[50px] flex items-center grow hover:text-[#0ba0e1]"
+                      href={processedLink.link}
+                    >
+                      {processedLink.name}
+                    </a>
+
+                    {processedLink.children.length > 0 && (
+                      <div class="">
+                        <button
+                          aria-label={`drop-down ${processedLink.name.toLowerCase()} menu button`}
+                          class="w-[50px] h-[50px] bg-white text-center sub-menu-btn"
+                        >
+                          <span>+</span>
+                        </button>
                       </div>
-                    </SubMenu>
+                    )}
+                  </div>
+                  {processedLink.children.length > 0 && (
+                    <div class="sub-menu-collection border-t-[1px]  pl-[2rem] hidden hover:border-t-[#009CE0]">
+                      <ul class="w-full">
+                        {processedLink.children.map((sublink, index) => {
+                          return (
+                            <li
+                              class={`w-full flex items-center ${
+                                index !== processedLink.children.length - 1 &&
+                                "border-b-[1px] hover:border-b-[#009CE0]"
+                              } hover:text-[#009CE0]`}
+                            >
+                              <a
+                                class="px-[21px] w-full h-[50px] flex items-center"
+                                href={sublink.link}
+                              >
+                                {sublink.name}
+                              </a>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
                   )}
                 </li>
-              </>
-            );
-          })
-        }
-      </ul>
-    </div>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </nav>
   </section>
 </header>
+<script>
+  //mobile nav menu drop-down button
+  var navMenuBtn = document.querySelector("#nav-menu-btn")!;
+  var navMenu = document.querySelector("#nav-menu")!;
+
+  navMenuBtn.addEventListener("click", function () {
+    navMenu.classList.toggle("hidden");
+  });
+  //mobile suv-nav menu drop-down btn
+  var subMenuBtns = document.querySelectorAll(".sub-menu-btn")!;
+  var subMenuCollections = document.querySelectorAll(".sub-menu-collection")!;
+  subMenuBtns.forEach((subMenuBtn, index) => {
+    subMenuBtn.addEventListener("click", function () {
+      subMenuCollections[index].classList.toggle("hidden");
+    });
+  });
+</script>
