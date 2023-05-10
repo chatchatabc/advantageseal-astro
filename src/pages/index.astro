@@ -1,9 +1,12 @@
 ---
-import BlankLayout from "../layouts/BlankLayout.astro";
-import Navbar from "../components/theme/navbar/Navbar.astro";
-//going to revise this as a default layout
+import Layout from "@layouts/Layout.astro";
+import Navbar from "@components/theme/navbar/Navbar.astro";
+import homeJson from "@data/pages/home.json";
 ---
 
-<BlankLayout>
-  <Navbar />
-</BlankLayout>
+<Layout
+  pageTitle={homeJson.pageTitle}
+  pageDescription={homeJson.pageDescription}
+  pageKeywords={homeJson.pageKeywords}
+  pageAuthor={homeJson.pageAuthor}
+/>
