@@ -1,10 +1,27 @@
+---
+//REQUIRED
+type Props = {
+  pageTitle: string;
+  pageDescription: string;
+  pageKeywords: string;
+  pageAuthor: string;
+};
+
+const { pageTitle, pageDescription, pageKeywords, pageAuthor } =
+  Astro.props as Props;
+---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <!-- Site Information -->
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content={pageAuthor} />
+    <meta name="keywords" content={pageKeywords} />
+    <title>{pageTitle}</title>
   </head>
   <body>
     <slot />

@@ -1,0 +1,28 @@
+---
+import BlankLayout from "../layouts/BlankLayout.astro";
+import Navbar from "../components/theme/navbar/Navbar.astro";
+import siteInfo from "@data/site-info.json";
+//going to revise this as a default layout
+type Props = {
+  pageTitle?: string;
+  pageDescription?: string;
+  pageKeywords?: string;
+  pageAuthor?: string;
+};
+const {
+  pageTitle = siteInfo.pageTitle,
+  pageDescription = siteInfo.pageDescription,
+  pageKeywords = siteInfo.pageKeywords,
+  pageAuthor = siteInfo.pageAuthor,
+} = Astro.props as Props;
+---
+
+<BlankLayout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  pageKeywords={pageKeywords}
+  pageAuthor={pageAuthor}
+>
+  <Navbar />
+  <slot />
+</BlankLayout>
