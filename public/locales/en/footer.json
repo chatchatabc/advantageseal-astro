@@ -1,16 +1,29 @@
 {
   "lower": {
-    "text1": "Copyright © 2019 Advantage Seal (Ningbo) Co., Ltd. All rights reserved.",
+    "text1": {
+      "exist": "1",
+      "value": "Copyright © 2019 Advantage Seal (Ningbo) Co., Ltd. All rights reserved."
+    },
+    "text2": {
+      "exist": "0",
+      "value": ""
+    },
     "text3": {
-      "text": "Web Support:",
-      "title": "NBZiyu A.D.",
-      "hyperLinkText": "NBZiyu A.D.",
-      "hyperLinkUrl": "http://www.hszg.com.cn"
+      "exist": "1",
+      "value": {
+        "text": "Web Support:",
+        "title": "NBZiyu A.D.",
+        "hyperLinkText": "NBZiyu A.D.",
+        "hyperLinkUrl": "http://www.hszg.com.cn"
+      }
     },
     "text4": {
-      "text": "YeSen Design:",
-      "contactNumber": "+86 13777050039",
-      "href": "tel:+86 13777050039"
+      "exist": "1",
+      "value": {
+        "text": "YeSen Design:",
+        "contactNumber": "+86 13777050039",
+        "href": "tel:+86 13777050039"
+      }
     }
   }
 }
