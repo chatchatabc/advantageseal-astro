@@ -1,14 +1,19 @@
 ---
+import { SEO } from "astro-seo";
+import type { SEOType } from "@customTypes/seo/seoType";
+import siteInfo from "@data/site-info.json";
 //REQUIRED
-type Props = {
-  pageTitle: string;
-  pageDescription: string;
-  pageKeywords: string;
-  pageAuthor: string;
-};
 
-const { pageTitle, pageDescription, pageKeywords, pageAuthor } =
-  Astro.props as Props;
+const {
+  pageTitle = siteInfo.pageTitle,
+  pageDescription = siteInfo.pageDescription,
+  pageKeywords = siteInfo.pageKeywords,
+  pageAuthor = siteInfo.pageAuthor,
+  ogTitle = siteInfo.ogTitle,
+  ogType = siteInfo.ogType,
+  ogImage = siteInfo.ogImage,
+  ogDescription = siteInfo.ogDescription,
+} = Astro.props as SEOType;
 ---
 
 <html lang="en">
@@ -18,10 +23,29 @@ const { pageTitle, pageDescription, pageKeywords, pageAuthor } =
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <!-- Site Information -->
-    <meta name="description" content={pageDescription} />
-    <meta name="author" content={pageAuthor} />
-    <meta name="keywords" content={pageKeywords} />
-    <title>{pageTitle}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <SEO
+      title={pageTitle}
+      description={pageDescription}
+      openGraph={{
+        basic: {
+          title: ogTitle,
+          type: ogType,
+          image: ogImage,
+        },
+        optional: {
+          siteName: ogTitle,
+          description: ogDescription,
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [
+          { name: "author", content: pageAuthor },
+          { name: "keywords", content: pageKeywords },
+        ],
+      }}
+    />
   </head>
   <body>
     <slot />
