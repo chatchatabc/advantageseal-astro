@@ -1,0 +1,8 @@
+{
+  "lower": [
+    { "type": "literal", "name": "text1" },
+    { "type": "hyperlink", "name": "text2" },
+    { "type": "hyperlink", "name": "text3" },
+    { "type": "contact", "name": "text4" }
+  ]
+}
