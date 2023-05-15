@@ -1,4 +1,15 @@
 {
+  "upper": {
+    "about": "about",
+    "news": "news",
+    "products": "products",
+    "customerCenter": "customerCenter",
+    "contact": "contact",
+    "networkShare": {
+      "label": "网络分享",
+      "subText": "网站二维码"
+    }
+  },
   "lower": {
     "fieldCount": "4",
     "text1": {
@@ -17,7 +28,7 @@
     "text3": {
       "type": "hyperlink",
       "value": {
-        "label": "网站支持：",
+        "text": "网站支持：",
         "title": "宁波紫宇网络科技有限公司",
         "hyperLinkText": "宁波网站建设",
         "hyperLinkUrl": "http://www.hszg.com.cn"
@@ -26,7 +37,7 @@
     "text4": {
       "type": "contact",
       "value": {
-        "label": "宁波烨森设计：",
+        "text": "宁波烨森设计：",
         "contactNumber": "13777050039",
         "href": "tel:13777050039"
       }
