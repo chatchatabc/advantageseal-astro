@@ -1,4 +1,15 @@
 {
+  "upper": {
+    "about": "about",
+    "news": "news",
+    "products": "products",
+    "customerCenter": "customerCenter",
+    "contact": "contact",
+    "networkShare": {
+      "label": "Network Share",
+      "subText": "QRCode"
+    }
+  },
   "lower": {
     "fieldCount": "3",
     "text1": {

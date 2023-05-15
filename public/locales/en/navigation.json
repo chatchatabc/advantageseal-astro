@@ -3,40 +3,33 @@
   "navbar": {
     "home": {
       "name": "Home",
-      "link": "/en/",
       "sublinks": {}
     },
     "about": {
       "name": "About",
-      "link": "/en/About",
       "sublinks": {
         "companyProfile": {
           "name": "Company Profile",
-          "link": "/en/company-profile",
           "alt": "Company Profile",
           "subText": ""
         },
         "researchAndInnovation": {
           "name": "Research and Innovation",
-          "link": "/en/research-and-innovation",
           "alt": "Research and Innovation",
           "subText": ""
         },
         "productionAbility": {
           "name": "Production Ability",
-          "link": "/en/production-ability",
           "alt": "Production Ability",
           "subText": ""
         },
         "qualificationHonor": {
           "name": "Qualification Honor",
-          "link": "/en/qualification-honor",
           "alt": "Qualification Honor",
           "subText": ""
         },
         "enterpriseCulture": {
           "name": "Enterprise Culture",
-          "link": "/en/enterprise-culture",
           "alt": "Enterprise Culture",
           "subText": ""
         }
@@ -44,113 +37,93 @@
     },
     "news": {
       "name": "News",
-      "link": "/en/News",
       "sublinks": {
         "industryInformation": {
           "name": "Industry Information",
-          "link": "/en/industry-information/",
           "alt": "Industry Information",
           "subText": ""
         },
         "companyAnnouncements": {
           "name": "Company Announcements",
-          "link": "/en/company-announcements/",
           "alt": "Company Announcements",
           "subText": ""
         },
         "newProductReleases": {
           "name": "New Product Release",
-          "link": "/en/new-product-releases/",
           "alt": "New Product Release",
           "subText": ""
         },
         "videos": {
           "name": "Videos",
-          "link": "/en/Videos/",
           "alt": "Videos"
         }
       }
     },
     "products": {
       "name": "Products",
-      "link": "/en/products",
       "sublinks": {
         "sealSeriesForPoolAndSpaPump": {
           "name": "Seal Series for Pool and Spa Pump",
-          "link": "/en/seal-series-for-pool-and-spa-pump/",
           "alt": "Seal Series for Pool and Spa Pump",
           "subText": ""
         },
         "sealSeriesForVerticalMultiStagePump": {
           "name": "Seal Series for Vertical Multi-stage Pump",
-          "link": "/en/seal-series-for-vertical-multi-stage-pump/",
           "alt": "Seal Series for Vertical Multi-stage Pump",
           "subText": ""
         },
         "sealSeriesForSanitaryPump": {
           "name": "Seal Series for Sanitary Pump",
-          "link": "/en/seal-series-for-sanitary-pump/",
           "alt": "Seal Series for Sanitary Pump",
           "subText": ""
         },
         "sealSeriesForFlyptPump": {
           "name": "Seal Series for Flypt Pump",
-          "link": "/en/sealing-series-for-flypt-pump/",
           "alt": "Seal Series for Flypt Pump",
           "subText": ""
         },
         "sealSeriesForRotorPump": {
           "name": "Seal Series for Rotor Pump",
-          "link": "/en/seal-series-for-rotor-pump/",
           "alt": "Seal Series for Rotor Pump",
           "subText": ""
         },
         "sealSeriesForMetalBellows": {
           "name": "Seal Series for Metal Bellows",
-          "link": "/en/seal-series-for-metal-bellows/",
           "alt": "Seal Series for Metal Bellows",
           "subText": ""
         },
         "universalStandardSealSeries": {
           "name": "Universal Standard Seal Series",
-          "link": "/en/universal-standard-seal-series/",
           "alt": "Universal Standard Seal Series",
           "subText": ""
         },
         "staticRingSeries": {
           "name": "Static Ring Series",
-          "link": "/en/static-ring-series/",
           "alt": "Static Ring Series",
           "subText": ""
         },
         "sealMaterialCode": {
           "name": "Seal Material Code",
-          "link": "/en/seal-material-code/",
           "alt": "",
           "subText": null
         },
         "productSubstitutionForm": {
           "name": "Product Substitution Form",
-          "link": "/en/product/product-substitution-form/",
           "alt": "",
           "subText": null
         }
       }
     },
-
     "customerCenter": {
       "name": "Customer Center",
-      "link": "/en/customer-center",
       "sublinks": {
-        "concreateCase": {
+        "concreteCase": {
           "name": "Concrete Case",
-          "link": "/en/concrete-case/",
           "alt": "",
           "subText": null
         },
         "solutions": {
           "name": "Solutions",
-          "link": "/en/solutions/",
           "alt": "",
           "subText": null
         }
@@ -158,27 +131,28 @@
     },
     "contact": {
       "name": "Contact",
-      "link": "/en/Contact",
       "sublinks": {
         "talentStrategy": {
           "name": "Talent Strategy",
-          "link": "/en/talent-strategy/",
           "alt": "",
           "subText": null
         },
         "contactInformation": {
           "name": "Contact Information",
-          "link": "/en/contact-information/",
           "alt": "",
           "subText": null
         },
         "digitalMap": {
           "name": "Digital Map",
-          "link": "/en/digital-map/",
           "alt": "",
           "subText": null
         }
       }
+    },
+    "networkShare": {
+      "name": "Network Share",
+      "subText": "QR Code",
+      "alt": "QR Code"
     }
   }
 }
