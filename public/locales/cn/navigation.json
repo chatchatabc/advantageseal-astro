@@ -3,40 +3,33 @@
   "navbar": {
     "home": {
       "name": "首页",
-      "link": "/",
       "sublinks": {}
     },
     "about": {
       "name": "关于我们",
-      "link": "/about",
       "sublinks": {
         "companyProfile": {
           "name": "公司概况",
-          "link": "/company-profile",
           "alt": "公司概况",
           "subText": "爱得万以“创新”为使命，专注生产旋转轴用流体动密封系统，立足本土放眼世界"
         },
         "researchAndInnovation": {
           "name": "研发创新",
-          "link": "/research-and-innovation",
           "alt": "研发创新",
           "subText": "卓越的研发创新能力一直是爱得万企业竞争力的重要部分。研发战略是以市场和客户需求为基础，不断投入，持续创新"
         },
         "productionAbility": {
           "name": "生产实力",
-          "link": "/production-ability",
           "alt": "生产实力",
           "subText": "公司实现了生产数控化、研发软件化、试验平台化，拥有成套数控加工、科研、质检设施和系统"
         },
         "qualificationHonor": {
           "name": "资质荣誉",
-          "link": "/qualification-honor",
           "alt": "资质荣誉",
           "subText": "依托强大的国际知名品牌Advantage Seal，引进先进的现代化技术，爱得万不断开拓创新，获得多项技术认证，引领密封件品牌"
         },
         "enterpriseCulture": {
           "name": "企业文化",
-          "link": "/enterprise-culture",
           "alt": "企业文化",
           "subText": "“拼搏、奋进、开拓、创新”，我们坚守共同的人生观价值观，期待更高目标，实现理想未来"
         }
@@ -44,29 +37,24 @@
     },
     "news": {
       "name": "新闻资讯",
-      "link": "/news",
       "sublinks": {
         "industryInformation": {
           "name": "行业资讯",
-          "link": "/industry-information",
           "alt": "行业资讯",
           "subText": "全面了解行业内动态及媒体报道,关注未来趋势走向"
         },
         "companyAnnouncements": {
           "name": "公司公告",
-          "link": "/company-announcements",
           "alt": "公司公告",
           "subText": "及时发布第一时效公司公告，关切了解公司动态"
         },
         "newProductReleases": {
           "name": "新品发布",
-          "link": "/new-product-releases",
           "alt": "新品发布",
           "subText": "爱得万新品发布，见证不断创新的发展气息"
         },
         "videos": {
           "name": "视频中心",
-          "link": "/videos",
           "alt": "视频中心",
           "subText": "关注爱得万生产加工等系列影像资料"
         }
@@ -74,65 +62,54 @@
     },
     "products": {
       "name": "产品展示",
-      "link": "/product",
       "sublinks": {
         "sealSeriesForPoolAndSpaPump": {
           "name": "水池水疗泵用密封系列",
-          "link": "/seal-series-for-pool-and-spa-pump",
           "alt": "水池水疗泵用密封系列",
           "subText": "水池、水疗用水泵用机械密封系列"
         },
         "sealSeriesForVerticalMultiStagePump": {
           "name": "立式多级泵密封系列",
-          "link": "/seal-series-for-vertical-multi-stage-pump",
           "alt": "立式多级泵密封系列",
           "subText": "立式多级泵机械密封系列"
         },
         "sealSeriesForSanitaryPump": {
           "name": "卫生泵用机密封系列",
-          "link": "/seal-series-for-sanitary-pump",
           "alt": "卫生泵用机密封系列",
           "subText": "卫生泵用机密封系列"
         },
         "sealSeriesForFlyptPump": {
           "name": "飞力泵用密封系列",
-          "link": "/sealing-series-for-flypt-pump",
           "alt": "飞力泵用密封系列",
           "subText": "飞力泵用机械密封系列"
         },
         "sealSeriesForRotorPump": {
           "name": "转子泵用密封系列",
-          "link": "/seal-series-for-rotor-pump",
           "alt": "转子泵用密封系列",
           "subText": "转子泵用机械密封系列"
         },
         "sealSeriesForMetalBellows": {
           "name": "金属波纹管密封系列",
-          "link": "/seal-series-for-metal-bellows",
           "alt": "金属波纹管密封系列",
           "subText": "金属波纹管密封系列"
         },
         "universalStandardSealSeries": {
           "name": "通用标准密封系列",
-          "link": "/universal-standard-seal-series",
           "alt": "通用标准密封系列",
           "subText": "通用标准密封系列"
         },
         "staticRingSeries": {
           "name": "静环系列",
-          "link": "/static-ring-series",
           "alt": "静环系列",
           "subText": "静环系列"
         },
         "sealMaterialCode": {
           "name": "密封材料代码",
-          "link": "/seal-material-code",
           "alt": "密封材料代码",
           "subText": null
         },
         "productSubstitutionForm": {
           "name": "产品替代表",
-          "link": "/product/product-substitution-form",
           "alt": "产品替代表",
           "subText": null
         }
@@ -140,17 +117,14 @@
     },
     "customerCenter": {
       "name": "客户中心",
-      "link": "/customerCenter",
       "sublinks": {
         "concreteCase": {
           "name": "具体案例",
-          "link": "/concrete-case",
           "alt": "具体案例",
           "subText": "展示客户案例，遇有合作，请第一时间联系我们"
         },
         "solutions": {
           "name": "解决方案",
-          "link": "/solutions",
           "alt": "解决方案",
           "subText": "为适应各种复杂工况，爱得万有针对性的提出解决方案"
         }
@@ -158,27 +132,28 @@
     },
     "contact": {
       "name": "联系我们",
-      "link": "/contact",
       "sublinks": {
         "talentStrategy": {
           "name": "人才战略",
-          "link": "/talent-strategy",
           "alt": "人才战略",
           "subText": "为梦想者提供舞台，携手共进，共创未来"
         },
         "contactInformation": {
           "name": "联系方式",
-          "link": "/contact-information",
           "alt": "联系方式",
           "subText": "电话:+086(574)87500883 \n 邮箱:admin@advantageseal.cn"
         },
         "digitalMap": {
           "name": "电子地图",
-          "link": "/digital-map",
           "alt": "电子地图",
           "subText": "一键导航，为您提供地图服务"
         }
       }
+    },
+    "networkShare": {
+      "name": "网络分享",
+      "subText": "网站二维码",
+      "alt": "网站二维码"
     }
   }
 }
