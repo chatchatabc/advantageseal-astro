@@ -1,1 +1,11 @@
-{}
+{
+  "upper": {
+    "refs": ["about", "news", "products", "customerCenter", "contact"],
+    "unique": [
+      {
+        "name": "networkShare",
+        "iamgeRef": "@images/footer/qc.png"
+      }
+    ]
+  }
+}

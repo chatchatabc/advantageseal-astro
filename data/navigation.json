@@ -1,0 +1,234 @@
+{
+  "links": [
+    {
+      "name": "home",
+      "link": "/",
+      "type": "navigationSet",
+      "showNavBar": true,
+      "showFooter": false,
+      "children": []
+    },
+    {
+      "name": "about",
+      "link": "/about",
+      "type": "navigationSet",
+      "showNavBar": true,
+      "showFooter": true,
+      "children": [
+        {
+          "name": "companyProfile",
+          "link": "/about/company-profile",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/about-company-profile.jpg"
+        },
+        {
+          "name": "researchAndInnovation",
+          "link": "/about/research-and-innovation",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/about-research-and-innovation.jpg"
+        },
+        {
+          "name": "productionAbility",
+          "link": "/about/production-ability",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/about-production-ability.jpg"
+        },
+        {
+          "name": "qualificationHonor",
+          "link": "/about/qualification-honor",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/about-qualification-honor.jpg"
+        },
+        {
+          "name": "enterpriseCulture",
+          "link": "/about/enterprise-culture",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/about-enterprise-culture.jpg"
+        }
+      ]
+    },
+    {
+      "name": "news",
+      "link": "/news",
+      "type": "navigationSet",
+      "showNavBar": true,
+      "showFooter": true,
+      "children": [
+        {
+          "name": "industryInformation",
+          "link": "/news/industry-information",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/news-industry-information.jpg"
+        },
+        {
+          "name": "companyAnnouncements",
+          "link": "/news/company-announcements",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/news-company-announcements.jpg"
+        },
+        {
+          "name": "newProductReleases",
+          "link": "/news/new-product-releases",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/news-new-product-releases.jpg"
+        },
+        {
+          "name": "videos",
+          "link": "/news/videos",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/news-videos.jpg"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "link": "/products",
+      "type": "navigationSet",
+      "showNavBar": true,
+      "showFooter": true,
+      "children": [
+        {
+          "name": "sealSeriesForPoolAndSpaPump",
+          "link": "/products/seal-series-for-pool-and-spa-pump",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-seal-series-for-pool-and-spa-pump.jpg"
+        },
+        {
+          "name": "sealSeriesForVerticalMultiStagePump",
+          "link": "/products/seal-series-for-vertical-multi-stage-pump",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-seal-series-for-vertical-multi-stage-pump.jpg"
+        },
+        {
+          "name": "sealSeriesForSanitaryPump",
+          "link": "/products/seal-series-for-sanitary-pump",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-seal-series-for-sanitary-pump.jpg"
+        },
+        {
+          "name": "sealSeriesForFlyptPump",
+          "link": "/products/seal-series-for-flypt-pump",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-seal-series-for-flypt-pump.jpg"
+        },
+        {
+          "name": "sealSeriesForRotorPump",
+          "link": "/products/seal-series-for-rotor-pump",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-seal-series-for-rotor-pump.jpg"
+        },
+        {
+          "name": "sealSeriesForMetalBellows",
+          "link": "/products/seal-series-for-metal-bellows",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-seal-series-for-metal-bellows.jpg"
+        },
+        {
+          "name": "universalStandardSealSeries",
+          "link": "/products/universal-standard-seal-series",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-universal-standard-seal-series.jpg"
+        },
+        {
+          "name": "staticRingSeries",
+          "link": "/products/static-ring-series",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/products-static-ring-series.jpg"
+        },
+        {
+          "name": "sealMaterialCode",
+          "link": "/products/seal-material-code",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": ""
+        },
+        {
+          "name": "productSubstitutionForm",
+          "link": "/products/product-substitution-form",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": ""
+        }
+      ]
+    },
+    {
+      "name": "customerCenter",
+      "link": "/customer-center",
+      "type": "navigationSet",
+      "showNavBar": true,
+      "showFooter": true,
+      "children": [
+        {
+          "name": "concreteCase",
+          "link": "/customer-center/concrete-case",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/customer-center-concrete-case.jpg"
+        },
+        {
+          "name": "solutions",
+          "link": "/customer-center/solutions",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/customer-center-solutions.jpg"
+        }
+      ]
+    },
+    {
+      "name": "contact",
+      "link": "/contact",
+      "type": "navigationSet",
+      "showNavBar": true,
+      "showFooter": true,
+      "children": [
+        {
+          "name": "talentStrategy",
+          "link": "/contact/talent-strategy",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/contact-talent-strategy.jpg"
+        },
+        {
+          "name": "contactInformation",
+          "link": "/contact/contact-information",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/contact-information.jpg"
+        },
+        {
+          "name": "digitalMap",
+          "link": "/contact/digital-map",
+          "showNavBar": true,
+          "showFooter": true,
+          "imageRef": "/images/navbar/contact-digital-map.jpg"
+        }
+      ]
+    },
+    {
+      "name": "networkShare",
+      "link": "",
+      "type": "singleton",
+      "showNavBar": false,
+      "showFooter": true,
+      "imageRef": "/images/footer/qc.png",
+      "children": []
+    }
+  ]
+}
