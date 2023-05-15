@@ -1,11 +1,91 @@
 ---
+import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
 import { Img } from "astro-imagetools/components";
-import footerJson from "@data/footer.json";
+import { utilGetCurrentLangauge } from "@helpers/commonUtils";
+import navigationJson from "@data/navigation.json";
+const { links } = navigationJson;
+const { pathname } = Astro.url;
+const currentLanguage = utilGetCurrentLangauge(pathname);
+type FooterLink = {
+  name: string;
+  link: string;
+  type: string;
+  children: FooterSubLink[];
+  imageRef: string;
+};
+type FooterSubLink = {
+  name: string;
+  link: string;
+};
+var FooterProcessedLinks: FooterLink[] = [];
+links.map((link: any) => {
+  if (link.showFooter) {
+    var footerProcessedLink: FooterLink = {
+      name: "",
+      link: "",
+      type: "",
+      children: [],
+      imageRef: "",
+    };
+    footerProcessedLink.name = link.name;
+    footerProcessedLink.link = currentLanguage + link.link;
+    footerProcessedLink.type = link.type;
+    footerProcessedLink.imageRef = link.imageRef;
+    link.children.map(
+      (child: { name: string; link: string; showFooter: boolean }) => {
+        if (child.showFooter) {
+          footerProcessedLink.children.push(child);
+        }
+      }
+    );
+    FooterProcessedLinks.push(footerProcessedLink);
+  }
+});
 ---
 
-<footer class="block">
-  <div></div>
+<footer class="block bg-[#e9e9e9]">
+  <div class="flex flex-row w-10/12 mx-auto py-[40px]">
+    {
+      FooterProcessedLinks.map((footerLink: FooterLink) => {
+        return (
+          <div class="w-2/12 px-[15px]">
+            <h4 class="text-[18px] pt-[10px] pb-[30px]">
+              {t("navigation:navbar." + footerLink.name + ".name")}
+            </h4>
+
+            {footerLink.type === "navigationSet" ? (
+              <ul>
+                {footerLink.children.map((child: FooterSubLink) => {
+                  return (
+                    <li class="border-b-[1px] border-b-[#ccc] border-solid">
+                      <a href={child.link} class="text-[12px] text-[#555]">
+                        {t(
+                          "navigation:navbar." +
+                            footerLink.name +
+                            ".sublinks." +
+                            child.name +
+                            ".name"
+                        )}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <div>
+                <Picture
+                  src={footerLink.imageRef}
+                  alt={t("navigation:navbar." + footerLink.name + ".alt")}
+                />
+                <p>{t("navigation:navbar." + footerLink.name + ".subText")}</p>
+              </div>
+            )}
+          </div>
+        );
+      })
+    }
+  </div>
   <div class="bg-[#333] py-[20px] text-[#ccc] text-[12px]">
     <div class="container mx-auto mb-[10px]">
       <div class="flex flex-row mx-auto w-fit space-x-[30px]">
@@ -23,7 +103,7 @@ import footerJson from "@data/footer.json";
                 return (
                   <div>
                     <span>
-                      {t("footer:lower.text" + index + ".value.label")}
+                      {t("footer:lower.text" + index + ".value.text")}
                     </span>
                     <a
                       href={t(
@@ -36,12 +116,14 @@ import footerJson from "@data/footer.json";
                   </div>
                 );
               } else {
-                <div>
-                  {t("footer:lower.text" + index + ".value.label")}
-                  <a href={t("footer:lower.text" + index + ".value.href")}>
-                    {t("footer:lower.text" + index + ".value.contactNumber")}
-                  </a>
-                </div>;
+                return (
+                  <div>
+                    {t("footer:lower.text" + index + ".value.text")}
+                    <a href={t("footer:lower.text" + index + ".value.href")}>
+                      {t("footer:lower.text" + index + ".value.contactNumber")}
+                    </a>
+                  </div>
+                );
               }
             }
           })
