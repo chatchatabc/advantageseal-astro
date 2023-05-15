@@ -6,11 +6,49 @@ import footerJson from "@data/footer.json";
 
 <footer class="block">
   <div></div>
-  <div class="bg-333 py-[20px]">
-    <div class="container mx-auto flex flex-row">
-      {footerJson.lower.forEach((footerElement) => {})}
-      <div>
-        <Img src="/images/footer/CNZZ.gif" alt="CNZZ" />
+  <div class="bg-[#333] py-[20px] text-[#ccc] text-[12px]">
+    <div class="container mx-auto mb-[10px]">
+      <div class="flex flex-row mx-auto w-fit space-x-[30px]">
+        {
+          Array.from(
+            { length: parseInt(t("footer:lower.fieldCount")) },
+            (_, i) => i + 1
+          ).map((index) => {
+            {
+              if (t("footer:lower.text" + index + ".type") === "literal") {
+                return <div>{t("footer:lower.text" + index + ".value")}</div>;
+              } else if (
+                t("footer:lower.text" + index + ".type") === "hyperlink"
+              ) {
+                return (
+                  <div>
+                    <span>
+                      {t("footer:lower.text" + index + ".value.label")}
+                    </span>
+                    <a
+                      href={t(
+                        "footer:lower.text" + index + ".value.hyperLinkUrl"
+                      )}
+                      title={t("footer:lower.text" + index + ".value.title")}
+                    >
+                      {t("footer:lower.text" + index + ".value.hyperLinkText")}
+                    </a>
+                  </div>
+                );
+              } else {
+                <div>
+                  {t("footer:lower.text" + index + ".value.label")}
+                  <a href={t("footer:lower.text" + index + ".value.href")}>
+                    {t("footer:lower.text" + index + ".value.contactNumber")}
+                  </a>
+                </div>;
+              }
+            }
+          })
+        }
+        <div>
+          <Img src="/images/footer/CNZZ.gif" alt="CNZZ" />
+        </div>
       </div>
     </div>
   </div>

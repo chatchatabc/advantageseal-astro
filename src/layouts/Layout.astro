@@ -1,6 +1,7 @@
 ---
 import BlankLayout from "@layouts/BlankLayout.astro";
 import Navbar from "@components/theme/navbar/Navbar.astro";
+import Footer from "@components/theme/footer/Footer.astro";
 import type { SEOType } from "@customTypes/seo/seoType";
 import siteInfo from "@data/site-info.json";
 //going to revise this as a default layout
@@ -29,4 +30,5 @@ const {
 >
   <Navbar />
   <slot />
+  <Footer />
 </BlankLayout>

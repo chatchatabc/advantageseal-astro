@@ -1,11 +1,12 @@
 {
   "lower": {
+    "fieldCount": "4",
     "text1": {
-      "exist": "1",
+      "type": "literal",
       "value": "Copyright © 2019 爱得万（宁波）密封技术有限公司版权所有。"
     },
     "text2": {
-      "exist": "1",
+      "type": "hyperlink",
       "value": {
         "label": "",
         "title": "",
@@ -14,7 +15,7 @@
       }
     },
     "text3": {
-      "exist": "1",
+      "type": "hyperlink",
       "value": {
         "label": "网站支持：",
         "title": "宁波紫宇网络科技有限公司",
@@ -23,7 +24,7 @@
       }
     },
     "text4": {
-      "exist": "1",
+      "type": "contact",
       "value": {
         "label": "宁波烨森设计：",
         "contactNumber": "13777050039",
