@@ -1,42 +1,24 @@
 ---
 import { changeLanguage } from "i18next";
-import Layout from "@layouts/Layout.astro";
+import DefaultPageLayout from "@layouts/DefaultPageLayout.astro";
 import json from "@data/pages/home.json";
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
-import siteInfoJson from "@data/site-info.json";
 
-const pageMetaTag: PageMetaTag = {
-    title: json.pageTitle,
-    description: json.pageDescription,
-    keywords: json.pageKeywords,
-    author: json.pageAuthor,
-  },
-  opengraphMetaTag: OpenGraphMetaTag = {
-    title: json.ogTitle,
-    type: json.ogType,
-    image: json.ogImage,
-    description: json.ogDescription,
-  },
-  twitterMetaTag: TwitterMetaTag = {
-    cardType: json.twitterCardType ?? siteInfoJson.twitterCardType,
-    title: json.twitterTitle ?? json.ogType ?? siteInfoJson.twitterTitle,
-    description:
-      json.twitterDescription ??
-      json.ogDescription ??
-      siteInfoJson.pageDescription,
-    image: json.twitterImage,
-  };
 changeLanguage("cn");
 ---
 
-<Layout
-  page={pageMetaTag}
-  openGraph={opengraphMetaTag}
-  twitter={twitterMetaTag}
+<DefaultPageLayout
+  title={json.pageTitle}
+  description={json.pageDescription}
+  keywords={json.pageKeywords}
+  author={json.pageAuthor}
+  ogTitle={json.ogTitle}
+  ogType={json.ogType}
+  ogImage={json.ogImage}
+  ogDescription={json.ogDescription}
+  twitterCardType={json.twitterCardType}
+  twitterTitle={json.twitterTitle}
+  twitterDescription={json.twitterDescription}
+  twitterImage={json.twitterImage}
 >
-  <main></main>
-</Layout>
+  <main class="flex-grow"></main>
+</DefaultPageLayout>
