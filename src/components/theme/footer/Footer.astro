@@ -18,6 +18,7 @@ type FooterSubLink = {
   name: string;
   link: string;
 };
+var prefix: string = t("footer:lower.prefix");
 var FooterProcessedLinks: FooterLink[] = [];
 links.map((link: any) => {
   if (link.showFooter) {
@@ -95,32 +96,78 @@ links.map((link: any) => {
             (_, i) => i + 1
           ).map((index) => {
             {
-              if (t("footer:lower.text" + index + ".type") === "literal") {
-                return <div>{t("footer:lower.text" + index + ".value")}</div>;
+              if (
+                t("footer:lower." + prefix + "text" + index + ".type") ===
+                "literal"
+              ) {
+                return (
+                  <div>
+                    {t("footer:lower." + prefix + "text" + index + ".value")}
+                  </div>
+                );
               } else if (
-                t("footer:lower.text" + index + ".type") === "hyperlink"
+                t("footer:lower." + prefix + "text" + index + ".type") ===
+                "hyperlink"
               ) {
                 return (
                   <div>
                     <span>
-                      {t("footer:lower.text" + index + ".value.text")}
+                      {t(
+                        "footer:lower." +
+                          prefix +
+                          "text" +
+                          index +
+                          ".value.text"
+                      )}
                     </span>
                     <a
                       href={t(
-                        "footer:lower.text" + index + ".value.hyperLinkUrl"
+                        "footer:lower." +
+                          prefix +
+                          "text" +
+                          index +
+                          ".value.hyperLinkUrl"
                       )}
-                      title={t("footer:lower.text" + index + ".value.title")}
+                      title={t(
+                        "footer:lower." +
+                          prefix +
+                          "text" +
+                          index +
+                          ".value.title"
+                      )}
                     >
-                      {t("footer:lower.text" + index + ".value.hyperLinkText")}
+                      {t(
+                        "footer:lower." +
+                          prefix +
+                          "text" +
+                          index +
+                          ".value.hyperLinkText"
+                      )}
                     </a>
                   </div>
                 );
               } else {
                 return (
                   <div>
-                    {t("footer:lower.text" + index + ".value.text")}
-                    <a href={t("footer:lower.text" + index + ".value.href")}>
-                      {t("footer:lower.text" + index + ".value.contactNumber")}
+                    {t(
+                      "footer:lower." + prefix + "text" + index + ".value.text"
+                    )}
+                    <a
+                      href={t(
+                        "footer:lower." +
+                          prefix +
+                          "text" +
+                          index +
+                          ".value.href"
+                      )}
+                    >
+                      {t(
+                        "footer:lower." +
+                          prefix +
+                          "text" +
+                          index +
+                          ".value.contactNumber"
+                      )}
                     </a>
                   </div>
                 );
