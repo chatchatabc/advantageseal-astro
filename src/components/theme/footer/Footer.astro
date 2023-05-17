@@ -7,6 +7,7 @@ import navigationJson from "@data/navigation.json";
 const { links } = navigationJson;
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLangauge(pathname);
+console.log(currentLanguage);
 type FooterLink = {
   name: string;
   link: string;
@@ -36,6 +37,7 @@ links.map((link: any) => {
     link.children.map(
       (child: { name: string; link: string; showFooter: boolean }) => {
         if (child.showFooter) {
+          child.link = currentLanguage + child.link;
           footerProcessedLink.children.push(child);
         }
       }
