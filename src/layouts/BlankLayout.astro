@@ -1,48 +1,41 @@
 ---
 import { SEO } from "astro-seo";
-import type { SEOType } from "@customTypes/seo/seoType";
-import siteInfo from "@data/site-info.json";
+import type { MetaTag } from "@customTypes/seo/types";
 //REQUIRED
 
-const {
-  pageTitle = siteInfo.pageTitle,
-  pageDescription = siteInfo.pageDescription,
-  pageKeywords = siteInfo.pageKeywords,
-  pageAuthor = siteInfo.pageAuthor,
-  ogTitle = siteInfo.ogTitle,
-  ogType = siteInfo.ogType,
-  ogImage = siteInfo.ogImage,
-  ogDescription = siteInfo.ogDescription,
-} = Astro.props as SEOType;
+const { page, openGraph, twitter } = Astro.props as MetaTag;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <!-- Site Information -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <SEO
-      title={pageTitle}
-      description={pageDescription}
+      title={page.title}
+      description={page.description}
       openGraph={{
         basic: {
-          title: ogTitle,
-          type: ogType,
-          image: ogImage,
+          title: openGraph.title,
+          type: openGraph.type,
+          image: openGraph.image,
         },
         optional: {
-          siteName: ogTitle,
-          description: ogDescription,
+          siteName: openGraph.title,
+          description: openGraph.description,
         },
       }}
       extend={{
         link: [{ rel: "icon", href: "/favicon.ico" }],
         meta: [
-          { name: "author", content: pageAuthor },
-          { name: "keywords", content: pageKeywords },
+          { name: "author", content: page.author },
+          { name: "keywords", content: page.keywords },
+          { name: "twitter:card", content: twitter.title },
+          { name: "twitter:description", content: twitter.description },
+          { name: "twitter:image", content: twitter.image },
         ],
       }}
     />
