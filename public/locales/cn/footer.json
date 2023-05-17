@@ -12,20 +12,22 @@
   },
   "lower": {
     "fieldCount": "4",
-    "text1": {
+    "prefix": "cn",
+    "cntext1": {
       "type": "literal",
       "value": "Copyright © 2019 爱得万（宁波）密封技术有限公司版权所有。"
     },
-    "text2": {
+    "cntext2": {
       "type": "hyperlink",
       "value": {
+        "text": "",
         "label": "",
         "title": "",
         "hyperLinkText": "浙ICP备: 15029748号-1",
         "hyperLinkUrl": "#"
       }
     },
-    "text3": {
+    "cntext3": {
       "type": "hyperlink",
       "value": {
         "text": "网站支持：",
@@ -34,7 +36,7 @@
         "hyperLinkUrl": "http://www.hszg.com.cn"
       }
     },
-    "text4": {
+    "cntext4": {
       "type": "contact",
       "value": {
         "text": "宁波烨森设计：",
