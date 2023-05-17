@@ -6,7 +6,7 @@ import type { MetaTag } from "@customTypes/seo/types";
 const { page, openGraph, twitter } = Astro.props as MetaTag;
 ---
 
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -33,14 +33,14 @@ const { page, openGraph, twitter } = Astro.props as MetaTag;
         meta: [
           { name: "author", content: page.author },
           { name: "keywords", content: page.keywords },
-          { name: "twitter:card", content: twitter.title },
+          { name: "twitter:card", content: twitter.cardType },
           { name: "twitter:description", content: twitter.description },
           { name: "twitter:image", content: twitter.image },
         ],
       }}
     />
   </head>
-  <body>
+  <body class="flex flex-col h-full">
     <slot />
   </body>
 </html>
