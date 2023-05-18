@@ -1,0 +1,94 @@
+---
+---
+
+<div class="carousel">
+  <div class="image-container relative w-full" style="">
+    <slot />
+  </div>
+  <div
+    class="btn-container flex flex-row justify-between text-white absolute w-full h-full top-0 items-center"
+  >
+    <button class="left-button bg-black p-4 text-white h-fit"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="6 6 12 12"
+        ><path
+          fill="currentColor"
+          d="M14.71 6.71a.996.996 0 0 0-1.41 0L8.71 11.3a.996.996 0 0 0 0 1.41l4.59 4.59a.996.996 0 1 0 1.41-1.41L10.83 12l3.88-3.88c.39-.39.38-1.03 0-1.41z"
+        ></path></svg
+      ></button
+    >
+    <button class="right-button bg-black p-4 text-white h-fit"
+      ><svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        viewBox="6 6 12 12"
+        ><path
+          fill="currentColor"
+          d="M9.29 6.71a.996.996 0 0 0 0 1.41L13.17 12l-3.88 3.88a.996.996 0 1 0 1.41 1.41l4.59-4.59a.996.996 0 0 0 0-1.41L10.7 6.7c-.38-.38-1.02-.38-1.41.01z"
+        ></path></svg
+      ></button
+    >
+  </div>
+</div>
+<script>
+  (() => {
+    var carousels = document.querySelectorAll(".carousel");
+    carousels.forEach((carousel) => {
+      (function (carousel) {
+        var imageCollection: HTMLDivElement[] = Array.from(
+          carousel.querySelectorAll(".image-container .image-element")
+        ).map((node) => node as HTMLDivElement);
+        var leftBtn: HTMLButtonElement = carousel.querySelector(
+          ".btn-container .left-button"
+        )!;
+        var rightBtn: HTMLButtonElement = carousel.querySelector(
+          ".btn-container .right-button"
+        )!;
+        var intervalSecond: number = 3;
+        var index: number = 0;
+        var interval: any;
+
+        var switchDisplay = function (indexp: number, targetIndexp: number) {
+          imageCollection[indexp].classList.add("opacity-0");
+          imageCollection[targetIndexp].classList.remove("opacity-0");
+        };
+        switchDisplay(2, 0);
+
+        leftBtn.addEventListener("click", () => {
+          clearInterval(interval);
+          var indexP =
+            (index + imageCollection.length) % imageCollection.length;
+          var targetIndexP =
+            (index - 1 + imageCollection.length) % imageCollection.length;
+          switchDisplay(indexP, targetIndexP);
+          index = targetIndexP;
+          startInterval(indexP, targetIndexP);
+        });
+        rightBtn.addEventListener("click", () => {
+          clearInterval(interval);
+
+          var indexP =
+            (index + imageCollection.length) % imageCollection.length;
+          var targetIndexP =
+            (index + 1 + imageCollection.length) % imageCollection.length;
+          switchDisplay(indexP, targetIndexP);
+          index = targetIndexP;
+          console.log(indexP, targetIndexP);
+
+          startInterval(indexP, targetIndexP);
+          //switchDisplay(index, index + 1);
+        });
+        var startInterval = (indexP: number, indexTargetP: number) => {
+          interval = setInterval(() => {
+            rightBtn.click();
+          }, intervalSecond * 1000);
+        };
+        //startInterval(index, index + 1);
+      })(carousel);
+    });
+  })();
+</script>
