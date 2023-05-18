@@ -2,9 +2,14 @@
 import i18next, { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import json from "@data/pages/home.json";
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 import defaultJson from "@data/site-info.json";
-
+import Carousel from "@components/theme/Carousel.astro";
+import { Img } from "astro-imagetools/components";
 changeLanguage("cn");
 
 const pageMetaTag: PageMetaTag = {
@@ -12,19 +17,23 @@ const pageMetaTag: PageMetaTag = {
     description: json?.pageDescription ?? defaultJson.pageDescription,
     keywords: json?.pageKeywords ?? defaultJson.pageKeywords,
     author: json?.pageAuthor ?? defaultJson.pageAuthor,
-}, opengraphMetaTag: OpenGraphMetaTag = {
+  },
+  opengraphMetaTag: OpenGraphMetaTag = {
     title: json?.ogTitle ?? json?.pageTitle ?? defaultJson.ogTitle,
     type: json?.ogType ?? defaultJson.ogType,
     image: json?.ogImage ?? json?.twitterImage ?? defaultJson.ogImage,
-    description: json?.ogDescription ?? json?.pageDescription ?? defaultJson.ogDescription,
-}, twitterMetaTag: TwitterMetaTag = {
+    description:
+      json?.ogDescription ?? json?.pageDescription ?? defaultJson.ogDescription,
+  },
+  twitterMetaTag: TwitterMetaTag = {
     cardType: json?.twitterCardType ?? defaultJson.twitterCardType,
     title: json?.twitterTitle ?? json?.ogType ?? defaultJson.twitterTitle,
-    description: json?.twitterDescription ??
-        json?.ogDescription ??
-        defaultJson.pageDescription,
+    description:
+      json?.twitterDescription ??
+      json?.ogDescription ??
+      defaultJson.pageDescription,
     image: json?.twitterImage ?? defaultJson.twitterImage,
-};
+  };
 ---
 
 <Layout
@@ -32,5 +41,23 @@ const pageMetaTag: PageMetaTag = {
   openGraph={opengraphMetaTag}
   twitter={twitterMetaTag}
 >
-  <main class="flex-grow"></main>
+  <main class="flex-grow relative">
+    <Carousel>
+      <div class="relative h-[400px]">
+        {
+          [
+            "images/landing-page/banner-en-1.jpg",
+            "images/landing-page/banner-en-2.jpg",
+            "images/landing-page/banner-en-3.jpg",
+          ].map((link) => {
+            return (
+              <div class="image-element absolute top-0 opacity-0 transition-all duration-300 w-full flex justify-center">
+                <Img src={link} alt="image1" objectFit="fullWidth" />
+              </div>
+            );
+          })
+        }
+      </div>
+    </Carousel>
+  </main>
 </Layout>
