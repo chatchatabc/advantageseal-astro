@@ -1,0 +1,11 @@
+{
+  "carousel": {
+    "count": 3,
+    "prefix": "en",
+    "en": {
+      "image1": "images/landing-page/carousel/en/1.jpg",
+      "image2": "images/landing-page/carousel/en/2.jpg",
+      "image3": "images/landing-page/carousel/en/3.jpg"
+    }
+  }
+}
