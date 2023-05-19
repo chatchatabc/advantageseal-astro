@@ -4,7 +4,7 @@ import i18next, { t } from "i18next";
 import navigationJson from "@data/navigation.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
 import { utilGetCurrentLangauge } from "@helpers/commonUtils";
-
+import productRefs from "@data/product-categories.json";
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLangauge(pathname);
 
@@ -16,15 +16,71 @@ type Sublink = {
   alt: string;
   subText: string;
 };
-const { links }: any = navigationJson;
+type ProductsLinkChildren = {
+  name: string;
+  link: string;
+  showNavBar: boolean;
+  showFooter: boolean;
+  imageRef: string;
+};
+
+const links = [...navigationJson.links];
+
+//for products navbar get from product category instead and add it
+//let productsLink = links.filter((obj: any) => obj.name == "products")[0];
+
+var productLinkItems: ProductsLinkChildren[] = productRefs.refs.map(
+  (el: string) => {
+    let a: ProductsLinkChildren = {
+      name: "product-categories:contents." + el + ".name",
+      link: "product-categories:contents." + el + ".slug",
+      showNavBar: t(
+        "product-categories:contents." + el + ".showNavBar"
+      ) as unknown as boolean,
+      showFooter: t(
+        "product-categories:contents." + el + ".showFooter"
+      ) as unknown as boolean,
+      imageRef: "product-categories:contents." + el + ".imageRef",
+    };
+    return a;
+  }
+);
 
 //process the entire thing includidng the translation
 var processedLinks: Link[] = [];
+
 links.map((link: any) => {
   if (link.showNavBar) {
     var processedLink: Link = { name: "", link: "", children: [] };
     processedLink.name = t("navigation:navbar." + link.name + ".name");
     processedLink.link = currentLanguage + link.link;
+    if (link.name == "products") {
+      [...productLinkItems].map(
+        (navbarJsonSublink: {
+          name: string;
+          link: string;
+          imageRef: string;
+          showNavBar: boolean;
+        }) => {
+          var processedSublink: Sublink = {
+            name: "",
+            link: "",
+            imageRef: "",
+            alt: "",
+            subText: "",
+          };
+
+          processedSublink.name = t(navbarJsonSublink.name);
+          processedSublink.link = t(navbarJsonSublink.link);
+          processedSublink.alt = t(navbarJsonSublink.name);
+          processedSublink.subText = t(navbarJsonSublink.name);
+          processedSublink.imageRef = t(navbarJsonSublink.imageRef);
+
+          processedLink.children.push(processedSublink);
+        }
+      );
+    } else {
+    }
     link.children.map(
       (navbarJsonSublink: {
         name: string;
@@ -40,6 +96,7 @@ links.map((link: any) => {
             alt: "",
             subText: "",
           };
+
           processedSublink.name = t(
             "navigation:navbar." +
               link.name +
@@ -47,8 +104,8 @@ links.map((link: any) => {
               navbarJsonSublink.name +
               ".name"
           );
+
           processedSublink.link = currentLanguage + navbarJsonSublink.link;
-          processedSublink.imageRef = navbarJsonSublink.imageRef;
           processedSublink.alt = t(
             "navigation:navbar." +
               link.name +
@@ -63,6 +120,8 @@ links.map((link: any) => {
               navbarJsonSublink.name +
               ".subText"
           );
+          processedSublink.imageRef = navbarJsonSublink.imageRef;
+
           processedLink.children.push(processedSublink);
         }
       }
