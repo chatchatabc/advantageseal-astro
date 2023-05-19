@@ -2,6 +2,6 @@
 export default {
   defaultLocale: "cn",
   locales: ["cn", "en"],
-  namespaces: ["navigation","footer","home"],
+  namespaces: ["site-info","navigation","footer","home"],
   defaultNamespace: "navigation",
 };
