@@ -1,14 +1,19 @@
 ---
+import i18next, { t, changeLanguage } from "i18next";
+
+var interval = parseInt(t("home:carousel.interval"));
 ---
 
 <div class="carousel">
+  <input type="hidden" class="intervalDuration" value={interval} />
   <div class="image-container relative w-full" style="">
     <slot />
   </div>
   <div
     class="btn-container flex flex-row justify-between text-white absolute w-full h-full top-0 items-center"
   >
-    <button class="left-button bg-black p-4 text-white h-fit"
+    <button
+      class="left-button bg-black p-4 text-white h-fit opacity-50 hover:opacity-100"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"
@@ -20,7 +25,8 @@
         ></path></svg
       ></button
     >
-    <button class="right-button bg-black p-4 text-white h-fit"
+    <button
+      class="right-button bg-black p-4 text-white h-fit opacity-50 hover:opacity-100"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"
@@ -48,7 +54,10 @@
         var rightBtn: HTMLButtonElement = carousel.querySelector(
           ".btn-container .right-button"
         )!;
-        var intervalSecond: number = 3;
+        var intervalSecond: number = parseInt(
+          (carousel.querySelector(".intervalDuration") as HTMLInputElement)
+            .value
+        );
         var index: number = 0;
         var interval: any;
 
@@ -86,7 +95,7 @@
             rightBtn.click();
           }, intervalSecond * 1000);
         };
-        //startInterval(index, index + 1);
+        startInterval(index, index + 1);
       })(carousel);
     });
   })();
