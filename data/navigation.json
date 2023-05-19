@@ -97,62 +97,6 @@
       "showFooter": true,
       "children": [
         {
-          "name": "sealSeriesForPoolAndSpaPump",
-          "link": "/products/seal-series-for-pool-and-spa-pump",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-seal-series-for-pool-and-spa-pump.jpg"
-        },
-        {
-          "name": "sealSeriesForVerticalMultiStagePump",
-          "link": "/products/seal-series-for-vertical-multi-stage-pump",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-seal-series-for-vertical-multi-stage-pump.jpg"
-        },
-        {
-          "name": "sealSeriesForSanitaryPump",
-          "link": "/products/seal-series-for-sanitary-pump",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-seal-series-for-sanitary-pump.jpg"
-        },
-        {
-          "name": "sealSeriesForFlyptPump",
-          "link": "/products/seal-series-for-flypt-pump",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-seal-series-for-flypt-pump.jpg"
-        },
-        {
-          "name": "sealSeriesForRotorPump",
-          "link": "/products/seal-series-for-rotor-pump",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-seal-series-for-rotor-pump.jpg"
-        },
-        {
-          "name": "sealSeriesForMetalBellows",
-          "link": "/products/seal-series-for-metal-bellows",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-seal-series-for-metal-bellows.jpg"
-        },
-        {
-          "name": "universalStandardSealSeries",
-          "link": "/products/universal-standard-seal-series",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-universal-standard-seal-series.jpg"
-        },
-        {
-          "name": "staticRingSeries",
-          "link": "/products/static-ring-series",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/products-static-ring-series.jpg"
-        },
-        {
           "name": "sealMaterialCode",
           "link": "/products/seal-material-code",
           "showNavBar": true,
