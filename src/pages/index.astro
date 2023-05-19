@@ -45,14 +45,19 @@ const pageMetaTag: PageMetaTag = {
     <Carousel>
       <div class="relative h-[400px]">
         {
-          [
-            "images/landing-page/banner-en-1.jpg",
-            "images/landing-page/banner-en-2.jpg",
-            "images/landing-page/banner-en-3.jpg",
-          ].map((link) => {
+          Array.from(
+            { length: parseInt(t("home:carousel.count")) },
+            (_, i) => i + 1
+          ).map((index) => {
             return (
               <div class="image-element absolute top-0 opacity-0 transition-all duration-300 w-full flex justify-center">
-                <Img src={link} alt="image1" objectFit="fullWidth" />
+                <Img
+                  src={t(
+                    "home:carousel." + i18next.language + ".image" + index
+                  )}
+                  alt={"image" + index}
+                  objectFit="fullWidth"
+                />
               </div>
             );
           })
