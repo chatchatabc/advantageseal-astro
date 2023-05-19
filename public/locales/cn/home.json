@@ -1,6 +1,7 @@
 {
   "carousel": {
     "count": 3,
+    "interval": 5,
     "prefix": "cn",
     "cn": {
       "image1": "images/landing-page/carousel/cn/1.jpg",
