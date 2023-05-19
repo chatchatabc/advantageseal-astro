@@ -1,38 +1,56 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
-import json from "@data/pages/home.json";
+//import json from "@data/pages/home.json";
 import type {
   PageMetaTag,
   OpenGraphMetaTag,
   TwitterMetaTag,
 } from "@customTypes/seo/types";
-import defaultJson from "@data/site-info.json";
+//import defaultJson from "@data/site-info.json";
 import Carousel from "@components/theme/Carousel.astro";
 import { Img } from "astro-imagetools/components";
+var metaTagRef = "home:metaTag";
 changeLanguage("cn");
 
 const pageMetaTag: PageMetaTag = {
-    title: json?.pageTitle ?? defaultJson.pageTitle,
-    description: json?.pageDescription ?? defaultJson.pageDescription,
-    keywords: json?.pageKeywords ?? defaultJson.pageKeywords,
-    author: json?.pageAuthor ?? defaultJson.pageAuthor,
+    title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
+    description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
+    keywords: t("home:metaTag.pageKeywords") ?? t("site-info:pageKeywords"),
+    author: t("home:metaTag.pageAuthor") ?? t("site-info:pageAuthor"),
   },
   opengraphMetaTag: OpenGraphMetaTag = {
-    title: json?.ogTitle ?? json?.pageTitle ?? defaultJson.ogTitle,
-    type: json?.ogType ?? defaultJson.ogType,
-    image: json?.ogImage ?? json?.twitterImage ?? defaultJson.ogImage,
+    title:
+      t("home:metaTag.ogTitle") ??
+      t("home:metaTag.pageTitle") ??
+      t("home:metaTag.twitterTitle") ??
+      t("site-info:ogTitle"),
+    type: t("home:metaTag.ogType") ?? t("site-info:ogType"),
+    image:
+      t("home:metaTag.ogImage") ??
+      t("home:metaTag.twitterImage") ??
+      t("site-info:ogImage"),
     description:
-      json?.ogDescription ?? json?.pageDescription ?? defaultJson.ogDescription,
+      t("home:metaTag.ogDescription") ??
+      t("home:metaTag.twitterDescription") ??
+      t("home:metaTag.pageDescription") ??
+      t("site-info:ogDescription"),
   },
   twitterMetaTag: TwitterMetaTag = {
-    cardType: json?.twitterCardType ?? defaultJson.twitterCardType,
-    title: json?.twitterTitle ?? json?.ogType ?? defaultJson.twitterTitle,
+    cardType:
+      t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
+    title:
+      t("home:meta-tag.twitterTitle") ??
+      t("home:metaTag.ogTitle") ??
+      t("site-info:twitterTitle"),
     description:
-      json?.twitterDescription ??
-      json?.ogDescription ??
-      defaultJson.pageDescription,
-    image: json?.twitterImage ?? defaultJson.twitterImage,
+      t("home:metaTag.description") ??
+      t("home:metaTag.ogDescription") ??
+      t("site-info:pageDescription"),
+    image:
+      t("home:metaTag.twitterImage") ??
+      t("home:metaTag.ogImage") ??
+      t("site-info:twitterImage"),
   };
 ---
 
@@ -42,27 +60,44 @@ const pageMetaTag: PageMetaTag = {
   twitter={twitterMetaTag}
 >
   <main class="flex-grow relative">
-    <Carousel>
-      <div class="relative h-0 pb-[26.07%]">
-        {
-          Array.from(
-            { length: parseInt(t("home:carousel.count")) },
-            (_, i) => i + 1
-          ).map((index) => {
-            return (
-              <div class="image-element absolute top-0 opacity-0 transition-all duration-300 w-full flex justify-center">
-                <Img
-                  src={t(
-                    "home:carousel." + i18next.language + ".image" + index
-                  )}
-                  alt={"image" + index}
-                  objectFit="fullWidth"
-                />
-              </div>
-            );
-          })
-        }
+    <section>
+      <Carousel>
+        <div class="relative h-0 pb-[26.07%]">
+          {
+            Array.from(
+              { length: parseInt(t("home:carousel.count")) },
+              (_, i) => i + 1
+            ).map((index) => {
+              return (
+                <div class="image-element absolute top-0 opacity-0 transition-all duration-300 w-full flex justify-center">
+                  <Img
+                    src={t(
+                      "home:carousel." + i18next.language + ".image" + index
+                    )}
+                    alt={"image" + index}
+                    objectFit="fullWidth"
+                  />
+                </div>
+              );
+            })
+          }
+        </div>
+      </Carousel>
+    </section>
+    <!--Popular Products Section -->
+    <section>
+      <div class="header">
+        <h3><b>Popular Products</b></h3>
+        <h4 class="text-sm text-[#777777]">
+          --Our own design, Careful research on competitor design, and based on
+          years of service. taking advantage of each other's strengths,
+          gradually formed a gradually unique, advanced seal design concept.
+        </h4>
       </div>
-    </Carousel>
+      <blockquote
+        class="py-[1.25rem] px-[0.625rem] border-l-4 border-solid border-l-[#cc0000] bg-[#f1f1f1]"
+      >
+      </blockquote>
+    </section>
   </main>
 </Layout>
