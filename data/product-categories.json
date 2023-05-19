@@ -1,0 +1,12 @@
+{
+  "refs": [
+    "sealSeriesForPoolAndSpaPump",
+    "sealSeriesForVerticalMultiStagePump",
+    "sealSeriesForSanitaryPump",
+    "sealSeriesForFlyptPump",
+    "sealSeriesForRotorPump",
+    "sealSeriesForMetalBellows",
+    "universalStandardSealSeries",
+    "staticRingSeries"
+  ]
+}
