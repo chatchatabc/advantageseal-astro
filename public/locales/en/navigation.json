@@ -62,46 +62,6 @@
     "products": {
       "name": "Products",
       "sublinks": {
-        "sealSeriesForPoolAndSpaPump": {
-          "name": "Seal Series for Pool and Spa Pump",
-          "alt": "Seal Series for Pool and Spa Pump",
-          "subText": ""
-        },
-        "sealSeriesForVerticalMultiStagePump": {
-          "name": "Seal Series for Vertical Multi-stage Pump",
-          "alt": "Seal Series for Vertical Multi-stage Pump",
-          "subText": ""
-        },
-        "sealSeriesForSanitaryPump": {
-          "name": "Seal Series for Sanitary Pump",
-          "alt": "Seal Series for Sanitary Pump",
-          "subText": ""
-        },
-        "sealSeriesForFlyptPump": {
-          "name": "Seal Series for Flypt Pump",
-          "alt": "Seal Series for Flypt Pump",
-          "subText": ""
-        },
-        "sealSeriesForRotorPump": {
-          "name": "Seal Series for Rotor Pump",
-          "alt": "Seal Series for Rotor Pump",
-          "subText": ""
-        },
-        "sealSeriesForMetalBellows": {
-          "name": "Seal Series for Metal Bellows",
-          "alt": "Seal Series for Metal Bellows",
-          "subText": ""
-        },
-        "universalStandardSealSeries": {
-          "name": "Universal Standard Seal Series",
-          "alt": "Universal Standard Seal Series",
-          "subText": ""
-        },
-        "staticRingSeries": {
-          "name": "Static Ring Series",
-          "alt": "Static Ring Series",
-          "subText": ""
-        },
         "sealMaterialCode": {
           "name": "Seal Material Code",
           "alt": "",

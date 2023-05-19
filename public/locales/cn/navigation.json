@@ -63,46 +63,6 @@
     "products": {
       "name": "产品展示",
       "sublinks": {
-        "sealSeriesForPoolAndSpaPump": {
-          "name": "水池水疗泵用密封系列",
-          "alt": "水池水疗泵用密封系列",
-          "subText": "水池、水疗用水泵用机械密封系列"
-        },
-        "sealSeriesForVerticalMultiStagePump": {
-          "name": "立式多级泵密封系列",
-          "alt": "立式多级泵密封系列",
-          "subText": "立式多级泵机械密封系列"
-        },
-        "sealSeriesForSanitaryPump": {
-          "name": "卫生泵用机密封系列",
-          "alt": "卫生泵用机密封系列",
-          "subText": "卫生泵用机密封系列"
-        },
-        "sealSeriesForFlyptPump": {
-          "name": "飞力泵用密封系列",
-          "alt": "飞力泵用密封系列",
-          "subText": "飞力泵用机械密封系列"
-        },
-        "sealSeriesForRotorPump": {
-          "name": "转子泵用密封系列",
-          "alt": "转子泵用密封系列",
-          "subText": "转子泵用机械密封系列"
-        },
-        "sealSeriesForMetalBellows": {
-          "name": "金属波纹管密封系列",
-          "alt": "金属波纹管密封系列",
-          "subText": "金属波纹管密封系列"
-        },
-        "universalStandardSealSeries": {
-          "name": "通用标准密封系列",
-          "alt": "通用标准密封系列",
-          "subText": "通用标准密封系列"
-        },
-        "staticRingSeries": {
-          "name": "静环系列",
-          "alt": "静环系列",
-          "subText": "静环系列"
-        },
         "sealMaterialCode": {
           "name": "密封材料代码",
           "alt": "密封材料代码",
