@@ -1,7 +1,8 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLangauge } from "@helpers/commonUtils";
 import Layout from "@layouts/Layout.astro";
-//import json from "@data/pages/home.json";
+import homeJson from "@data/pages/home.json";
 import type {
   PageMetaTag,
   OpenGraphMetaTag,
@@ -11,8 +12,10 @@ import type {
 import Carousel from "@components/theme/Carousel.astro";
 import { Img } from "astro-imagetools/components";
 var metaTagRef = "home:metaTag";
+const { pathname } = Astro.url;
+const currentLanguage = utilGetCurrentLangauge(pathname);
 changeLanguage("cn");
-
+console.log(homeJson.popularProducts);
 const pageMetaTag: PageMetaTag = {
     title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
     description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
@@ -97,6 +100,20 @@ const pageMetaTag: PageMetaTag = {
       <blockquote
         class="py-[1.25rem] px-[0.625rem] border-l-4 border-solid border-l-[#cc0000] bg-[#f1f1f1]"
       >
+        {
+          homeJson.popularProducts.map(
+            (product: { name: string; href: string }, index: number) => {
+              return (
+                <a
+                  href={currentLanguage + product.href}
+                  title={t("home:popularProducts." + product.name + ".title")}
+                >
+                  {t("home:popularProducts." + product.name + ".label")}
+                </a>
+              );
+            }
+          )
+        }
       </blockquote>
     </section>
   </main>
