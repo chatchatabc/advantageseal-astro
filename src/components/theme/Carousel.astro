@@ -4,7 +4,7 @@ import i18next, { t, changeLanguage } from "i18next";
 var interval = parseInt(t("home:carousel.interval"));
 ---
 
-<div class="carousel">
+<div class="carousel relative">
   <input type="hidden" class="intervalDuration" value={interval} />
   <div class="image-container relative w-full" style="">
     <slot />
