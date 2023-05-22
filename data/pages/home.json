@@ -6,9 +6,55 @@
   "ogTitle": "Advantage Seal | The Seal of Quality",
   "ogType": "website",
   "ogDescription": "Quality seals by Advantage Seal",
-  "ogImage": "https://advantageseal.com/assets/img/advantage-seal-logo.png",
+  "ogImage": "/images/logo/android-chrome-192x192.png",
   "twitterCardType": null,
   "twitterTitle": null,
   "twitterDescription": null,
-  "twitterImage": null
+  "twitterImage": "https://advantageseal.com/assets/img/advantage-seal-logo.png",
+  "popularProducts": [
+    {
+      "name": "seal-series-for-pool-and-spa-pump",
+      "href": "/products/seal-series-for-pool-and-spa-pump"
+    },
+    {
+      "name": "seal-series-for-vertical-multi-stage-pump",
+      "href": "/products/seal-series-for-vertical-multi-stage-pump"
+    },
+    {
+      "name": "seal-series-for-sanitary-pump",
+      "href": "/products/seal-series-for-sanitary-pump"
+    },
+    {
+      "name": "sealing-series-for-flypt-pump",
+      "href": "/products/sealing-series-for-flypt-pump"
+    },
+    {
+      "name": "seal-series-for-rotor-pump",
+      "href": "/products/seal-series-for-rotor-pump"
+    },
+    {
+      "name": "modular-mechanical-seals-series",
+      "href": "/products/modular-mechanical-seals-series"
+    },
+    {
+      "name": "universal-standard-seal-series",
+      "href": "/products/universal-standard-seal-series"
+    },
+    {
+      "name": "static-ring-series",
+      "href": "/products/static-ring-series"
+    },
+    {
+      "name": "seal-material-code",
+      "href": "/products/seal-material-code"
+    },
+    {
+      "name": "product-substitution-form",
+      "href": "/products/product-substitution-form"
+    },
+    {
+      "name": "......",
+      "href": "/products"
+    }
+  ]
 }

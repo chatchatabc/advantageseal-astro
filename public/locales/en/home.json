@@ -22,5 +22,55 @@
       "image2": "images/landing-page/carousel/en/2.jpg",
       "image3": "images/landing-page/carousel/en/3.jpg"
     }
+  },
+  "popularProducts": {
+    "seal-series-for-pool-and-spa-pump": {
+      "label": "Seal Series for Pool and Spa Pump",
+      "title": ""
+    },
+    "seal-series-for-vertical-multi-stage-pump": {
+      "label": "Seal Series for Vertical Multi-Stage Pump",
+      "title": ""
+    },
+    "seal-series-for-sanitary-pump": {
+      "label": "Seal Series for Sanitary Pump",
+      "title": ""
+    },
+    "sealing-series-for-flypt-pump": {
+      "label": "Sealing Series for Flypt Pump",
+      "title": ""
+    },
+    "seal-series-for-rotor-pump": {
+      "label": "Seal Series for Rotor Pump",
+      "title": ""
+    },
+    "modular-mechanical-seals-series": {
+      "label": "Modular Mechanical Seals Series",
+      "title": ""
+    },
+    "seal-series-for-metal-bellows": {
+      "label": "Seal Series for Metal Bellows",
+      "title": ""
+    },
+    "universal-standard-seal-series": {
+      "label": "Universal Standard Seal Series",
+      "title": ""
+    },
+    "static-ring-series": {
+      "label": "Static Ring Series",
+      "title": ""
+    },
+    "seal-material-code": {
+      "label": "Seal Material Code",
+      "title": ""
+    },
+    "product-substitution-form": {
+      "label": "Product Substitution Form",
+      "title": ""
+    },
+    "......": {
+      "label": "......",
+      "title": "More"
+    }
   }
 }
