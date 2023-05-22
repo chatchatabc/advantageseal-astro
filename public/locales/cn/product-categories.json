@@ -100,6 +100,26 @@
       "twitterDescription": null,
       "twitterImage": null
     },
+    "modularMechanicalSealsSeries": {
+      "name": "集装式机械密封系列",
+      "slug": "modular-mechanical-seal-series",
+      "alt": "集装式机械密封系列",
+      "subText": "",
+      "showNavBar": true,
+      "showFooter": true,
+      "imageRef": "/images/navbar/products-modular-mechanical-seals-series.png",
+      "pageTitle": null,
+      "pageDescription": null,
+      "pageKeywords": null,
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null
+    },
     "sealSeriesForMetalBellows": {
       "name": "金属波纹管密封系列",
       "slug": "seal-series-for-metal-bellows",

@@ -5,6 +5,7 @@
     "sealSeriesForSanitaryPump",
     "sealSeriesForFlyptPump",
     "sealSeriesForRotorPump",
+    "modularMechanicalSealsSeries",
     "sealSeriesForMetalBellows",
     "universalStandardSealSeries",
     "staticRingSeries"

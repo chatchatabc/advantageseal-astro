@@ -100,6 +100,26 @@
       "twitterDescription": null,
       "twitterImage": null
     },
+    "modularMechanicalSealsSeries": {
+      "name": "Modular Mechanical Seal Series",
+      "slug": "modular-mechanical-seal-series",
+      "alt": "Modular Mechanical Seal Series",
+      "subText": "",
+      "showNavBar": true,
+      "showFooter": true,
+      "imageRef": "/images/navbar/products-modular-mechanical-seals-series.png",
+      "pageTitle": null,
+      "pageDescription": null,
+      "pageKeywords": null,
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null
+    },
     "sealSeriesForMetalBellows": {
       "name": "Seal Series for Metal Bellows",
       "slug": "seal-series-for-metal-bellows",
