@@ -15,7 +15,6 @@ var metaTagRef = "home:metaTag";
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLangauge(pathname);
 changeLanguage("cn");
-console.log(homeJson.popularProducts);
 const pageMetaTag: PageMetaTag = {
     title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
     description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
@@ -78,7 +77,7 @@ const pageMetaTag: PageMetaTag = {
                       "home:carousel." + i18next.language + ".image" + index
                     )}
                     alt={"image" + index}
-                    objectFit="fullWidth"
+                    layout="fullWidth"
                   />
                 </div>
               );
@@ -88,27 +87,33 @@ const pageMetaTag: PageMetaTag = {
       </Carousel>
     </section>
     <!--Popular Products Section -->
-    <section>
-      <div class="header">
-        <h3><b>Popular Products</b></h3>
-        <h4 class="text-sm text-[#777777]">
-          --Our own design, Careful research on competitor design, and based on
-          years of service. taking advantage of each other's strengths,
-          gradually formed a gradually unique, advanced seal design concept.
+    <section class="container p-4 w-full mx-auto md:w-9/12 space-y-4">
+      <div class="header flex flex-row items-end">
+        <h3 class="text-[24px]">{t("home:popularProducts.title")}</h3>
+        <h4 class="text-xs text-[#777777]">
+          &nbsp;&nbsp; {t("home:popularProducts.subText")}
         </h4>
       </div>
       <blockquote
-        class="py-[1.25rem] px-[0.625rem] border-l-4 border-solid border-l-[#cc0000] bg-[#f1f1f1]"
+        class="flex flex-row py-3 px-8 border-l-4 border-solid border-l-[#cc0000] bg-[#fbfbfb] flex-wrap whitespace-nowrap"
       >
         {
-          homeJson.popularProducts.map(
+          homeJson.popularProducts.collection.map(
             (product: { name: string; href: string }, index: number) => {
               return (
                 <a
+                  class={`text-[13px] text-[#009ce0] px-4 font-semibold hover:text-[#cc0000] ${
+                    homeJson.popularProducts.collection.length - 1 !== index &&
+                    "border-solid border-r border-r-[#ccc]"
+                  }`}
                   href={currentLanguage + product.href}
-                  title={t("home:popularProducts." + product.name + ".title")}
+                  title={t(
+                    "home:popularProducts.collection." + product.name + ".title"
+                  )}
                 >
-                  {t("home:popularProducts." + product.name + ".label")}
+                  {t(
+                    "home:popularProducts.collection." + product.name + ".label"
+                  )}
                 </a>
               );
             }
