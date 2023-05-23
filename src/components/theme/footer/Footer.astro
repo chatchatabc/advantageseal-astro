@@ -4,6 +4,7 @@ import i18next, { t } from "i18next";
 import { Img } from "astro-imagetools/components";
 import { utilGetCurrentLangauge } from "@helpers/commonUtils";
 import navigationJson from "@data/navigation.json";
+import productRefs from "@data/product-categories.json";
 const { links } = navigationJson;
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLangauge(pathname);
@@ -19,8 +20,34 @@ type FooterSubLink = {
   name: string;
   link: string;
 };
+type ProductsLinkChildren = {
+  name: string;
+  link: string;
+  showNavBar: boolean;
+  showFooter: boolean;
+  imageRef: string;
+};
+
+var productLinkItems: ProductsLinkChildren[] = productRefs.refs.map(
+  (el: string) => {
+    let a: ProductsLinkChildren = {
+      name: "product-categories:contents." + el + ".name",
+      link: "product-categories:contents." + el + ".slug",
+      showNavBar: t(
+        "product-categories:contents." + el + ".showNavBar"
+      ) as unknown as boolean,
+      showFooter: t(
+        "product-categories:contents." + el + ".showFooter"
+      ) as unknown as boolean,
+      imageRef: "product-categories:contents." + el + ".imageRef",
+    };
+    return a;
+  }
+);
+
 var prefix: string = t("footer:lower.prefix");
 var FooterProcessedLinks: FooterLink[] = [];
+
 links.map((link: any) => {
   if (link.showFooter) {
     var footerProcessedLink: FooterLink = {
@@ -30,15 +57,45 @@ links.map((link: any) => {
       children: [],
       imageRef: "",
     };
+
     footerProcessedLink.name = link.name;
     footerProcessedLink.link = currentLanguage + link.link;
     footerProcessedLink.type = link.type;
     footerProcessedLink.imageRef = link.imageRef;
+    if (link.name == "products") {
+      [...productLinkItems].map(
+        (child: { name: string; link: string; showFooter: boolean }) => {
+          if (child.showFooter) {
+            var processedSublink: FooterSubLink = {
+              name: "",
+              link: "",
+            };
+            processedSublink.name = t(child.name);
+            processedSublink.link = t(child.link);
+            footerProcessedLink.children.push(processedSublink);
+          }
+        }
+      );
+    }
+
     link.children.map(
       (child: { name: string; link: string; showFooter: boolean }) => {
         if (child.showFooter) {
-          child.link = currentLanguage + child.link;
-          footerProcessedLink.children.push(child);
+          var footerSubLink: FooterSubLink = {
+            name: "",
+            link: "",
+          };
+
+          footerSubLink.name = t(
+            "navigation:navbar." +
+              link.name +
+              ".sublinks." +
+              child.name +
+              ".name"
+          );
+          footerSubLink.link = currentLanguage + child.link;
+
+          footerProcessedLink.children.push(footerSubLink);
         }
       }
     );
@@ -63,13 +120,7 @@ links.map((link: any) => {
                   return (
                     <li class="border-b-[1px] border-b-[#ccc] border-solid">
                       <a href={child.link} class="text-[12px] text-[#555]">
-                        {t(
-                          "navigation:navbar." +
-                            footerLink.name +
-                            ".sublinks." +
-                            child.name +
-                            ".name"
-                        )}
+                        {child.name}
                       </a>
                     </li>
                   );
