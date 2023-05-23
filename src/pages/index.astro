@@ -11,10 +11,12 @@ import type {
 //import defaultJson from "@data/site-info.json";
 import Carousel from "@components/theme/Carousel.astro";
 import { Img } from "astro-imagetools/components";
+
+changeLanguage("cn");
+
 var metaTagRef = "home:metaTag";
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLangauge(pathname);
-changeLanguage("cn");
 const pageMetaTag: PageMetaTag = {
     title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
     description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
@@ -87,22 +89,24 @@ const pageMetaTag: PageMetaTag = {
       </Carousel>
     </section>
     <!--Popular Products Section -->
-    <section class="container p-4 w-full mx-auto md:w-9/12 space-y-4">
+    <section class="container p-4 w-full mx-auto md:w-9/12 space-y-4 mt-8">
       <div class="header flex flex-row items-end">
-        <h3 class="text-[24px]">{t("home:popularProducts.title")}</h3>
-        <h4 class="text-xs text-[#777777]">
-          &nbsp;&nbsp; {t("home:popularProducts.subText")}
-        </h4>
+        <h3 class="text-[24px] leading-8">
+          {t("home:popularProducts.title")}
+          <small class="text-xs text-[#777777]">
+            {t("home:popularProducts.subText")}
+          </small>
+        </h3>
       </div>
       <blockquote
-        class="flex flex-row py-3 px-8 border-l-4 border-solid border-l-[#cc0000] bg-[#fbfbfb] flex-wrap whitespace-nowrap"
+        class="flex flex-row p-2 border-l-4 border-solid border-l-[#cc0000] bg-[#fbfbfb] flex-wrap whitespace-nowrap"
       >
         {
           homeJson.popularProducts.collection.map(
             (product: { name: string; href: string }, index: number) => {
               return (
                 <a
-                  class={`text-[13px] text-[#009ce0] px-4 font-semibold hover:text-[#cc0000] ${
+                  class={`text-[13px] text-[#009ce0] px-2 font-semibold hover:text-[#cc0000] ${
                     homeJson.popularProducts.collection.length - 1 !== index &&
                     "border-solid border-r border-r-[#ccc]"
                   }`}
