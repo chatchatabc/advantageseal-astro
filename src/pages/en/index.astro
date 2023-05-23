@@ -1,29 +1,47 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLangauge } from "@helpers/commonUtils";
 import Layout from "@layouts/Layout.astro";
-import json from "@data/pages/home.json";
+import homeJson from "@data/pages/home.json";
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
-import defaultJson from "@data/site-info.json";
+//import defaultJson from "@data/site-info.json";
+import Carousel from "@components/theme/Carousel.astro";
+import { Img } from "astro-imagetools/components";
 
 changeLanguage("en");
 
+var metaTagRef = "home:metaTag";
+const { pathname } = Astro.url;
+const currentLanguage = utilGetCurrentLangauge(pathname);
 const pageMetaTag: PageMetaTag = {
-    title: json?.pageTitle ?? defaultJson.pageTitle,
-    description: json?.pageDescription ?? defaultJson.pageDescription,
-    keywords: json?.pageKeywords ?? defaultJson.pageKeywords,
-    author: json?.pageAuthor ?? defaultJson.pageAuthor,
+    title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
+    description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
+    keywords: t("home:metaTag.pageKeywords") ?? t("site-info:pageKeywords"),
+    author: t("home:metaTag.pageAuthor") ?? t("site-info:pageAuthor"),
 }, opengraphMetaTag: OpenGraphMetaTag = {
-    title: json?.ogTitle ?? json?.pageTitle ?? defaultJson.ogTitle,
-    type: json?.ogType ?? defaultJson.ogType,
-    image: json?.ogImage ?? json?.twitterImage ?? defaultJson.ogImage,
-    description: json?.ogDescription ?? json?.pageDescription ?? defaultJson.ogDescription,
+    title: t("home:metaTag.ogTitle") ??
+        t("home:metaTag.pageTitle") ??
+        t("home:metaTag.twitterTitle") ??
+        t("site-info:ogTitle"),
+    type: t("home:metaTag.ogType") ?? t("site-info:ogType"),
+    image: t("home:metaTag.ogImage") ??
+        t("home:metaTag.twitterImage") ??
+        t("site-info:ogImage"),
+    description: t("home:metaTag.ogDescription") ??
+        t("home:metaTag.twitterDescription") ??
+        t("home:metaTag.pageDescription") ??
+        t("site-info:ogDescription"),
 }, twitterMetaTag: TwitterMetaTag = {
-    cardType: json?.twitterCardType ?? defaultJson.twitterCardType,
-    title: json?.twitterTitle ?? json?.ogType ?? defaultJson.twitterTitle,
-    description: json?.twitterDescription ??
-        json?.ogDescription ??
-        defaultJson.pageDescription,
-    image: json?.twitterImage ?? defaultJson.twitterImage,
+    cardType: t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
+    title: t("home:meta-tag.twitterTitle") ??
+        t("home:metaTag.ogTitle") ??
+        t("site-info:twitterTitle"),
+    description: t("home:metaTag.description") ??
+        t("home:metaTag.ogDescription") ??
+        t("site-info:pageDescription"),
+    image: t("home:metaTag.twitterImage") ??
+        t("home:metaTag.ogImage") ??
+        t("site-info:twitterImage"),
 };
 ---
 
@@ -32,5 +50,67 @@ const pageMetaTag: PageMetaTag = {
   openGraph={opengraphMetaTag}
   twitter={twitterMetaTag}
 >
-  <main class="flex-grow"></main>
+  <main class="flex-grow relative">
+    <section>
+      <Carousel>
+        <div class="relative h-0 pb-[26.07%]">
+          {
+            Array.from(
+              { length: parseInt(t("home:carousel.count")) },
+              (_, i) => i + 1
+            ).map((index) => {
+              return (
+                <div class="image-element absolute top-0 opacity-0 transition-all duration-300 w-full flex justify-center">
+                  <Img
+                    src={t(
+                      "home:carousel." + i18next.language + ".image" + index
+                    )}
+                    alt={"image" + index}
+                    layout="fullWidth"
+                  />
+                </div>
+              );
+            })
+          }
+        </div>
+      </Carousel>
+    </section>
+    <!--Popular Products Section -->
+    <section class="container p-4 w-full mx-auto md:w-9/12 space-y-4">
+      <div class="header flex flex-row items-end">
+        <h3 class="text-[24px] leading-8">
+          {t("home:popularProducts.title")}
+          <small class="text-xs text-[#777777]">
+            {t("home:popularProducts.subText")}
+          </small>
+        </h3>
+      </div>
+      <blockquote
+        class="flex flex-row p-2 border-l-4 border-solid border-l-[#cc0000] bg-[#fbfbfb] flex-wrap whitespace-nowrap"
+      >
+        {
+          homeJson.popularProducts.collection.map(
+            (product: { name: string; href: string }, index: number) => {
+              return (
+                <a
+                  class={`text-[13px] text-[#009ce0] px-2 font-semibold hover:text-[#cc0000] ${
+                    homeJson.popularProducts.collection.length - 1 !== index &&
+                    "border-solid border-r border-r-[#ccc]"
+                  }`}
+                  href={currentLanguage + product.href}
+                  title={t(
+                    "home:popularProducts.collection." + product.name + ".title"
+                  )}
+                >
+                  {t(
+                    "home:popularProducts.collection." + product.name + ".label"
+                  )}
+                </a>
+              );
+            }
+          )
+        }
+      </blockquote>
+    </section>
+  </main>
 </Layout>
