@@ -76,5 +76,41 @@
         "title": "More"
       }
     }
+  },
+  "marquee": {
+    "count": 3,
+    "prefix": "en",
+    "en": {
+      "image1": {
+        "name": "Type 16",
+        "src": "images/products/type-16.jpg",
+        "link": "products/type-16",
+        "title": "Type 16"
+      },
+      "image2": {
+        "name": "Type 21",
+        "src": "images/products/type-21.jpg",
+        "link": "products/type-21",
+        "title": "Type 21"
+      },
+      "image3": {
+        "name": "Type 201",
+        "src": "images/products/type-201.jpg",
+        "link": "products/type-201",
+        "title": "Type 201"
+      },
+      "image4": {
+        "name": "Type 202",
+        "src": "images/products/type-202.jpg",
+        "link": "products/type-20",
+        "title": "Type 202"
+      },
+      "image5": {
+        "name": "Type 511-22",
+        "src": "images/products/type-511-22.jpg",
+        "link": "products/type-511-22",
+        "title": "Type 511-22"
+      }
+    }
   }
 }

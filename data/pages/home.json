@@ -60,5 +60,10 @@
         "href": "/products"
       }
     ]
+  },
+  "marquee": {
+    "height": 140,
+    "width": 190,
+    "speed": 1
   }
 }

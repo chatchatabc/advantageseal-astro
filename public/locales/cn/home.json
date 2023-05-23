@@ -64,5 +64,41 @@
       "product-substitution-form": { "label": "产品替代表", "title": "" },
       "......": { "label": "......", "title": "更多" }
     }
+  },
+  "marquee": {
+    "count": 3,
+    "prefix": "cn",
+    "cn": {
+      "image1": {
+        "name": "Type 16",
+        "src": "images/products/type-16.jpg",
+        "link": "products/type-16",
+        "title": "水池水疗泵用密封系列-Type 16"
+      },
+      "image2": {
+        "name": "Type 21",
+        "src": "images/products/type-21.jpg",
+        "link": "products/type-21",
+        "title": "水池水疗泵用密封系列-Type 21"
+      },
+      "image3": {
+        "name": "Type 201",
+        "src": "images/products/type-201.jpg",
+        "link": "products/type-201",
+        "title": "水池水疗泵用密封系列-Type 201"
+      },
+      "image4": {
+        "name": "Type 202",
+        "src": "images/products/type-202.jpg",
+        "link": "products/type-20",
+        "title": "水池水疗泵用密封系列-Type 202"
+      },
+      "image5": {
+        "name": "Type 511-22",
+        "src": "images/products/type-511-22.jpg",
+        "link": "products/type-511-22",
+        "title": "立式多级泵密封系列-511-22"
+      }
+    }
   }
 }
