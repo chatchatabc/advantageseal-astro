@@ -1,47 +1,95 @@
-# Astro Starter Kit: Minimal
+# Advance Seals Web Project
 
-```
-npm create astro@latest -- --template minimal
-```
+Welcome to the Advance Seals Web Project Github repository. Here lies the documentation and definitions that you'll need to understand the project development.
+<br/>
+<br/>
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+# **Table of Contents**
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## **Advance Seals Website**
 
-## 🚀 Project Structure
+You can check each of the links provided below for the original and the remade version
+
+- [Original Site](http://www.advantageseal.cn/)
+- [Remade Site](https://918f6f82.advantageseals-astro.pages.dev)
+
+> Note: link is going to change throughout the development phase
+
+## **Tech Stack**
+
+The project uses various tech to build the website.
+
+### **Main**
+
+- [Astro](www.astro.build.com) with [Svelte Integration](https://docs.astro.build/en/guides/integrations-guide/svelte/) - for UI templates and interactivity
+- [Tailwind CSS Integration](https://docs.astro.build/en/guides/integrations-guide/tailwind/) - for designing web pages
+
+### **SEO**
+
+- [Astro-SEO](https://github.com/jonasmerlin/astro-seo#readme) - for Search Engine Optimizations
+
+### **Image Compression and Optimizations**
+
+- [Astro-Imagetools](https://astro-imagetools-docs.vercel.app/en/components-and-apis) - for image optimization
+
+### **Translation**
+
+- [Astro-i18next](https://github.com/yassinedoghri/astro-i18next#readme) - for setting-up manual translations
+
+## **🚀 Project Structure**
 
 Inside of your Astro project, you'll see the following folders and files:
 
 ```
 /
+├── data/
+│   ├── pages/
+│   │   └──...
+│   └──...
 ├── public/
+│   ├── images/
+│   │   └──...
+│   └── locales/
+│       ├── cn/
+│       │   └──...
+│       └── en/
+│           └──...
 ├── src/
+│   ├── components/
+│   │   ├─── theme/
+│   │   │   ├── navbar/
+│   │   │   │   └── ...
+│   │   │   └── footer/
+│   │   │       └── ...
+│   │   └── ...
+│   ├── customTypes/
+│   │   ├─── seo/
+│   │   │   └── ...
+│   │   └── ...
+│   ├── helpers/
+│   │   └─── ...
+│   ├── layouts/
+│   │   └─── ...
 │   └── pages/
-│       └── index.astro
-└── package.json
+│       ├── [auto-generated language-directory]
+│       └── ...
+└── ...
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## **Directory Definition**
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:3000`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- data/
+  - contains JSON files full of references for the translation tech to work. More details how it is used in [Translations and How to set it up](#)
+- public/
+  - contains images folder (for images) and locales (for literal translations) that is being referenced from JSON files in `data/` folder
+  - locales folder **MUST** contain all the translation files you're trying to support.
+- src/components/
+  - contains all the `web components` being used on layouts and pages
+- src/customTypes/
+  - contains TypeScript Types that are being reused such as types used for SEO
+- src/helpers/
+  - contains all the utility files used in the project
+- src/layouts/
+  - contains all layout files (templates)
+- src/pages
+  - base directory will contain the necessary files for the base language. `Translation` section will explain how to create the pages for the other supported languages.
