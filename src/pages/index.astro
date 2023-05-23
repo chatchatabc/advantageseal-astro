@@ -3,7 +3,11 @@ import i18next, { t, changeLanguage } from "i18next";
 import { utilGetCurrentLangauge } from "@helpers/commonUtils";
 import Layout from "@layouts/Layout.astro";
 import homeJson from "@data/pages/home.json";
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 //import defaultJson from "@data/site-info.json";
 import Carousel from "@components/theme/Carousel.astro";
 import { Img } from "astro-imagetools/components";
@@ -18,31 +22,40 @@ const pageMetaTag: PageMetaTag = {
     description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
     keywords: t("home:metaTag.pageKeywords") ?? t("site-info:pageKeywords"),
     author: t("home:metaTag.pageAuthor") ?? t("site-info:pageAuthor"),
-}, opengraphMetaTag: OpenGraphMetaTag = {
-    title: t("home:metaTag.ogTitle") ??
-        t("home:metaTag.pageTitle") ??
-        t("home:metaTag.twitterTitle") ??
-        t("site-info:ogTitle"),
+  },
+  opengraphMetaTag: OpenGraphMetaTag = {
+    title:
+      t("home:metaTag.ogTitle") ??
+      t("home:metaTag.pageTitle") ??
+      t("home:metaTag.twitterTitle") ??
+      t("site-info:ogTitle"),
     type: t("home:metaTag.ogType") ?? t("site-info:ogType"),
-    image: t("home:metaTag.ogImage") ??
-        t("home:metaTag.twitterImage") ??
-        t("site-info:ogImage"),
-    description: t("home:metaTag.ogDescription") ??
-        t("home:metaTag.twitterDescription") ??
-        t("home:metaTag.pageDescription") ??
-        t("site-info:ogDescription"),
-}, twitterMetaTag: TwitterMetaTag = {
-    cardType: t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
-    title: t("home:meta-tag.twitterTitle") ??
-        t("home:metaTag.ogTitle") ??
-        t("site-info:twitterTitle"),
-    description: t("home:metaTag.description") ??
-        t("home:metaTag.ogDescription") ??
-        t("site-info:pageDescription"),
-    image: t("home:metaTag.twitterImage") ??
-        t("home:metaTag.ogImage") ??
-        t("site-info:twitterImage"),
-};
+    image:
+      t("home:metaTag.ogImage") ??
+      t("home:metaTag.twitterImage") ??
+      t("site-info:ogImage"),
+    description:
+      t("home:metaTag.ogDescription") ??
+      t("home:metaTag.twitterDescription") ??
+      t("home:metaTag.pageDescription") ??
+      t("site-info:ogDescription"),
+  },
+  twitterMetaTag: TwitterMetaTag = {
+    cardType:
+      t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
+    title:
+      t("home:meta-tag.twitterTitle") ??
+      t("home:metaTag.ogTitle") ??
+      t("site-info:twitterTitle"),
+    description:
+      t("home:metaTag.description") ??
+      t("home:metaTag.ogDescription") ??
+      t("site-info:pageDescription"),
+    image:
+      t("home:metaTag.twitterImage") ??
+      t("home:metaTag.ogImage") ??
+      t("site-info:twitterImage"),
+  };
 ---
 
 <Layout
