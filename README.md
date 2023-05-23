@@ -11,7 +11,7 @@ Welcome to the Advance Seals Web Project Github repository. Here lies the docume
 You can check each of the links provided below for the original and the remade version
 
 - [Original Site](http://www.advantageseal.cn/)
-- [Remade Site](https://918f6f82.advantageseals-astro.pages.dev)
+- [Remade Site](https://3cb3d79a.advantageseals-astro.pages.dev)
 
 > Note: link is going to change throughout the development phase
 
