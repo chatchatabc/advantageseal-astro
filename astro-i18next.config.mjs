@@ -5,10 +5,10 @@ export default {
   namespaces: [
     "site-info",
     "navigation",
-    "footer",
     "home",
     "product-categories",
     "products",
+    "footer",
   ],
   defaultNamespace: "navigation",
 };
