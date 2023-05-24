@@ -18,9 +18,9 @@
     "interval": 5,
     "prefix": "cn",
     "cn": {
-      "image1": "images/landing-page/carousel/cn/1.jpg",
-      "image2": "images/landing-page/carousel/cn/2.jpg",
-      "image3": "images/landing-page/carousel/cn/3.jpg"
+      "image1": "/images/landing-page/carousel/cn/1.jpg",
+      "image2": "/images/landing-page/carousel/cn/2.jpg",
+      "image3": "/images/landing-page/carousel/cn/3.jpg"
     }
   },
   "popularProducts": {
@@ -71,33 +71,54 @@
     "cn": {
       "image1": {
         "label": "Type 16",
-        "src": "images/products/type-16.jpg",
+        "src": "/images/products/type-16.jpg",
         "href": "products/type-16",
         "alt": "水池水疗泵用密封系列-Type 16"
       },
       "image2": {
         "label": "Type 21",
-        "src": "images/products/type-21.jpg",
+        "src": "/images/products/type-21.jpg",
         "href": "products/type-21",
         "alt": "水池水疗泵用密封系列-Type 21"
       },
       "image3": {
         "label": "Type 201",
-        "src": "images/products/type-201.jpg",
+        "src": "/images/products/type-201.jpg",
         "href": "products/type-201",
         "alt": "水池水疗泵用密封系列-Type 201"
       },
       "image4": {
         "label": "Type 202",
-        "src": "images/products/type-202.jpg",
+        "src": "/images/products/type-202.jpg",
         "href": "products/type-20",
         "alt": "水池水疗泵用密封系列-Type 202"
       },
       "image5": {
         "label": "Type 511-22",
-        "src": "images/products/type-511-22.jpg",
+        "src": "/images/products/type-511-22.jpg",
         "href": "products/type-511-22",
         "alt": "立式多级泵密封系列-511-22"
+      }
+    }
+  },
+  "customerCenter": {
+    "label": "客户中心",
+    "image": {
+      "src": "/images/landing-page/customer-center/banner-image.webp",
+      "alt": "客户中心"
+    },
+    "children": {
+      "child1": {
+        "text": "视频中心",
+        "link": "/videos"
+      },
+      "child2": {
+        "text": "解决方案",
+        "link": "/solutions"
+      },
+      "child3": {
+        "text": "具体案例",
+        "link": "/concrete-case"
       }
     }
   }

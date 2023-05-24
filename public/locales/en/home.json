@@ -18,9 +18,9 @@
     "interval": 5,
     "prefix": "en",
     "en": {
-      "image1": "images/landing-page/carousel/en/1.jpg",
-      "image2": "images/landing-page/carousel/en/2.jpg",
-      "image3": "images/landing-page/carousel/en/3.jpg"
+      "image1": "/images/landing-page/carousel/en/1.jpg",
+      "image2": "/images/landing-page/carousel/en/2.jpg",
+      "image3": "/images/landing-page/carousel/en/3.jpg"
     }
   },
   "popularProducts": {
@@ -83,33 +83,54 @@
     "en": {
       "image1": {
         "label": "Type 16",
-        "src": "images/products/type-16.jpg",
+        "src": "/images/products/type-16.jpg",
         "href": "products/type-16",
         "alt": "Type 16"
       },
       "image2": {
         "label": "Type 21",
-        "src": "images/products/type-21.jpg",
+        "src": "/images/products/type-21.jpg",
         "href": "products/type-21",
         "alt": "Type 21"
       },
       "image3": {
         "label": "Type 201",
-        "src": "images/products/type-201.jpg",
+        "src": "/images/products/type-201.jpg",
         "href": "products/type-201",
         "alt": "Type 201"
       },
       "image4": {
         "label": "Type 202",
-        "src": "images/products/type-202.jpg",
+        "src": "/images/products/type-202.jpg",
         "href": "products/type-20",
         "alt": "Type 202"
       },
       "image5": {
         "label": "Type 511-22",
-        "src": "images/products/type-511-22.jpg",
+        "src": "/images/products/type-511-22.jpg",
         "href": "products/type-511-22",
         "alt": "Type 511-22"
+      }
+    }
+  },
+  "customerCenter": {
+    "label": "Customer Center",
+    "image": {
+      "src": "/images/landing-page/customer-center/banner-image.webp",
+      "alt": "Customer Center"
+    },
+    "children": {
+      "child1": {
+        "text": "Videos",
+        "link": "/videos"
+      },
+      "child2": {
+        "text": "Solutions",
+        "link": "/solutions"
+      },
+      "child3": {
+        "text": "Concrete Case",
+        "link": "/concrete-case"
       }
     }
   }
