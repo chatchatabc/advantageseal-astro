@@ -7,6 +7,8 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 //import defaultJson from "@data/site-info.json";
 import Carousel from "@components/theme/Carousel.astro";
 import { Img } from "astro-imagetools/components";
+import Marquee from "@components/theme/Marquee.astro";
+import type { MarqueeImage } from "@customTypes/marquee/types";
 
 changeLanguage("en");
 
@@ -43,6 +45,18 @@ const pageMetaTag: PageMetaTag = {
         t("home:metaTag.ogImage") ??
         t("site-info:twitterImage"),
 };
+let marqueeImages: MarqueeImage[] = [];
+let marqueeImagePrefix: string = t("home:marquee.prefix");
+//get images from respective languages
+Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((index: number) => {
+    var tempMarqueeImage: MarqueeImage = {
+        src: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
+        alt: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".title"),
+        label: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".label"),
+        href: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".href"),
+    };
+    marqueeImages.push(tempMarqueeImage);
+});
 ---
 
 <Layout
@@ -111,6 +125,7 @@ const pageMetaTag: PageMetaTag = {
           )
         }
       </blockquote>
+      <Marquee images={marqueeImages} />
     </section>
   </main>
 </Layout>
