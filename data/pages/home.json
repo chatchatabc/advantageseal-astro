@@ -98,11 +98,11 @@
     "news": {},
     "about": {
       "tabs": [
-        "companyProfile",
-        "researchAndInnovation",
-        "productionAbility",
-        "qualificationHonor",
-        "enterpriseCulture"
+        "company-profile",
+        "research-and-innovation",
+        "production-ability",
+        "qualification-honor",
+        "enterprise-culture"
       ]
     }
   }
