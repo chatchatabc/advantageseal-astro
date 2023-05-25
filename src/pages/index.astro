@@ -13,6 +13,7 @@ import Carousel from "@components/theme/Carousel.astro";
 import { Img, BackgroundImage } from "astro-imagetools/components";
 import Marquee from "@components/theme/Marquee.astro";
 import type { MarqueeImage } from "@customTypes/marquee/types";
+import AboutStub from "@components/landing-page/AboutStub.astro";
 
 changeLanguage("cn");
 
@@ -263,7 +264,9 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
     >
       <!--News Stub -->
       <div class="w-full lg:w-6/12"></div>
-      <div class="w-full lg:w-6/12"></div>
+      <div class="w-full lg:w-6/12">
+        <AboutStub tabs={homeJson.stubs.about.tabs} lang={i18next.language} />
+      </div>
     </section>
   </main>
 </Layout>
