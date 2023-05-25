@@ -155,8 +155,43 @@
       "tabs": {
         "company-profile": {
           "label": "Company Profile",
-          "img": "",
-          "content": ""
+          "img": {
+            "src": "/images/landing-page/stubs/about/company-profile.jpg",
+            "alt": "high-rise buildings"
+          },
+          "content": "Advantage Seal was born in the United States From 1985 to 2002, a group of senior sealing technical engineers teamed up to the international brand Advantage Seal to provide an affordable high quality products and attentive service in the sealing industry. Serves China Advantage Seal is committed to designing and developing exceptional seals to meet the fluid handling requirements of both current and emerging markets. In 2006, Advantage Seals Ningbo operation commence and duplicate its US Manufacturing process. Since then Advantage Seal successfully merge American innovation to provide affordable and high quality seals a reality, to serve both domestic and international customers. Start With Demand, Stop At The Best Follow the Customer firs..."
+        },
+        "research-and-innovation": {
+          "label": "Research and Innovation",
+          "img": {
+            "src": "/images/landing-page/stubs/about/research-and-innovation.jpg",
+            "alt": "global idea"
+          },
+          "content": "Each seal has its own characteristics, like humans. In the 21st century, all high-end sealing materials and fine processing are easily accessible due to the acceleration of globalization. These no longer constitute the elements of competition for seal companies. How we make the difference? Our own design. Careful research on competitor design, and based on years of service. Taking advantage of each others strengths, gradually formed a gradually unique, advanced seal design concept. What are the unique features of our seals? Special Design Feature Continuous innovation and development Excellent research and innovation ability has always been an important part of Advantage Seal enterprise com..."
+        },
+        "production-ability": {
+          "label": "Production Ability",
+          "img": {
+            "src": "/images/landing-page/stubs/about/production-ability.jpg",
+            "alt": "factory floor with machinery"
+          },
+          "content": "The company has the international first-class technical level of the rotary shaft sealing device simulation test center. The company has several sets of production and assembly equipment imported from the United States, and strictly monitors the process quality control of each product. Since the company obtained the ISO9001 quality management system certification in 2008, has been strictly implementing the quality management system. According to the different needs of customers, we customize special design for customers, and adhering to the customers ideal, that is our ideal service concept. We strive for customers need. In response to the technical needs of our customers, our team (including the us-china-philippines technical team) is a trinity that provides technical support to our cust..."
+        },
+        "qualification-honor": {
+          "label": "Qualification Honor",
+          "img": {
+            "src": "/images/landing-page/stubs/about/qualification-honor.jpg",
+            "alt": "silver trophy with a red ribbon in-front of the blue horizon"
+          },
+          "content": "Advantage Seal (Ningbo) co., LTD, an international leading supplier of industrial sealing technology, is the investment subsidiary of Advantage Seal, a well-known American sealing brand. Since the establishment of Advantage Seal Inc. in Chicago, with its technicians, Mr. Nestor, a famous sealing expert from the United States, has relied on its strong technical strength and rich industry experience to provide sealing solutions for established pump manufacturers, industrial pumps and chemical pumps in the United States and Europe. In 2006, Mr Liu Hongzhi introduce the Advantage Seal technology and established Advantage Seal (Ningbo) co., LTD. The company inherits the core technology, strictly..."
+        },
+        "enterprise-culture": {
+          "label": "Enterprise Culture",
+          "img": {
+            "src": "/images/landing-page/stubs/about/enterprise-culture.jpg",
+            "alt": "convoy of camels in the desert"
+          },
+          "content": "Since the establishment of Advantage Seal (Ningbo) co., LTD, we keep moving forward. A generation work hard and accumulated excellent corporate culture, cast a unique soul of the enterprise.This is the precious spiritual wealth of love, isthe internal power of continuous development and growth. Mission: Lead the progress of sealing field and create a better future for working conditions; Vision: Build a hundred-year enterprise and become a reliable supplier in the minds of customers; Core Value: Creating value for customers."
         }
       }
     }
