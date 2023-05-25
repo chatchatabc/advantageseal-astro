@@ -1,0 +1,97 @@
+---
+import { Img } from "astro-imagetools/components";
+import i18next, { t } from "i18next";
+
+const { tabs, language } = Astro.props;
+---
+
+<div class="about-stub border-[1px] border-solid border-[#0b4a75]">
+  <div class="bg-[#0b4a75] text-white px-[15px] py-[10px]">
+    <h3 class="text-lg font-semibold">{t("home:stubs.about.label")}</h3>
+  </div>
+  <div class="">
+    <div class="stub-tabs p-4 flex flex-row flex-wrap w-full">
+      {
+        tabs.map((tab: string) => {
+          return (
+            <button class="stub-tab font-semibold px-4 py-2 border-[1px] border-t-[0.25rem] border-[#00000000] border-b-[#ddd] rounded-tl-[0.25rem] rounded-tr-[0.25rem]">
+              {t("home:stubs.about.tabs." + tab + ".label")}
+            </button>
+          );
+        })
+      }
+      <div class="flex-grow border-b-[1px] border-solid border-[#ddd]"></div>
+    </div>
+    <div class="stub-contents">
+      {
+        tabs.map((tab: string) => {
+          return (
+            <div class="stub-content p-4 min-h-[305px] hidden transition opacity-0 duration-300">
+              <div class=" float-left mr-4 mb-2">
+                <Img
+                  src={t("home:stubs.about.tabs." + tab + ".img.src")}
+                  alt={t("home:stubs.about.tabs." + tab + ".img.alt")}
+                  format="webp"
+                  width={250}
+                />
+              </div>
+              <p class="text-[13px]">
+                {t("home:stubs.about.tabs." + tab + ".content")}
+              </p>
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</div>
+<script>
+  (function () {
+    var aboutStub = document.querySelector(".about-stub")! as HTMLDivElement;
+    var stubTabs = aboutStub.querySelectorAll(
+      ".stub-tabs button"
+    )! as unknown as HTMLButtonElement[];
+    var stubContents = aboutStub.querySelectorAll(
+      ".stub-content"
+    )! as unknown as HTMLDivElement[];
+
+    var activeTab: number = 0;
+    var activeContent: HTMLDivElement = stubContents[activeTab];
+    activeContent.classList.remove("hidden");
+    activeContent.classList.add("opacity-100");
+    stubTabs[activeTab].classList.add("border-[#ddd]");
+    stubTabs[activeTab].classList.add("border-t-[#009ce0]");
+    stubTabs[activeTab].classList.add("border-b-[#fff]");
+    stubTabs[activeTab].classList.add("text-[#009ce0]");
+
+    var setActiveTab = (index: number) => {
+      if (index != activeTab) {
+        activeContent.classList.remove("opacity-100");
+        stubTabs[activeTab].classList.remove("border-[#ddd]");
+        stubTabs[activeTab].classList.remove("border-t-[#009ce0]");
+        stubTabs[activeTab].classList.remove("border-b-[#fff]");
+        stubTabs[activeTab].classList.remove("text-[#009ce0]");
+        stubTabs[index].classList.add("border-[#ddd]");
+        stubTabs[index].classList.add("border-t-[#009ce0]");
+        stubTabs[index].classList.add("border-b-[#fff]");
+        stubTabs[index].classList.add("text-[#009ce0]");
+        setTimeout(() => {
+          activeContent.classList.add("hidden");
+          activeTab = index;
+          activeContent = stubContents[activeTab];
+          activeContent.classList.remove("hidden");
+          setTimeout(() => {
+            activeContent.classList.add("opacity-100");
+          }, 150);
+        }, 150);
+      }
+    };
+    for (var i = 0; i < stubTabs.length; i++) {
+      ((i: number, tabButton: HTMLButtonElement) => {
+        tabButton.addEventListener("click", () => {
+          setActiveTab(i);
+        });
+      })(i, stubTabs[i]);
+    }
+  })();
+</script>
