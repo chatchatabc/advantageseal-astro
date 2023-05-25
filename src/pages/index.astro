@@ -1,9 +1,13 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
-import { utilGetCurrentLangauge } from "@helpers/commonUtils";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import Layout from "@layouts/Layout.astro";
 import homeJson from "@data/pages/home.json";
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 //import defaultJson from "@data/site-info.json";
 import Carousel from "@components/theme/Carousel.astro";
 import { Img, BackgroundImage } from "astro-imagetools/components";
@@ -15,49 +19,66 @@ changeLanguage("cn");
 
 var metaTagRef = "home:metaTag";
 const { pathname } = Astro.url;
-const currentLanguage = utilGetCurrentLangauge(pathname);
+const currentLanguage = utilGetCurrentLanguage(pathname);
 const pageMetaTag: PageMetaTag = {
     title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
     description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
     keywords: t("home:metaTag.pageKeywords") ?? t("site-info:pageKeywords"),
     author: t("home:metaTag.pageAuthor") ?? t("site-info:pageAuthor"),
-}, opengraphMetaTag: OpenGraphMetaTag = {
-    title: t("home:metaTag.ogTitle") ??
-        t("home:metaTag.pageTitle") ??
-        t("home:metaTag.twitterTitle") ??
-        t("site-info:ogTitle"),
+  },
+  opengraphMetaTag: OpenGraphMetaTag = {
+    title:
+      t("home:metaTag.ogTitle") ??
+      t("home:metaTag.pageTitle") ??
+      t("home:metaTag.twitterTitle") ??
+      t("site-info:ogTitle"),
     type: t("home:metaTag.ogType") ?? t("site-info:ogType"),
-    image: t("home:metaTag.ogImage") ??
-        t("home:metaTag.twitterImage") ??
-        t("site-info:ogImage"),
-    description: t("home:metaTag.ogDescription") ??
-        t("home:metaTag.twitterDescription") ??
-        t("home:metaTag.pageDescription") ??
-        t("site-info:ogDescription"),
-}, twitterMetaTag: TwitterMetaTag = {
-    cardType: t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
-    title: t("home:meta-tag.twitterTitle") ??
-        t("home:metaTag.ogTitle") ??
-        t("site-info:twitterTitle"),
-    description: t("home:metaTag.description") ??
-        t("home:metaTag.ogDescription") ??
-        t("site-info:pageDescription"),
-    image: t("home:metaTag.twitterImage") ??
-        t("home:metaTag.ogImage") ??
-        t("site-info:twitterImage"),
-};
+    image:
+      t("home:metaTag.ogImage") ??
+      t("home:metaTag.twitterImage") ??
+      t("site-info:ogImage"),
+    description:
+      t("home:metaTag.ogDescription") ??
+      t("home:metaTag.twitterDescription") ??
+      t("home:metaTag.pageDescription") ??
+      t("site-info:ogDescription"),
+  },
+  twitterMetaTag: TwitterMetaTag = {
+    cardType:
+      t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
+    title:
+      t("home:meta-tag.twitterTitle") ??
+      t("home:metaTag.ogTitle") ??
+      t("site-info:twitterTitle"),
+    description:
+      t("home:metaTag.description") ??
+      t("home:metaTag.ogDescription") ??
+      t("site-info:pageDescription"),
+    image:
+      t("home:metaTag.twitterImage") ??
+      t("home:metaTag.ogImage") ??
+      t("site-info:twitterImage"),
+  };
 let marqueeImages: MarqueeImage[] = [];
 let marqueeImagePrefix: string = t("home:marquee.prefix");
 //get images from respective languages
-Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((index: number) => {
+Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
+  (index: number) => {
     var tempMarqueeImage: MarqueeImage = {
-        src: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
-        alt: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".title"),
-        label: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".label"),
-        href: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".href"),
+      src: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
+      alt: t(
+        "home:marquee." + marqueeImagePrefix + ".image" + index + ".title"
+      ),
+      label: t(
+        "home:marquee." + marqueeImagePrefix + ".image" + index + ".label"
+      ),
+      href: t(
+        "home:marquee." + marqueeImagePrefix + ".image" + index + ".href"
+      ),
     };
     marqueeImages.push(tempMarqueeImage);
-});
+  }
+);
 ---
 
 <Layout
@@ -150,7 +171,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
         </div>
         <div class="w-full flex flex-row mx-auto flex-wrap">
           <a
-            href={utilGetCurrentLangauge(pathname) +
+            href={utilGetCurrentLanguage(pathname) +
               t("home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
@@ -172,7 +193,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
             </h3>
           </a>
           <a
-            href={utilGetCurrentLangauge(pathname) +
+            href={utilGetCurrentLanguage(pathname) +
               t("home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
@@ -194,7 +215,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
             </h3>
           </a>
           <a
-            href={utilGetCurrentLangauge(pathname) +
+            href={utilGetCurrentLanguage(pathname) +
               t("home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
