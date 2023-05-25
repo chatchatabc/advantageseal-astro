@@ -1,0 +1,18 @@
+---
+const { articles } = Astro.props;
+import { Img } from "astro-imagetools/components";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import i18next, { t } from "i18next";
+---
+
+<div class="about-stub border-[1px] border-solid border-[#0b4a75]">
+  <div
+    class="bg-[#0b4a75] text-white px-[15px] py-[10px] flex flex-row justify-between"
+  >
+    <h3 class="text-lg font-semibold">{t("home:stubs.news.label")}</h3>
+    <a href={t("home:stubs.news.more.href")}
+      >{t("home:stubs.news.more.label")}</a
+    >
+  </div>
+  <div class="p-4"></div>
+</div>
