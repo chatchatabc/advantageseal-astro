@@ -121,5 +121,32 @@
         "link": "/concrete-case"
       }
     }
+  },
+  "productApplication": {
+    "header": "产品运用 ",
+    "hyperLink": {
+      "label": "更多",
+      "href": "#"
+    }
+  },
+  "stubs": {
+    "news": {
+      "label": "News",
+      "more": {
+        "label": "More",
+        "href": "/news"
+      },
+      "content": []
+    },
+    "about": {
+      "label": "About Advantage",
+      "tabs": {
+        "company-profile": {
+          "label": "Company Profile",
+          "img": "",
+          "content": ""
+        }
+      }
+    }
   }
 }

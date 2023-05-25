@@ -133,5 +133,32 @@
         "link": "/concrete-case"
       }
     }
+  },
+  "productApplication": {
+    "header": "Product application ",
+    "hyperLink": {
+      "label": "more",
+      "href": "#"
+    }
+  },
+  "stubs": {
+    "news": {
+      "label": "News",
+      "more": {
+        "label": "More",
+        "href": "/news"
+      },
+      "content": []
+    },
+    "about": {
+      "label": "About Advantage",
+      "tabs": {
+        "company-profile": {
+          "label": "Company Profile",
+          "img": "",
+          "content": ""
+        }
+      }
+    }
   }
 }

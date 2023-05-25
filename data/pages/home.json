@@ -65,5 +65,45 @@
     "height": 140,
     "width": 190,
     "speed": 1
+  },
+  "productApplication": {
+    "images": [
+      {
+        "src": "/images/landing-page/product-application/image-1.webp",
+        "alt": ""
+      },
+      {
+        "src": "/images/landing-page/product-application/image-2.webp",
+        "alt": ""
+      },
+      {
+        "src": "/images/landing-page/product-application/image-3.webp",
+        "alt": ""
+      },
+      {
+        "src": "/images/landing-page/product-application/image-4.webp",
+        "alt": ""
+      },
+      {
+        "src": "/images/landing-page/product-application/image-5.webp",
+        "alt": ""
+      },
+      {
+        "src": "/images/landing-page/product-application/image-6.webp",
+        "alt": ""
+      }
+    ]
+  },
+  "stubs": {
+    "news": {},
+    "about": {
+      "tabs": [
+        "companyProfile",
+        "researchAndInnovation",
+        "productionAbility",
+        "qualificationHonor",
+        "enterpriseCulture"
+      ]
+    }
   }
 }
