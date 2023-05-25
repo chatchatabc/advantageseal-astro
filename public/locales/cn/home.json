@@ -131,9 +131,9 @@
   },
   "stubs": {
     "news": {
-      "label": "News",
+      "label": "新闻资讯",
       "more": {
-        "label": "More",
+        "label": "更多",
         "href": "/news"
       },
       "content": []
