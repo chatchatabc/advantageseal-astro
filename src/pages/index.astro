@@ -111,9 +111,11 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
       </Carousel>
     </section>
     <!--Popular Products Section -->
-    <section class="container p-4 w-full mx-auto md:w-9/12 space-y-4 mt-8">
+    <section
+      class="container p-4 w-full mx-auto space-y-4 mt-8 md:w-11/12 lg:w-10/12"
+    >
       <div class="header flex flex-row items-end">
-        <h3 class="text-[24px] leading-8">
+        <h3 class="text-[1.5rem] leading-8">
           {t("home:popularProducts.title")}
           <small class="text-xs text-[#777777]">
             {t("home:popularProducts.subText")}
@@ -148,12 +150,15 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
       </blockquote>
       <Marquee images={marqueeImages} />
     </section>
+    <!--Customer Center -->
     <section
       class="customer-center bg-[url('/images/landing-page/customer-center/g2.webp')] bg-repeat bg-[#0b4a75]"
       style=""
     >
-      <div class="container w-full mx-auto block flex-row lg:flex lg:w-10/12">
-        <div class="w-full relative lg:w-4/12">
+      <div
+        class="w-full block flex-row lg:flex lg:container lg:mx-auto lg:w-10/12"
+      >
+        <div class="w-full relative mx-auto lg:w-4/12">
           <div
             class="text-white text-center py-[50px] bg-cover"
             style={`background-image:url(${t(
@@ -163,7 +168,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
             {t("home:customerCenter.label")}
           </div>
         </div>
-        <div class="w-full flex flex-row flex-wrap">
+        <div class="w-full flex flex-row mx-auto flex-wrap">
           <a
             href={utilGetCurrentLangauge(pathname) +
               t("home:customerCenter.children.child1.link")}
@@ -231,6 +236,34 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
           </a>
         </div>
       </div>
+    </section>
+    <!--Product Application -->
+
+    <section
+      class="product-application container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 lg:w-10/12"
+    >
+      <h2 class="text-[1.5rem] block">{t("home:productApplication.header")}</h2>
+      <div class="w-full">
+        <ul class="flex flex-row space-x-8">
+          {
+            homeJson.productApplication.images.map((image, _) => {
+              return (
+                <li>
+                  <Img src={image.src} alt={image.alt} />
+                </li>
+              );
+            })
+          }
+        </ul>
+      </div>
+    </section>
+    <!--Stubs Section -->
+    <section
+      class="stubs-section container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 lg:w-10/12 lg:flex lg:flex-row"
+    >
+      <!--News Stub -->
+      <div class="w-full lg:w-6/12"></div>
+      <div class="w-full lg:w-6/12"></div>
     </section>
   </main>
 </Layout>
