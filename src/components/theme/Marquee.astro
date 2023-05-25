@@ -1,7 +1,7 @@
 ---
 import { Img } from "astro-imagetools/components";
 import type { MarqueeImage } from "@customTypes/marquee/types";
-import {utilGetCurrentLangauge} from "@helpers/commonUtils";
+import {utilGetCurrentLanguage} from "@helpers/commonUtils";
 const { images } = Astro.props;
 const speed: number = 1;
 const width: number = 190;
@@ -18,7 +18,7 @@ const height: number = 140;
             images.map((image: MarqueeImage) => {
               return (
                 <li>
-                  <a href={utilGetCurrentLangauge(Astro.url.pathname)+"/"+image.href} class="block m-4">
+                  <a href={utilGetCurrentLanguage(Astro.url.pathname)+"/"+image.href} class="block m-4">
                     <figure class="p-[5px] bg-white drop-shadow-md  border-[1px] border-solid border-[#f1f1f1] w-[190px] transition-all duration-300 hover:border-[#d7d7d7] hover:drop-shadow-lg">
                       <Img src={image.src} alt={image.alt} {height} {width} />
                       <figcaption class="block w-full text-center py-4">

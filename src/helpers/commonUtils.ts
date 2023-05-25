@@ -1,6 +1,6 @@
 const defaultLanguage = "cn";
 import i18next from "i18next";
-export const utilGetCurrentLangauge = (url: string) => {
+export const utilGetCurrentLanguage = (url: string) => {
   const languages = i18next.languages;
   for(var i = 0 ; i < languages.length ; i++){
     if(url.includes(`/${languages[i]}/`)){

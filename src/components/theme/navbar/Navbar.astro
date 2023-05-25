@@ -3,10 +3,10 @@ import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
 import navigationJson from "@data/navigation.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
-import { utilGetCurrentLangauge } from "@helpers/commonUtils";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import productRefs from "@data/product-categories.json";
 const { pathname } = Astro.url;
-const currentLanguage = utilGetCurrentLangauge(pathname);
+const currentLanguage = utilGetCurrentLanguage(pathname);
 
 type Link = { name: string; link: string; children: Sublink[] };
 type Sublink = {

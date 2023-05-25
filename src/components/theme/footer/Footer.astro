@@ -2,12 +2,12 @@
 import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
 import { Img } from "astro-imagetools/components";
-import { utilGetCurrentLangauge } from "@helpers/commonUtils";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import navigationJson from "@data/navigation.json";
 import productRefs from "@data/product-categories.json";
 const { links } = navigationJson;
 const { pathname } = Astro.url;
-const currentLanguage = utilGetCurrentLangauge(pathname);
+const currentLanguage = utilGetCurrentLanguage(pathname);
 
 type FooterLink = {
   name: string;
