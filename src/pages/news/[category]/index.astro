@@ -1,0 +1,57 @@
+---
+import astroI18next, { changeLanguage } from "i18next";
+import Layout from "@layouts/Layout.astro";
+
+import { getCollection } from "astro:content";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection("news", ({ data }) => {
+    return data.lang === "cn";
+  });
+  //console.log(newsEntries);
+  return newsEntries.map((entry) => ({
+    params: {
+      category: entry.data.category,
+    },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const pageMetaTag: PageMetaTag = {
+    title: entry.data.pageTitle,
+    description: entry.data.pageDescription,
+    keywords: entry.data.pageKeywords,
+    author: entry.data.pageAuthor,
+  },
+  opengraphMetaTag: OpenGraphMetaTag = {
+    title: entry.data.ogTitle,
+
+    type: entry.data.ogType,
+    image: entry.data.ogImage,
+
+    description: entry.data.ogDescription,
+  },
+  twitterMetaTag: TwitterMetaTag = {
+    cardType: entry.data.twitterCardType,
+    title: entry.data.twitterTitle,
+    description: entry.data.twitterDescription,
+    image: entry.data.twitterImage,
+  };
+console.log(pageMetaTag, opengraphMetaTag, twitterMetaTag);
+changeLanguage("cn");
+---
+
+<Layout
+  page={pageMetaTag}
+  openGraph={opengraphMetaTag}
+  twitter={twitterMetaTag}
+>
+  <Content />
+</Layout>
