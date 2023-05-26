@@ -62,18 +62,7 @@
     },
     "products": {
       "name": "产品展示",
-      "sublinks": {
-        "sealMaterialCode": {
-          "name": "密封材料代码",
-          "alt": "密封材料代码",
-          "subText": null
-        },
-        "productSubstitutionForm": {
-          "name": "产品替代表",
-          "alt": "产品替代表",
-          "subText": null
-        }
-      }
+      "sublinks": {}
     },
     "customerCenter": {
       "name": "客户中心",

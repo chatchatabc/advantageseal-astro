@@ -61,18 +61,7 @@
     },
     "products": {
       "name": "Products",
-      "sublinks": {
-        "sealMaterialCode": {
-          "name": "Seal Material Code",
-          "alt": "",
-          "subText": null
-        },
-        "productSubstitutionForm": {
-          "name": "Product Substitution Form",
-          "alt": "",
-          "subText": null
-        }
-      }
+      "sublinks": {}
     },
     "customerCenter": {
       "name": "Customer Center",
