@@ -25,6 +25,8 @@ const newsCollection = defineCollection({
     twitterTitle: z.string().nullable(),
     twitterDescription: z.string().nullable(),
     twitterImage: z.string().nullable(),
+    bannerImage: z.string().nullable(),
+    articleName: z.string().nullable(),
   })
 
 });
