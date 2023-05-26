@@ -1,0 +1,57 @@
+---
+import astroI18next, { changeLanguage } from "i18next";
+import { getCollection } from "astro:content";
+
+import NewsLayout from "@layouts/news/NewsLayout.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
+
+changeLanguage("cn");
+
+export async function getStaticPaths() {
+  const newsEntries = await getCollection("news", ({ data }) => {
+    return data.lang === astroI18next.language;
+  });
+
+  return newsEntries.map((entry) => ({
+    params: {
+      category: entry.data.category,
+      articleName: entry.data.articleName,
+    },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const pageMetaTag: PageMetaTag = {
+    title: entry.data.pageTitle,
+    description: entry.data.pageDescription,
+    keywords: entry.data.pageKeywords,
+    author: entry.data.pageAuthor,
+  },
+  opengraphMetaTag: OpenGraphMetaTag = {
+    title: entry.data.ogTitle,
+    type: entry.data.ogType,
+    image: entry.data.ogImage,
+    description: entry.data.ogDescription,
+  },
+  twitterMetaTag: TwitterMetaTag = {
+    cardType: entry.data.twitterCardType,
+    title: entry.data.twitterTitle,
+    description: entry.data.twitterDescription,
+    image: entry.data.twitterImage,
+  };
+---
+
+<NewsLayout
+  page={pageMetaTag}
+  openGraph={opengraphMetaTag}
+  twitter={twitterMetaTag}
+  bannerImage={entry.data.bannerImage}
+>
+  <Content links={entry.data.links} />
+</NewsLayout>
