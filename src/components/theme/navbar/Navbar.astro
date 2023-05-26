@@ -80,52 +80,52 @@ links.map((link: any) => {
         }
       );
     } else {
-    }
-    link.children.map(
-      (navbarJsonSublink: {
-        name: string;
-        link: string;
-        imageRef: string;
-        showNavBar: boolean;
-      }) => {
-        if (navbarJsonSublink.showNavBar) {
-          var processedSublink: Sublink = {
-            name: "",
-            link: "",
-            imageRef: "",
-            alt: "",
-            subText: "",
-          };
+      link.children.map(
+        (navbarJsonSublink: {
+          name: string;
+          link: string;
+          imageRef: string;
+          showNavBar: boolean;
+        }) => {
+          if (navbarJsonSublink.showNavBar) {
+            var processedSublink: Sublink = {
+              name: "",
+              link: "",
+              imageRef: "",
+              alt: "",
+              subText: "",
+            };
 
-          processedSublink.name = t(
-            "navigation:navbar." +
-              link.name +
-              ".sublinks." +
-              navbarJsonSublink.name +
-              ".name"
-          );
+            processedSublink.name = t(
+              "navigation:navbar." +
+                link.name +
+                ".sublinks." +
+                navbarJsonSublink.name +
+                ".name"
+            );
 
-          processedSublink.link = currentLanguage + navbarJsonSublink.link;
-          processedSublink.alt = t(
-            "navigation:navbar." +
-              link.name +
-              ".sublinks." +
-              navbarJsonSublink.name +
-              ".alt"
-          );
-          processedSublink.subText = t(
-            "navigation:navbar." +
-              link.name +
-              ".sublinks." +
-              navbarJsonSublink.name +
-              ".subText"
-          );
-          processedSublink.imageRef = navbarJsonSublink.imageRef;
+            processedSublink.link = currentLanguage + navbarJsonSublink.link;
+            processedSublink.alt = t(
+              "navigation:navbar." +
+                link.name +
+                ".sublinks." +
+                navbarJsonSublink.name +
+                ".alt"
+            );
+            processedSublink.subText = t(
+              "navigation:navbar." +
+                link.name +
+                ".sublinks." +
+                navbarJsonSublink.name +
+                ".subText"
+            );
+            processedSublink.imageRef = navbarJsonSublink.imageRef;
 
-          processedLink.children.push(processedSublink);
+            processedLink.children.push(processedSublink);
+          }
         }
-      }
-    );
+      );
+    }
     processedLinks.push(processedLink);
   }
 });
