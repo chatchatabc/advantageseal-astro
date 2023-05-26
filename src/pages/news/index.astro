@@ -1,0 +1,8 @@
+---
+import { changeLanguage } from "i18next";
+import { getCollection } from "astro:content";
+console.log(await getCollection("news"));
+changeLanguage("cn");
+---
+
+Welcome to news section
