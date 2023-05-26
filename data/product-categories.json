@@ -8,6 +8,8 @@
     "modularMechanicalSealsSeries",
     "sealSeriesForMetalBellows",
     "universalStandardSealSeries",
-    "staticRingSeries"
+    "staticRingSeries",
+    "sealMaterialCode",
+    "productSubstitutionForm"
   ]
 }

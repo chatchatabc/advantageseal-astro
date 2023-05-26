@@ -179,6 +179,46 @@
       "twitterTitle": null,
       "twitterDescription": null,
       "twitterImage": null
+    },
+    "sealMaterialCode": {
+      "name": "Seal Material Code",
+      "slug": "seal-material-code",
+      "alt": "",
+      "subText": "",
+      "showNavBar": true,
+      "showFooter": true,
+      "imageRef": "",
+      "pageTitle": null,
+      "pageDescription": null,
+      "pageKeywords": null,
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null
+    },
+    "productSubstitutionForm": {
+      "name": "Product Substitution Form",
+      "slug": "product-substitution-form",
+      "alt": "",
+      "subText": "",
+      "showNavBar": true,
+      "showFooter": true,
+      "imageRef": "",
+      "pageTitle": null,
+      "pageDescription": null,
+      "pageKeywords": null,
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null
     }
   }
 }
