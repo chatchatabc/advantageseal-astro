@@ -1,0 +1,25 @@
+---
+const { subnavs } = Astro.props;
+---
+
+<div
+  class="bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid sticky top-0"
+  style=""
+>
+  <ul class="p-4 bg-white ml-4 flex flex-row">
+    {
+      subnavs.map((subnav: { label: string; href: string }) => {
+        return (
+          <li>
+            <a
+              class="px-4 py-1 text-[#777] bg-white rounded-[4px] hover:bg-[#009ce0] hover:text-white text-xs font-semibold"
+              href={subnav.href}
+            >
+              {subnav.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
