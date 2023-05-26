@@ -1,6 +1,6 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
-import { utilGetCurrentLangauge } from "@helpers/commonUtils";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import Layout from "@layouts/Layout.astro";
 import homeJson from "@data/pages/home.json";
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
@@ -15,7 +15,7 @@ changeLanguage("en");
 
 var metaTagRef = "home:metaTag";
 const { pathname } = Astro.url;
-const currentLanguage = utilGetCurrentLangauge(pathname);
+const currentLanguage = utilGetCurrentLanguage(pathname);
 const pageMetaTag: PageMetaTag = {
     title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
     description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
@@ -150,7 +150,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
         </div>
         <div class="w-full flex flex-row mx-auto flex-wrap">
           <a
-            href={utilGetCurrentLangauge(pathname) +
+            href={utilGetCurrentLanguage(pathname) +
               t("home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
@@ -172,7 +172,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
             </h3>
           </a>
           <a
-            href={utilGetCurrentLangauge(pathname) +
+            href={utilGetCurrentLanguage(pathname) +
               t("home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
@@ -194,7 +194,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
             </h3>
           </a>
           <a
-            href={utilGetCurrentLangauge(pathname) +
+            href={utilGetCurrentLanguage(pathname) +
               t("home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
