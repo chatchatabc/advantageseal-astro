@@ -76,29 +76,30 @@ links.map((link: any) => {
           }
         }
       );
+    } else {
+      link.children.map(
+        (child: { name: string; link: string; showFooter: boolean }) => {
+          if (child.showFooter) {
+            var footerSubLink: FooterSubLink = {
+              name: "",
+              link: "",
+            };
+
+            footerSubLink.name = t(
+              "navigation:navbar." +
+                link.name +
+                ".sublinks." +
+                child.name +
+                ".name"
+            );
+            footerSubLink.link = currentLanguage + child.link;
+
+            footerProcessedLink.children.push(footerSubLink);
+          }
+        }
+      );
     }
 
-    link.children.map(
-      (child: { name: string; link: string; showFooter: boolean }) => {
-        if (child.showFooter) {
-          var footerSubLink: FooterSubLink = {
-            name: "",
-            link: "",
-          };
-
-          footerSubLink.name = t(
-            "navigation:navbar." +
-              link.name +
-              ".sublinks." +
-              child.name +
-              ".name"
-          );
-          footerSubLink.link = currentLanguage + child.link;
-
-          footerProcessedLink.children.push(footerSubLink);
-        }
-      }
-    );
     FooterProcessedLinks.push(footerProcessedLink);
   }
 });
