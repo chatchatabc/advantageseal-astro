@@ -14,43 +14,7 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": [
-        {
-          "name": "companyProfile",
-          "link": "/about/company-profile",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/about-company-profile.jpg"
-        },
-        {
-          "name": "researchAndInnovation",
-          "link": "/about/research-and-innovation",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/about-research-and-innovation.jpg"
-        },
-        {
-          "name": "productionAbility",
-          "link": "/about/production-ability",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/about-production-ability.jpg"
-        },
-        {
-          "name": "qualificationHonor",
-          "link": "/about/qualification-honor",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/about-qualification-honor.jpg"
-        },
-        {
-          "name": "enterpriseCulture",
-          "link": "/about/enterprise-culture",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/about-enterprise-culture.jpg"
-        }
-      ]
+      "children": []
     },
     {
       "name": "news",
