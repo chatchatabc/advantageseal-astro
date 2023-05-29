@@ -1,14 +1,22 @@
-import { defineConfig } from 'astro/config';
-import { astroImageTools } from 'astro-imagetools';
+import { defineConfig } from "astro/config";
+import { astroImageTools } from "astro-imagetools";
 import tailwind from "@astrojs/tailwind";
 import astroI18next from "astro-i18next";
 import svelte from "@astrojs/svelte";
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
 
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
   trailingSlash: "always",
-  integrations: [tailwind(), astroI18next(), astroImageTools, svelte(), sitemap(), mdx()]
+  site: "https://advantageseals-astro.pages.dev",
+  integrations: [
+    tailwind(),
+    astroI18next(),
+    astroImageTools,
+    svelte(),
+    sitemap(),
+    mdx(),
+  ],
 });
