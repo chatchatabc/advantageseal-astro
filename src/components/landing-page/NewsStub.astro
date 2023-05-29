@@ -1,18 +1,83 @@
 ---
-const { articles } = Astro.props;
 import { Img } from "astro-imagetools/components";
-import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import i18next, { t } from "i18next";
+import { getCollection, getEntries } from "astro:content";
+const { lang } = Astro.props;
+const newsEntries = await getCollection("news", ({ data }) => {
+  return data.lang === lang;
+});
+const maxArticles = 5;
+//sort by date
+newsEntries.sort((entry1, entry2) => {
+  const date1 = new Date(entry1.data.pubDate) as any;
+  const date2 = new Date(entry2.data.pubDate) as any;
+  return date1 - date2;
+});
+var articles = newsEntries.slice(0, maxArticles);
 ---
 
-<div class="about-stub border-[1px] border-solid border-[#0b4a75]">
+<div class="news-stub border-[1px] border-solid border-[#0b4a75]">
   <div
     class="bg-[#0b4a75] text-white px-[15px] py-[10px] flex flex-row justify-between"
   >
     <h3 class="text-lg font-semibold">{t("home:stubs.news.label")}</h3>
-    <a href={t("home:stubs.news.more.href")}
-      >{t("home:stubs.news.more.label")}</a
-    >
+    <a href={t("home:stubs.news.more.href")}>
+      {t("home:stubs.news.more.label")}
+    </a>
   </div>
-  <div class="p-4"></div>
+  <div class="p-4">
+    {
+      () => {
+        if (articles.length) {
+          return (
+            <>
+              <figure class="flex flex-row ">
+                <div class="w-[100px] shrink-0 flex items-center">
+                  <Img
+                    src={articles[0].data.image.src}
+                    alt={articles[0].data.image.alt}
+                  />
+                </div>
+
+                <figcaption class="px-4 py-2">
+                  {articles[0].data.articleShortDescription}
+                </figcaption>
+              </figure>
+            </>
+          );
+        }
+      }
+    }
+
+    <ul class="w-full">
+      {
+        articles.map((entry, index: number) => {
+          if (index !== 0) {
+            return (
+              <>
+                <li class="text-[13px] bg-[#ececec] border-solid border-[1px] border-[#cecece] w-full">
+                  <a
+                    href={
+                      entry.collection +
+                      "/" +
+                      entry.data.category +
+                      "/" +
+                      entry.data.articleName +
+                      "/"
+                    }
+                    class="flex flex-row justify-between font-semibold text-[#777777] hover:text-[#009ce0]"
+                  >
+                    <div class="p-2">{entry.data.title}</div>
+                    <div class="p-2 whitespace-nowrap">
+                      {new Date(entry.data.pubDate).toISOString().split("T")[0]}
+                    </div>
+                  </a>
+                </li>
+              </>
+            );
+          }
+        })
+      }
+    </ul>
+  </div>
 </div>
