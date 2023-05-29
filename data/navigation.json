@@ -58,36 +58,7 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": [
-        {
-          "name": "industryInformation",
-          "link": "/news/industry-information",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/news-industry-information.jpg"
-        },
-        {
-          "name": "companyAnnouncements",
-          "link": "/news/company-announcements",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/news-company-announcements.jpg"
-        },
-        {
-          "name": "newProductReleases",
-          "link": "/news/new-product-releases",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/news-new-product-releases.jpg"
-        },
-        {
-          "name": "videos",
-          "link": "/news/videos",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/news-videos.jpg"
-        }
-      ]
+      "children": []
     },
     {
       "name": "products",
