@@ -3,17 +3,14 @@ import i18next, { t, changeLanguage } from "i18next";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import Layout from "@layouts/Layout.astro";
 import homeJson from "@data/pages/home.json";
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 //import defaultJson from "@data/site-info.json";
 import Carousel from "@components/theme/Carousel.astro";
 import { Img, BackgroundImage } from "astro-imagetools/components";
 import Marquee from "@components/theme/Marquee.astro";
 import type { MarqueeImage } from "@customTypes/marquee/types";
 import AboutStub from "@components/landing-page/AboutStub.astro";
+import NewsStub from "@components/landing-page/NewsStub.astro";
 
 changeLanguage("cn");
 
@@ -25,60 +22,43 @@ const pageMetaTag: PageMetaTag = {
     description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
     keywords: t("home:metaTag.pageKeywords") ?? t("site-info:pageKeywords"),
     author: t("home:metaTag.pageAuthor") ?? t("site-info:pageAuthor"),
-  },
-  opengraphMetaTag: OpenGraphMetaTag = {
-    title:
-      t("home:metaTag.ogTitle") ??
-      t("home:metaTag.pageTitle") ??
-      t("home:metaTag.twitterTitle") ??
-      t("site-info:ogTitle"),
+}, opengraphMetaTag: OpenGraphMetaTag = {
+    title: t("home:metaTag.ogTitle") ??
+        t("home:metaTag.pageTitle") ??
+        t("home:metaTag.twitterTitle") ??
+        t("site-info:ogTitle"),
     type: t("home:metaTag.ogType") ?? t("site-info:ogType"),
-    image:
-      t("home:metaTag.ogImage") ??
-      t("home:metaTag.twitterImage") ??
-      t("site-info:ogImage"),
-    description:
-      t("home:metaTag.ogDescription") ??
-      t("home:metaTag.twitterDescription") ??
-      t("home:metaTag.pageDescription") ??
-      t("site-info:ogDescription"),
-  },
-  twitterMetaTag: TwitterMetaTag = {
-    cardType:
-      t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
-    title:
-      t("home:meta-tag.twitterTitle") ??
-      t("home:metaTag.ogTitle") ??
-      t("site-info:twitterTitle"),
-    description:
-      t("home:metaTag.description") ??
-      t("home:metaTag.ogDescription") ??
-      t("site-info:pageDescription"),
-    image:
-      t("home:metaTag.twitterImage") ??
-      t("home:metaTag.ogImage") ??
-      t("site-info:twitterImage"),
-  };
+    image: t("home:metaTag.ogImage") ??
+        t("home:metaTag.twitterImage") ??
+        t("site-info:ogImage"),
+    description: t("home:metaTag.ogDescription") ??
+        t("home:metaTag.twitterDescription") ??
+        t("home:metaTag.pageDescription") ??
+        t("site-info:ogDescription"),
+}, twitterMetaTag: TwitterMetaTag = {
+    cardType: t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
+    title: t("home:meta-tag.twitterTitle") ??
+        t("home:metaTag.ogTitle") ??
+        t("site-info:twitterTitle"),
+    description: t("home:metaTag.description") ??
+        t("home:metaTag.ogDescription") ??
+        t("site-info:pageDescription"),
+    image: t("home:metaTag.twitterImage") ??
+        t("home:metaTag.ogImage") ??
+        t("site-info:twitterImage"),
+};
 let marqueeImages: MarqueeImage[] = [];
 let marqueeImagePrefix: string = t("home:marquee.prefix");
 //get images from respective languages
-Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
-  (index: number) => {
+Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((index: number) => {
     var tempMarqueeImage: MarqueeImage = {
-      src: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
-      alt: t(
-        "home:marquee." + marqueeImagePrefix + ".image" + index + ".title"
-      ),
-      label: t(
-        "home:marquee." + marqueeImagePrefix + ".image" + index + ".label"
-      ),
-      href: t(
-        "home:marquee." + marqueeImagePrefix + ".image" + index + ".href"
-      ),
+        src: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
+        alt: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".title"),
+        label: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".label"),
+        href: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".href"),
     };
     marqueeImages.push(tempMarqueeImage);
-  }
-);
+});
 ---
 
 <Layout
@@ -262,10 +242,13 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map(
     </section>
     <!--Stubs Section -->
     <section
-      class="stubs-section container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 lg:w-10/12 lg:flex lg:flex-row"
+      class="stubs-section container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 
+      lg:w-10/12 lg:flex lg:flex-row lg:space-y-0 lg:space-x-2 "
     >
       <!--News Stub -->
-      <div class="w-full lg:w-6/12"></div>
+      <div class="w-full lg:w-6/12">
+        <NewsStub lang={i18next.language} />
+      </div>
       <div class="w-full lg:w-6/12">
         <AboutStub tabs={homeJson.stubs.about.tabs} lang={i18next.language} />
       </div>
