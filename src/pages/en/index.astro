@@ -10,6 +10,7 @@ import { Img, BackgroundImage } from "astro-imagetools/components";
 import Marquee from "@components/theme/Marquee.astro";
 import type { MarqueeImage } from "@customTypes/marquee/types";
 import AboutStub from "@components/landing-page/AboutStub.astro";
+import NewsStub from "@components/landing-page/NewsStub.astro";
 
 changeLanguage("en");
 
@@ -224,11 +225,13 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
     >
       <h2 class="text-[1.5rem] block">{t("home:productApplication.header")}</h2>
       <div class="w-full">
-        <ul class="flex flex-row space-x-8">
+        <ul
+          class="flex flex-row flex-wrap space-x-0 lg:space-x-8 lg:flex-nowrap"
+        >
           {
             homeJson.productApplication.images.map((image, _) => {
               return (
-                <li>
+                <li class="p-4 w-6/12 md:w-4/12 lg:w-2/12 lg:p-0">
                   <Img src={image.src} alt={image.alt} />
                 </li>
               );
@@ -239,10 +242,13 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
     </section>
     <!--Stubs Section -->
     <section
-      class="stubs-section container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 lg:w-10/12 lg:flex lg:flex-row"
+      class="stubs-section container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 
+      lg:w-10/12 lg:flex lg:flex-row lg:space-y-0 lg:space-x-2 "
     >
       <!--News Stub -->
-      <div class="w-full lg:w-6/12"></div>
+      <div class="w-full lg:w-6/12">
+        <NewsStub lang={i18next.language} />
+      </div>
       <div class="w-full lg:w-6/12">
         <AboutStub tabs={homeJson.stubs.about.tabs} lang={i18next.language} />
       </div>

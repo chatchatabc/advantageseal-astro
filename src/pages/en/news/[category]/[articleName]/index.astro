@@ -5,7 +5,7 @@ import NewsLayout from "@layouts/news/NewsLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 
-changeLanguage("cn");
+changeLanguage("en");
 
 export async function getStaticPaths() {
     const newsEntries = await getCollection("news", ({ data }) => {
