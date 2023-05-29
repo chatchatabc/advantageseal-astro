@@ -2,25 +2,19 @@
 import Layout from "@layouts/Layout.astro";
 import { BackgroundImage } from "astro-imagetools/components";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import i18next, { t } from "i18next";
+import newsRefs from "@data/news-categories.json";
 const { page, openGraph, twitter, bannerImage } = Astro.props;
-const subnavs: { label: string; href: string }[] = [
-  {
-    label: "Industry Information",
-    href: "news/industry-information",
-  },
-  {
-    label: "Company Announcements",
-    href: "news/company-announcements",
-  },
-  {
-    label: "New Product Release",
-    href: "news/new-product-release",
-  },
-  {
-    label: "Videos",
-    href: "news/videos",
-  },
-];
+
+const subnavs: { label: string; href: string; slug: string }[] = [];
+
+newsRefs.refs.map((ref) => {
+  subnavs.push({
+    label: t("news-categories:contents." + ref + ".name"),
+    href: "/news/" + t("news-categories:contents." + ref + ".slug") + "/",
+    slug: t("news-categories:contents." + ref + ".slug"),
+  });
+});
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
