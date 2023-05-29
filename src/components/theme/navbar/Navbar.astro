@@ -5,6 +5,8 @@ import navigationJson from "@data/navigation.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import productRefs from "@data/product-categories.json";
+import newsRefs from "@data/news-categories.json";
+
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
 
@@ -16,7 +18,7 @@ type Sublink = {
   alt: string;
   subText: string;
 };
-type ProductsLinkChildren = {
+type SubCategory = {
   name: string;
   link: string;
   showNavBar: boolean;
@@ -29,23 +31,39 @@ const links = [...navigationJson.links];
 //for products navbar get from product category instead and add it
 //let productsLink = links.filter((obj: any) => obj.name == "products")[0];
 
-var productLinkItems: ProductsLinkChildren[] = productRefs.refs.map(
-  (el: string) => {
-    let a: ProductsLinkChildren = {
-      name: "product-categories:contents." + el + ".name",
-      link: "product-categories:contents." + el + ".slug",
-      showNavBar: t(
-        "product-categories:contents." + el + ".showNavBar"
-      ) as unknown as boolean,
-      showFooter: t(
-        "product-categories:contents." + el + ".showFooter"
-      ) as unknown as boolean,
-      imageRef: "product-categories:contents." + el + ".imageRef",
-    };
-    return a;
-  }
-);
+var productLinkItems: SubCategory[] = productRefs.refs.map((el: string) => {
+  let a: SubCategory = {
+    name: "product-categories:contents." + el + ".name",
+    link: "product-categories:contents." + el + ".slug",
+    showNavBar: t(
+      "product-categories:contents." + el + ".showNavBar"
+    ) as unknown as boolean,
+    showFooter: t(
+      "product-categories:contents." + el + ".showFooter"
+    ) as unknown as boolean,
+    imageRef: "product-categories:contents." + el + ".imageRef",
+  };
+  return a;
+});
+var newsLinkItems: SubCategory[] = newsRefs.refs.map((el: string) => {
+  let a: SubCategory = {
+    name: "news-categories:contents." + el + ".name",
+    link: "news-categories:contents." + el + ".slug",
+    showNavBar: t(
+      "news-categories:contents." + el + ".showNavBar"
+    ) as unknown as boolean,
+    showFooter: t(
+      "news-categories:contents." + el + ".showFooter"
+    ) as unknown as boolean,
+    imageRef: "news-categories:contents." + el + ".imageRef",
+  };
+  return a;
+});
 
+var categoryToSubCategory = {
+  categories: ["products", "news"],
+  subCategories: [productLinkItems, newsLinkItems],
+};
 //process the entire thing includidng the translation
 var processedLinks: Link[] = [];
 
@@ -54,8 +72,12 @@ links.map((link: any) => {
     var processedLink: Link = { name: "", link: "", children: [] };
     processedLink.name = t("navigation:navbar." + link.name + ".name");
     processedLink.link = currentLanguage + link.link;
-    if (link.name == "products") {
-      [...productLinkItems].map(
+    if (categoryToSubCategory.categories.includes(link.name)) {
+      [
+        ...categoryToSubCategory.subCategories[
+          categoryToSubCategory.categories.indexOf(link.name)
+        ],
+      ].map(
         (navbarJsonSublink: {
           name: string;
           link: string;
