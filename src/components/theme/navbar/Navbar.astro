@@ -93,7 +93,7 @@ links.map((link: any) => {
           };
 
           processedSublink.name = t(navbarJsonSublink.name);
-          processedSublink.link = t(navbarJsonSublink.link);
+          processedSublink.link = link.name + "/" + t(navbarJsonSublink.link);
           processedSublink.alt = t(navbarJsonSublink.name);
           processedSublink.subText = t(navbarJsonSublink.name);
           processedSublink.imageRef = t(navbarJsonSublink.imageRef);

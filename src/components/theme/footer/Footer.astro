@@ -90,7 +90,7 @@ links.map((link: any) => {
             link: "",
           };
           processedSublink.name = t(child.name);
-          processedSublink.link = t(child.link);
+          processedSublink.link = link.name + "/" + t(child.link);
           footerProcessedLink.children.push(processedSublink);
         }
       });
