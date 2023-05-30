@@ -5,7 +5,8 @@ export default {
   namespaces: [
     "site-info",
     "navigation",
-    "home",
+    "page-home",
+    "page-news",
     "products",
     "about-categories",
     "news-categories",
