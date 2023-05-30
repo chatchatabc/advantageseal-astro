@@ -67,11 +67,10 @@ categoryToSubCategory.categories.map((category, index) => {
 var processedLinks: Link[] = [];
 
 links.map((link: any) => {
-  console.log(link.name);
   if (link.showNavBar) {
     var processedLink: Link = { name: "", link: "", children: [] };
     processedLink.name = t("navigation:navbar." + link.name + ".name");
-    processedLink.link = currentLanguage + link.link;
+    processedLink.link = currentLanguage + link.link + "/";
     if (categoryToSubCategory.categories.includes(link.name)) {
       [
         ...categoryToSubCategory.subCategories[
@@ -95,7 +94,7 @@ links.map((link: any) => {
 
           processedSublink.name = t(navbarJsonSublink.name);
           processedSublink.link =
-            "/" + link.name + "/" + t(navbarJsonSublink.link);
+            "/" + link.name + "/" + t(navbarJsonSublink.link) + "/";
           processedSublink.alt = t(navbarJsonSublink.name);
           processedSublink.subText = t(navbarJsonSublink.subText);
           processedSublink.imageRef = t(navbarJsonSublink.imageRef);
@@ -128,7 +127,8 @@ links.map((link: any) => {
                 ".name"
             );
 
-            processedSublink.link = currentLanguage + navbarJsonSublink.link;
+            processedSublink.link =
+              currentLanguage + navbarJsonSublink.link + "/";
             processedSublink.alt = t(
               "navigation:navbar." +
                 link.name +
