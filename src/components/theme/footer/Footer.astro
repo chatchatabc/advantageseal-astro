@@ -5,7 +5,7 @@ import { Img } from "astro-imagetools/components";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import navigationJson from "@data/navigation.json";
 import aboutRefs from "@data/about-categories.json";
-import productRefs from "@data/product-categories.json";
+import productRefs from "@data/products-categories.json";
 import newsRefs from "@data/news-categories.json";
 const { links } = navigationJson;
 const { pathname } = Astro.url;
@@ -45,15 +45,15 @@ var aboutLinkItems: SubCategory[] = aboutRefs.refs.map((el: string) => {
 });
 var productLinkItems: SubCategory[] = productRefs.refs.map((el: string) => {
   let a: SubCategory = {
-    name: "product-categories:contents." + el + ".name",
-    link: "product-categories:contents." + el + ".slug",
+    name: "products-categories:contents." + el + ".name",
+    link: "products-categories:contents." + el + ".slug",
     showNavBar: t(
-      "product-categories:contents." + el + ".showNavBar"
+      "products-categories:contents." + el + ".showNavBar"
     ) as unknown as boolean,
     showFooter: t(
-      "product-categories:contents." + el + ".showFooter"
+      "products-categories:contents." + el + ".showFooter"
     ) as unknown as boolean,
-    imageRef: "product-categories:contents." + el + ".imageRef",
+    imageRef: "products-categories:contents." + el + ".imageRef",
   };
   return a;
 });
