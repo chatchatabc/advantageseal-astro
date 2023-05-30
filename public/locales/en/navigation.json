@@ -63,7 +63,7 @@
       "name": "Products",
       "sublinks": {}
     },
-    "customerCenter": {
+    "customer-center": {
       "name": "Customer Center",
       "sublinks": {
         "concreteCase": {
