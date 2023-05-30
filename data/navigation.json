@@ -33,27 +33,12 @@
       "children": []
     },
     {
-      "name": "customerCenter",
+      "name": "customer-center",
       "link": "/customer-center",
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": [
-        {
-          "name": "concreteCase",
-          "link": "/customer-center/concrete-case",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/customer-center-concrete-case.jpg"
-        },
-        {
-          "name": "solutions",
-          "link": "/customer-center/solutions",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/customer-center-solutions.jpg"
-        }
-      ]
+      "children": []
     },
     {
       "name": "contact",

@@ -64,7 +64,7 @@
       "name": "产品展示",
       "sublinks": {}
     },
-    "customerCenter": {
+    "customer-center": {
       "name": "客户中心",
       "sublinks": {
         "concreteCase": {
