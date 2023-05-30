@@ -2,7 +2,11 @@
 import { Img } from "astro-imagetools/components";
 import i18next, { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 import newsRef from "@data/news-categories.json";
 
 changeLanguage("cn");
@@ -13,36 +17,45 @@ const pageMetaTag: PageMetaTag = {
     description: t(metaTagRef + ".pageDescription") ?? t("site-info.pageTitle"),
     keywords: t(metaTagRef + ".pageKeywords") ?? t("site-info:pageKeywords"),
     author: t(metaTagRef + ".pageAuthor") ?? t("site-info:pageAuthor"),
-}, opengraphMetaTag: OpenGraphMetaTag = {
-    title: t(metaTagRef + ".ogTitle") ??
-        t(metaTagRef + ".pageTitle") ??
-        t(metaTagRef + ".twitterTitle") ??
-        t("site-info:ogTitle"),
+  },
+  opengraphMetaTag: OpenGraphMetaTag = {
+    title:
+      t(metaTagRef + ".ogTitle") ??
+      t(metaTagRef + ".pageTitle") ??
+      t(metaTagRef + ".twitterTitle") ??
+      t("site-info:ogTitle"),
     type: t(metaTagRef + ".ogType") ?? t("site-info:ogType"),
-    image: t(metaTagRef + ".ogImage") ??
-        t(metaTagRef + ".twitterImage") ??
-        t("site-info:ogImage"),
-    description: t(metaTagRef + ".ogDescription") ??
-        t(metaTagRef + ".twitterDescription") ??
-        t(metaTagRef + ".pageDescription") ??
-        t("site-info:ogDescription"),
-}, twitterMetaTag: TwitterMetaTag = {
-    cardType: t(metaTagRef + ".twitterCardType") ?? t("site-info:twitterCardType"),
-    title: t(metaTagRef + ".twitterTitle") ??
-        t(metaTagRef + ".ogTitle") ??
-        t("site-info:twitterTitle"),
-    description: t(metaTagRef + ".description") ??
-        t(metaTagRef + ".ogDescription") ??
-        t("site-info:pageDescription"),
-    image: t(metaTagRef + ".twitterImage") ??
-        t(metaTagRef + ".ogImage") ??
-        t("site-info:twitterImage"),
-};
+    image:
+      t(metaTagRef + ".ogImage") ??
+      t(metaTagRef + ".twitterImage") ??
+      t("site-info:ogImage"),
+    description:
+      t(metaTagRef + ".ogDescription") ??
+      t(metaTagRef + ".twitterDescription") ??
+      t(metaTagRef + ".pageDescription") ??
+      t("site-info:ogDescription"),
+  },
+  twitterMetaTag: TwitterMetaTag = {
+    cardType:
+      t(metaTagRef + ".twitterCardType") ?? t("site-info:twitterCardType"),
+    title:
+      t(metaTagRef + ".twitterTitle") ??
+      t(metaTagRef + ".ogTitle") ??
+      t("site-info:twitterTitle"),
+    description:
+      t(metaTagRef + ".description") ??
+      t(metaTagRef + ".ogDescription") ??
+      t("site-info:pageDescription"),
+    image:
+      t(metaTagRef + ".twitterImage") ??
+      t(metaTagRef + ".ogImage") ??
+      t("site-info:twitterImage"),
+  };
 ---
 
 <Layout
   page={pageMetaTag}
-  opengraph={opengraphMetaTag}
+  openGraph={opengraphMetaTag}
   twitter={twitterMetaTag}
 >
   <main>
@@ -57,7 +70,10 @@ const pageMetaTag: PageMetaTag = {
                   alt={t("news-categories:contents." + ref + ".alt")}
                 />
               </div>
-              <figcaption />
+              <figcaption>
+                <h3>{t("news-categories:contents." + ref + ".name")}</h3>
+                <h4>{t("news-categories:contents." + ref + ".subText")}</h4>
+              </figcaption>
             </figure>
           </>
         );
