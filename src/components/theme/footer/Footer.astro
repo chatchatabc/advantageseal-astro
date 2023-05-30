@@ -7,6 +7,7 @@ import navigationJson from "@data/navigation.json";
 import aboutRefs from "@data/about-categories.json";
 import productRefs from "@data/products-categories.json";
 import newsRefs from "@data/news-categories.json";
+import customerCenterRefs from "@data/customer-center-categories.json";
 const { links } = navigationJson;
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
@@ -71,10 +72,36 @@ var newsLinkItems: SubCategory[] = newsRefs.refs.map((el: string) => {
   };
   return a;
 });
-var categoryToSubCategory = {
-  categories: ["about", "products", "news"],
-  subCategories: [aboutLinkItems, productLinkItems, newsLinkItems],
+var categoryToSubCategory: {
+  categories: string[];
+  refs: { refs: string[] }[];
+  subCategories: SubCategory[][];
+} = {
+  categories: ["about", "products", "news", "customer-center"],
+  refs: [aboutRefs, productRefs, newsRefs, customerCenterRefs],
+  subCategories: [],
 };
+categoryToSubCategory.categories.map((category, index) => {
+  categoryToSubCategory.subCategories.push(
+    categoryToSubCategory.refs[index].refs.map((el: string) => {
+      let a: SubCategory = {
+        name: category + "-categories:contents." + el + ".name",
+        link: category + "-categories:contents." + el + ".slug",
+        showNavBar: t(
+          category + "-categories:contents." + el + ".showNavBar"
+        ) as unknown as boolean,
+        showFooter: t(
+          category + "-categories:contents." + el + ".showFooter"
+        ) as unknown as boolean,
+        imageRef: category + "-categories:contents." + el + ".imageRef",
+      };
+      if (category === "customer-center") {
+        console.log(a);
+      }
+      return a;
+    })
+  );
+});
 var prefix: string = t("footer:lower.prefix");
 var FooterProcessedLinks: FooterLink[] = [];
 
@@ -89,7 +116,7 @@ links.map((link: any) => {
     };
 
     footerProcessedLink.name = link.name;
-    footerProcessedLink.link = currentLanguage + link.link;
+    footerProcessedLink.link = currentLanguage + link.link + "/";
     footerProcessedLink.type = link.type;
     footerProcessedLink.imageRef = link.imageRef;
     if (categoryToSubCategory.categories.includes(link.name)) {
@@ -104,7 +131,7 @@ links.map((link: any) => {
             link: "",
           };
           processedSublink.name = t(child.name);
-          processedSublink.link = link.name + "/" + t(child.link);
+          processedSublink.link = link.name + "/" + t(child.link) + "/";
           footerProcessedLink.children.push(processedSublink);
         }
       });
@@ -124,7 +151,7 @@ links.map((link: any) => {
                 child.name +
                 ".name"
             );
-            footerSubLink.link = currentLanguage + child.link;
+            footerSubLink.link = currentLanguage + child.link + "/";
 
             footerProcessedLink.children.push(footerSubLink);
           }
