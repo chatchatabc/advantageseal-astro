@@ -14,48 +14,48 @@ import NewsStub from "@components/landing-page/NewsStub.astro";
 
 changeLanguage("cn");
 
-var metaTagRef = "home:metaTag";
+var metaTagRef = "page-home:metaTag";
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
 const pageMetaTag: PageMetaTag = {
-    title: t("home:metaTag.pageTitle") ?? t("site-info.pageTitle"),
-    description: t("home:metaTag.pageDescription") ?? t("site-info.pageTitle"),
-    keywords: t("home:metaTag.pageKeywords") ?? t("site-info:pageKeywords"),
-    author: t("home:metaTag.pageAuthor") ?? t("site-info:pageAuthor"),
+    title: t(metaTagRef + ".pageTitle") ?? t("site-info.pageTitle"),
+    description: t(metaTagRef + ".pageDescription") ?? t("site-info.pageTitle"),
+    keywords: t(metaTagRef + ".pageKeywords") ?? t("site-info:pageKeywords"),
+    author: t(metaTagRef + ".pageAuthor") ?? t("site-info:pageAuthor"),
 }, opengraphMetaTag: OpenGraphMetaTag = {
-    title: t("home:metaTag.ogTitle") ??
-        t("home:metaTag.pageTitle") ??
-        t("home:metaTag.twitterTitle") ??
+    title: t(metaTagRef + ".ogTitle") ??
+        t(metaTagRef + ".pageTitle") ??
+        t(metaTagRef + ".twitterTitle") ??
         t("site-info:ogTitle"),
-    type: t("home:metaTag.ogType") ?? t("site-info:ogType"),
-    image: t("home:metaTag.ogImage") ??
-        t("home:metaTag.twitterImage") ??
+    type: t(metaTagRef + ".ogType") ?? t("site-info:ogType"),
+    image: t(metaTagRef + ".ogImage") ??
+        t(metaTagRef + ".twitterImage") ??
         t("site-info:ogImage"),
-    description: t("home:metaTag.ogDescription") ??
-        t("home:metaTag.twitterDescription") ??
-        t("home:metaTag.pageDescription") ??
+    description: t(metaTagRef + ".ogDescription") ??
+        t(metaTagRef + ".twitterDescription") ??
+        t(metaTagRef + ".pageDescription") ??
         t("site-info:ogDescription"),
 }, twitterMetaTag: TwitterMetaTag = {
-    cardType: t("home:meta-tag.twitterCardType") ?? t("site-info:twitterCardType"),
-    title: t("home:meta-tag.twitterTitle") ??
-        t("home:metaTag.ogTitle") ??
+    cardType: t(metaTagRef + ".twitterCardType") ?? t("site-info:twitterCardType"),
+    title: t(metaTagRef + ".twitterTitle") ??
+        t(metaTagRef + ".ogTitle") ??
         t("site-info:twitterTitle"),
-    description: t("home:metaTag.description") ??
-        t("home:metaTag.ogDescription") ??
+    description: t(metaTagRef + ".description") ??
+        t(metaTagRef + ".ogDescription") ??
         t("site-info:pageDescription"),
-    image: t("home:metaTag.twitterImage") ??
-        t("home:metaTag.ogImage") ??
+    image: t(metaTagRef + ".twitterImage") ??
+        t(metaTagRef + ".ogImage") ??
         t("site-info:twitterImage"),
 };
 let marqueeImages: MarqueeImage[] = [];
-let marqueeImagePrefix: string = t("home:marquee.prefix");
+let marqueeImagePrefix: string = t("page-home:marquee.prefix");
 //get images from respective languages
-Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((index: number) => {
+Array.from({ length: parseInt(t("page-home:marquee.count")) }, (_, i) => i + 1).map((index: number) => {
     var tempMarqueeImage: MarqueeImage = {
-        src: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
-        alt: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".title"),
-        label: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".label"),
-        href: t("home:marquee." + marqueeImagePrefix + ".image" + index + ".href"),
+        src: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
+        alt: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".title"),
+        label: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".label"),
+        href: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".href"),
     };
     marqueeImages.push(tempMarqueeImage);
 });
@@ -72,14 +72,17 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
         <div class="relative h-0 pb-[26.07%]">
           {
             Array.from(
-              { length: parseInt(t("home:carousel.count")) },
+              { length: parseInt(t("page-home:carousel.count")) },
               (_, i) => i + 1
             ).map((index) => {
               return (
                 <div class="image-element absolute top-0 opacity-0 transition-all duration-300 w-full flex justify-center">
                   <Img
                     src={t(
-                      "home:carousel." + i18next.language + ".image" + index
+                      "page-home:carousel." +
+                        i18next.language +
+                        ".image" +
+                        index
                     )}
                     alt={"image" + index}
                     layout="fullWidth"
@@ -97,9 +100,9 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
     >
       <div class="header flex flex-row items-end">
         <h3 class="text-[1.5rem] leading-8">
-          {t("home:popularProducts.title")}
+          {t("page-home:popularProducts.title")}
           <small class="text-xs text-[#777777]">
-            {t("home:popularProducts.subText")}
+            {t("page-home:popularProducts.subText")}
           </small>
         </h3>
       </div>
@@ -117,11 +120,15 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
                   }`}
                   href={currentLanguage + product.href}
                   title={t(
-                    "home:popularProducts.collection." + product.name + ".title"
+                    "page-home:popularProducts.collection." +
+                      product.name +
+                      ".title"
                   )}
                 >
                   {t(
-                    "home:popularProducts.collection." + product.name + ".label"
+                    "page-home:popularProducts.collection." +
+                      product.name +
+                      ".label"
                   )}
                 </a>
               );
@@ -146,13 +153,13 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
               "home:customerCenter.image.src"
             )})`}
           >
-            {t("home:customerCenter.label")}
+            {t("page-home:customerCenter.label")}
           </div>
         </div>
         <div class="w-full flex flex-row mx-auto flex-wrap">
           <a
             href={utilGetCurrentLanguage(pathname) +
-              t("home:customerCenter.children.child1.link")}
+              t("page-home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
             <div class="grow flex justify-center items-center py-8 lg:py-0">
@@ -169,12 +176,12 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
             </div>
 
             <h3 class="text-white text-center pb-8">
-              {t("home:customerCenter.children.child1.text")}
+              {t("page-home:customerCenter.children.child1.text")}
             </h3>
           </a>
           <a
             href={utilGetCurrentLanguage(pathname) +
-              t("home:customerCenter.children.child1.link")}
+              t("page-home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
             <div class="grow flex justify-center items-center py-8 lg:py-0">
@@ -191,12 +198,12 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
             </div>
 
             <h3 class="text-white pb-8 text-center">
-              {t("home:customerCenter.children.child2.text")}
+              {t("page-home:customerCenter.children.child2.text")}
             </h3>
           </a>
           <a
             href={utilGetCurrentLanguage(pathname) +
-              t("home:customerCenter.children.child1.link")}
+              t("page-home:customerCenter.children.child1.link")}
             class="flex flex-col w-6/12 hover:bg-[#005c85] sm:w-6/12 md:w-4/12 lg:2/12"
           >
             <div class="grow flex justify-center items-center py-8 lg:py-0">
@@ -212,7 +219,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
               >
             </div>
             <h3 class="text-white pb-8 grow-0 text-center">
-              {t("home:customerCenter.children.child3.text")}
+              {t("page-home:customerCenter.children.child3.text")}
             </h3>
           </a>
         </div>
@@ -223,7 +230,9 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
     <section
       class="product-application container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 lg:w-10/12"
     >
-      <h2 class="text-[1.5rem] block">{t("home:productApplication.header")}</h2>
+      <h2 class="text-[1.5rem] block">
+        {t("page-home:productApplication.header")}
+      </h2>
       <div class="w-full">
         <ul
           class="flex flex-row flex-wrap space-x-0 lg:space-x-8 lg:flex-nowrap"
@@ -242,8 +251,7 @@ Array.from({ length: parseInt(t("home:marquee.count")) }, (_, i) => i + 1).map((
     </section>
     <!--Stubs Section -->
     <section
-      class="stubs-section container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 
-      lg:w-10/12 lg:flex lg:flex-row lg:space-y-0 lg:space-x-2 "
+      class="stubs-section container p-4 w-full mx-auto space-y-2 mt-8 md:w-11/12 lg:w-10/12 lg:flex lg:flex-row lg:space-y-0 lg:space-x-2"
     >
       <!--News Stub -->
       <div class="w-full lg:w-6/12">
