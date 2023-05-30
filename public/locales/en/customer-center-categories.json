@@ -1,0 +1,44 @@
+{
+  "contents": {
+    "concreteCase": {
+      "name": "Concrete Case",
+      "slug": "concrete-case",
+      "alt": "jigsaw puzzle",
+      "subText": "",
+      "showNavBar": true,
+      "showFooter": true,
+      "imageRef": "/images/navbar/customer-center-concrete-case.jpg",
+      "pageTitle": null,
+      "pageDescription": null,
+      "pageKeywords": null,
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null
+    },
+    "solutions": {
+      "name": "Solutions",
+      "slug": "solutions",
+      "alt": "maze solution",
+      "subText": "",
+      "showNavBar": true,
+      "showFooter": true,
+      "imageRef": "/images/navbar/customer-center-solutions.jpg",
+      "pageTitle": null,
+      "pageDescription": null,
+      "pageKeywords": null,
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null
+    }
+  }
+}
