@@ -4,9 +4,10 @@ import i18next, { t } from "i18next";
 import navigationJson from "@data/navigation.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
-import abougRefs from "@data/about-categories.json";
-import productRefs from "@data/product-categories.json";
+import aboutRefs from "@data/about-categories.json";
+import productRefs from "@data/products-categories.json";
 import newsRefs from "@data/news-categories.json";
+import customerCenterRefs from "@data/customer-center-categories.json";
 
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
@@ -30,62 +31,43 @@ type SubCategory = {
 
 const links = [...navigationJson.links];
 
-//for products navbar get from product category instead and add it
-//let productsLink = links.filter((obj: any) => obj.name == "products")[0];
-var aboutLinkItems: SubCategory[] = abougRefs.refs.map((el: string) => {
-  let a: SubCategory = {
-    name: "about-categories:contents." + el + ".name",
-    link: "about-categories:contents." + el + ".slug",
-    showNavBar: t(
-      "about-categories:contents." + el + ".showNavBar"
-    ) as unknown as boolean,
-    showFooter: t(
-      "about-categories:contents." + el + ".showFooter"
-    ) as unknown as boolean,
-    imageRef: "about-categories:contents." + el + ".imageRef",
-    subText: "about-categories:contents." + el + ".subText",
-  };
-  return a;
-});
-var productLinkItems: SubCategory[] = productRefs.refs.map((el: string) => {
-  let a: SubCategory = {
-    name: "product-categories:contents." + el + ".name",
-    link: "product-categories:contents." + el + ".slug",
-    showNavBar: t(
-      "product-categories:contents." + el + ".showNavBar"
-    ) as unknown as boolean,
-    showFooter: t(
-      "product-categories:contents." + el + ".showFooter"
-    ) as unknown as boolean,
-    imageRef: "product-categories:contents." + el + ".imageRef",
-    subText: "product-categories:contents." + el + ".subText",
-  };
-  return a;
-});
-var newsLinkItems: SubCategory[] = newsRefs.refs.map((el: string) => {
-  let a: SubCategory = {
-    name: "news-categories:contents." + el + ".name",
-    link: "news-categories:contents." + el + ".slug",
-    showNavBar: t(
-      "news-categories:contents." + el + ".showNavBar"
-    ) as unknown as boolean,
-    showFooter: t(
-      "news-categories:contents." + el + ".showFooter"
-    ) as unknown as boolean,
-    imageRef: "news-categories:contents." + el + ".imageRef",
-    subText: "news-categories:contents." + el + ".subText",
-  };
-  return a;
-});
-
-var categoryToSubCategory = {
-  categories: ["about", "products", "news"],
-  subCategories: [aboutLinkItems, productLinkItems, newsLinkItems],
+var categoryToSubCategory: {
+  categories: string[];
+  refs: { refs: string[] }[];
+  subCategories: SubCategory[][];
+} = {
+  categories: ["about", "products", "news", "customer-center"],
+  refs: [aboutRefs, productRefs, newsRefs, customerCenterRefs],
+  subCategories: [],
 };
+
+categoryToSubCategory.categories.map((category, index) => {
+  categoryToSubCategory.subCategories.push(
+    categoryToSubCategory.refs[index].refs.map((el: string) => {
+      let a: SubCategory = {
+        name: category + "-categories:contents." + el + ".name",
+        link: category + "-categories:contents." + el + ".slug",
+        showNavBar: t(
+          category + "-categories:contents." + el + ".showNavBar"
+        ) as unknown as boolean,
+        showFooter: t(
+          category + "-categories:contents." + el + ".showFooter"
+        ) as unknown as boolean,
+        imageRef: category + "-categories:contents." + el + ".imageRef",
+        subText: category + "-categories:contents." + el + ".subText",
+      };
+      if (category === "customer-center") {
+        console.log(a);
+      }
+      return a;
+    })
+  );
+});
 //process the entire thing includidng the translation
 var processedLinks: Link[] = [];
 
 links.map((link: any) => {
+  console.log(link.name);
   if (link.showNavBar) {
     var processedLink: Link = { name: "", link: "", children: [] };
     processedLink.name = t("navigation:navbar." + link.name + ".name");
