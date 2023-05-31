@@ -7,8 +7,8 @@ import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
 
-type Link = { name: string; link: string; children: Sublink[] };
-type Sublink = {
+type Link = { name: string; link: string; children: NavbarSublink[] };
+type NavbarSublink = {
   name: string;
   link: string;
   imageRef: string;
@@ -36,7 +36,7 @@ links.map((link: any) => {
             ".showNavBar"
         )
       ) {
-        var processedSublink: Sublink = {
+        var processedSublink: NavbarSublink = {
           name: "",
           link: "",
           imageRef: "",
@@ -50,6 +50,8 @@ links.map((link: any) => {
 
         processedSublink.link =
           currentLanguage +
+          link.link +
+          "/" +
           t(
             "navigation:navbar." + link.name + ".sublinks." + childRef + ".slug"
           ) +
