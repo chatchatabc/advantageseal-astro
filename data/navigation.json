@@ -2,7 +2,7 @@
   "links": [
     {
       "name": "home",
-      "link": "/",
+      "link": "",
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": false,
