@@ -4,11 +4,6 @@ import i18next, { t } from "i18next";
 import navigationJson from "@data/navigation.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
-import aboutRefs from "@data/about-categories.json";
-import productRefs from "@data/products-categories.json";
-import newsRefs from "@data/news-categories.json";
-import customerCenterRefs from "@data/customer-center-categories.json";
-
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
 
@@ -20,47 +15,8 @@ type Sublink = {
   alt: string;
   subText: string;
 };
-type SubCategory = {
-  name: string;
-  link: string;
-  showNavBar: boolean;
-  showFooter: boolean;
-  imageRef: string;
-  subText: string;
-};
-
 const links = [...navigationJson.links];
 
-var categoryToSubCategory: {
-  categories: string[];
-  refs: { refs: string[] }[];
-  subCategories: SubCategory[][];
-} = {
-  categories: ["about", "products", "news", "customer-center"],
-  refs: [aboutRefs, productRefs, newsRefs, customerCenterRefs],
-  subCategories: [],
-};
-
-categoryToSubCategory.categories.map((category, index) => {
-  categoryToSubCategory.subCategories.push(
-    categoryToSubCategory.refs[index].refs.map((el: string) => {
-      let a: SubCategory = {
-        name: category + "-categories:contents." + el + ".name",
-        link: category + "-categories:contents." + el + ".slug",
-        showNavBar: t(
-          category + "-categories:contents." + el + ".showNavBar"
-        ) as unknown as boolean,
-        showFooter: t(
-          category + "-categories:contents." + el + ".showFooter"
-        ) as unknown as boolean,
-        imageRef: category + "-categories:contents." + el + ".imageRef",
-        subText: category + "-categories:contents." + el + ".subText",
-      };
-
-      return a;
-    })
-  );
-});
 //process the entire thing includidng the translation
 var processedLinks: Link[] = [];
 
@@ -69,85 +25,57 @@ links.map((link: any) => {
     var processedLink: Link = { name: "", link: "", children: [] };
     processedLink.name = t("navigation:navbar." + link.name + ".name");
     processedLink.link = currentLanguage + link.link + "/";
-    if (categoryToSubCategory.categories.includes(link.name)) {
-      [
-        ...categoryToSubCategory.subCategories[
-          categoryToSubCategory.categories.indexOf(link.name)
-        ],
-      ].map(
-        (navbarJsonSublink: {
-          name: string;
-          link: string;
-          imageRef: string;
-          showNavBar: boolean;
-          subText: string;
-        }) => {
-          var processedSublink: Sublink = {
-            name: "",
-            link: "",
-            imageRef: "",
-            alt: "",
-            subText: "",
-          };
 
-          processedSublink.name = t(navbarJsonSublink.name);
-          processedSublink.link =
-            "/" + link.name + "/" + t(navbarJsonSublink.link) + "/";
-          processedSublink.alt = t(navbarJsonSublink.name);
-          processedSublink.subText = t(navbarJsonSublink.subText);
-          processedSublink.imageRef = t(navbarJsonSublink.imageRef);
+    link.children.map((childRef: string) => {
+      if (
+        t(
+          "navigation:navbar." +
+            link.name +
+            ".sublinks." +
+            childRef +
+            ".showNavBar"
+        )
+      ) {
+        var processedSublink: Sublink = {
+          name: "",
+          link: "",
+          imageRef: "",
+          alt: "",
+          subText: "",
+        };
 
-          processedLink.children.push(processedSublink);
-        }
-      );
-    } else {
-      link.children.map(
-        (navbarJsonSublink: {
-          name: string;
-          link: string;
-          imageRef: string;
-          showNavBar: boolean;
-        }) => {
-          if (navbarJsonSublink.showNavBar) {
-            var processedSublink: Sublink = {
-              name: "",
-              link: "",
-              imageRef: "",
-              alt: "",
-              subText: "",
-            };
+        processedSublink.name = t(
+          "navigation:navbar." + link.name + ".sublinks." + childRef + ".name"
+        );
 
-            processedSublink.name = t(
-              "navigation:navbar." +
-                link.name +
-                ".sublinks." +
-                navbarJsonSublink.name +
-                ".name"
-            );
+        processedSublink.link =
+          currentLanguage +
+          t(
+            "navigation:navbar." + link.name + ".sublinks." + childRef + ".slug"
+          ) +
+          "/";
+        processedSublink.alt = t(
+          "navigation:navbar." + link.name + ".sublinks." + childRef + ".alt"
+        );
+        processedSublink.subText = t(
+          "navigation:navbar." +
+            link.name +
+            ".sublinks." +
+            childRef +
+            ".subText"
+        );
+        processedSublink.imageRef = t(
+          "navigation:navbar." +
+            link.name +
+            ".sublinks." +
+            childRef +
+            ".imageRef"
+        );
 
-            processedSublink.link =
-              currentLanguage + navbarJsonSublink.link + "/";
-            processedSublink.alt = t(
-              "navigation:navbar." +
-                link.name +
-                ".sublinks." +
-                navbarJsonSublink.name +
-                ".alt"
-            );
-            processedSublink.subText = t(
-              "navigation:navbar." +
-                link.name +
-                ".sublinks." +
-                navbarJsonSublink.name +
-                ".subText"
-            );
-            processedSublink.imageRef = navbarJsonSublink.imageRef;
+        processedLink.children.push(processedSublink);
+      }
+    });
 
-            processedLink.children.push(processedSublink);
-          }
-        }
-      );
-    }
     processedLinks.push(processedLink);
   }
 });
