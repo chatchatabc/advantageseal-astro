@@ -1,7 +1,4 @@
 ---
-/**
- * @param {string} pageName
- */
 import { Img } from "astro-imagetools/components";
 import i18next, { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
@@ -59,6 +56,7 @@ const pageMetaTag: PageMetaTag = {
       t(metaTagRef + ".ogImage") ??
       t("site-info:twitterImage"),
   };
+console.log("refs", refs);
 ---
 
 <Layout
@@ -77,24 +75,36 @@ const pageMetaTag: PageMetaTag = {
                   href={`/${pageName}/${t(
                     `navigation:navbar.${pageName}.sublinks.` + ref + ".slug"
                   )}/`}
-                  class="group drop-shadow-sm transition duration-100 flex 
+                  class="group drop-shadow-sm transition duration-100 flex flex-grow
                   hover:drop-shadow-md "
                 >
                   <figure class="flex flex-row border-[1px] border-solid border-[#e5e7eb] flex-grow">
-                    <div class="w-[150px] max-h-[150px] shrink-0 flex justify-center items-center">
-                      <Img
-                        src={t(
-                          `navigation:navbar.${pageName}.sublinks.` +
-                            ref +
-                            ".imageRef"
-                        )}
-                        alt={t(
-                          `navigation:navbar.${pageName}.sublinks.` +
-                            ref +
-                            ".alt"
-                        )}
-                        h={100}
-                      />
+                    <div class="w-[150px] min-h-[75px] max-h-[150px] shrink-0 flex justify-center items-center">
+                      {() => {
+                        if (
+                          t(
+                            `navigation:navbar.${pageName}.sublinks.` +
+                              ref +
+                              ".imageRef"
+                          ) !== ""
+                        ) {
+                          return (
+                            <Img
+                              src={t(
+                                `navigation:navbar.${pageName}.sublinks.` +
+                                  ref +
+                                  ".imageRef"
+                              )}
+                              alt={t(
+                                `navigation:navbar.${pageName}.sublinks.` +
+                                  ref +
+                                  ".alt"
+                              )}
+                              h={100}
+                            />
+                          );
+                        }
+                      }}
                     </div>
                     <figcaption class="px-4 py-2 w-full bg-[#f1f1f1] space-y-2">
                       <h3 class="group-hover:text-[#0ba0e1]">
