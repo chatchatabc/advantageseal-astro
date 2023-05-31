@@ -14,7 +14,13 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": []
+      "children": [
+        "companyProfile",
+        "researchAndInnovation",
+        "productionAbility",
+        "qualificationHonor",
+        "enterpriseCulture"
+      ]
     },
     {
       "name": "news",
@@ -22,7 +28,12 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": []
+      "children": [
+        "industryInformation",
+        "companyAnnouncements",
+        "newProductReleases",
+        "videos"
+      ]
     },
     {
       "name": "products",
@@ -30,7 +41,19 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": []
+      "children": [
+        "sealSeriesForPoolAndSpaPump",
+        "sealSeriesForVerticalMultiStagePump",
+        "sealSeriesForSanitaryPump",
+        "sealSeriesForFlyptPump",
+        "sealSeriesForRotorPump",
+        "modularMechanicalSealsSeries",
+        "sealSeriesForMetalBellows",
+        "universalStandardSealSeries",
+        "staticRingSeries",
+        "sealMaterialCode",
+        "productSubstitutionForm"
+      ]
     },
     {
       "name": "customer-center",
@@ -38,7 +61,7 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": []
+      "children": ["concreteCase", "solutions"]
     },
     {
       "name": "contact",
@@ -46,29 +69,7 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": [
-        {
-          "name": "talentStrategy",
-          "link": "/contact/talent-strategy",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/contact-talent-strategy.jpg"
-        },
-        {
-          "name": "contactInformation",
-          "link": "/contact/contact-information",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/contact-information.jpg"
-        },
-        {
-          "name": "digitalMap",
-          "link": "/contact/digital-map",
-          "showNavBar": true,
-          "showFooter": true,
-          "imageRef": "/images/navbar/contact-digital-map.jpg"
-        }
-      ]
+      "children": ["talentStrategy", "contactInformation", "digitalMap"]
     },
     {
       "name": "networkShare",
