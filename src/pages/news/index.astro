@@ -7,11 +7,13 @@ import type {
   OpenGraphMetaTag,
   TwitterMetaTag,
 } from "@customTypes/seo/types";
-import newsRef from "@data/news-categories.json";
 
+import navigationJson from "@data/navigation.json";
+
+var newsRef = navigationJson.links.filter((link) => link.name === "news")[0];
 changeLanguage("cn");
 
-var metaTagRef = "page-news:metaTag";
+var metaTagRef = "navigation:navbar.news.metaTag";
 const pageMetaTag: PageMetaTag = {
     title: t(metaTagRef + ".pageTitle") ?? t("site-info.pageTitle"),
     description: t(metaTagRef + ".pageDescription") ?? t("site-info.pageTitle"),
@@ -59,25 +61,48 @@ const pageMetaTag: PageMetaTag = {
   twitter={twitterMetaTag}
 >
   <main>
-    {
-      newsRef.refs.map((ref: string) => {
-        return (
-          <>
-            <figure class="flex flex-row">
-              <div class="w-[150px] h-[150px]">
-                <Img
-                  src={t("news-categories:contents." + ref + ".imageRef")}
-                  alt={t("news-categories:contents." + ref + ".alt")}
-                />
+    <section class="container mx-auto my-4 flex flex-wrap">
+      {
+        newsRef.children.map((ref: string) => {
+          return (
+            <>
+              <div class="w-full md:w-6/12 p-4">
+                <a
+                  href={`/news/${t(
+                    "navigation:navbar.news.sublinks." + ref + ".slug"
+                  )}/`}
+                  class="group drop-shadow-sm transition duration-100
+                  hover:drop-shadow-md "
+                >
+                  <figure class="flex flex-row border-[1px] border-solid border-[#e5e7eb]">
+                    <div class="w-[150px] max-h-[150px] shrink-0">
+                      <Img
+                        src={t(
+                          "navigation:navbar.news.sublinks." + ref + ".imageRef"
+                        )}
+                        alt={t(
+                          "navigation:navbar.news.sublinks." + ref + ".alt"
+                        )}
+                        h={100}
+                      />
+                    </div>
+                    <figcaption class="px-4 py-2 w-full bg-[#f1f1f1] space-y-2">
+                      <h3 class="group-hover:text-[#0ba0e1]">
+                        {t("navigation:navbar.news.sublinks." + ref + ".name")}
+                      </h3>
+                      <h4 class="text-[0.75rem] text-[#777]">
+                        {t(
+                          "navigation:navbar.news.sublinks." + ref + ".subText"
+                        )}
+                      </h4>
+                    </figcaption>
+                  </figure>
+                </a>
               </div>
-              <figcaption>
-                <h3>{t("news-categories:contents." + ref + ".name")}</h3>
-                <h4>{t("news-categories:contents." + ref + ".subText")}</h4>
-              </figcaption>
-            </figure>
-          </>
-        );
-      })
-    }
+            </>
+          );
+        })
+      }
+    </section>
   </main>
 </Layout>
