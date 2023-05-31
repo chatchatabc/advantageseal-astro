@@ -4,10 +4,6 @@ import i18next, { t } from "i18next";
 import { Img } from "astro-imagetools/components";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import navigationJson from "@data/navigation.json";
-import aboutRefs from "@data/about-categories.json";
-import productRefs from "@data/products-categories.json";
-import newsRefs from "@data/news-categories.json";
-import customerCenterRefs from "@data/customer-center-categories.json";
 const { links } = navigationJson;
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
@@ -23,83 +19,7 @@ type FooterSubLink = {
   name: string;
   link: string;
 };
-type SubCategory = {
-  name: string;
-  link: string;
-  showNavBar: boolean;
-  showFooter: boolean;
-  imageRef: string;
-};
-var aboutLinkItems: SubCategory[] = aboutRefs.refs.map((el: string) => {
-  let a: SubCategory = {
-    name: "about-categories:contents." + el + ".name",
-    link: "about-categories:contents." + el + ".slug",
-    showNavBar: t(
-      "about-categories:contents." + el + ".showNavBar"
-    ) as unknown as boolean,
-    showFooter: t(
-      "about-categories:contents." + el + ".showFooter"
-    ) as unknown as boolean,
-    imageRef: "about-categories:contents." + el + ".imageRef",
-  };
-  return a;
-});
-var productLinkItems: SubCategory[] = productRefs.refs.map((el: string) => {
-  let a: SubCategory = {
-    name: "products-categories:contents." + el + ".name",
-    link: "products-categories:contents." + el + ".slug",
-    showNavBar: t(
-      "products-categories:contents." + el + ".showNavBar"
-    ) as unknown as boolean,
-    showFooter: t(
-      "products-categories:contents." + el + ".showFooter"
-    ) as unknown as boolean,
-    imageRef: "products-categories:contents." + el + ".imageRef",
-  };
-  return a;
-});
-var newsLinkItems: SubCategory[] = newsRefs.refs.map((el: string) => {
-  let a: SubCategory = {
-    name: "news-categories:contents." + el + ".name",
-    link: "news-categories:contents." + el + ".slug",
-    showNavBar: t(
-      "news-categories:contents." + el + ".showNavBar"
-    ) as unknown as boolean,
-    showFooter: t(
-      "news-categories:contents." + el + ".showFooter"
-    ) as unknown as boolean,
-    imageRef: "news-categories:contents." + el + ".imageRef",
-  };
-  return a;
-});
-var categoryToSubCategory: {
-  categories: string[];
-  refs: { refs: string[] }[];
-  subCategories: SubCategory[][];
-} = {
-  categories: ["about", "products", "news", "customer-center"],
-  refs: [aboutRefs, productRefs, newsRefs, customerCenterRefs],
-  subCategories: [],
-};
-categoryToSubCategory.categories.map((category, index) => {
-  categoryToSubCategory.subCategories.push(
-    categoryToSubCategory.refs[index].refs.map((el: string) => {
-      let a: SubCategory = {
-        name: category + "-categories:contents." + el + ".name",
-        link: category + "-categories:contents." + el + ".slug",
-        showNavBar: t(
-          category + "-categories:contents." + el + ".showNavBar"
-        ) as unknown as boolean,
-        showFooter: t(
-          category + "-categories:contents." + el + ".showFooter"
-        ) as unknown as boolean,
-        imageRef: category + "-categories:contents." + el + ".imageRef",
-      };
 
-      return a;
-    })
-  );
-});
 var prefix: string = t("footer:lower.prefix");
 var FooterProcessedLinks: FooterLink[] = [];
 
@@ -117,45 +37,37 @@ links.map((link: any) => {
     footerProcessedLink.link = currentLanguage + link.link + "/";
     footerProcessedLink.type = link.type;
     footerProcessedLink.imageRef = link.imageRef;
-    if (categoryToSubCategory.categories.includes(link.name)) {
-      [
-        ...categoryToSubCategory.subCategories[
-          categoryToSubCategory.categories.indexOf(link.name)
-        ],
-      ].map((child: { name: string; link: string; showFooter: boolean }) => {
-        if (child.showFooter) {
-          var processedSublink: FooterSubLink = {
-            name: "",
-            link: "",
-          };
-          processedSublink.name = t(child.name);
-          processedSublink.link = link.name + "/" + t(child.link) + "/";
-          footerProcessedLink.children.push(processedSublink);
-        }
-      });
-    } else {
-      link.children.map(
-        (child: { name: string; link: string; showFooter: boolean }) => {
-          if (child.showFooter) {
-            var footerSubLink: FooterSubLink = {
-              name: "",
-              link: "",
-            };
 
-            footerSubLink.name = t(
-              "navigation:navbar." +
-                link.name +
-                ".sublinks." +
-                child.name +
-                ".name"
-            );
-            footerSubLink.link = currentLanguage + child.link + "/";
+    link.children.map((childRef: string) => {
+      if (
+        t(
+          "navigation:navbar." +
+            link.name +
+            ".sublinks." +
+            childRef +
+            ".showFooter"
+        )
+      ) {
+        var footerSubLink: FooterSubLink = {
+          name: "",
+          link: "",
+        };
 
-            footerProcessedLink.children.push(footerSubLink);
-          }
-        }
-      );
-    }
+        footerSubLink.name = t(
+          "navigation:navbar." + link.name + ".sublinks." + childRef + ".name"
+        );
+        footerSubLink.link =
+          currentLanguage +
+          link.link +
+          "/" +
+          t(
+            "navigation:navbar." + link.name + ".sublinks." + childRef + ".slug"
+          ) +
+          "/";
+
+        footerProcessedLink.children.push(footerSubLink);
+      }
+    });
 
     FooterProcessedLinks.push(footerProcessedLink);
   }
