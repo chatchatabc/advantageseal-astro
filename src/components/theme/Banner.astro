@@ -1,0 +1,29 @@
+---
+import { BackgroundImage } from "astro-imagetools/components";
+type Props = {
+  bannerImageSrc: string;
+  bannerHeight: string;
+  trueImage: boolean | null;
+  trueImageStyle: string | null;
+};
+
+const { bannerImageSrc, bannerHeight, trueImage, trueImageStyle } = Astro.props;
+---
+
+{
+  () => {
+    if (!trueImage) {
+      return (
+        <BackgroundImage src={bannerImageSrc} format={["webp"]}>
+          <div style={`height:${bannerHeight};`} />
+        </BackgroundImage>
+      );
+    } else {
+      return (
+        <section
+          style={`height:${bannerHeight}; background-image:url('${bannerImageSrc}'); ${trueImageStyle} `}
+        />
+      );
+    }
+  }
+}
