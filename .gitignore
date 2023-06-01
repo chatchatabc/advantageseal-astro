@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 #unlighthouse files
 .unlighthouse
+
+#translation equivalent atuo-generated files
+#remove at your own risk
+src/pages/en
