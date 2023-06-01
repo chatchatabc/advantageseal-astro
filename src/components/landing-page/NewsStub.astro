@@ -31,16 +31,23 @@ var articles = newsEntries.slice(0, maxArticles);
         if (articles.length) {
           return (
             <>
-              <figure class="flex flex-row ">
-                <div class="w-[100px] shrink-0 flex items-center">
+              <figure class="flex flex-row group">
+                <div class="w-[160px] shrink-0 flex items-center">
                   <Img
                     src={articles[0].data.image.src}
                     alt={articles[0].data.image.alt}
+                    w={160}
                   />
                 </div>
 
                 <figcaption class="px-4 py-2">
-                  {articles[0].data.articleShortDescription}
+                  <span class="hover:text-[#cc0000] text-[#009ce0]">
+                    {articles[0].data.title}
+                  </span>
+                  <br />
+                  <span class="text-[#434343]">
+                    {articles[0].data.articleShortDescription}
+                  </span>
                 </figcaption>
               </figure>
             </>
@@ -65,7 +72,7 @@ var articles = newsEntries.slice(0, maxArticles);
                       entry.data.articleName +
                       "/"
                     }
-                    class="flex flex-row justify-between font-semibold text-[#777777] hover:text-[#009ce0]"
+                    class="flex flex-row justify-between font-semibold text-[#777777] hover:text-[#cc0000]"
                   >
                     <div class="p-2">{entry.data.title}</div>
                     <div class="p-2 whitespace-nowrap">
