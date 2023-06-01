@@ -1,0 +1,13 @@
+---
+type Props = {
+  label: string | null;
+};
+const { label } = Astro.props;
+---
+
+<div
+  class="border-b-[1px] border-dashed border-b-[#ccc] flex justify-between w-full p-4"
+>
+  <h3 class="block text-lg text-[#434343]">{label}</h3>
+  <div><!--Breadcrums supposed to be here--></div>
+</div>
