@@ -2,6 +2,9 @@
 import { Img } from "astro-imagetools/components";
 import i18next, { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
 import type {
   PageMetaTag,
   OpenGraphMetaTag,
@@ -10,9 +13,11 @@ import type {
 
 type Props = {
   pageName: string;
+  trueImage: boolean;
+  trueImageStyle: string;
 };
 
-const { pageName } = Astro.props as Props;
+const { pageName, trueImage, trueImageStyle } = Astro.props as Props;
 import navigationJson from "@data/navigation.json";
 
 var refs = navigationJson.links.filter((link) => link.name === pageName)[0];
@@ -63,71 +68,95 @@ const pageMetaTag: PageMetaTag = {
   openGraph={opengraphMetaTag}
   twitter={twitterMetaTag}
 >
+  <Banner
+    bannerImageSrc={t("navigation:navbar." + pageName + ".bannerImageSrc")}
+    bannerHeight="200px"
+    trueImage={trueImage}
+    trueImageStyle={trueImageStyle}
+  />
   <main>
-    <section class="container mx-auto my-4 flex flex-wrap">
-      {
-        refs.children.map((ref: string) => {
-          return (
-            <>
-              <div class="w-full md:w-6/12 p-4 flex">
-                <a
-                  href={`/${pageName}/${t(
-                    `navigation:navbar.${pageName}.sublinks.` + ref + ".slug"
-                  )}/`}
-                  class="group drop-shadow-sm transition duration-100 flex flex-grow
-                  hover:drop-shadow-md "
-                >
-                  <figure class="flex flex-row border-[1px] border-solid border-[#e5e7eb] flex-grow">
-                    <div class="w-[150px] min-h-[75px] max-h-[150px] shrink-0 flex justify-center items-center">
-                      {() => {
-                        if (
-                          t(
+    <div class="container w-full mx-auto my-4 md:w-11/12 lg:w-10/12">
+      <section class="flex flex-col flex-wrap">
+        <BreadCrumbs label={t("navigation:navbar." + pageName + ".name")} />
+
+        <div class="w-full py-4">
+          <blockquote
+            class="px-4 py-2 border-l-[5px] border-solid border-l-[#eee] text-[0.875rem]"
+          >
+            {t("navigation:navbar." + pageName + ".quote")}
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="flex flex-row flex-wrap mt-4 lg:mt-8">
+        {
+          refs.children.map((ref: string) => {
+            return (
+              <>
+                <div class="w-full md:w-6/12 p-2 flex">
+                  <a
+                    href={`/${pageName}/${t(
+                      `navigation:navbar.${pageName}.sublinks.` + ref + ".slug"
+                    )}/`}
+                    class="group drop-shadow-sm transition duration-100 flex flex-grow
+                    hover:drop-shadow-md 
+                    "
+                  >
+                    <figure class="flex flex-row border-[1px] border-solid border-[#e5e7eb] flex-grow hover:border-[#cc0000]">
+                      <div class="w-[240px] min-h-[75px] max-h-[150px] shrink-0 flex justify-center items-center">
+                        {() => {
+                          if (
+                            t(
+                              `navigation:navbar.${pageName}.sublinks.` +
+                                ref +
+                                ".imageRef"
+                            ) !== ""
+                          ) {
+                            return (
+                              <Img
+                                src={t(
+                                  `navigation:navbar.${pageName}.sublinks.` +
+                                    ref +
+                                    ".imageRef"
+                                )}
+                                alt={t(
+                                  `navigation:navbar.${pageName}.sublinks.` +
+                                    ref +
+                                    ".alt"
+                                )}
+                                h={125}
+                              />
+                            );
+                          }
+                        }}
+                      </div>
+                      <figcaption class="px-4 py-2 w-full bg-[#f1f1f1] space-y-2">
+                        <h3 class="group-hover:text-[#cc0000]">
+                          {t(
                             `navigation:navbar.${pageName}.sublinks.` +
                               ref +
-                              ".imageRef"
-                          ) !== ""
-                        ) {
-                          return (
-                            <Img
-                              src={t(
-                                `navigation:navbar.${pageName}.sublinks.` +
-                                  ref +
-                                  ".imageRef"
-                              )}
-                              alt={t(
-                                `navigation:navbar.${pageName}.sublinks.` +
-                                  ref +
-                                  ".alt"
-                              )}
-                              h={100}
-                            />
-                          );
-                        }
-                      }}
-                    </div>
-                    <figcaption class="px-4 py-2 w-full bg-[#f1f1f1] space-y-2">
-                      <h3 class="group-hover:text-[#0ba0e1]">
-                        {t(
-                          `navigation:navbar.${pageName}.sublinks.` +
-                            ref +
-                            ".name"
-                        )}
-                      </h3>
-                      <h4 class="text-[0.75rem] text-[#777]">
-                        {t(
-                          `navigation:navbar.${pageName}.sublinks.` +
-                            ref +
-                            ".subText"
-                        )}
-                      </h4>
-                    </figcaption>
-                  </figure>
-                </a>
-              </div>
-            </>
-          );
-        })
-      }
-    </section>
+                              ".name"
+                          )}
+                        </h3>
+                        <h4 class="text-[0.75rem] text-[#777]">
+                          {t(
+                            `navigation:navbar.${pageName}.sublinks.` +
+                              ref +
+                              ".subText"
+                          )}
+                        </h4>
+                      </figcaption>
+                    </figure>
+                  </a>
+                </div>
+              </>
+            );
+          })
+        }
+      </section>
+      <div class="flex justify-center">
+        <BackBtn />
+      </div>
+    </div>
   </main>
 </Layout>
