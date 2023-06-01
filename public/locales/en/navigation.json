@@ -121,8 +121,12 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
-      }
+        "twitterImage": null,
+        "bannerImageSrc": ""
+      },
+      "bannerImageSrc": "/images/about/about-tinified.webp",
+      "trueImage": false,
+      "quote": "Advantage Seal was born in the United States, from 1985 to 2002, a group of senior sealing technical engineers teamed up to the international brand Advantage Seal to provide an affordable high quality products and attentive service in the sealing industry."
     },
     "news": {
       "name": "News",
@@ -145,7 +149,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "companyAnnouncements": {
           "name": "Company Announcements",
@@ -165,7 +170,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "newProductReleases": {
           "name": "New Product Releases",
@@ -185,7 +191,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "videos": {
           "name": "Videos",
@@ -205,7 +212,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -220,8 +228,10 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
-      }
+        "twitterImage": null,
+        "bannerImageSrc": ""
+      },
+      "bannerImageSrc": ""
     },
     "products": {
       "name": "Products",
@@ -244,7 +254,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForVerticalMultiStagePump": {
           "name": "Seal Series for Vertical Multi-stage Pump",
@@ -264,7 +275,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForSanitaryPump": {
           "name": "Seal Series for Sanitary Pump",
@@ -284,7 +296,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForFlyptPump": {
           "name": "Seal Series for Flypt Pump",
@@ -304,7 +317,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForRotorPump": {
           "name": "Seal Series for Rotor Pump",
@@ -324,7 +338,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "modularMechanicalSealsSeries": {
           "name": "Modular Mechanical Seal Series",
@@ -344,7 +359,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForMetalBellows": {
           "name": "Seal Series for Metal Bellows",
@@ -364,7 +380,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "universalStandardSealSeries": {
           "name": "Universal Standard Seal Series",
@@ -384,7 +401,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "staticRingSeries": {
           "name": "Static Ring Series",
@@ -404,7 +422,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealMaterialCode": {
           "name": "Seal Material Code",
@@ -424,7 +443,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "productSubstitutionForm": {
           "name": "Product Substitution Form",
@@ -444,7 +464,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -459,8 +480,10 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
-      }
+        "twitterImage": null,
+        "bannerImageSrc": ""
+      },
+      "bannerImageSrc": ""
     },
     "customer-center": {
       "name": "Customer Center",
@@ -483,7 +506,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "solutions": {
           "name": "Solutions",
@@ -503,7 +527,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -518,8 +543,10 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
-      }
+        "twitterImage": null,
+        "bannerImageSrc": ""
+      },
+      "bannerImageSrc": ""
     },
     "contact": {
       "name": "Contact",
@@ -542,7 +569,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "contactInformation": {
           "name": "Contact Information",
@@ -562,7 +590,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "digitalMap": {
           "name": "Digital Map",
@@ -582,7 +611,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -597,13 +627,18 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
-      }
+        "twitterImage": null,
+        "bannerImageSrc": ""
+      },
+      "bannerImageSrc": ""
     },
     "networkShare": {
       "name": "Network Share",
       "subText": "QR Code",
       "alt": "QR Code"
     }
+  },
+  "common": {
+    "back": "Back"
   }
 }

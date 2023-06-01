@@ -26,7 +26,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "researchAndInnovation": {
           "name": "研发创新",
@@ -46,7 +47,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "productionAbility": {
           "name": "生产实力",
@@ -66,7 +68,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "qualificationHonor": {
           "name": "资质荣誉",
@@ -86,7 +89,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "enterpriseCulture": {
           "name": "企业文化",
@@ -106,7 +110,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -121,8 +126,12 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
-      }
+        "twitterImage": null,
+        "bannerImageSrc": ""
+      },
+      "bannerImageSrc": "/images/about/about-tinified.webp",
+      "trueImage": false,
+      "quote": "爱得万（宁波）密封技术有限公司，是一家国际领先的工业密封技术供应商，是美国密封知名品牌Advantage Seal转投资子公司.2002年，美国著名密封技术专家Nestor先生携其技术人员在芝加哥成立了Advantage Seal Inc，依托强大的技术力量与丰富的..."
     },
     "news": {
       "name": "新闻资讯",
@@ -145,7 +154,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "companyAnnouncements": {
           "name": "公司公告",
@@ -165,7 +175,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "newProductReleases": {
           "name": "新品发布",
@@ -186,7 +197,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "videos": {
           "name": "视频中心",
@@ -206,7 +218,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -221,7 +234,8 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
+        "twitterImage": null,
+        "bannerImageSrc": ""
       }
     },
     "products": {
@@ -245,7 +259,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForVerticalMultiStagePump": {
           "name": "立式多级泵密封系列",
@@ -265,7 +280,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForSanitaryPump": {
           "name": "卫生泵用机密封系列",
@@ -285,7 +301,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForFlyptPump": {
           "name": "飞力泵用密封系列",
@@ -305,7 +322,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForRotorPump": {
           "name": "转子泵用密封系列",
@@ -325,7 +343,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "modularMechanicalSealsSeries": {
           "name": "集装式机械密封系列",
@@ -345,7 +364,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealSeriesForMetalBellows": {
           "name": "金属波纹管密封系列",
@@ -365,7 +385,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "universalStandardSealSeries": {
           "name": "通用标准密封系列",
@@ -385,7 +406,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "staticRingSeries": {
           "name": "静环系列",
@@ -405,7 +427,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "sealMaterialCode": {
           "name": "密封材料代码",
@@ -425,7 +448,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "productSubstitutionForm": {
           "name": "产品替代表",
@@ -445,7 +469,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -460,7 +485,8 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
+        "twitterImage": null,
+        "bannerImageSrc": ""
       }
     },
     "customer-center": {
@@ -484,7 +510,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "solutions": {
           "name": "解决方案",
@@ -504,7 +531,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -519,7 +547,8 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
+        "twitterImage": null,
+        "bannerImageSrc": ""
       }
     },
     "contact": {
@@ -543,7 +572,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "contactInformation": {
           "name": "联系方式",
@@ -563,7 +593,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         },
         "digitalMap": {
           "name": "电子地图",
@@ -583,7 +614,8 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": ""
         }
       },
       "metaTag": {
@@ -598,7 +630,8 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null
+        "twitterImage": null,
+        "bannerImageSrc": ""
       }
     },
     "networkShare": {
@@ -606,5 +639,8 @@
       "subText": "网站二维码",
       "alt": "网站二维码"
     }
+  },
+  "common": {
+    "back": "返回"
   }
 }
