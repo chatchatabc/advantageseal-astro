@@ -91,7 +91,10 @@ links.map((link: any) => {
                 {footerLink.children.map((child: FooterSubLink) => {
                   return (
                     <li class="border-b-[1px] border-b-[#ccc] border-solid">
-                      <a href={child.link} class="text-[12px] text-[#555]">
+                      <a
+                        href={child.link}
+                        class="text-[12px] text-[#555] hover:text-[#cc0000]"
+                      >
                         {child.name}
                       </a>
                     </li>
