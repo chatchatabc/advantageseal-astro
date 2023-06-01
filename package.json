@@ -8,7 +8,8 @@
     "build": "astro check && tsc && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lh" : "unlighthouse"
+    "lh": "unlighthouse",
+    "deploy": "wrangler pages publish --project-name advantageseals-astro dist"
   },
   "dependencies": {
     "@astrojs/mdx": "^0.19.4",
