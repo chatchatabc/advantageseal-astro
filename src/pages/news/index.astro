@@ -1,12 +1,12 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import GenericLayout from "@layouts/pages/GenericLayout.astro";
+
+import NavigationJson from "@data/navigation.json";
+
+const pageName = "news";
 
 changeLanguage("cn");
 ---
 
-<GenericLayout
-  pageName="news"
-  trueImage={true}
-  trueImageStyle=" background-position:center"
-/>
+<GenericLayout pageName="news" />
