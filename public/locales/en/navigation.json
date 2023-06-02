@@ -29,7 +29,28 @@
           "twitterImage": null,
           "bannerImageSrc": "/images/about/banners/about-tinified.webp",
           "trueImage": false,
-          "trueImageStyle": "background-position:center"
+          "trueImageStyle": "background-position:center",
+          "contents": {
+            "image": {
+              "src": "/images/about/company-profile/company-profile-tinified.webp",
+              "alt": "Company Building"
+            },
+            "sections": {
+              "count": 3,
+              "section1": {
+                "label": "Advantage Seal was born in the United States",
+                "text": "From 1985 to 2002, a group of senior sealing technical engineers teamed up to the international brand Advantage Seal to provide an affordable high quality products and attentive service in the sealing industry."
+              },
+              "section2": {
+                "label": "Serves China",
+                "text": "Advantage Seal is committed to designing and developing exceptional seals to meet the fluid handling requirements of both current and emerging markets.\n In 2006, Advantage Seals Ningbo operation commence and duplicate its US Manufacturing process. Since then Advantage Seal successfully merge American innovation to provide affordable and high quality seals a reality, to serve both domestic and international customers."
+              },
+              "section3": {
+                "label": "Start With Demand, Stop At The Best",
+                "text": "Follow the 'Customer first', carefully analyze the technical parameters, and customize the 'sealing failure analysis' with the sealed dynamic test procedure to provide an effective sealing solution. \nAdhering to the 'product quality is designed', deep insight into the huge quality differences brought about by the innovative design differences, focus on the subtleties, and let the design DNA throughout the product development process.\nAdhere to the 'quality service', supporting the world's top brand water pump manufacturers, from the on-time delivery, installation guidance, correct use, safety stock, fast response and other links to provide standardized services."
+              }
+            }
+          }
         },
         "researchAndInnovation": {
           "name": "Research And Innovation",
