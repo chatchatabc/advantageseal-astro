@@ -27,7 +27,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": ""
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "researchAndInnovation": {
           "name": "研发创新",
@@ -48,7 +50,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": ""
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "productionAbility": {
           "name": "生产实力",
@@ -69,7 +73,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": ""
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "qualificationHonor": {
           "name": "资质荣誉",
@@ -90,7 +96,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": ""
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "enterpriseCulture": {
           "name": "企业文化",
@@ -111,7 +119,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": ""
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         }
       },
       "metaTag": {

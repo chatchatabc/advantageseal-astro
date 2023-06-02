@@ -26,7 +26,10 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "researchAndInnovation": {
           "name": "Research And Innovation",
@@ -46,7 +49,10 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "productionAbility": {
           "name": "Production Ability",
@@ -66,7 +72,10 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "qualificationHonor": {
           "name": "Qualification Honor",
@@ -86,7 +95,10 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         },
         "enterpriseCulture": {
           "name": "Enterprise Culture",
@@ -106,7 +118,10 @@
           "twitterCardType": null,
           "twitterTitle": null,
           "twitterDescription": null,
-          "twitterImage": null
+          "twitterImage": null,
+          "bannerImageSrc": "",
+          "trueImage": true,
+          "trueImageStyle": ""
         }
       },
       "metaTag": {
