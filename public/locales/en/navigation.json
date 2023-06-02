@@ -124,8 +124,9 @@
         "twitterImage": null,
         "bannerImageSrc": ""
       },
-      "bannerImageSrc": "/images/about/about-tinified.webp",
+      "bannerImageSrc": "/images/about/banners/about-tinified.webp",
       "trueImage": false,
+      "trueImageStyle": "background-position:center",
       "quote": "Advantage Seal was born in the United States, from 1985 to 2002, a group of senior sealing technical engineers teamed up to the international brand Advantage Seal to provide an affordable high quality products and attentive service in the sealing industry."
     },
     "news": {
@@ -231,7 +232,10 @@
         "twitterImage": null,
         "bannerImageSrc": ""
       },
-      "bannerImageSrc": ""
+      "bannerImageSrc": "/images/news/banners/news-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center",
+      "quote": "Mastering first-hand information and understanding of industry trends, Advantage Seal has launched new product launches and company events, product video viewing, and look forward to your participation."
     },
     "products": {
       "name": "Products",
@@ -483,7 +487,10 @@
         "twitterImage": null,
         "bannerImageSrc": ""
       },
-      "bannerImageSrc": ""
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": true,
+      "trueImageStyle": "background-position:center",
+      "quote": "Our own design based on careful research on competitor design years of service.Taking advantage of each other's strengths, gradually formed a gradually unique, advanced seal design concept."
     },
     "customer-center": {
       "name": "Customer Center",
@@ -546,7 +553,10 @@
         "twitterImage": null,
         "bannerImageSrc": ""
       },
-      "bannerImageSrc": ""
+      "bannerImageSrc": "/images/customer-center/banners/customer-center-tinified.webp",
+      "trueImage": true,
+      "trueImageStyle": "background-position:center",
+      "quote": "Our product brand has a long history and excellent quality, relying on international advanced technology support. We provide solution for the United States and Europe, our product sales worldwide and our clients are all famous enterprises in the world."
     },
     "contact": {
       "name": "Contact",
@@ -630,7 +640,10 @@
         "twitterImage": null,
         "bannerImageSrc": ""
       },
-      "bannerImageSrc": ""
+      "bannerImageSrc": "/images/contact-us/banners/contact-us-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center",
+      "quote": "Steady enterprise development strategy provides a strong driving force for the introduction of talent and the rise of enterprises. Pay attention to the enterprise, care for employees, provide a stage for dreamers.Pay attention to Advantage Seal,please call, we will provide you with more help."
     },
     "networkShare": {
       "name": "Network Share",
