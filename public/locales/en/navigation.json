@@ -27,9 +27,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
-          "trueImage": true,
-          "trueImageStyle": ""
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+          "trueImage": false,
+          "trueImageStyle": "background-position:center"
         },
         "researchAndInnovation": {
           "name": "Research And Innovation",
@@ -50,9 +50,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
-          "trueImage": true,
-          "trueImageStyle": ""
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+          "trueImage": false,
+          "trueImageStyle": "background-position:center"
         },
         "productionAbility": {
           "name": "Production Ability",
@@ -73,9 +73,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
-          "trueImage": true,
-          "trueImageStyle": ""
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+          "trueImage": false,
+          "trueImageStyle": "background-position:center"
         },
         "qualificationHonor": {
           "name": "Qualification Honor",
@@ -96,9 +96,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
-          "trueImage": true,
-          "trueImageStyle": ""
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+          "trueImage": false,
+          "trueImageStyle": "background-position:center"
         },
         "enterpriseCulture": {
           "name": "Enterprise Culture",
@@ -119,9 +119,9 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
-          "trueImage": true,
-          "trueImageStyle": ""
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+          "trueImage": false,
+          "trueImageStyle": "background-position:center"
         }
       },
       "metaTag": {

@@ -27,9 +27,10 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
-          "trueImage": true,
-          "trueImageStyle": ""
+
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+          "trueImage": false,
+          "trueImageStyle": "background-position:center"
         },
         "researchAndInnovation": {
           "name": "研发创新",
@@ -50,7 +51,7 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
           "trueImage": true,
           "trueImageStyle": ""
         },
@@ -73,7 +74,7 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
           "trueImage": true,
           "trueImageStyle": ""
         },
@@ -96,7 +97,7 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
           "trueImage": true,
           "trueImageStyle": ""
         },
@@ -119,7 +120,7 @@
           "twitterTitle": null,
           "twitterDescription": null,
           "twitterImage": null,
-          "bannerImageSrc": "",
+          "bannerImageSrc": "/images/about/banners/about-tinified.webp",
           "trueImage": true,
           "trueImageStyle": ""
         }
@@ -136,8 +137,7 @@
         "twitterCardType": null,
         "twitterTitle": null,
         "twitterDescription": null,
-        "twitterImage": null,
-        "bannerImageSrc": ""
+        "twitterImage": null
       },
       "bannerImageSrc": "/images/about/banners/about-tinified.webp",
       "trueImage": false,
