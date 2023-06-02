@@ -13,11 +13,13 @@ import type {
 
 type Props = {
   pageName: string;
-  trueImage: boolean;
-  trueImageStyle: string;
 };
 
-const { pageName, trueImage, trueImageStyle } = Astro.props as Props;
+const { pageName } = Astro.props as Props;
+const trueImage = t(
+  "navigation:navbar." + pageName + ".trueImage"
+) as unknown as boolean;
+const trueImageStyle = t("navigation:navbar." + pageName + ".trueImageStyle");
 import navigationJson from "@data/navigation.json";
 
 var refs = navigationJson.links.filter((link) => link.name === pageName)[0];
@@ -103,7 +105,7 @@ const pageMetaTag: PageMetaTag = {
                     "
                   >
                     <figure class="flex flex-row border-[1px] border-solid border-[#e5e7eb] flex-grow hover:border-[#cc0000]">
-                      <div class="w-[240px] min-h-[75px] max-h-[150px] shrink-0 flex justify-center items-center">
+                      <div class="w-[240px] min-h-[125px] max-h-[150px] shrink-0 flex justify-center items-center">
                         {() => {
                           if (
                             t(
