@@ -54,6 +54,7 @@ var interval = parseInt(t("page-home:carousel.interval"));
         var rightBtn: HTMLButtonElement = carousel.querySelector(
           ".btn-container .right-button"
         )!;
+
         var intervalSecond: number = parseInt(
           (carousel.querySelector(".intervalDuration") as HTMLInputElement)
             .value
@@ -61,11 +62,11 @@ var interval = parseInt(t("page-home:carousel.interval"));
         var index: number = 0;
         var interval: any;
 
-        var switchDisplay = function (indexp: number, targetIndexp: number) {
+        function SwitchDisplay(indexp: number, targetIndexp: number) {
           imageCollection[indexp].classList.add("opacity-0");
           imageCollection[targetIndexp].classList.remove("opacity-0");
-        };
-        switchDisplay(2, 0);
+        }
+        SwitchDisplay(2, 0);
 
         leftBtn.addEventListener("click", () => {
           clearInterval(interval);
@@ -73,7 +74,7 @@ var interval = parseInt(t("page-home:carousel.interval"));
             (index + imageCollection.length) % imageCollection.length;
           var targetIndexP =
             (index - 1 + imageCollection.length) % imageCollection.length;
-          switchDisplay(indexP, targetIndexP);
+          SwitchDisplay(indexP, targetIndexP);
           index = targetIndexP;
           startInterval(indexP, targetIndexP);
         });
@@ -84,7 +85,7 @@ var interval = parseInt(t("page-home:carousel.interval"));
             (index + imageCollection.length) % imageCollection.length;
           var targetIndexP =
             (index + 1 + imageCollection.length) % imageCollection.length;
-          switchDisplay(indexP, targetIndexP);
+          SwitchDisplay(indexP, targetIndexP);
           index = targetIndexP;
 
           startInterval(indexP, targetIndexP);
