@@ -1,9 +1,10 @@
 ---
 import { utilCurrentPage } from "@helpers/commonUtils";
 type Subnav = { label: string; href: string; slug: string };
-const { subnavs } = Astro.props as {
+type Props = {
   subnavs: Subnav[];
 };
+const { subnavs } = Astro.props as Props;
 ---
 
 <div
