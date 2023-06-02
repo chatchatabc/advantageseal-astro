@@ -2,10 +2,18 @@
 import BlankLayout from "@layouts/BlankLayout.astro";
 import Navbar from "@components/theme/navbar/Navbar.astro";
 import Footer from "@components/theme/footer/Footer.astro";
-import type { MetaTag } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 //going to revise this as a default layout
-
-const { page, openGraph, twitter } = Astro.props as MetaTag;
+type Props = {
+  page: PageMetaTag;
+  openGraph: OpenGraphMetaTag;
+  twitter: TwitterMetaTag;
+};
+const { page, openGraph, twitter } = Astro.props as Props;
 ---
 
 <BlankLayout page={page} openGraph={openGraph} , twitter={twitter}>
