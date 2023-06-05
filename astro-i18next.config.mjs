@@ -9,6 +9,7 @@ export default {
     "page-news",
     "products",
     "about-categories",
+    "page-about-sublink-research-and-innovation",
     "news-categories",
     "products-categories",
     "customer-center-categories",
