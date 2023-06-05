@@ -3,11 +3,7 @@ import i18next, { t, changeLanguage } from "i18next";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import Layout from "@layouts/Layout.astro";
 import homeJson from "@data/pages/home.json";
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 //import defaultJson from "@data/site-info.json";
 import Carousel from "@components/theme/Carousel.astro";
 import { Img, BackgroundImage } from "astro-imagetools/components";
@@ -26,62 +22,42 @@ const pageMetaTag: PageMetaTag = {
     description: t(metaTagRef + ".pageDescription") ?? t("site-info.pageTitle"),
     keywords: t(metaTagRef + ".pageKeywords") ?? t("site-info:pageKeywords"),
     author: t(metaTagRef + ".pageAuthor") ?? t("site-info:pageAuthor"),
-  },
-  opengraphMetaTag: OpenGraphMetaTag = {
-    title:
-      t(metaTagRef + ".ogTitle") ??
-      t(metaTagRef + ".pageTitle") ??
-      t(metaTagRef + ".twitterTitle") ??
-      t("site-info:ogTitle"),
+}, opengraphMetaTag: OpenGraphMetaTag = {
+    title: t(metaTagRef + ".ogTitle") ??
+        t(metaTagRef + ".pageTitle") ??
+        t(metaTagRef + ".twitterTitle") ??
+        t("site-info:ogTitle"),
     type: t(metaTagRef + ".ogType") ?? t("site-info:ogType"),
-    image:
-      t(metaTagRef + ".ogImage") ??
-      t(metaTagRef + ".twitterImage") ??
-      t("site-info:ogImage"),
-    description:
-      t(metaTagRef + ".ogDescription") ??
-      t(metaTagRef + ".twitterDescription") ??
-      t(metaTagRef + ".pageDescription") ??
-      t("site-info:ogDescription"),
-  },
-  twitterMetaTag: TwitterMetaTag = {
-    cardType:
-      t(metaTagRef + ".twitterCardType") ?? t("site-info:twitterCardType"),
-    title:
-      t(metaTagRef + ".twitterTitle") ??
-      t(metaTagRef + ".ogTitle") ??
-      t("site-info:twitterTitle"),
-    description:
-      t(metaTagRef + ".description") ??
-      t(metaTagRef + ".ogDescription") ??
-      t("site-info:pageDescription"),
-    image:
-      t(metaTagRef + ".twitterImage") ??
-      t(metaTagRef + ".ogImage") ??
-      t("site-info:twitterImage"),
-  };
+    image: t(metaTagRef + ".ogImage") ??
+        t(metaTagRef + ".twitterImage") ??
+        t("site-info:ogImage"),
+    description: t(metaTagRef + ".ogDescription") ??
+        t(metaTagRef + ".twitterDescription") ??
+        t(metaTagRef + ".pageDescription") ??
+        t("site-info:ogDescription"),
+}, twitterMetaTag: TwitterMetaTag = {
+    cardType: t(metaTagRef + ".twitterCardType") ?? t("site-info:twitterCardType"),
+    title: t(metaTagRef + ".twitterTitle") ??
+        t(metaTagRef + ".ogTitle") ??
+        t("site-info:twitterTitle"),
+    description: t(metaTagRef + ".description") ??
+        t(metaTagRef + ".ogDescription") ??
+        t("site-info:pageDescription"),
+    image: t(metaTagRef + ".twitterImage") ??
+        t(metaTagRef + ".ogImage") ??
+        t("site-info:twitterImage"),
+};
 let marqueeImages: MarqueeImage[] = [];
 let marqueeImagePrefix: string = t("page-home:marquee.prefix");
 //get images from respective languages
-Array.from(
-  { length: parseInt(t("page-home:marquee.count")) },
-  (_, i) => i + 1
-).map((index: number) => {
-  var tempMarqueeImage: MarqueeImage = {
-    src: t(
-      "page-home:marquee." + marqueeImagePrefix + ".image" + index + ".src"
-    ),
-    alt: t(
-      "page-home:marquee." + marqueeImagePrefix + ".image" + index + ".title"
-    ),
-    label: t(
-      "page-home:marquee." + marqueeImagePrefix + ".image" + index + ".label"
-    ),
-    href: t(
-      "page-home:marquee." + marqueeImagePrefix + ".image" + index + ".href"
-    ),
-  };
-  marqueeImages.push(tempMarqueeImage);
+Array.from({ length: parseInt(t("page-home:marquee.count")) }, (_, i) => i + 1).map((index: number) => {
+    var tempMarqueeImage: MarqueeImage = {
+        src: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".src"),
+        alt: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".title"),
+        label: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".label"),
+        href: t("page-home:marquee." + marqueeImagePrefix + ".image" + index + ".href"),
+    };
+    marqueeImages.push(tempMarqueeImage);
 });
 ---
 
