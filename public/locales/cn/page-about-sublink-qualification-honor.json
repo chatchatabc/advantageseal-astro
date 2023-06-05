@@ -1,0 +1,29 @@
+{
+  "name": "资质荣誉",
+  "slug": "qualification-honor",
+  "alt": "factory floor with machinery",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/about-production-ability.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "text1": "爱得万（宁波）密封技术有限公司，是一家国际领先的工业密封技术供应商，是美国密封知名品牌Advantage Seal转投资子公司。自美国著名密封技术专家Nestor先生携其技术人员在芝加哥成立了Advantage Seal Inc.以来，依托强大的技术力量与丰富的行业经验，为美国本土及欧洲老牌水泵制造商，工业泵，化工泵等提供一站式密封解决方案。",
+    "text2": "2006年刘鸿志先生引进美国Advantage Seal技术力量，在国内成立爱得万（宁波）密封技术有限公司，公司继承了核心技术，严格执行美国密封技术标准，利用先进ERP先进管理软件，全面实施Lean Manufacturing Management，多年来，我们始终执行‘确保第一个与最后一个产品质量一样“的理念，极大提升了企业核心竞争力。同时赢得客户信赖，成为众多核心客户心中的‘靠谱供应商”!",
+    "text3": "客户的信赖就是我们荣誉！ 客户的认可就是对我们的最高褒奖！",
+    "image1": "/images/about/qualification-honor/image1-tinified.webp"
+  }
+}
