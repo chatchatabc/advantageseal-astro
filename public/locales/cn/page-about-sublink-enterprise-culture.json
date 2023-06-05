@@ -1,0 +1,35 @@
+{
+  "name": "企业文化",
+  "slug": "enterprise-culture",
+  "alt": "world-wide-web",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/about-research-and-innovation.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+
+  "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "text1": "爱得万（宁波）密封技术有限公司自成立以来，历经风雨，披荆斩棘，不断前行；一代人的努力拼搏为爱得万积淀了优秀的企业文化，铸就了独特的企业之魂。这是爱得万宝贵的精神财富，是推动爱得万事业不断发展壮大的内在动力。",
+    "text2": "爱得万企业使命：引领密封领域进步，共创美好工况未来；",
+    "text3": "爱得万企业愿景：打造“百年企业”，成为客户心中的“靠谱供应商”；",
+    "text4": "爱得万核心价值观：",
+    "text5": "以客户价值为核心。",
+    "image1": {
+      "src": "/images/navbar/about-enterprise-culture.jpg",
+      "alt": "convoy of camels in the desert"
+    }
+  }
+}
