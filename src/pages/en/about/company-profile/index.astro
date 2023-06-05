@@ -1,0 +1,122 @@
+---
+import { t, changeLanguage } from "i18next";
+//components
+import Layout from "@layouts/Layout.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
+import { Img } from "astro-imagetools/components";
+//data
+import NavigationJson from "@data/navigation.json";
+//data types
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+
+changeLanguage("en");
+
+const page: PageMetaTag = {
+    title: t("navigation:navbar.about.sublinks.companyProfile.pageTitle"),
+    description: t("navigation:navbar.about.sublinks.companyProfile.pageDescription"),
+    author: t("navigation:navbar.about.sublinks.companyProfile.pageAuthor"),
+    keywords: t("navigation:navbar.about.sublinks.companyProfile.pageKeywords"),
+};
+const openGraph: OpenGraphMetaTag = {
+    title: t("navigation:navbar.about.sublinks.companyProfile.openGraphTitle"),
+    type: t("navigation:navbar.about.sublinks.companyProfile.openGraphType"),
+    image: t("navigation:navbar.about.sublinks.companyProfile.openGraphImage"),
+    description: t("navigation:navbar.about.sublinks.companyProfile.openGraphDescription"),
+};
+const twitter: TwitterMetaTag = {
+    cardType: t("navigation:navbar.about.sublinks.companyProfile.twitterCardType"),
+    title: t("navigation:navbar.about.sublinks.companyProfile.twitterTitle"),
+    description: t("navigation:navbar.about.sublinks.companyProfile.twitterDescription"),
+    image: t("navigation:navbar.about.sublinks.companyProfile.twitterImage"),
+};
+const bannerImageSrc = t("navigation:navbar.about.sublinks.companyProfile.bannerImageSrc");
+const bannerHeight = "200px";
+const trueImage = t("navigation:navbar.about.sublinks.companyProfile.trueImage") as unknown as boolean;
+const trueImageStyle = t("navigation:navbar.about.sublinks.companyProfile.trueImageStyle");
+type Subnav = {
+    label: string;
+    href: string;
+    slug: string;
+};
+var subnavs = NavigationJson.links
+    .filter((link) => link.name === "about")[0]
+    .children.map((child: string) => {
+    return {
+        label: t(`navigation:navbar.about.sublinks.${child}.name`),
+        href: `/about/${t(`navigation:navbar.about.sublinks.${child}.slug`)}+/`,
+        slug: t(`navigation:navbar.about.sublinks.${child}.slug`),
+    };
+}) as Subnav[];
+---
+
+<Layout page={page} openGraph={openGraph} twitter={twitter}>
+  <Banner
+    bannerImageSrc={bannerImageSrc}
+    bannerHeight={bannerHeight}
+    trueImage={trueImage}
+    trueImageStyle={trueImageStyle}
+  />
+  <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
+    <div class="my-[1.125rem] sticky top-0">
+      <InnerSubNav subnavs={subnavs} />
+    </div>
+    <div class="mb-6">
+      <BreadCrumbs
+        label={t("navigation:navbar.about.sublinks.companyProfile.name")}
+      />
+    </div>
+    <main>
+      <div class="group w-full lg:w-7/12 float-left">
+        <div
+          class="group-hover:scale-[0.9] transition-all duration-150 pr-2 pb-2"
+        >
+          <Img
+            src={t(
+              "navigation:navbar.about.sublinks.companyProfile.contents.image.src"
+            )}
+            alt={t(
+              "navigation:navbar.about.sublinks.companyProfile.contents.image.alt"
+            )}
+          />
+        </div>
+      </div>
+      {
+        Array.from(
+          {
+            length: parseInt(
+              t(
+                "navigation:navbar.about.sublinks.companyProfile.contents.sections.count"
+              )
+            ),
+          },
+          (_, i) => i + 1
+        ).map((i: number) => {
+          return (
+            <>
+              <h2 class="text-lg font-semibold">
+                {t(
+                  "navigation:navbar.about.sublinks.companyProfile.contents.sections.section" +
+                    i +
+                    ".label"
+                )}
+              </h2>
+              <p class="mb-6 mt-4">
+                {t(
+                  "navigation:navbar.about.sublinks.companyProfile.contents.sections.section" +
+                    i +
+                    ".text"
+                )}
+              </p>
+            </>
+          );
+        })
+      }
+    </main>
+    <div class="mb-16 flex justify-center">
+      <BackBtn />
+    </div>
+  </div>
+</Layout>
