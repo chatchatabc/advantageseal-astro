@@ -14,7 +14,7 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 
 changeLanguage("en");
 
-let pageJson = "page-about-sublink-enterprise-culture";
+let pageJson = "page-about-sublink-qualification-honor";
 const page: PageMetaTag = {
     title: t(pageJson + ":pageTitle"),
     description: t(pageJson + ":pageDescription"),
@@ -70,30 +70,19 @@ var subnavs = NavigationJson.links
     <main>
       <section>
         <div class="w-full flex justify-between">
-          <div class="w-7/12 text-text-primary text-[0.875rem] space-y-6">
-            <p class="">
-              {t(pageJson + `:contents.text1`)}
-            </p>
-            <p class="text-[1.125rem] text-black font-semibold">
-              {t(pageJson + `:contents.text2`)}
-            </p>
-            <p class="text-[1.125rem] text-black font-semibold">
-              {t(pageJson + `:contents.text3`)}
-            </p>
-            <p>
-              <span class="text-base text-black font-semibold"
-                >{t(pageJson + ":contents.text4")}</span
-              >
-              <span class=`${i18next.language==="en"? "font-semibold":""}`
-                >{t(pageJson + ":contents.text5")}</span
-              >
-            </p>
+          <div class="w-7/12">
+            {
+              Array.from({ length: 3 }).map((el: any, i: number) => {
+                return (
+                  <p class="text-text-primary text-[0.875rem]">
+                    {t(pageJson + `:contents.text${i + 1}`)}
+                  </p>
+                );
+              })
+            }
           </div>
           <div class="w-4/12">
-            <Img
-              src={t(pageJson + ":contents.image1.src")}
-              alt={t(pageJson + ":contents.image1.alt")}
-            />
+            <Img src={t(pageJson + ":contents.image1")} alt="silver trophy" />
           </div>
         </div>
       </section>
