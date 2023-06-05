@@ -1,0 +1,60 @@
+{
+  "name": "Production Ability",
+  "slug": "production-ability",
+  "alt": "factory floor with machinery",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/about-production-ability.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "texts": {
+      "text1": "The company has the international first-class technical level of the rotary shaft sealing device simulation test center.",
+      "text2": "The company has several sets of production and assembly equipment imported from the United States, and strictly monitors the process quality control of each product.",
+      "text3": "Since the company obtained the ISO9001 quality management system certification in 2008, has been strictly implementing the quality management system.",
+      "text4": "According to the different needs of customers, we customize special design for customers, and adhering to the \"customer's ideal, that is our ideal\" service concept. We strive for customers need.",
+      "text5": "In response to the technical needs of our customers, our team (including the us-china-philippines technical team) is a trinity that provides technical support to our customers.",
+      "text6": "Our professional design system and quality production equipment provide customers with more secure services.",
+      "text7": "Advanced design and manufacturing concept, continuous innovation, careful design, comprehensive and systematic organization, quality equipment and deep understanding of customer requirements, to provide professional product solutions."
+    },
+    "images": {
+      "image1": {
+        "src": "/images/about/production-ability/image1-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image2": {
+        "src": "/images/about/production-ability/image2-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image3": {
+        "src": "/images/about/production-ability/image3-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image4": {
+        "src": "/images/about/production-ability/image4-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image5": {
+        "src": "/images/about/production-ability/image5-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image6": {
+        "src": "/images/about/production-ability/image6-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "name": "生产实力",
+  "slug": "production-ability",
+  "alt": "factory floor with machinery",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/about-production-ability.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "texts": {
+      "text1": "公司建有国际一流技术水平的旋转轴密封装置模拟试验中心。",
+      "text2": "公司拥有多台美国进口生产和装配设备，严格监控每一件产品的过程质量控制。",
+      "text3": "公司自2008年取得ISO9001质量管理体系认证以来，一直严格贯彻执行质量管理体系.",
+      "text4": "我们针对客户的不同需求，为客户定制特殊设计的密封，并且秉承“客户的理想，即为我们的理想”的服务理念。客户所需，竭力而为。",
+      "text5": "针对客户的技术需求，我们的团队(包括:美国-中国-菲律宾技术团队)三位一体，不分彼此共同为客户提供技术支持。",
+      "text6": "专业设计系统及优质生产设备，为客户提供更有保障的服务。",
+      "text7": "先进的设计制造理念，不断创新，精心设计、全面系统的组织、优质的装备以及对客户要求的深刻理解，提供专业的产品解决方案。"
+    },
+    "images": {
+      "image1": {
+        "src": "/images/about/production-ability/image1-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image2": {
+        "src": "/images/about/production-ability/image2-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image3": {
+        "src": "/images/about/production-ability/image3-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image4": {
+        "src": "/images/about/production-ability/image4-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image5": {
+        "src": "/images/about/production-ability/image5-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      },
+      "image6": {
+        "src": "/images/about/production-ability/image6-tinified.webp",
+        "alt": "yellow-gray jacketed workers on factory floor"
+      }
+    }
+  }
+}
