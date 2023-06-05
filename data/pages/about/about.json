@@ -1,0 +1,14 @@
+{
+  "name": "about",
+  "link": "/about",
+  "type": "navigationSet",
+  "showNavBar": true,
+  "showFooter": true,
+  "children": [
+    "companyProfile",
+    "researchAndInnovation",
+    "productionAbility",
+    "qualificationHonor",
+    "enterpriseCulture"
+  ]
+}
