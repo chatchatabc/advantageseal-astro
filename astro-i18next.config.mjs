@@ -10,6 +10,7 @@ export default {
     "products",
     "about-categories",
     "page-about-sublink-research-and-innovation",
+    "page-about-sublink-production-ability",
     "news-categories",
     "products-categories",
     "customer-center-categories",
