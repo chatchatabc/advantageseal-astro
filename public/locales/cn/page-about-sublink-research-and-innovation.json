@@ -1,0 +1,46 @@
+{
+  "name": "研发创新",
+  "slug": "research-and-innovation",
+  "alt": "world-wide-web",
+  "subText": "卓越的研发创新能力一直是爱得万企业竞争力的重要部分。研发战略是以市场和客户需求为基础，不断投入，持续创新",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/about-research-and-innovation.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+
+  "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "section1": {
+      "header": "独特的设计理念",
+      "label": "如同人类，每个密封都具备自身特质！",
+      "text": "在21世纪，由于全球化的加快，所有高端密封材料和精细加工都可以轻易获取，这些已经不再构成密封件企业竞争的要素!"
+    },
+
+    "section2": {
+      "label": "那么，我们与众不同的地方在哪里?",
+      "text1": "自成一家的设计,",
+      "text2": "根据多年现场服务，对竞争对手设计的深入研究，取长补短，逐渐形成自己独特的，先进的密封设计理念。"
+    },
+    "section3": {
+      "header1": "我们的密封件有哪些独特之处?",
+      "header2": "Design设计独到"
+    },
+    "section4": {
+      "header": "不断创新发展",
+      "label": "卓越的研发创新能力一直是爱得万企业竞争力的重要部分。",
+      "text": "爱得万依托强大的国际化管理和精湛的技术团队，不断研究市场和客户的需求变化， 深入研讨客户反馈的宝贵意见资料，不断充实和更新换代密封件产品，以期达到客户满意。 持续创新、持续发展为企业注入无限动力。"
+    }
+  }
+}

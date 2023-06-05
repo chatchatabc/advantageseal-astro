@@ -1,0 +1,45 @@
+{
+  "name": "Research And Innovation",
+  "slug": "research-and-innovation",
+  "alt": "world-wide-web",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/about-research-and-innovation.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+
+  "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "section1": {
+      "header": "",
+      "label": "Each seal has its own characteristics, like humans.",
+      "text": "In the 21st century, all high-end sealing materials and fine processing are easily accessible due to the acceleration of globalization. These no longer constitute the elements of competition for seal companies."
+    },
+    "section2": {
+      "label": "How we make the difference?",
+      "text1": "Our own design.",
+      "text2": "Careful research on competitor design, and based on years of service.\nTaking advantage of each other's strengths, gradually formed a gradually unique, advanced seal design concept."
+    },
+    "section3": {
+      "header": "What are the unique features of our seals?",
+      "header2": "Special Design Feature"
+    },
+    "section4": {
+      "header": "Continuous innovation and development",
+      "label": "Excellent research and innovation ability has always been an important part of Advantage Seal enterprise competitiveness.",
+      "text": "Relying on the powerful international management and exquisite technical team, Advantage Seal constantly studies the changes of the market and customers' demands, deeply studies the valuable feedbacks from customers, and constantly enrishes and updates the sealing products to achieve customer satisfaction. Continuous innovation and development inject unlimited power into the enterprise."
+    }
+  }
+}
