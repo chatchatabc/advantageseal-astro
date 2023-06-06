@@ -15,7 +15,7 @@ import NavigationJson from "@data/navigation.json";
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
 
-changeLanguage("cn");
+changeLanguage("en");
 
 const currentEntry = (Astro.props.entry as CollectionEntry<"news-categories">).data;
 export async function getStaticPaths() {

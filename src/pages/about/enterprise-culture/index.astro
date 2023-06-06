@@ -10,51 +10,47 @@ import { Img } from "astro-imagetools/components";
 //data
 import NavigationJson from "@data/navigation.json";
 //data types
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 
 changeLanguage("cn");
 
 let pageJson = "page-about-sublink-enterprise-culture";
 const page: PageMetaTag = {
-  title: t(pageJson + ":pageTitle"),
-  description: t(pageJson + ":pageDescription"),
-  author: t(pageJson + ":pageAuthor"),
-  keywords: t(pageJson + ":pageKeywords"),
+    title: t(pageJson + ":pageTitle"),
+    description: t(pageJson + ":pageDescription"),
+    author: t(pageJson + ":pageAuthor"),
+    keywords: t(pageJson + ":pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-  title: t(pageJson + ":openGraphTitle"),
-  type: t(pageJson + ":openGraphType"),
-  image: t(pageJson + ":openGraphImage"),
-  description: t(pageJson + ":openGraphDescription"),
+    title: t(pageJson + ":openGraphTitle"),
+    type: t(pageJson + ":openGraphType"),
+    image: t(pageJson + ":openGraphImage"),
+    description: t(pageJson + ":openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-  cardType: t(pageJson + ":twitterCardType"),
-  title: t(pageJson + ":twitterTitle"),
-  description: t(pageJson + ":twitterDescription"),
-  image: t(pageJson + ":twitterImage"),
+    cardType: t(pageJson + ":twitterCardType"),
+    title: t(pageJson + ":twitterTitle"),
+    description: t(pageJson + ":twitterDescription"),
+    image: t(pageJson + ":twitterImage"),
 };
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = t(pageJson + ":trueImage") as unknown as boolean;
 const trueImageStyle = t(pageJson + ":trueImageStyle");
 type Subnav = {
-  label: string;
-  href: string;
-  slug: string;
+    label: string;
+    href: string;
+    slug: string;
 };
 var subnavs = NavigationJson.links
-  .filter((link) => link.name === "about")[0]
-  .children.map((child: string) => {
+    .filter((link) => link.name === "about")[0]
+    .children.map((child: string) => {
     return {
-      label: t(`navigation:navbar.about.sublinks.${child}.name`),
-      href: `/about/${t(`navigation:navbar.about.sublinks.${child}.slug`)}/`,
-      slug: t(`navigation:navbar.about.sublinks.${child}.slug`),
+        label: t(`navigation:navbar.about.sublinks.${child}.name`),
+        href: `/about/${t(`navigation:navbar.about.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.about.sublinks.${child}.slug`),
     };
-  }) as Subnav[];
+}) as Subnav[];
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>

@@ -1,5 +1,5 @@
 ---
-import astroI18next, { changeLanguage } from "i18next";
+import i18next, { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
@@ -9,11 +9,11 @@ changeLanguage("en");
 
 export async function getStaticPaths() {
     const newsEntries = await getCollection("news", ({ data }) => {
-        return data.lang === astroI18next.language;
+        return data.lang === i18next.language;
     });
     return newsEntries.map((entry) => ({
         params: {
-            category: entry.data.category,
+            category: entry.data.newsCategory,
             articleName: entry.data.articleName,
         },
         props: { entry },
