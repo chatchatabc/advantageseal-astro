@@ -48,6 +48,7 @@ const newsCategoryCollection = defineCollection({
     twitterTitle: z.string().nullable(),
     twitterDescription: z.string().nullable(),
     twitterImage: z.string().nullable(),
+    bannerImage: z.string(),
   }),
 });
 // 3. Export a single `collections` object to register your collection(s)
