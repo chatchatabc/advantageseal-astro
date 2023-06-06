@@ -13,6 +13,7 @@ export default {
     "page-about-sublink-production-ability",
     "page-about-sublink-qualification-honor",
     "page-about-sublink-enterprise-culture",
+    "page-customer-center-sublink-concrete-case",
     "news-categories",
     "products-categories",
     "customer-center-categories",
