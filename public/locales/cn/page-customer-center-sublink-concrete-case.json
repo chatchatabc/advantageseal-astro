@@ -1,0 +1,49 @@
+{
+  "name": "具体案例",
+  "slug": "concrete-case",
+  "alt": "jigsaw puzzle",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/customer-center-concrete-case.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/about/banners/about-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "section1":{
+      "text": "爱得万（宁波）密封技术有限公司一直致力于“以客户价值为中心”的经营理念，秉承“产品是设计出来的”路线方针，切实为客户解决生产过程中遇到的问题和难点，更好的服务客户，从而将客户的利益最大化。"
+    },
+    "section2": {
+      "header": "主要案例如下：",
+      "text" : "2012年4月美国MTH公司反馈我司21型5/8’的机械密封用普通反应烧结碳化硅材料（均为该材料）配对在实验室级去离子水工况中使用存在以下问题:",
+      "list" : {
+        "item1":"两个密封面在启动过程中存在吸住的现象，导致无法启动或启动困难。",
+        "item2":"运转之后，电机电流超过额定允许的电流值，导致电机电流损耗增加，浪费电能。",
+        "item3":"由于介质的特殊性，导致碳化硅动环容易发热龟裂，从而导致密封失效或泄漏。",
+        "item4":" 机械密封寿命短，只能使用12个月左右，维修成本大大增加。"
+      }
+    },
+    "section3": {
+      "header": "我司根据客户反馈的信息重新调整设计方案，主要作了如下调整：",
+      "list": {
+        "item1": "将端面材料进行升级，换成特种配方碳化硅材料，因为该材料有非常好的自润滑性，且启动阻力大大缩小，从而解决电机在启动时吸住的问题，",
+        "item2": "重新调整密封件的端面比压，进一步控制材料在运行过程中的磨损量，从而延长机械密封的使用寿命。",
+        "item3": "将两个密封端面的表面粗糙度进行雾面处理，在保证平面度的前提下，粗糙度改变，光洁度不变，同时电流从原来的5A降低到了目前的3.7A以内，很好的控制住了电机的电流损耗，节约了电能。"
+      }
+    },
+    "section4": {
+      "text" : "端面吸住的问题改善后，大大延长了机械密封的使用寿命，现在这款机械密封在客户的水泵中已经使用超过3年没有任何问题。"
+    }
+
+  }}
