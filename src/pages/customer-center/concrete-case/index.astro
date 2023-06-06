@@ -1,0 +1,106 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+//components
+import Layout from "@layouts/Layout.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
+import { Img } from "astro-imagetools/components";
+//data
+import NavigationJson from "@data/navigation.json";
+//data types
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+
+changeLanguage("cn");
+
+let pageJson = "page-customer-center-sublink-concrete-case";
+const page: PageMetaTag = {
+    title: t(pageJson + ":pageTitle"),
+    description: t(pageJson + ":pageDescription"),
+    author: t(pageJson + ":pageAuthor"),
+    keywords: t(pageJson + ":pageKeywords"),
+};
+const openGraph: OpenGraphMetaTag = {
+    title: t(pageJson + ":openGraphTitle"),
+    type: t(pageJson + ":openGraphType"),
+    image: t(pageJson + ":openGraphImage"),
+    description: t(pageJson + ":openGraphDescription"),
+};
+const twitter: TwitterMetaTag = {
+    cardType: t(pageJson + ":twitterCardType"),
+    title: t(pageJson + ":twitterTitle"),
+    description: t(pageJson + ":twitterDescription"),
+    image: t(pageJson + ":twitterImage"),
+};
+console.log("pageJson",pageJson + ":bannerImageSrc")
+const bannerImageSrc = t(pageJson + ":bannerImageSrc");
+const bannerHeight = "200px";
+const trueImage = t(pageJson + ":trueImage") as unknown as boolean;
+const trueImageStyle = t(pageJson + ":trueImageStyle");
+type Subnav = {
+    label: string;
+    href: string;
+    slug: string;
+};
+var subnavs = NavigationJson.links
+    .filter((link) => link.name === "customer-center")[0]
+    .children.map((child: string) => {
+    return {
+        label: t(`navigation:navbar.customer-center.sublinks.${child}.name`),
+        href: `/customer-center/${t(`navigation:navbar.customer-center.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.customer-center.sublinks.${child}.slug`),
+    };
+}) as Subnav[];
+---
+
+<Layout page={page} openGraph={openGraph} twitter={twitter}>
+  <Banner
+    bannerImageSrc={bannerImageSrc}
+    bannerHeight={bannerHeight}
+    trueImage={trueImage}
+    trueImageStyle={trueImageStyle}
+  />
+  <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
+    <div class="my-[1.125rem] sticky top-0">
+      <InnerSubNav subnavs={subnavs} />
+    </div>
+    <div class="mb-6">
+      <BreadCrumbs label={t(pageJson + ":name")} />
+    </div>
+    <main>
+      <!--Section1 -->
+      <div class="mb-8 text-[0.875rem] text-text-primary leading-[1.75rem]">
+        {t(pageJson+":contents.section1.text")}
+      </div>
+      <!--Section2 -->
+      <div class="mb-8 text-[0.875rem]">
+        <h3 class="text-[1.5rem]">{t(pageJson+":contents.section2.header")}</h3>
+        <div class="leading-[1.75rem]">{t(pageJson+":contents.section2.text")}</div>
+        <ol>
+          {Array.from({length:4}).map((el:any, i:number)=>{
+            return <li class=" list-decimal list-inside leading-[1.75rem]">
+                {t(pageJson+":contents.section2.list.item"+(1+i))}
+              </li>
+          })}
+        </ol>
+      </div>
+      <div class="mb-8 text-[0.875rem]">
+        <h3 class="text-[1.5rem]">{t(pageJson+":contents.section3.header")}</h3>
+        <ol>
+          {Array.from({length:3}).map((el:any, i:number)=>{
+            return <li class="list-decimal list-inside leading-[1.75rem]">
+                {t(pageJson+":contents.section3.list.item"+(1+i))}
+              </li>
+          })}
+        </ol>
+      </div>
+      <div class="mb-8 text-[0.875rem]">
+        <p class="leading-[1.75rem]">{t(pageJson+":contents.section4.text")}</p>
+      </div>
+      <div class="mb-16 flex justify-center">
+        <BackBtn />
+      </div>
+    </main>
+  </div>
+</Layout>
