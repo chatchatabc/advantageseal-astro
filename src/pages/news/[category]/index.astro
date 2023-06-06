@@ -62,12 +62,12 @@ type Subnav = {
   slug: string;
 };
 var subnavs = NavigationJson.links
-  .filter((link) => link.name === "about")[0]
+  .filter((link) => link.name === "news")[0]
   .children.map((child: string) => {
     return {
-      label: t(`navigation:navbar.about.sublinks.${child}.name`),
-      href: `/about/${t(`navigation:navbar.about.sublinks.${child}.slug`)}/`,
-      slug: t(`navigation:navbar.about.sublinks.${child}.slug`),
+      label: t(`navigation:navbar.news.sublinks.${child}.name`),
+      href: `/news/${t(`navigation:navbar.news.sublinks.${child}.slug`)}/`,
+      slug: t(`navigation:navbar.news.sublinks.${child}.slug`),
     };
   }) as Subnav[];
 
@@ -89,11 +89,13 @@ let entries = await getCollection("news", ({ data }) => {
     data.newsCategory === Astro.props.entry.data.title
   );
 });
+
 let currNewsCategory:string = "";
 try{
    currNewsCategory = (await getCollection("news-categories", ({data}) =>{
     return data.title === entries[0].data.newsCategory
   }))[0].data.name
+  console.log(entries[0].data)
 }
 catch(e){
    currNewsCategory = ""
@@ -162,9 +164,16 @@ catch(e){
             entries[0].data.newsCategory == "company-announcements"
           ){
             return(
-              <ul>
+              <ul class="w-full">
                 {entries.map((entry)=>{
-                  <li><span>[{currNewsCategory}]</span>{entry.data.articleName}</li>
+                  return <li class=" border-b-[1px] border-dotted border-[#ccc] w-full pl-[1.125rem] py-4">
+                      <a href={Astro.url.pathname+entry.data.articleName+"/"} class=" list-disc list-item group">
+                        <div class="flex flex-row">
+                          <div class="font-semibold">[{currNewsCategory}]</div>
+                          <div class="pl-4 text-[#337ab7] group-hover:text-red-primary">{entry.data.title}</div>
+                          </div>
+                      </a>
+                    </li>
                 })}
               </ul>
             )
