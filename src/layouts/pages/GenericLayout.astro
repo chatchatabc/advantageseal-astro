@@ -1,10 +1,13 @@
 ---
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+
 import { Img } from "astro-imagetools/components";
 import i18next, { t, changeLanguage } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
+
 import type {
   PageMetaTag,
   OpenGraphMetaTag,
@@ -97,7 +100,7 @@ const pageMetaTag: PageMetaTag = {
               <>
                 <div class="w-full md:w-6/12 p-2 flex">
                   <a
-                    href={`/${pageName}/${t(
+                    href={`${utilGetCurrentLanguage(Astro.url.toString())}/${pageName}/${t(
                       `navigation:navbar.${pageName}.sublinks.` + ref + ".slug"
                     )}/`}
                     class="group drop-shadow-sm transition duration-100 flex flex-grow
