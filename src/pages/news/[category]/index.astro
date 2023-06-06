@@ -128,12 +128,10 @@ catch(e){
           ) {
             {
               return entries.map((entry) => (
-                <div class="w-6/12 p-2 ">
+                <div class="w-full md:w-6/12 p-2 ">
                   <a
                     href={
-                      "/news/" +
-                      entry.data.newsCategory +
-                      "/" +
+                      Astro.url.pathname+
                       entry.data.articleName +
                       "/"
                     }
@@ -177,6 +175,31 @@ catch(e){
                 })}
               </ul>
             )
+          }else if(
+            entries.length > 0 && entries[0].data.newsCategory === "new-product-releases"
+          ){
+            return entries.map((entry)=>(
+              <div class="w-full md:w-6/12 p-2">
+                  <a href={Astro.url.pathname+entry.data.articleName+"/"} class="block hover:bg-[#f5f5f5] p-3 group">
+                    <figure class="flex flex-row h-[120px]">
+                      <div class="w-[200px] flex-shrink-0">
+                        <Img
+                          src={entry.data.image.src}
+                          alt={entry.data.image.alt}
+                        />
+                      </div>
+                      <figcaption class="flex-grow py-2 pl-[0.625rem] pr-2">
+                        <h4 class="text-[15px] text-[#337ab7] pb-2 font-semibold group-hover:text-red-primary">
+                          {entry.data.title}
+                        </h4>
+                        <p class="text-[0.75rem] text-[#999]">
+                          {entry.data.articleShortDescription}
+                        </p>
+                      </figcaption>
+                    </figure>
+                  </a>
+              </div>
+            ))
           }
         }
       }
