@@ -14,6 +14,7 @@ export default {
     "page-about-sublink-qualification-honor",
     "page-about-sublink-enterprise-culture",
     "page-customer-center-sublink-concrete-case",
+    "page-customer-center-sublink-solutions",
     "news-categories",
     "products-categories",
     "customer-center-categories",
