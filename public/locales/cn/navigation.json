@@ -622,7 +622,7 @@
         "contactInformation": {
           "name": "联系方式",
           "slug": "contact-information",
-          "alt": "person building a group of people",
+          "alt": "a group of people",
           "subText": "电话:+086(574)87500883 \n 邮箱:admin@advantageseal.cn",
           "showNavBar": true,
           "showFooter": true,

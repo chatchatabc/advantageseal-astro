@@ -621,7 +621,7 @@
         "contactInformation": {
           "name": "Contact Information",
           "slug": "contact-information",
-          "alt": "person building a group of people",
+          "alt": "a group of people",
           "subText": "",
           "showNavBar": true,
           "showFooter": true,
