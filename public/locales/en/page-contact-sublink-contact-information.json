@@ -1,0 +1,32 @@
+{
+  "name": "Contact Information",
+  "slug": "contact-information",
+  "alt": "a group of people",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/contact-talent-strategy.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/contact/banners/contact-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "header": "Advantage Seal (Ningbo) Co., Ltd.",
+    "text1": "Tel：+86 (574)87500883",
+    "text2": "Fax：+86 (574)87502803",
+    "text3": "E-mail：admin@advantageseal.cn",
+    "text4": "Zip code：315104",
+    "text5": "Address：No.90, 655 Qiming Road, Yinzhou, Ningbo",
+    "image1": "/images/contact/contact-information/contact-information-image1-tinified.webp"
+  }
+}

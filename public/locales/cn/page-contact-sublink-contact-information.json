@@ -1,0 +1,32 @@
+{
+  "name": "联系方式",
+  "slug": "contact-information",
+  "alt": "a group of people",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/contact-talent-strategy.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/contact/banners/contact-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "header": "爱得万（宁波）密封技术有限公司",
+    "text1": "电话：+86 (574)87500883",
+    "text2": "传真：+86 (574)87502803",
+    "text3": "邮箱：admin@advantageseal.cn",
+    "text4": "邮编：315104",
+    "text5": "地址：宁波市鄞州区启明路655弄90号",
+    "image1": "/images/contact/contact-information/contact-information-image1-tinified.webp"
+  }
+}
