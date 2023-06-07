@@ -48,6 +48,7 @@
         },
         "section2": {
           "tabLabel": "Product Details",
+          "header": "",
           "imageGallery": {
             "count": 4,
             "image1": {
@@ -117,7 +118,7 @@
               }
             },
             "detail6": {
-              "labels": "AVariety of Mating Rings:",
+              "labels": "A variety of Mating Rings:",
               "count": 3,
               "items": {
                 "item1": "O-Ring Mount",

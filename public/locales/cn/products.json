@@ -18,13 +18,13 @@
       "name": "Type 16",
       "contents": {
         "section1": {
-          "label": "Universal Seal：",
+          "label": "通用型密封：",
           "parameters": {
             "count": 3,
             "parameters": {
-              "parameter1": "Speed: 12-15m/s",
-              "parameter2": "Pressure: 150 PSI *",
-              "parameter3": "Temperature: -40°F （-40°C） ~ 400°F（204°C）*"
+              "parameter1": "转速： 5,000 SFPM *",
+              "parameter2": "压力： 150 PSI *",
+              "parameter3": "使用温度： -40°F （-40°C） 到 400°F（204°C）*"
             }
           },
           "disclaimer": "* 以上数据根据密封尺寸和不同材料得出。",
@@ -47,93 +47,103 @@
           }
         },
         "section2": {
-          "tabLabel": "Product Details",
+          "tabLabel": "产品详情",
+          "header": "为何选择Advantage Seal Type 16型密封材料？",
           "imageGallery": {
             "count": 4,
             "image1": {
               "src": "/images/products/type-16/section2-image1.jpg",
               "alt": "",
-              "name": "Hex Drive"
+              "name": "六角驱动"
             },
             "image2": {
               "src": "/images/products/type-16/section2-image2.jpg",
               "alt": "",
-              "name": "Crimped Head"
+              "name": "卷曲头"
             },
             "image3": {
               "src": "/images/products/type-16/section2-image3.jpg",
               "alt": "",
-              "name": "Unitized Rotary Seal"
+              "name": "整体旋转密封"
             },
             "image4": {
               "src": "/images/products/type-16/section2-image4.jpg",
               "alt": "",
-              "name": "Stationary Seal"
+              "name": "固定密封"
             }
           },
           "details": {
-            "count": 6,
+            "count": 7,
             "detail1": {
-              "label": "Unitized Design:",
+              "label": "标准设计：",
               "count": 2,
               "items": {
-                "item1": "No-hassle handling",
-                "item2": "Easy to install"
+                "item1": "无麻烦操作",
+                "item2": "安装简易"
               }
             },
             "detail2": {
-              "label": "Hex Drive:",
+              "label": "六角驱动：",
               "count": 2,
               "items": {
-                "item1": "Will not disengage during operation",
-                "item2": "Protects the elastomer bellows from damage"
+                "item1": "在水泵运转时不会停止运行",
+                "item2": "保护并防止橡胶件破损"
               }
             },
             "detail3": {
-              "label": "Ideal or:",
-              "count": 4,
+              "label": "经济之选：",
+              "count": 3,
               "items": {
-                "item1": "Pool Pumps",
-                "item2": "Spa Pumps",
-                "item3": "Stamped Pumps",
-                "item4": "Smaller Industrial and Commercial applications"
+                "item1": "标准配件",
+                "item2": "批量生产",
+                "item3": "保证成本优势"
               }
             },
             "detail4": {
-              "label": "Advantage:",
-              "count": 4,
+              "label": "适用于：",
+              "count": 3,
               "items": {
-                "item1": "Greatly simplifies installation",
-                "item2": "No adhesive on seal face",
-                "item3": "Prevents penetration of solids into the seal head",
-                "item4": "Cushions rotary seal face without metal to seal face contact"
+                "item1": "水池用水泵",
+                "item2": "水疗用水泵",
+                "item3": "小型工业和商业用泵"
               }
             },
             "detail5": {
-              "label": "Single Coil Spring:",
-              "count": 1,
+              "label": "优势：",
+              "count": 5,
               "items": {
-                "item1": "Helps prevent clogging"
+                "item1": "简化组装",
+                "item2": "密封面处无粘合",
+                "item3": "避免异物渗透",
+                "item4": "密封面无金属填充物",
+                "item5": "有效保护密封面"
               }
             },
             "detail6": {
-              "label": "AVariety of Mating Rings:",
+              "label": "单弹簧设计：",
+              "count": 1,
+              "items": {
+                "item1": "能较好的防止堵塞"
+              }
+            },
+            "detail7": {
+              "label": "多种静环：",
               "count": 3,
               "items": {
-                "item1": "O-Ring Mount",
-                "item2": "Cup Mount",
+                "item1": "配O型圈静环",
+                "item2": "杯状底座",
                 "item3": "DIN"
               }
             }
           },
           "replaces": {
-            "header": "Advantage Seal Type 16 replaces",
+            "header": "Advantage Seal Type 16型密封件可替代",
             "count": 4,
             "items": {
-              "item1": "John Crane Type 6",
-              "item2": "Sealol Type 60L",
-              "item3": "Pac-Seal Type 16",
-              "item4": "US Seal Type A"
+              "item1": "约翰克兰6型",
+              "item2": "Sealol (西乐)60L型",
+              "item3": "Pac-Seal 16型",
+              "item4": "US Seal A型"
             },
             "cutawayDiagram": "/images/products/type-16/section2-diagram1.jpg"
           }
