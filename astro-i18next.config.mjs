@@ -16,6 +16,7 @@ export default {
     "page-customer-center-sublink-concrete-case",
     "page-customer-center-sublink-solutions",
     "page-contact-sublink-talent-strategy",
+    "page-contact-sublink-contact-information",
     "news-categories",
     "products-categories",
     "customer-center-categories",
