@@ -1,0 +1,125 @@
+---
+import astroI18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import { getCollection } from "astro:content";
+//components
+import Layout from "@layouts/Layout.astro";
+import SealSeriesForPoolAndSpaPumpLayout from "@layouts/pages/product/SealSeriesForPoolAndSpaPumpLayout.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
+import { Img } from "astro-imagetools/components";
+//data
+import NavigationJson from "@data/navigation.json";
+import ProductsJson from "@data/pages/products.json";
+//data types
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type { CollectionEntry } from "astro:content";
+
+changeLanguage("cn");
+
+var pageJson = "products";
+export async function getStaticPaths() {
+    // return ProductsJson.list.flatMap((product) => {
+    //   return product.categories.map((category) => ({
+    //       params: {
+    //           category: category,
+    //           product: product.slug
+    //       },
+    //       props: {
+    //           //since the data of the produc is based on the translation file we just need to reference it using the slug instead
+    //           product: {
+    //               name: t(`products:contents.${product.slug}.name`),
+    //               slug: product.slug,
+    //               category: category
+    //           }
+    //       }
+    //   }));
+    // });
+    //disable for a while as ai build the literals
+    return [
+        {
+            params: {
+                category: "seal-series-for-pool-and-spa-pump",
+                product: "type-16"
+            },
+            props: {
+                product: {
+                    name: "Type 16",
+                    slug: "type-16",
+                    category: "seal-series-for-pool-and-spa-pump"
+                }
+            }
+        }
+    ];
+}
+const page: PageMetaTag = {
+    title: t(pageJson + ":pageTitle"),
+    description: t(pageJson + ":pageDescription"),
+    author: t(pageJson + ":pageAuthor"),
+    keywords: t(pageJson + ":pageKeywords"),
+};
+const openGraph: OpenGraphMetaTag = {
+    title: t(pageJson + ":openGraphTitle"),
+    type: t(pageJson + ":openGraphType"),
+    image: t(pageJson + ":openGraphImage"),
+    description: t(pageJson + ":openGraphDescription"),
+};
+const twitter: TwitterMetaTag = {
+    cardType: t(pageJson + ":twitterCardType"),
+    title: t(pageJson + ":twitterTitle"),
+    description: t(pageJson + ":twitterDescription"),
+    image: t(pageJson + ":twitterImage"),
+};
+const bannerImageSrc = t(pageJson + ":bannerImageSrc");
+const bannerHeight = "200px";
+const trueImage = false;
+const trueImageStyle = "";
+type Subnav = {
+    label: string;
+    href: string;
+    slug: string;
+};
+var subnavs = NavigationJson.links
+    .filter((link) => link.name === "products")[0]
+    .children.map((child: string) => {
+    return {
+        label: t(`navigation:navbar.products.sublinks.${child}.name`),
+        href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(`navigation:navbar.products.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
+    };
+}) as Subnav[];
+type Props = {
+    product: {
+        slug: string;
+        name: string;
+        category: string;
+    };
+};
+const { product } = Astro.props as Props;
+let currNewsCategory: string = product.name; //current name of the product item
+---
+
+<Layout page={page} openGraph={openGraph} twitter={twitter}>
+  <Banner
+    bannerImageSrc={bannerImageSrc}
+    bannerHeight={bannerHeight}
+    trueImage={trueImage}
+    trueImageStyle={trueImageStyle}
+  />
+  <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
+    <div class="my-[1.125rem] sticky top-0 z-[2]">
+      <InnerSubNav subnavs={subnavs} />
+    </div>
+    <div class="mb-6">
+      <BreadCrumbs label={currNewsCategory} />
+    </div>
+    <main class="">
+      {product.category === "seal-series-for-pool-and-spa-pump" && <SealSeriesForPoolAndSpaPumpLayout product={product}/>}
+    </main>
+    <div class="mb-16 flex justify-center">
+      <BackBtn />
+    </div>
+  </div>
+</Layout>
