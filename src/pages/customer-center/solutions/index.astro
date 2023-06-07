@@ -1,0 +1,112 @@
+---
+import astroI18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import { getCollection } from "astro:content";
+//components
+import Layout from "@layouts/Layout.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
+import { Img } from "astro-imagetools/components";
+//data
+import NavigationJson from "@data/navigation.json";
+//data types
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type { CollectionEntry } from "astro:content";
+
+changeLanguage("cn");
+
+let pageJson = "page-customer-center-sublink-solutions";
+const page: PageMetaTag = {
+    title: t(pageJson + ":pageTitle"),
+    description: t(pageJson + ":pageDescription"),
+    author: t(pageJson + ":pageAuthor"),
+    keywords: t(pageJson + ":pageKeywords"),
+};
+const openGraph: OpenGraphMetaTag = {
+    title: t(pageJson + ":openGraphTitle"),
+    type: t(pageJson + ":openGraphType"),
+    image: t(pageJson + ":openGraphImage"),
+    description: t(pageJson + ":openGraphDescription"),
+};
+const twitter: TwitterMetaTag = {
+    cardType: t(pageJson + ":twitterCardType"),
+    title: t(pageJson + ":twitterTitle"),
+    description: t(pageJson + ":twitterDescription"),
+    image: t(pageJson + ":twitterImage"),
+};
+const bannerImageSrc = t(pageJson + ":bannerImageSrc");
+const bannerHeight = "200px";
+const trueImage = false;
+const trueImageStyle = "";
+type Subnav = {
+    label: string;
+    href: string;
+    slug: string;
+};
+var subnavs = NavigationJson.links
+    .filter((link) => link.name === "customer-center")[0]
+    .children.map((child: string) => {
+    return {
+        label: t(`navigation:navbar.customer-center.sublinks.${child}.name`),
+        href: `${utilGetCurrentLanguage(Astro.url.toString())}/customer-center/${t(`navigation:navbar.customer-center.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.customer-center.sublinks.${child}.slug`),
+    };
+}) as Subnav[];
+let entries = await getCollection("solutions", ({ data }) => {
+    return data.lang === astroI18next.language;
+});
+let currNewsCategory: string = t(pageJson + ":name");
+---
+
+<Layout page={page} openGraph={openGraph} twitter={twitter}>
+  <Banner
+    bannerImageSrc={bannerImageSrc}
+    bannerHeight={bannerHeight}
+    trueImage={trueImage}
+    trueImageStyle={trueImageStyle}
+  />
+  <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
+    <div class="my-[1.125rem] sticky top-0">
+      <InnerSubNav subnavs={subnavs} />
+    </div>
+    <div class="mb-6">
+      <BreadCrumbs label={currNewsCategory} />
+    </div>
+    <main class="flex flex-wrap">
+      {
+        () => {
+          return entries.map((entry) => (
+            <div class="w-full md:w-6/12 p-2 ">
+              <a
+                href={Astro.url.pathname + entry.data.articleSlug + "/"}
+                class="  block hover:bg-[#f5f5f5] p-3 group"
+              >
+                <figure class="flex flex-row h-[120px]">
+                  <div class="w-[200px] flex-shrink-0">
+                    <Img
+                      src={entry.data.image.src}
+                      alt={entry.data.image.alt}
+                    />
+                  </div>
+                  <figcaption class="flex-grow py-2 pl-[0.625rem] pr-2">
+                    <h4 class="text-[15px] text-[#337ab7] pb-2 font-semibold group-hover:text-red-primary">
+                      {entry.data.title}
+                    </h4>
+                    <p class="text-[0.75rem] text-[#999]">
+                      {entry.data.articleShortDescription}
+                    </p>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          ));
+        }
+      }
+    </main>
+    <div class="mb-16 flex justify-center">
+      <BackBtn />
+    </div>
+  </div>
+</Layout>
