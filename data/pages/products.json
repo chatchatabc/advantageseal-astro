@@ -1,55 +1,168 @@
 {
-  "productsList": [
-    "type-202",
-    "type-201",
-    "type-91",
-    "type-81",
-    "type-61",
-    "type-21",
-    "type-16",
-    "type-37f",
-    "type-81b",
-    "type-91b",
-    "type-202e",
-    "type-37",
-    "type-846b",
-    "type-846",
-    "type-816",
-    "type-16c",
-    "type-852",
-    "type-850b",
-    "type-850",
-    "type-202v",
-    "type-201e",
-    "type-16wm",
-    "type-16eb",
-    "type-aa03",
-    "type-aa04",
-    "type-aa09",
-    "asi-b-u28-&-asi-b-l28",
-    "asi-c-u22-&-asi-c-l22",
-    "asi-d15-double-seal",
-    "asi-e-u22-&-asi-e-l22",
-    "asi-f-u22-&-asi-f-l22",
-    "asi-g-u20-&-asi-g-l20",
-    "asi-i-u28-&-asi-i-l28",
-    "asi-j-u25-&-asi-j-l25",
-    "asi-k-u35-&-asi-k-l35",
-    "asi-k-u35-&-asi-l-l35",
-    "asi-m-u35-&-asi-m-l35",
-    "asi-o-u45-&-asi-o-l45",
-    "asi-p-u60-&-asi-p-l60",
-    "asi-q-u60-&-asi-q-l60",
-    "asi-a-u20-&-asi-a-l20",
-    "asi-r-u60-&-asi-r-l60",
-    "as1-s-u90-&-asi-s-l80",
-    "asi-s-u90-&-asi-u-l90",
-    "asi-s-u90-&-asi-t-l120",
-    "asi-z-u25-&-asi-z-l24",
-    "xylem-flygt-pumps",
-    "xylem-flygt-pumps-1",
-    "type-511-12",
-    "type-511-16",
-    "type-511-22"
+  "list": [
+    {
+      "slug": "type-16",
+      "categories": ["seal-series-for-pool-and-spa-pump"]
+    },
+    {
+      "slug": "type-21",
+      "categories": ["seal-series-for-pool-and-spa-pump"]
+    },
+    {
+      "slug": "type-201",
+      "categories": ["seal-series-for-pool-and-spa-pump"]
+    },
+    {
+      "slug": "type-202",
+      "categories": ["seal-series-for-pool-and-spa-pump"]
+    },
+    {
+      "slug": "511-12",
+      "categories": ["seal-series-for-vertical-multi-stage-pump"]
+    },
+    {
+      "slug": "511-16",
+      "categories": ["seal-series-for-vertical-multi-stage-pump"]
+    },
+    {
+      "slug": "511-22",
+      "categories": ["seal-series-for-vertical-multi-stage-pump"]
+    },
+    {
+      "slug": "ASI-20,25,35,45,60,90",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-A-L20",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-A-U20",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-B-L28",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-C-L22",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-C-U22",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-G-U20",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-H-L20",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-J-L25",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-J-U25",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-K-L35",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-K-U35",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-M-L35",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-M-U35",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-N-U45",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-O-L45",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-O-U45",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-P-L60",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-P-U60",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-Q-U60",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-S-L80",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-S-U90",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-T-L120",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "ASI-Q-L60",
+      "categories": ["sealing-series-for-flypt-pump"]
+    },
+    {
+      "slug": "10EB-XXXX-46-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "10EB-XXXX-47-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "10EB-XXXX-48-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "10EB-XXXX-55-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "10EB-XXXX-56-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "10EB-XXXX-01-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "10EB-XXXX-60-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "10EB-XXXX-57-XXXX",
+      "categories": ["static-ring-series"]
+    },
+    {
+      "slug": "seal-material-code",
+      "categories": ["seal-material-code"]
+    },
+    {
+      "slug": "product-substitution-form",
+      "categories": ["product-substitution-form"]
+    }
   ]
 }
