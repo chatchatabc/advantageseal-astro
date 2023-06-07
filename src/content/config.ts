@@ -84,5 +84,5 @@ const solutionsCollection = defineCollection({
 export const collections = {
   'news': newsCollection,
   'news-categories': newsCategoryCollection,
-  'solutions': newsCollection,
+  'solutions': solutionsCollection,
 };
