@@ -1,5 +1,6 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 //components
 import Layout from "@layouts/Layout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
@@ -14,7 +15,7 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 
 changeLanguage("en");
 
-let pageJson = "page-customer-center-sublink-concrete-case";
+let pageJson = "page-contact-sublink-contact-information";
 const page: PageMetaTag = {
     title: t(pageJson + ":pageTitle"),
     description: t(pageJson + ":pageDescription"),
@@ -43,12 +44,12 @@ type Subnav = {
     slug: string;
 };
 var subnavs = NavigationJson.links
-    .filter((link) => link.name === "customer-center")[0]
+    .filter((link) => link.name === "contact")[0]
     .children.map((child: string) => {
     return {
-        label: t(`navigation:navbar.customer-center.sublinks.${child}.name`),
-        href: `/customer-center/${t(`navigation:navbar.customer-center.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.customer-center.sublinks.${child}.slug`),
+        label: t(`navigation:navbar.contact.sublinks.${child}.name`),
+        href: `${utilGetCurrentLanguage(Astro.url.toString())}/contact/${t(`navigation:navbar.contact.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.contact.sublinks.${child}.slug`),
     };
 }) as Subnav[];
 ---
@@ -68,51 +69,29 @@ var subnavs = NavigationJson.links
       <BreadCrumbs label={t(pageJson + ":name")} />
     </div>
     <main>
-      <!--Section1 -->
-      <div class="mb-8 text-[0.875rem] text-text-primary leading-[1.75rem]">
-        {t(pageJson + ":contents.section1.text")}
-      </div>
-      <!--Section2 -->
-      <div class="mb-8 text-[0.875rem]">
-        <h3 class="text-[1.5rem]">
-          {t(pageJson + ":contents.section2.header")}
-        </h3>
-        <div class="leading-[1.75rem]">
-          {t(pageJson + ":contents.section2.text")}
+      <div class="block lg:flex lg:flex-row lg:flex-wrap">
+        <div class="w-full text-text-primary lg:w-6/12">
+          <h3 class="text-[1.5rem] mb-[0.625rem]">
+            {t(pageJson + ":contents.header")}
+          </h3>
+          <div class="mb-8 text-[0.875rem] leading-[1.75rem]">
+            {
+              Array.from({ length: 5 }).map((_: any, i: number) => {
+                return <div>{t(pageJson + ":contents.text" + (1 + i))}</div>;
+              })
+            }
+          </div>
         </div>
-        <ol>
-          {
-            Array.from({ length: 4 }).map((el: any, i: number) => {
-              return (
-                <li class=" list-decimal list-inside leading-[1.75rem]">
-                  {t(pageJson + ":contents.section2.list.item" + (1 + i))}
-                </li>
-              );
-            })
-          }
-        </ol>
+        <div class="w-full lg:w-6/12">
+          <div class="max-w-[450px] mx-auto rounded-[0.75rem] overflow-hidden">
+            <Img
+              src={t(pageJson + ":contents.image1")}
+              alt="person using a computer"
+            />
+          </div>
+        </div>
       </div>
-      <div class="mb-8 text-[0.875rem]">
-        <h3 class="text-[1.5rem]">
-          {t(pageJson + ":contents.section3.header")}
-        </h3>
-        <ol>
-          {
-            Array.from({ length: 3 }).map((el: any, i: number) => {
-              return (
-                <li class="list-decimal list-inside leading-[1.75rem]">
-                  {t(pageJson + ":contents.section3.list.item" + (1 + i))}
-                </li>
-              );
-            })
-          }
-        </ol>
-      </div>
-      <div class="mb-8 text-[0.875rem]">
-        <p class="leading-[1.75rem]">
-          {t(pageJson + ":contents.section4.text")}
-        </p>
-      </div>
+
       <div class="mb-16 flex justify-center">
         <BackBtn />
       </div>
