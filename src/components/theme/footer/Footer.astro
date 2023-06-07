@@ -102,10 +102,11 @@ links.map((link: any) => {
                 })}
               </ul>
             ) : (
-              <div>
+              <div class="w-[120px]">
                 <Picture
                   src={footerLink.imageRef}
                   alt={t("navigation:navbar." + footerLink.name + ".alt")}
+                  
                 />
                 <p>{t("navigation:navbar." + footerLink.name + ".subText")}</p>
               </div>
