@@ -1,0 +1,43 @@
+{
+  "name": "人才战略",
+  "slug": "talent-strategy",
+  "alt": "person building a group of people",
+  "subText": "person building a group of people",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/contact-talent-strategy.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/contact/talent-strategy/talent-strategy-banner-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "section1": {
+      "text1": "\"诚信 共赢 团队\"",
+      "text2": "，是爱得万公司人才战略的核心观念。"
+    },
+    "section2": {
+      "text1": "人才战略一直是爱得万公司发展战略的重要组成部分，",
+      "text2": "\"知人善用、任人唯贤、人尽其才\"",
+      "text3": "是公司的用人宗旨，",
+      "text4": "\"纳人才、发展人才\"",
+      "text5": "是爱得万的一贯方针。在公司的成长过程中，一流的人才为企业的发展奠定了坚实的基础。"
+    },
+    "section3": {
+      "text1": "\"以人为本\"",
+      "text2": " 是爱得万公司企业文化的重要理念，人才是第一资源，是企业的发展之本、竞争之本。在爱得万公司，有广阔的个人发展空间、良好的个人成长环境、有效的绩效考核激励机制。公司提供良好健康的企业文化氛围，能为员工的职业生涯作出合理的规划。"
+    },
+    "section4": {
+      "text1": "我们期待您的加盟促进爱得万的发展，同时相信公司能为您提供广阔的发展空间，我们会为您在爱得万的成功而自豪，因为我们深信每一位员工对实现爱得万的目标都将起着至关重要的作用。我们坚信：爱得万在探索密封件行业的未来，是您实现自身价值的最佳选择。欢迎有志之士加盟爱得万公司，公司将会给您足够的舞台，让您尽情发挥！"
+    }
+  }
+}

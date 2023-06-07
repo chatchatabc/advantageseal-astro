@@ -1,0 +1,40 @@
+{
+  "name": "Talent Strategy",
+  "slug": "talent-strategy",
+  "alt": "person building a group of people",
+  "subText": "person building a group of people",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/contact-talent-strategy.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/iwmages/contact/talent-strategy/talent-strategy-banner-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center",
+  "contents": {
+    "section1": {
+      "text1": "\"Integrity, win-win and team\"",
+      "text2": "is the core concept of Advantage Seal's talent strategy."
+    },
+    "section2": {
+      "text1": "Talent strategy has always been an important part of the development strategy of the company.",
+      "text2": "\"Know people well, appoint people on their merits, make the best use of their talents\"",
+      "text3": "is the company's employment purpose, ",
+      "text4": "\"absorb talent, develop talent\"",
+      "text5": "is the consistent policy of the company. In the growth process, first-class talents have laid a solid foundation for the development of enterprises."
+    },
+    "section3": {
+      "text1": "\"People-oriented\"",
+      "text2": " is an important concept of enterprise culture of company.Talent is the first resource, is thebasis of development and competition of enterprises.In our company, there are broad personal development space, good personal growth environment and effective performance appraisal incentive mechanism.The company provides good and healthy enterprise culture atmosphere, can make the reasonable plan for the employee's career."
+    }
+  }
+}
