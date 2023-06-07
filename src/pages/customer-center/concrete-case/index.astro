@@ -33,7 +33,6 @@ const twitter: TwitterMetaTag = {
     description: t(pageJson + ":twitterDescription"),
     image: t(pageJson + ":twitterImage"),
 };
-console.log("pageJson", pageJson + ":bannerImageSrc");
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = t(pageJson + ":trueImage") as unknown as boolean;
@@ -71,32 +70,48 @@ var subnavs = NavigationJson.links
     <main>
       <!--Section1 -->
       <div class="mb-8 text-[0.875rem] text-text-primary leading-[1.75rem]">
-        {t(pageJson+":contents.section1.text")}
+        {t(pageJson + ":contents.section1.text")}
       </div>
       <!--Section2 -->
       <div class="mb-8 text-[0.875rem]">
-        <h3 class="text-[1.5rem]">{t(pageJson+":contents.section2.header")}</h3>
-        <div class="leading-[1.75rem]">{t(pageJson+":contents.section2.text")}</div>
+        <h3 class="text-[1.5rem]">
+          {t(pageJson + ":contents.section2.header")}
+        </h3>
+        <div class="leading-[1.75rem]">
+          {t(pageJson + ":contents.section2.text")}
+        </div>
         <ol>
-          {Array.from({length:4}).map((el:any, i:number)=>{
-            return <li class=" list-decimal list-inside leading-[1.75rem]">
-                {t(pageJson+":contents.section2.list.item"+(1+i))}
-              </li>
-          })}
+          {
+            Array.from({ length: 4 }).map((el: any, i: number) => {
+              return (
+                <li class=" list-decimal list-inside leading-[1.75rem]">
+                  {t(pageJson + ":contents.section2.list.item" + (1 + i))}
+                </li>
+              );
+            })
+          }
         </ol>
       </div>
       <div class="mb-8 text-[0.875rem]">
-        <h3 class="text-[1.5rem]">{t(pageJson+":contents.section3.header")}</h3>
+        <h3 class="text-[1.5rem]">
+          {t(pageJson + ":contents.section3.header")}
+        </h3>
         <ol>
-          {Array.from({length:3}).map((el:any, i:number)=>{
-            return <li class="list-decimal list-inside leading-[1.75rem]">
-                {t(pageJson+":contents.section3.list.item"+(1+i))}
-              </li>
-          })}
+          {
+            Array.from({ length: 3 }).map((el: any, i: number) => {
+              return (
+                <li class="list-decimal list-inside leading-[1.75rem]">
+                  {t(pageJson + ":contents.section3.list.item" + (1 + i))}
+                </li>
+              );
+            })
+          }
         </ol>
       </div>
       <div class="mb-8 text-[0.875rem]">
-        <p class="leading-[1.75rem]">{t(pageJson+":contents.section4.text")}</p>
+        <p class="leading-[1.75rem]">
+          {t(pageJson + ":contents.section4.text")}
+        </p>
       </div>
       <div class="mb-16 flex justify-center">
         <BackBtn />
