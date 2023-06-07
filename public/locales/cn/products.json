@@ -15,6 +15,7 @@
   "trueImageStyle": "background-position:center",
   "contents": {
     "type-16": {
+      "name": "Type 16",
       "contents": {
         "section1": {
           "label": "Universal Seal：",
@@ -26,7 +27,7 @@
               "parameter3": "Temperature: -40°F （-40°C） ~ 400°F（204°C）*"
             }
           },
-          "disclaimer": "",
+          "disclaimer": "* 以上数据根据密封尺寸和不同材料得出。",
           "imageGallery": {
             "count": 3,
             "images": {
@@ -73,7 +74,7 @@
           "details": {
             "count": 6,
             "detail1": {
-              "labels": "Unitized Design:",
+              "label": "Unitized Design:",
               "count": 2,
               "items": {
                 "item1": "No-hassle handling",
@@ -81,7 +82,7 @@
               }
             },
             "detail2": {
-              "labels": "Hex Drive:",
+              "label": "Hex Drive:",
               "count": 2,
               "items": {
                 "item1": "Will not disengage during operation",
@@ -89,7 +90,7 @@
               }
             },
             "detail3": {
-              "labels": "Ideal or:",
+              "label": "Ideal or:",
               "count": 4,
               "items": {
                 "item1": "Pool Pumps",
@@ -99,7 +100,7 @@
               }
             },
             "detail4": {
-              "labels": "Advantage:",
+              "label": "Advantage:",
               "count": 4,
               "items": {
                 "item1": "Greatly simplifies installation",
@@ -109,14 +110,14 @@
               }
             },
             "detail5": {
-              "labels": "Single Coil Spring:",
+              "label": "Single Coil Spring:",
               "count": 1,
               "items": {
                 "item1": "Helps prevent clogging"
               }
             },
             "detail6": {
-              "labels": "AVariety of Mating Rings:",
+              "label": "AVariety of Mating Rings:",
               "count": 3,
               "items": {
                 "item1": "O-Ring Mount",
@@ -153,5 +154,10 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     }
+  },
+  "QQchat":{
+    "btnLabel":"在线咨询",
+    "telephone": "咨询热线:",
+    "telephoneNumber": "+86 (574)87500883"
   }
 }

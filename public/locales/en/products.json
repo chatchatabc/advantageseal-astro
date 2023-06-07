@@ -15,6 +15,7 @@
   "trueImageStyle": "background-position:center",
   "contents": {
     "type-16": {
+      "name": "Type 16",
       "contents": {
         "section1": {
           "label": "Universal Seal：",
@@ -153,5 +154,10 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     }
+  },
+  "QQchat":{
+    "btnLabel":"QQ Chat",
+    "telephone": "Tel",
+    "telephoneNumber": "+86 (574)87500883"
   }
 }
