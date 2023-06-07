@@ -17,6 +17,7 @@ export default {
     "page-customer-center-sublink-solutions",
     "page-contact-sublink-talent-strategy",
     "page-contact-sublink-contact-information",
+    "page-contact-sublink-digital-map",
     "news-categories",
     "products-categories",
     "customer-center-categories",
