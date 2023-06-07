@@ -1,0 +1,114 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+//components
+import Layout from "@layouts/Layout.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
+import { Img } from "astro-imagetools/components";
+//data
+import NavigationJson from "@data/navigation.json";
+//data types
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+
+changeLanguage("cn");
+
+let pageJson = "page-contact-sublink-talent-strategy";
+const page: PageMetaTag = {
+    title: t(pageJson + ":pageTitle"),
+    description: t(pageJson + ":pageDescription"),
+    author: t(pageJson + ":pageAuthor"),
+    keywords: t(pageJson + ":pageKeywords"),
+};
+const openGraph: OpenGraphMetaTag = {
+    title: t(pageJson + ":openGraphTitle"),
+    type: t(pageJson + ":openGraphType"),
+    image: t(pageJson + ":openGraphImage"),
+    description: t(pageJson + ":openGraphDescription"),
+};
+const twitter: TwitterMetaTag = {
+    cardType: t(pageJson + ":twitterCardType"),
+    title: t(pageJson + ":twitterTitle"),
+    description: t(pageJson + ":twitterDescription"),
+    image: t(pageJson + ":twitterImage"),
+};
+console.log("pageJson", pageJson + ":bannerImageSrc");
+const bannerImageSrc = t(pageJson + ":bannerImageSrc");
+const bannerHeight = "200px";
+const trueImage = t(pageJson + ":trueImage") as unknown as boolean;
+const trueImageStyle = t(pageJson + ":trueImageStyle");
+type Subnav = {
+    label: string;
+    href: string;
+    slug: string;
+};
+var subnavs = NavigationJson.links
+    .filter((link) => link.name === "contact")[0]
+    .children.map((child: string) => {
+    return {
+        label: t(`navigation:navbar.contact.sublinks.${child}.name`),
+        href: `${utilGetCurrentLanguage(Astro.url.toString())}/contact/${t(`navigation:navbar.contact.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.contact.sublinks.${child}.slug`),
+    };
+}) as Subnav[];
+---
+
+<Layout page={page} openGraph={openGraph} twitter={twitter}>
+  <Banner
+    bannerImageSrc={bannerImageSrc}
+    bannerHeight={bannerHeight}
+    trueImage={trueImage}
+    trueImageStyle={trueImageStyle}
+  />
+  <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
+    <div class="my-[1.125rem] sticky top-0">
+      <InnerSubNav subnavs={subnavs} />
+    </div>
+    <div class="mb-6">
+      <BreadCrumbs label={t(pageJson + ":name")} />
+    </div>
+    <main>
+      <!--Section1 -->
+      <div class="mb-8 text-[0.875rem] text-text-primary leading-[1.75rem]">
+        <span class="font-semibold"
+          >{t(pageJson + ":contents.section1.text1")}</span
+        ><span>{t(pageJson + ":contents.section1.text2")}</span>
+      </div>
+      <!--Section2 -->
+      <div class="mb-8 text-[0.875rem] text-text-primary leading-[1.75rem]">
+        <p>
+          {t(pageJson + ":contents.section2.text1")}
+          <span class="font-semibold"
+            >{t(pageJson + ":contents.section2.text2")}</span
+          >
+          {t(pageJson + ":contents.section2.text3")}
+          <span class="font-semibold"
+            >{t(pageJson + ":contents.section2.text4")}</span
+          >
+          {t(pageJson + ":contents.section2.text5")}
+        </p>
+      </div>
+      <!--Section3-->
+      <div class="mb-8 text-[0.875rem] text-text-primary leading-[1.75rem]">
+        <p>
+          <span class="font-semibold"
+            >{t(pageJson + ":contents.section3.text1")}</span
+          >
+          {t(pageJson + ":contents.section3.text2")}
+        </p>
+      </div>
+      {
+        i18next.language === "cn" && (
+          <div class="mb-8 text-[0.875rem] text-text-primary leading-[1.75rem]">
+            {t(pageJson + ":contents.section4.text1")}
+          </div>
+        )
+      }
+      <div class="mb-16 flex justify-center">
+        <BackBtn />
+      </div>
+    </main>
+  </div>
+</Layout>
