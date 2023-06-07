@@ -50,10 +50,39 @@ const newsCategoryCollection = defineCollection({
     twitterImage: z.string().nullable(),
     bannerImage: z.string(),
   }),
+
+});
+const solutionsCollection = defineCollection({
+  schema: z.object({
+    title : z.string(),
+    pubDate : z.string(),
+    lang: z.string(),
+    image: z.object({
+      src : z.string(),
+      alt : z.string()
+    }),
+    pageTitle: z.string().nullable(),
+    pageDescription: z.string().nullable(),
+    pageKeywords: z.string().nullable(),
+    pageAuthor: z.string().nullable(),
+    ogTitle: z.string().nullable(),
+    ogType: z.string().nullable(),
+    ogDescription: z.string().nullable(),
+    ogImage: z.string().nullable(),
+    twitterCardType: z.string().nullable().nullable(),
+    twitterTitle: z.string().nullable(),
+    twitterDescription: z.string().nullable(),
+    twitterImage: z.string().nullable(),
+    bannerImage: z.string().nullable(),
+    articleSlug: z.string().nullable(),
+    articleShortDescription: z.string().nullable(),
+  })
+
 });
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
 export const collections = {
   'news': newsCollection,
-  'news-categories': newsCategoryCollection
+  'news-categories': newsCategoryCollection,
+  'solutions': newsCollection,
 };
