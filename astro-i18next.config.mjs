@@ -15,6 +15,7 @@ export default {
     "page-about-sublink-enterprise-culture",
     "page-customer-center-sublink-concrete-case",
     "page-customer-center-sublink-solutions",
+    "page-contact-sublink-talent-strategy",
     "news-categories",
     "products-categories",
     "customer-center-categories",
