@@ -1,6 +1,6 @@
 ---
 const {product} = Astro.props
-import astroI18next, { t, changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 import { Img, Picture } from "astro-imagetools/components";
 let productContent = `products:contents.${product.slug}.contents`;
 
@@ -70,6 +70,10 @@ let rightDetailsCount = parseInt(t(`${productContent}.section2.details.count`)) 
         {t(`${productContent}.section2.tabLabel`)}
     </div>
     <div class="border-[1px] border-dotted border-[#ccc] py-8 px-4" >
+        <!--Header -->
+        {
+            i18next.language === "cn" && <h3 class="text-[1.5rem] my-8 text-center">{t(`${productContent}.section2.header`)}</h3>
+        }
         <!--images -->
         <div class="block flex-row flex-wrap md:flex">
             {Array.from({length:parseInt(t(`${productContent}.section2.imageGallery.count`))}).map((el:any, index:number)=>{
