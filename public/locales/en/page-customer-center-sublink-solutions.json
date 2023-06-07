@@ -1,0 +1,23 @@
+{
+  "name": "Solutions",
+  "slug": "solutions",
+  "alt": "maze solution",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/customer-center-solutions.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/customer-center/solutions/solution-banner-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center"
+}
