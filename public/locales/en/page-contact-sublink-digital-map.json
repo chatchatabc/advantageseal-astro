@@ -1,0 +1,23 @@
+{
+  "name": "Digital Map",
+  "slug": "digital-map",
+  "alt": "digital map",
+  "subText": "",
+  "showNavBar": true,
+  "showFooter": true,
+  "imageRef": "/images/navbar/contact-talent-strategy.jpg",
+  "pageTitle": null,
+  "pageDescription": null,
+  "pageKeywords": null,
+  "ogTitle": null,
+  "ogImage": null,
+  "ogType": null,
+  "ogDescription": null,
+  "twitterCardType": null,
+  "twitterTitle": null,
+  "twitterDescription": null,
+  "twitterImage": null,
+  "bannerImageSrc": "/images/contact/banners/contact-tinified.webp",
+  "trueImage": false,
+  "trueImageStyle": "background-position:center"
+}
