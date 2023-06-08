@@ -202,22 +202,22 @@
           "imageGallery": {
             "count": 4,
             "image1": {
-              "src": "/images/products/type-21/section2-image1.jpg",
+              "src": "/images/products/type-21/section2-image1.png",
               "alt": "",
               "name": "实心六角传动"
             },
             "image2": {
-              "src": "/images/products/type-21/section2-image2.jpg",
+              "src": "/images/products/type-21/section2-image2.png",
               "alt": "",
               "name": "卷曲头"
             },
             "image3": {
-              "src": "/images/products/type-21/section2-image3.jpg",
+              "src": "/images/products/type-21/section2-image3.png",
               "alt": "",
               "name": "旋转密封"
             },
             "image4": {
-              "src": "/images/products/type-21/section2-image4.jpg",
+              "src": "/images/products/type-21/section2-image4.png",
               "alt": "",
               "name": "固定密封"
             }

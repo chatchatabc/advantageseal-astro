@@ -193,22 +193,22 @@
           "imageGallery": {
             "count": 4,
             "image1": {
-              "src": "/images/products/type-21/section2-image1.jpg",
+              "src": "/images/products/type-21/section2-image1.png",
               "alt": "",
               "name": "Solid hexagon drive"
             },
             "image2": {
-              "src": "/images/products/type-21/section2-image2.jpg",
+              "src": "/images/products/type-21/section2-image2.png",
               "alt": "",
               "name": "Crimped Head"
             },
             "image3": {
-              "src": "/images/products/type-21/section2-image3.jpg",
+              "src": "/images/products/type-21/section2-image3.png",
               "alt": "",
               "name": "Rotary Seal"
             },
             "image4": {
-              "src": "/images/products/type-21/section2-image4.jpg",
+              "src": "/images/products/type-21/section2-image4.png",
               "alt": "",
               "name": "Stationary Seal"
             }
