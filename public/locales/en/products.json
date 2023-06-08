@@ -601,6 +601,142 @@
       "bannerImageSrc": "/images/products/banners/product-tinified.webp",
       "trueImage": false,
       "trueImageStyle": "background-position:center"
+    },
+    "511-12":{
+      "contents": {
+        "section1": {
+          "label": "Technical Parameters",
+          "parameters": {
+            "count": 3,
+            "parameters": {
+              "parameter1": "Temperature:-30℃～200℃",
+              "parameter2": "Pressure:≤1.2Mpa",
+              "parameter3": "Speed:≤10m/s"
+            }
+          },
+          "imageGallery": {
+            "count": 1,
+            "images": {
+              "image1": {
+                "src": "/images/products/511-12/section1-image1.jpg",
+                "alt": ""
+              }
+             
+            }
+          }
+        },
+        "section2": {
+          "cutawayDiagram": "/images/products/511-12/section2-diagram1.png",
+          "tabLabel": "Product Details",
+          
+    
+          "details": {
+            "count": 1,
+            "detail1": {
+              "label": "Materials",
+              "count": 4,
+              "items": {
+                "item1": "Rotary Seal Face: SiC/TC",
+                "item2": "Stationary Seal Face: Carbon/SiC/TC",
+                "item3": "Rubber Parts: NBR/EPDM/FKM",
+                "item4": "Spring and stamping parts：Stainless Steel"
+              
+              }
+            }
+          },
+          "replaces": {
+            "header": "Advantage Seal Type 511-12 replaces:",
+            "count": 2,
+            "items": {
+              "item1": "CR1.3.5.10.15.20.32.45.64.90",
+              "item2": "CRN1.3.5.10.15.20.32.45.64.90"
+             
+            }
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
+    },
+    "511-16":{
+      "contents": {
+        "section1": {
+          "label": "Technical Parameters",
+          "parameters": {
+            "count": 3,
+            "parameters": {
+              "parameter1": "Temperature:-30℃～200℃",
+              "parameter2": "Pressure:≤1.2Mpa",
+              "parameter3": "Speed:≤10m/s"
+            }
+          },
+          "imageGallery": {
+            "count": 1,
+            "images": {
+              "image1": {
+                "src": "/images/products/511-16/section1-image1.jpg",
+                "alt": ""
+              }
+             
+            }
+          }
+        },
+        "section2": {
+          "cutawayDiagram": "/images/products/511-16/section2-diagram1.png",
+          "tabLabel": "Product Details",
+          
+    
+          "details": {
+            "count": 1,
+            "detail1": {
+              "label": "Materials",
+              "count": 4,
+              "items": {
+                "item1": "Rotary Seal Face: SiC/TC",
+                "item2": "Stationary Seal Face: Carbon/SiC/TC",
+                "item3": "Rubber Parts: NBR/EPDM/FKM",
+                "item4": "Spring and stamping parts：Stainless Steel"
+              
+              }
+            }
+          },
+          "replaces": {
+            "header": "Advantage Seal Type 511-16 replaces:",
+            "count": 2,
+            "items": {
+              "item1": "CR1.3.5.10.15.20.32.45.64.90",
+              "item2": "CRN1.3.5.10.15.20.32.45.64.90"
+             
+            }
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
     }
   },
   "QQchat":{
