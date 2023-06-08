@@ -1294,6 +1294,80 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
+    "asi-c-u22":{
+      "contents": {
+        "section1": {
+          "label": "技术参数",
+          "parameters": {
+            "count": 3,
+            "parameters": {
+              "parameter1": "温度：-30℃～+200℃",
+              "parameter2": "压力：≤1 Mpa",
+              "parameter3": "线速度：≤5m/s"
+            }
+          },
+          "imageGallery": {
+            "count": 1,
+            "images": {
+              "image1": {
+                "src": "/images/products/asi-c-u22/section1-image1.jpg",
+                "alt": ""
+              }   
+            }
+          }
+        },
+        "section2": {
+          "tabLabel": "产品详情",
+          "details": {
+            "count": 1,
+            "detail1": {
+              "label": "材料组合",
+              "count": 5,
+              "items": {
+                "item1": "动环（碳化硅/碳化钨）",
+                "item2": "静环（碳化硅/碳化钨）",
+                "item3": "辅助密封（丁晴胶/三元乙丙胶/氟胶）",
+                "item4": "弹簧及车制件（不锈钢）",
+                "item5": "其它零件（塑料/铸铝）"
+              }
+            }
+          },
+          "table": {
+            "cols": 4,
+            "th":{
+              "th1": "飞力泵编号",
+              "th2": "轴尺寸",
+              "th3": "上密封编号",
+              "th4": "下密封编号"
+            },
+            "tr":{
+              "count":1,
+              "tr1": {
+                "tc1": "2040 2102-210 2102-041 2102-220 Ready40 Ready56",
+                "tc2": "22mm",
+                "tc3": "ASI-C-U22",
+                "tc4": "ASI-C-L22"
+              }
+              
+            }
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
+    },
   },
   "QQchat":{
     "btnLabel":"在线咨询",
