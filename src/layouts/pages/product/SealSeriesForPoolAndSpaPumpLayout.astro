@@ -79,7 +79,7 @@ let rightDetailsCount = parseInt(t(`${productContent}.section2.details.count`)) 
             {Array.from({length:parseInt(t(`${productContent}.section2.imageGallery.count`))}).map((el:any, index:number)=>{
                 return(
                     <div class="border-[1px] border-solid border-[#ccc] w-full h-fit md:w-6/12 lg:w-3/12">
-                        <Img src={t(`${productContent}.section2.imageGallery.image${index+1}.src`)} alt={t(`${productContent}.section2.imageGallery.image${index+1}.alt`)}/>
+                        <Picture src={t(`${productContent}.section2.imageGallery.image${index+1}.src`)} alt={t(`${productContent}.section2.imageGallery.image${index+1}.alt`)}/>
                         <div class="w-full mt-4 text-center text-[0.875rem]">{t(`${productContent}.section2.imageGallery.image${index+1}.name`)}</div>
                     </div>
                 )
@@ -145,6 +145,9 @@ let rightDetailsCount = parseInt(t(`${productContent}.section2.details.count`)) 
         </div>
         <div>
             
+            <!--
+
+            -->
             <Picture src={t(`${productContent}.section2.replaces.cutawayDiagram`)} alt="cutaway digram of item"/>
         </div>
     </div>
