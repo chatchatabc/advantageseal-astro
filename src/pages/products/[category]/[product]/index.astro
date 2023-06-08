@@ -23,116 +23,23 @@ changeLanguage("cn");
 const { product } = Astro.props as Props;
 var pageJson = `products:contents.${product.slug}`;
 export async function getStaticPaths() {
-    // return ProductsJson.list.flatMap((product) => {
-    //   return product.categories.map((category) => ({
-    //       params: {
-    //           category: category,
-    //           product: product.slug
-    //       },
-    //       props: {
-    //           //since the data of the produc is based on the translation file we just need to reference it using the slug instead
-    //           product: {
-    //               name: t(`products:contents.${product.slug}.name`),
-    //               slug: product.slug,
-    //               category: category
-    //           }
-    //       }
-    //   }));
-    // });
-    //disable for a while as ai build the literals
-    return [
-        {
-            params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-16"
-            },
-            props: {
-                product: {
-                    name: "Type 16",
-                    slug: "type-16",
-                    category: "seal-series-for-pool-and-spa-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-21"
-            },
-            props: {
-                product: {
-                    name: "Type 21",
-                    slug: "type-21",
-                    category: "seal-series-for-pool-and-spa-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-201"
-            },
-            props: {
-                product: {
-                    name: "Type 201",
-                    slug: "type-201",
-                    category: "seal-series-for-pool-and-spa-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-202"
-            },
-            props: {
-                product: {
-                    name: "Type 202",
-                    slug: "type-202",
-                    category: "seal-series-for-pool-and-spa-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-vertical-multi-stage-pump",
-                product: "511-12"
-            },
-            props: {
-                product: {
-                    name: "511-12",
-                    slug: "511-12",
-                    category: "seal-series-for-vertical-multi-stage-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-vertical-multi-stage-pump",
-                product: "511-16"
-            },
-            props: {
-                product: {
-                    name: "511-16",
-                    slug: "511-16",
-                    category: "seal-series-for-vertical-multi-stage-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-vertical-multi-stage-pump",
-                product: "511-22"
-            },
-            props: {
-                product: {
-                    name: "511-22",
-                    slug: "511-22",
-                    category: "seal-series-for-vertical-multi-stage-pump"
-                }
-            }
-        }
-    ];
+    return (ProductsJson.list.flatMap((product) => {
+      return product.categories.map((category) => ({
+          params: {
+              category: category,
+              product: product.slug
+          },
+          props: {
+              //since the data of the produc is based on the translation file we just need to reference it using the slug instead
+              product: {
+                  name: t(`products:contents.${product.slug}.name`),
+                  slug: product.slug,
+                  category: category
+              }
+          }
+      }));
+    })).filter((product)=> ["seal-series-for-pool-and-spa-pump","seal-series-for-vertical-multi-stage-pump","sealing-series-for-flypt-pump"].includes(product.props.product.category));
+    
 }
 const page: PageMetaTag = {
     title: t(pageJson + ".pageTitle"),
