@@ -979,6 +979,80 @@
       "bannerImageSrc": "/images/products/banners/product-tinified.webp",
       "trueImage": false,
       "trueImageStyle": "background-position:center"
+    },
+    "asi-a-u20":{
+      "contents": {
+        "section1": {
+          "label": "Technical Parameters",
+          "parameters": {
+            "count": 3,
+            "parameters": {
+              "parameter1": "Temperature: -30℃～+200℃",
+              "parameter2": "Pressure: ≤1 Mpa",
+              "parameter3": "Speed: ≤5m/s"
+            }
+          },
+          "imageGallery": {
+            "count": 1,
+            "images": {
+              "image1": {
+                "src": "/images/products/asi-a-u20/section1-image1.jpg",
+                "alt": ""
+              }   
+            }
+          }
+        },
+        "section2": {
+          "tabLabel": "Product Details",
+          "details": {
+            "count": 1,
+            "detail1": {
+              "label": "Materials",
+              "count": 5,
+              "items": {
+                "item1": "Rotary Seal Face：SiC/TC",
+                "item2": "Stationary Seal Face：SiC/TC",
+                "item3": "Rubber Parts ：NBR/EPDM/FKM",
+                "item4": "Spring and stamping parts：Stainless Steel",
+                "item5": "Other Parts：plastic/cast aluminum"
+              }
+            }
+          },
+          "table": {
+            "cols": 4,
+            "th":{
+              "th1": "Flypt Pump Number",
+              "th2": "Shaft Size",
+              "th3": "Up Seal Number",
+              "th4": "Down Seal Number"
+            },
+            "tr":{
+              "count":1,
+              "tr1": {
+                "tc1": "Ready 24",
+                "tc2": "20mm",
+                "tc3": "ASI-A-U20",
+                "tc4": "ASI-A-L20"
+              }
+              
+            }
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
     }
   },
   "QQchat":{
