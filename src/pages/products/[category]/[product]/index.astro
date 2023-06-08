@@ -19,7 +19,8 @@ import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
 
-var pageJson = "products";
+const { product } = Astro.props as Props;
+var pageJson = `products:contents.${product.slug}`;
 export async function getStaticPaths() {
     // return ProductsJson.list.flatMap((product) => {
     //   return product.categories.map((category) => ({
@@ -55,24 +56,24 @@ export async function getStaticPaths() {
     ];
 }
 const page: PageMetaTag = {
-    title: t(pageJson + ":pageTitle"),
-    description: t(pageJson + ":pageDescription"),
-    author: t(pageJson + ":pageAuthor"),
-    keywords: t(pageJson + ":pageKeywords"),
+    title: t(pageJson + ".pageTitle"),
+    description: t(pageJson + ".pageDescription"),
+    author: t(pageJson + ".pageAuthor"),
+    keywords: t(pageJson + ".pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ":openGraphTitle"),
-    type: t(pageJson + ":openGraphType"),
-    image: t(pageJson + ":openGraphImage"),
-    description: t(pageJson + ":openGraphDescription"),
+    title: t(pageJson + ".openGraphTitle"),
+    type: t(pageJson + ".openGraphType"),
+    image: t(pageJson + ".openGraphImage"),
+    description: t(pageJson + ".openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ":twitterCardType"),
-    title: t(pageJson + ":twitterTitle"),
-    description: t(pageJson + ":twitterDescription"),
-    image: t(pageJson + ":twitterImage"),
+    cardType: t(pageJson + ".twitterCardType"),
+    title: t(pageJson + ".twitterTitle"),
+    description: t(pageJson + ".twitterDescription"),
+    image: t(pageJson + ".twitterImage"),
 };
-const bannerImageSrc = t(pageJson + ":bannerImageSrc");
+const bannerImageSrc = t(pageJson + ".bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
@@ -97,7 +98,6 @@ type Props = {
         category: string;
     };
 };
-const { product } = Astro.props as Props;
 let currNewsCategory: string = product.name; //current name of the product item
 ---
 
