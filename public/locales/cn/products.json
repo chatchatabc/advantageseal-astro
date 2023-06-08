@@ -10,7 +10,7 @@
   "twitterTitle": null,
   "twitterDescription": null,
   "twitterImage": null,
-  "bannerImageSrc": "/images/customer-center/solutions/solution-banner-tinified.webp",
+  "bannerImageSrc": "/images/products/banners/product-tinified.webp",
   "trueImage": false,
   "trueImageStyle": "background-position:center",
   "contents": {
@@ -160,7 +160,156 @@
       "twitterTitle": null,
       "twitterDescription": null,
       "twitterImage": null,
-      "bannerImageSrc": "/images/customer-center/solutions/solution-banner-tinified.webp",
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
+    },
+    "type-21": {
+      "name": "Type 21",
+      "contents": {
+        "section1": {
+          "label": "通用型密封：",
+          "parameters": {
+            "count": 3,
+            "parameters": {
+              "parameter1": "转速： 5,000 SFPM *",
+              "parameter2": "压力： 250 PSI *",
+              "parameter3": "使用温度： -40°F （-40°C） 到 400°F（204°C）*"
+            }
+          },
+          "disclaimer": "* 以上数据根据密封尺寸和不同材料得出。",
+          "imageGallery": {
+            "count": 3,
+            "images": {
+              "image1": {
+                "src": "/images/products/type-21/section1-image1.jpg",
+                "alt": ""
+              },
+              "image2": {
+                "src": "/images/products/type-21/section1-image2.jpg",
+                "alt": ""
+              },
+              "image3": {
+                "src": "/images/products/type-21/section1-image3.jpg",
+                "alt": ""
+              }
+            }
+          }
+        },
+        "section2": {
+          "tabLabel": "产品详情",
+          "header": "为何选择Advantage Seal Type 21型密封材料？",
+          "imageGallery": {
+            "count": 4,
+            "image1": {
+              "src": "/images/products/type-21/section2-image1.jpg",
+              "alt": "",
+              "name": "实心六角传动"
+            },
+            "image2": {
+              "src": "/images/products/type-21/section2-image2.jpg",
+              "alt": "",
+              "name": "卷曲头"
+            },
+            "image3": {
+              "src": "/images/products/type-21/section2-image3.jpg",
+              "alt": "",
+              "name": "旋转密封"
+            },
+            "image4": {
+              "src": "/images/products/type-21/section2-image4.jpg",
+              "alt": "",
+              "name": "固定密封"
+            }
+          },
+          "details": {
+            "count": 7,
+            "detail1": {
+              "label": "标准设计：",
+              "count": 2,
+              "items": {
+                "item1": "无麻烦操作",
+                "item2": "安装简易"
+              }
+            },
+            "detail2": {
+              "label": "六角驱动：",
+              "count": 2,
+              "items": {
+                "item1": "在水泵运转时不会停止运行",
+                "item2": "保护并防止橡胶件破损"
+              }
+            },
+            "detail3": {
+              "label": "经济之选：",
+              "count": 3,
+              "items": {
+                "item1": "标准配件",
+                "item2": "批量生产",
+                "item3": "保证成本优势"
+              }
+            },
+            "detail4": {
+              "label": "适用于：",
+              "count": 3,
+              "items": {
+                "item1": "水池用水泵",
+                "item2": "水疗用水泵",
+                "item3": "小型工业和商业用泵"
+              }
+            },
+            "detail5": {
+              "label": "优势：",
+              "count": 5,
+              "items": {
+                "item1": "简化组装",
+                "item2": "密封面处无粘合",
+                "item3": "避免异物渗透",
+                "item4": "密封面无金属填充物",
+                "item5": "有效保护密封面"
+              }
+            },
+            "detail6": {
+              "label": "单弹簧设计：",
+              "count": 1,
+              "items": {
+                "item1": "能较好的防止堵塞"
+              }
+            },
+            "detail7": {
+              "label": "多种静环：",
+              "count": 3,
+              "items": {
+                "item1": "配O型圈静环",
+                "item2": "杯状底座",
+                "item3": "DIN"
+              }
+            }
+          },
+          "replaces": {
+            "header": "Advantage Seal Type 21型密封件可替代",
+            "count": 3,
+            "items": {
+              "item1": "约翰克兰21型：2100型",
+              "item2": "Sealol 43 CU",
+              "item3": "Pac-Seal 21型"
+            },
+            "cutawayDiagram": "/images/products/type-21/section2-diagram1.jpg"
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     }

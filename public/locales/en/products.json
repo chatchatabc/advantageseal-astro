@@ -151,7 +151,147 @@
       "twitterTitle": null,
       "twitterDescription": null,
       "twitterImage": null,
-      "bannerImageSrc": "/images/customer-center/solutions/solution-banner-tinified.webp",
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
+    },
+    "type-21": {
+      "name": "Type 21",
+      "contents": {
+        "section1": {
+          "label": "Universal Seal：",
+          "parameters": {
+            "count": 3,
+            "parameters": {
+              "parameter1": "Speed: 12-15m/s",
+              "parameter2": "Pressure: 250 PSI *",
+              "parameter3": "Temperature: -40°F （-40°C） ~ 400°F（204°C）*"
+            }
+          },
+          "disclaimer": "",
+          "imageGallery": {
+            "count": 3,
+            "images": {
+              "image1": {
+                "src": "/images/products/type-21/section1-image1.jpg",
+                "alt": ""
+              },
+              "image2": {
+                "src": "/images/products/type-21/section1-image2.jpg",
+                "alt": ""
+              },
+              "image3": {
+                "src": "/images/products/type-21/section1-image3.jpg",
+                "alt": ""
+              }
+            }
+          }
+        },
+        "section2": {
+          "tabLabel": "Product Details",
+          "header": "",
+          "imageGallery": {
+            "count": 4,
+            "image1": {
+              "src": "/images/products/type-21/section2-image1.jpg",
+              "alt": "",
+              "name": "Solid hexagon drive"
+            },
+            "image2": {
+              "src": "/images/products/type-21/section2-image2.jpg",
+              "alt": "",
+              "name": "Crimped Head"
+            },
+            "image3": {
+              "src": "/images/products/type-21/section2-image3.jpg",
+              "alt": "",
+              "name": "Rotary Seal"
+            },
+            "image4": {
+              "src": "/images/products/type-21/section2-image4.jpg",
+              "alt": "",
+              "name": "Stationary Seal"
+            }
+          },
+          "details": {
+            "count": 6,
+            "detail1": {
+              "labels": "Unitized Design:",
+              "count": 2,
+              "items": {
+                "item1": "No-hassle handling",
+                "item2": "Easy to install"
+              }
+            },
+            "detail2": {
+              "labels": "Hex Drive:",
+              "count": 2,
+              "items": {
+                "item1": "Will not disengage during operation",
+                "item2": "Protects the elastomer bellows from damage"
+              }
+            },
+            "detail3": {
+              "labels": "Ideal or:",
+              "count": 4,
+              "items": {
+                "item1": "Pool Pumps",
+                "item2": "Spa Pumps",
+                "item3": "Stamped Pumps",
+                "item4": "Smaller Industrial and Commercial applications"
+              }
+            },
+            "detail4": {
+              "labels": "Advantage:",
+              "count": 4,
+              "items": {
+                "item1": "Greatly simplifies installation",
+                "item2": "No adhesive on seal face",
+                "item3": "Prevents penetration of solids into the seal head",
+                "item4": "Cushions rotary seal face without metal to seal face contact"
+              }
+            },
+            "detail5": {
+              "labels": "Single Coil Spring:",
+              "count": 1,
+              "items": {
+                "item1": "Helps prevent clogging"
+              }
+            },
+            "detail6": {
+              "labels": "A variety of Mating Rings:",
+              "count": 3,
+              "items": {
+                "item1": "O-Ring Mount",
+                "item2": "Cup Mount",
+                "item3": "DIN"
+              }
+            }
+          },
+          "replaces": {
+            "header": "Advantage Seal Type 21 replaces",
+            "count": 3,
+            "items": {
+              "item1": "John Crane Model 21: Type 2100",
+              "item2": "Sealol 43 CU",
+              "item3": "Pac-Seal type 21"
+            },
+            "cutawayDiagram": "/images/products/type-21/section2-diagram1.jpg"
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     }
