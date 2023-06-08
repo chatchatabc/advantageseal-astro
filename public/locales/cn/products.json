@@ -755,6 +755,78 @@
       "bannerImageSrc": "/images/products/banners/product-tinified.webp",
       "trueImage": false,
       "trueImageStyle": "background-position:center"
+    },
+    "511-22":{
+      "contents": {
+        "section1": {
+          "label": "技术参数",
+          "parameters": {
+            "count": 3,
+            "parameters": {
+              "parameter1": "温度：-30℃～200℃",
+              "parameter2": "压力：≤1.2Mpa",
+              "parameter3": "转速：≤10m/s"
+            }
+          },
+          "imageGallery": {
+            "count": 2,
+            "images": {
+              "image1": {
+                "src": "/images/products/511-22/section1-image1.jpg",
+                "alt": ""
+              },
+              "image2": {
+                "src": "/images/products/511-22/section1-image2.jpg",
+                "alt": ""
+              }
+             
+            }
+          }
+        },
+        "section2": {
+          "cutawayDiagram": "/images/products/511-22/section2-diagram1.png",
+          "tabLabel": "Product Details",
+          
+    
+          "details": {
+            "count": 1,
+            "detail1": {
+              "label": "材料组合",
+              "count": 4,
+              "items": {
+                "item1": "动环：碳化硅/碳化钨",
+                "item2": "静环：车制石墨/碳化硅/碳化钨",
+                "item3": "辅助密封：丁晴胶/三元乙丙胶/氟胶",
+                "item4": "弹簧及金属件：不锈钢"
+              
+              }
+            }
+          },
+          "replaces": {
+            "header": "不锈钢立式多级离心泵用密封适配于格兰富：",
+            "count": 2,
+            "items": {
+              "item1": "CR1.3.5.10.15.20.32.45.64.90水泵常规机械密封，O型圈集装式结构",
+              "item2": "CRN1.3.5.10.15.20.32.45.64.90水泵常规机械密封，O型圈集装式结构"
+             
+            }
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
     }
   },
   "QQchat":{
