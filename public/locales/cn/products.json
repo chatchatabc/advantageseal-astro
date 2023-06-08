@@ -465,6 +465,160 @@
       "bannerImageSrc": "/images/products/banners/product-tinified.webp",
       "trueImage": false,
       "trueImageStyle": "background-position:center"
+    },
+    "type-202": {
+      "name": "Type 202",
+      "contents": {
+        "section1": {
+          "label": "密封面要求较窄，单弹簧通用型密封：",
+          "parameters": {
+            "count": 5,
+            "parameters": {
+              "parameter1": "Requiring a narrow seal cross-section",
+              "parameter2": "Requiring a more convoluted bellows",
+              "parameter3": "转速： 5,000 SFPM *",
+              "parameter4": "压力： 250 PSI *",
+              "parameter5": "使用温度： -40°F （-40°C） 到 400°F（204°C）*"
+            }
+          },
+          "disclaimer": "* 以上数据根据密封尺寸和不同材料得出。",
+          "imageGallery": {
+            "count": 3,
+            "images": {
+              "image1": {
+                "src": "/images/products/type-202/section1-image1.jpg",
+                "alt": ""
+              },
+              "image2": {
+                "src": "/images/products/type-202/section1-image2.jpg",
+                "alt": ""
+              },
+              "image3": {
+                "src": "/images/products/type-202/section1-image3.jpg",
+                "alt": ""
+              }
+            }
+          }
+        },
+        "section2": {
+          "tabLabel": "产品详情",
+          "header": "为何选择Advantage Seal Type 202型密封材料？",
+          "imageGallery": {
+            "count": 4,
+            "image1": {
+              "src": "/images/products/type-202/section2-image1.png",
+              "alt": "",
+              "name": "实心六角传动"
+            },
+            "image2": {
+              "src": "/images/products/type-202/section2-image2.png",
+              "alt": "",
+              "name": "卷曲头"
+            },
+            "image3": {
+              "src": "/images/products/type-202/section2-image3.png",
+              "alt": "",
+              "name": "卷曲波纹管"
+            },
+            "image4": {
+              "src": "/images/products/type-202/section2-image4.png",
+              "alt": "",
+              "name": "全密封组件"
+            }
+          },
+          "details": {
+            "count": 7,
+            "detail1": {
+              "label": "机加工件用于六角驱动的优势：",
+              "count": 5,
+              "items": {
+                "item1": "所有201的标准设计",
+                "item2": "有效啮合",
+                "item3": "不会将六角驱动装反",
+                "item4": "不会造成驱动失败",
+                "item5": "不会破坏橡胶件"
+              }
+            },
+            "detail2": {
+              "label": "六而其他竞争对手冲压设计的缺陷：",
+              "count": 2,
+              "items": {
+                "item1": "冲压件的锋利可能破坏波纹管道造成泄露",
+                "item2": "组装时易装反"
+              }
+            },
+            "detail3": {
+              "label": "波纹管设计：",
+              "count": 2,
+              "items": {
+                "item1": "较好的自调整能力",
+                "item2": "对于设备偏转有较强承受及调整能力"
+              }
+            },
+            "detail4": {
+              "label": "创新设计：",
+              "count": 3,
+              "items": {
+                "item1": "相较于其他设计，配件较少",
+                "item2": "与202型密封件有很多共性",
+                "item3": "更具性价比"
+              }
+            },
+            "detail5": {
+              "label": "环动收边：",
+              "count": 4,
+              "items": {
+                "item1": "使安装变的简洁",
+                "item2": "密封面无粘合",
+                "item3": "阻止固体进入动环头",
+                "item4": "保护动环密封面（无金属直接接触密封面）"
+              }
+            },
+            "detail6": {
+              "label": "单弹簧设计：",
+              "count": 1,
+              "items": {
+                "item1": "不会造成堵塞"
+              }
+            },
+            "detail7": {
+              "label": "不同的静环配套设施：",
+              "count": 3,
+              "items": {
+                "item1": "O型圈底座",
+                "item2": "杯状底座",
+                "item3": "DIN"
+              }
+            }
+          },
+          "replaces": {
+            "header": "Advantage Seal Type 201型密封件可替代",
+            "count": 5,
+            "items": {
+              "item1": "约翰克兰2型，21型，2100型",
+              "item2": "Sealol 43 CE Short,43 BE",
+              "item3": "Pac-Seal 52型,21型",
+              "item4": "US Seal D型",
+              "item5": "伯格曼M2型， M3型， M377型"
+            },
+            "cutawayDiagram": "/images/products/type-201/section2-diagram1.jpg"
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
     }
   },
   "QQchat":{

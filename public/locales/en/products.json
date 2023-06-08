@@ -447,6 +447,160 @@
       "bannerImageSrc": "/images/products/banners/product-tinified.webp",
       "trueImage": false,
       "trueImageStyle": "background-position:center"
+    },
+    "type-202": {
+      "name": "Type 202",
+      "contents": {
+        "section1": {
+          "label": "Single Spring Universal Seal:",
+          "parameters": {
+            "count": 5,
+            "parameters": {
+              "parameter1": "Requiring a narrow seal cross-section",
+              "parameter2": "Requiring a more convoluted bellows",
+              "parameter3": "Speed：12-15m/s",
+              "parameter4": "Pressure: 250 PSI",
+              "parameter5": "Temperature: -40°F （-40°C） ~ 400°F（204°C）*"
+            }
+          },
+          "disclaimer": "",
+          "imageGallery": {
+            "count": 3,
+            "images": {
+              "image1": {
+                "src": "/images/products/type-202/section1-image1.jpg",
+                "alt": ""
+              },
+              "image2": {
+                "src": "/images/products/type-202/section1-image2.jpg",
+                "alt": ""
+              },
+              "image3": {
+                "src": "/images/products/type-202/section1-image3.jpg",
+                "alt": ""
+              }
+            }
+          }
+        },
+        "section2": {
+          "tabLabel": "Product Details",
+          "header": "",
+          "imageGallery": {
+            "count": 4,
+            "image1": {
+              "src": "/images/products/type-202/section2-image1.png",
+              "alt": "",
+              "name": "Solid Hex Drive"
+            },
+            "image2": {
+              "src": "/images/products/type-202/section2-image2.png",
+              "alt": "",
+              "name": "Crimped Head"
+            },
+            "image3": {
+              "src": "/images/products/type-202/section2-image3.png",
+              "alt": "",
+              "name": "Convoluted Bellows"
+            },
+            "image4": {
+              "src": "/images/products/type-202/section2-image4.png",
+              "alt": "",
+              "name": "Complete Seal Assembly"
+            }
+          },
+          "details": {
+            "count": 7,
+            "detail1": {
+              "labels": "The Solid Hex Drive Advantage:",
+              "count": 5,
+              "items": {
+                "item1": "Standard in every Advantage Seal Type 201",
+                "item2": "Locking, Positive Engagement",
+                "item3": "Drive Band cannot be installed improperly",
+                "item4": "Eliminates damage to below",
+                "item5": "Eliminates drive failure"
+              }
+            },
+            "detail2": {
+              "labels": "Competitor's stamped designs:",
+              "count": 2,
+              "items": {
+                "item1": "Sharp stampings can damage the seal bellows",
+                "item2": "Can be installed upside down at the seal manufacturer"
+              }
+            },
+            "detail3": {
+              "labels": "Convoluted Bellows:",
+              "count": 2,
+              "items": {
+                "item1": "Greater self-aligning capability",
+                "item2": "Adjusts for End-Play, Runout, and Equipment Tolerance issues"
+              }
+            },
+            "detail4": {
+              "labels": "Innovative Design",
+              "count": 3,
+              "items": {
+                "item1": "Fewer seal components than other designs",
+                "item2": "Commonality of components with Type 202 seal",
+                "item3": "Delivers Performance and Value"
+              }
+            },
+            "detail5": {
+              "labels": "Cramping Process:",
+              "count": 4,
+              "items": {
+                "item1": "Cushions rotary seal face without metal to seal face contact",
+                "item2": "Greatly simplifies installation",
+                "item3": "No adhesive on seal face",
+                "item4": "Prevents penetration of solids into the seal head"
+              }
+            },
+            "detail6": {
+              "labels": "Single Coil Spring:",
+              "count": 1,
+              "items": {
+                "item1": "Helps prevent clogging"
+              }
+            },
+            "detail7": {
+              "labels": "A variety of Mating Rings:",
+              "count": 3,
+              "items": {
+                "item1": "O-Ring Mount",
+                "item2": "Cup Mount",
+                "item3": "DIN"
+              }
+            }
+          },
+          "replaces": {
+            "header": "Advantage Seal Type 202 replaces",
+            "count": 5,
+            "items": {
+              "item1": "John Crane Model 2, Type 21, Type 2100",
+              "item2": "Sealol 43 CE Short,43 BE",
+              "item3": "Pac-Seal Type 52, Type 21",
+              "item4": "US Seal Type D",
+              "item5": "Bergman Type M2, Type M3, Type M377"
+            },
+            "cutawayDiagram": "/images/products/type-202/section2-diagram1.jpg"
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
     }
   },
   "QQchat":{
