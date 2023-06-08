@@ -4396,6 +4396,255 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
+    "10eb-xxxx-60-xxxx": {
+      "name": "10EB-XXXX-60-XXXX",
+      "contents": {
+        "section1": {
+          "imageGallery": {
+            "count": 1,
+            "images": {
+              "image1": {
+                "src": "/images/products/10eb-xxxx-60-xxxx/section1-image1.png",
+                "alt": ""
+              }   
+            }
+          }
+        },
+        "section2": {
+          "tabLabel": "产品详情",
+          "table": {
+            "cols": 4,
+            "th":{
+              "th1": "轴尺寸",
+              "th2": "d6",
+              "th3": "d7",
+              "th4": "L28"
+            },
+            "tr":{
+              "count":34,
+              "tr1": {
+                "tc1": "10",
+                "tc2": "17",
+                "tc3": "21",
+                "tc4": "6.5"
+              },
+              "tr2": {
+                "tc1": "12",
+                "tc2": "19",
+                "tc3": "23",
+                "tc4": "6.5"
+              },
+              "tr3": {
+                "tc1": "14",
+                "tc2": "21",
+                "tc3": "25",
+                "tc4": "6.5"
+              },
+              "tr4": {
+                "tc1": "16",
+                "tc2": "23",
+                "tc3": "27",
+                "tc4": "6.5"
+              },
+              "tr5": {
+                "tc1": "18",
+                "tc2": "27",
+                "tc3": "33",
+                "tc4": "7.5"
+              },
+              "tr6": {
+                "tc1": "20",
+                "tc2": "29",
+                "tc3": "35",
+                "tc4": "7.5"
+              },
+              "tr7": {
+                "tc1": "22",
+                "tc2": "31",
+                "tc3": "37",
+                "tc4": "7.5"
+              },
+              "tr8": {
+                "tc1": "24",
+                "tc2": "33",
+                "tc3": "39",
+                "tc4": "7.5"
+              },
+              "tr9": {
+                "tc1": "25",
+                "tc2": "34",
+                "tc3": "40",
+                "tc4": "7.5"
+              },
+              "tr10": {
+                "tc1": "28",
+                "tc2": "37",
+                "tc3": "43",
+                "tc4": "7.5"
+              },
+              "tr11": {
+                "tc1": "30",
+                "tc2": "39",
+                "tc3": "45",
+                "tc4": "7.5"
+              },
+              "tr12": {
+                "tc1": "32",
+                "tc2": "42",
+                "tc3": "48",
+                "tc4": "7.5"
+              },
+              "tr13": {
+                "tc1": "33",
+                "tc2": "42",
+                "tc3": "48",
+                "tc4": "7.5"
+              },
+              "tr14": {
+                "tc1": "35",
+                "tc2": "44",
+                "tc3": "50",
+                "tc4": "7.5"
+              },
+              "tr15": {
+                "tc1": "38",
+                "tc2": "49",
+                "tc3": "56",
+                "tc4": "9.0"
+              },
+              "tr16": {
+                "tc1": "40",
+                "tc2": "51",
+                "tc3": "58",
+                "tc4": "9.0"
+              },
+              "tr17": {
+                "tc1": "43",
+                "tc2": "54",
+                "tc3": "61",
+                "tc4": "9.0"
+              },
+              "tr18": {
+                "tc1": "45",
+                "tc2": "56",
+                "tc3": "63",
+                "tc4": "9.0"
+              },
+              "tr19": {
+                "tc1": "48",
+                "tc2": "59",
+                "tc3": "66",
+                "tc4": "9.0"
+              },
+              "tr20": {
+                "tc1": "50",
+                "tc2": "62",
+                "tc3": "70",
+                "tc4": "9.5"
+              },
+              "tr21": {
+                "tc1": "53",
+                "tc2": "65",
+                "tc3": "73",
+                "tc4": "11.0"
+              },
+              "tr22": {
+                "tc1": "55",
+                "tc2": "67",
+                "tc3": "75",
+                "tc4": "11.0"
+              },
+              "tr23": {
+                "tc1": "58",
+                "tc2": "70",
+                "tc3": "78",
+                "tc4": "11.0"
+              },
+              "tr24": {
+                "tc1": "60",
+                "tc2": "72",
+                "tc3": "80",
+                "tc4": "11.0"
+              },
+              "tr25": {
+                "tc1": "63",
+                "tc2": "75",
+                "tc3": "83",
+                "tc4": "11.0"
+              },
+              "tr26": {
+                "tc1": "65",
+                "tc2": "77",
+                "tc3": "85",
+                "tc4": "11.0"
+              },
+              "tr27": {
+                "tc1": "68",
+                "tc2": "81",
+                "tc3": "90",
+                "tc4": "11.5"
+              },
+              "tr28": {
+                "tc1": "70",
+                "tc2": "83",
+                "tc3": "92",
+                "tc4": "11.5"
+              },
+              "tr29": {
+                "tc1": "75",
+                "tc2": "88",
+                "tc3": "97",
+                "tc4": "11.5"
+              },
+              "tr30": {
+                "tc1": "80",
+                "tc2": "95",
+                "tc3": "105",
+                "tc4": "12.0"
+              },
+              "tr31": {
+                "tc1": "85",
+                "tc2": "100",
+                "tc3": "110",
+                "tc4": "14.0"
+              },
+              "tr32": {
+                "tc1": "90",
+                "tc2": "105",
+                "tc3": "115",
+                "tc4": "14.0"
+              },
+              "tr33": {
+                "tc1": "95",
+                "tc2": "110",
+                "tc3": "120",
+                "tc4": "14.0"
+              },
+              "tr34": {
+                "tc1": "100",
+                "tc2": "115",
+                "tc3": "125",
+                "tc4": "14.0"
+              }
+            }
+          }
+        }
+      },
+      "pageTitle": "Products | Advantage Seal",
+      "pageDescription": "Products - Quality seals by Advantage Seal",
+      "pageKeywords": "Products, Advantage Seal, Item Catalogue",
+      "ogTitle": null,
+      "ogImage": null,
+      "ogType": null,
+      "ogDescription": null,
+      "twitterCardType": null,
+      "twitterTitle": null,
+      "twitterDescription": null,
+      "twitterImage": null,
+      "bannerImageSrc": "/images/products/banners/product-tinified.webp",
+      "trueImage": false,
+      "trueImageStyle": "background-position:center"
+    },
   },
   "QQchat":{
     "btnLabel":"在线咨询",
