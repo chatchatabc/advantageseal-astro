@@ -5,6 +5,7 @@ import { getCollection } from "astro:content";
 //components
 import Layout from "@layouts/Layout.astro";
 import SealSeriesForPoolAndSpaPumpLayout from "@layouts/pages/product/SealSeriesForPoolAndSpaPumpLayout.astro";
+import SealSeriesForVerticalMultiStagePumpLayout from "@layouts/pages/product/SealSeriesForVerticalMultiStagePumpLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
@@ -54,7 +55,7 @@ export async function getStaticPaths() {
             }
         },
         {
-          params: {
+            params: {
                 category: "seal-series-for-pool-and-spa-pump",
                 product: "type-21"
             },
@@ -63,6 +64,71 @@ export async function getStaticPaths() {
                     name: "Type 21",
                     slug: "type-21",
                     category: "seal-series-for-pool-and-spa-pump"
+                }
+            }
+        },
+        {
+            params: {
+                category: "seal-series-for-pool-and-spa-pump",
+                product: "type-201"
+            },
+            props: {
+                product: {
+                    name: "Type 201",
+                    slug: "type-201",
+                    category: "seal-series-for-pool-and-spa-pump"
+                }
+            }
+        },
+        {
+            params: {
+                category: "seal-series-for-pool-and-spa-pump",
+                product: "type-202"
+            },
+            props: {
+                product: {
+                    name: "Type 202",
+                    slug: "type-202",
+                    category: "seal-series-for-pool-and-spa-pump"
+                }
+            }
+        },
+        {
+            params: {
+                category: "seal-series-for-vertical-multi-stage-pump",
+                product: "511-12"
+            },
+            props: {
+                product: {
+                    name: "511-12",
+                    slug: "511-12",
+                    category: "seal-series-for-vertical-multi-stage-pump"
+                }
+            }
+        },
+        {
+            params: {
+                category: "seal-series-for-vertical-multi-stage-pump",
+                product: "511-16"
+            },
+            props: {
+                product: {
+                    name: "511-16",
+                    slug: "511-16",
+                    category: "seal-series-for-vertical-multi-stage-pump"
+                }
+            }
+        },
+        {
+            params: {
+                category: "seal-series-for-vertical-multi-stage-pump",
+                product: "511-22"
+            },
+            props: {
+                product: {
+                    name: "511-22",
+                    slug: "511-22",
+                    category: "seal-series-for-vertical-multi-stage-pump"
                 }
             }
         }
@@ -130,6 +196,7 @@ let currNewsCategory: string = product.name; //current name of the product item
     </div>
     <main class="">
       {product.category === "seal-series-for-pool-and-spa-pump" && <SealSeriesForPoolAndSpaPumpLayout product={product}/>}
+      {product.category === "seal-series-for-vertical-multi-stage-pump" && <SealSeriesForVerticalMultiStagePumpLayout product={product}/>}
     </main>
     <div class="mb-16 flex justify-center">
       <BackBtn />
