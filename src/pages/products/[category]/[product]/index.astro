@@ -26,22 +26,21 @@ const { product } = Astro.props as Props;
 var pageJson = `products:contents.${product.slug}`;
 export async function getStaticPaths() {
     return (ProductsJson.list.flatMap((product) => {
-      return product.categories.map((category) => ({
-          params: {
-              category: category,
-              product: product.slug
-          },
-          props: {
-              //since the data of the produc is based on the translation file we just need to reference it using the slug instead
-              product: {
-                  name: t(`products:contents.${product.slug}.name`),
-                  slug: product.slug,
-                  category: category
-              }
-          }
-      }));
-    })).filter((product)=> ["seal-series-for-pool-and-spa-pump","seal-series-for-vertical-multi-stage-pump","sealing-series-for-flypt-pump"].includes(product.props.product.category));
-    
+        return product.categories.map((category) => ({
+            params: {
+                category: category,
+                product: product.slug
+            },
+            props: {
+                //since the data of the produc is based on the translation file we just need to reference it using the slug instead
+                product: {
+                    name: t(`products:contents.${product.slug}.name`),
+                    slug: product.slug,
+                    category: category
+                }
+            }
+        }));
+    })).filter((product) => ["seal-series-for-pool-and-spa-pump", "seal-series-for-vertical-multi-stage-pump", "sealing-series-for-flypt-pump", "static-ring-series"].includes(product.props.product.category));
 }
 const page: PageMetaTag = {
     title: t(pageJson + ".pageTitle"),

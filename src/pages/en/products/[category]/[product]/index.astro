@@ -6,6 +6,8 @@ import { getCollection } from "astro:content";
 import Layout from "@layouts/Layout.astro";
 import SealSeriesForPoolAndSpaPumpLayout from "@layouts/pages/product/SealSeriesForPoolAndSpaPumpLayout.astro";
 import SealSeriesForVerticalMultiStagePumpLayout from "@layouts/pages/product/SealSeriesForVerticalMultiStagePumpLayout.astro";
+import SealingSeriesForFlyptPumpLayout from "@layouts/pages/product/SealingSeriesForFlyptPumpLayout.astro";
+import StaticRingSeriesLayout from "@layouts/pages/product/StaticRingSeriesLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
@@ -23,116 +25,22 @@ changeLanguage("en");
 const { product } = Astro.props as Props;
 var pageJson = `products:contents.${product.slug}`;
 export async function getStaticPaths() {
-    // return ProductsJson.list.flatMap((product) => {
-    //   return product.categories.map((category) => ({
-    //       params: {
-    //           category: category,
-    //           product: product.slug
-    //       },
-    //       props: {
-    //           //since the data of the produc is based on the translation file we just need to reference it using the slug instead
-    //           product: {
-    //               name: t(`products:contents.${product.slug}.name`),
-    //               slug: product.slug,
-    //               category: category
-    //           }
-    //       }
-    //   }));
-    // });
-    //disable for a while as ai build the literals
-    return [
-        {
+    return (ProductsJson.list.flatMap((product) => {
+        return product.categories.map((category) => ({
             params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-16"
+                category: category,
+                product: product.slug
             },
             props: {
+                //since the data of the produc is based on the translation file we just need to reference it using the slug instead
                 product: {
-                    name: "Type 16",
-                    slug: "type-16",
-                    category: "seal-series-for-pool-and-spa-pump"
+                    name: t(`products:contents.${product.slug}.name`),
+                    slug: product.slug,
+                    category: category
                 }
             }
-        },
-        {
-            params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-21"
-            },
-            props: {
-                product: {
-                    name: "Type 21",
-                    slug: "type-21",
-                    category: "seal-series-for-pool-and-spa-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-201"
-            },
-            props: {
-                product: {
-                    name: "Type 201",
-                    slug: "type-201",
-                    category: "seal-series-for-pool-and-spa-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-pool-and-spa-pump",
-                product: "type-202"
-            },
-            props: {
-                product: {
-                    name: "Type 202",
-                    slug: "type-202",
-                    category: "seal-series-for-pool-and-spa-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-vertical-multi-stage-pump",
-                product: "511-12"
-            },
-            props: {
-                product: {
-                    name: "511-12",
-                    slug: "511-12",
-                    category: "seal-series-for-vertical-multi-stage-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-vertical-multi-stage-pump",
-                product: "511-16"
-            },
-            props: {
-                product: {
-                    name: "511-16",
-                    slug: "511-16",
-                    category: "seal-series-for-vertical-multi-stage-pump"
-                }
-            }
-        },
-        {
-            params: {
-                category: "seal-series-for-vertical-multi-stage-pump",
-                product: "511-22"
-            },
-            props: {
-                product: {
-                    name: "511-22",
-                    slug: "511-22",
-                    category: "seal-series-for-vertical-multi-stage-pump"
-                }
-            }
-        }
-    ];
+        }));
+    })).filter((product) => ["seal-series-for-pool-and-spa-pump", "seal-series-for-vertical-multi-stage-pump", "sealing-series-for-flypt-pump", "static-ring-series"].includes(product.props.product.category));
 }
 const page: PageMetaTag = {
     title: t(pageJson + ".pageTitle"),
@@ -197,6 +105,8 @@ let currNewsCategory: string = product.name; //current name of the product item
     <main class="">
       {product.category === "seal-series-for-pool-and-spa-pump" && <SealSeriesForPoolAndSpaPumpLayout product={product}/>}
       {product.category === "seal-series-for-vertical-multi-stage-pump" && <SealSeriesForVerticalMultiStagePumpLayout product={product}/>}
+      {product.category === "sealing-series-for-flypt-pump" && <SealingSeriesForFlyptPumpLayout product={product}/>}
+      {product.category === "static-ring-series" && <StaticRingSeriesLayout product={product}/>}
     </main>
     <div class="mb-16 flex justify-center">
       <BackBtn />
