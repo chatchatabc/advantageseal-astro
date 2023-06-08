@@ -7,6 +7,7 @@ import Layout from "@layouts/Layout.astro";
 import SealSeriesForPoolAndSpaPumpLayout from "@layouts/pages/product/SealSeriesForPoolAndSpaPumpLayout.astro";
 import SealSeriesForVerticalMultiStagePumpLayout from "@layouts/pages/product/SealSeriesForVerticalMultiStagePumpLayout.astro";
 import SealingSeriesForFlyptPumpLayout from "@layouts/pages/product/SealingSeriesForFlyptPumpLayout.astro";
+import StaticRingSeriesLayout from "@layouts/pages/product/StaticRingSeriesLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
@@ -106,6 +107,7 @@ let currNewsCategory: string = product.name; //current name of the product item
       {product.category === "seal-series-for-pool-and-spa-pump" && <SealSeriesForPoolAndSpaPumpLayout product={product}/>}
       {product.category === "seal-series-for-vertical-multi-stage-pump" && <SealSeriesForVerticalMultiStagePumpLayout product={product}/>}
       {product.category === "sealing-series-for-flypt-pump" && <SealingSeriesForFlyptPumpLayout product={product}/>}
+      {product.category === "static-ring-series" && <StaticRingSeriesLayout product={product}/>}
     </main>
     <div class="mb-16 flex justify-center">
       <BackBtn />
