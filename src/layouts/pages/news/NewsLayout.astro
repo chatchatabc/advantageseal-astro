@@ -4,15 +4,20 @@ import { BackgroundImage } from "astro-imagetools/components";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import i18next, { t } from "i18next";
 import NavigationJson from "@data/navigation.json";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 const { page, openGraph, twitter, bannerImage } = Astro.props;
 
 const subnavs: { label: string; href: string; slug: string }[] = [];
 const newsRefs = NavigationJson.links.filter((link) => link.name === "news")[0];
 newsRefs.children.map((ref) => {
   subnavs.push({
-    label: t("navigation:navbar.sublinks." + ref + ".name"),
-    href: "/news/" + t("news-categories:contents." + ref + ".slug") + "/",
-    slug: t("navigation:navbar.sublinks." + ref + ".slug"),
+    label: t("navigation:navbar.news.sublinks." + ref + ".name"),
+    href:
+      utilGetCurrentLanguage(Astro.url.pathname) +
+      "/news/" +
+      t("navigation:navbar.news.sublinks." + ref + ".slug") +
+      "/",
+    slug: t("navigation:navbar.news.sublinks." + ref + ".slug"),
   });
 });
 ---
