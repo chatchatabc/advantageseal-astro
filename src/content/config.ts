@@ -107,5 +107,5 @@ export const collections = {
   'news': newsCollection,
   'news-categories': newsCategoryCollection,
   'solutions': solutionsCollection,
-  'products': productCollection
+ 
 };
