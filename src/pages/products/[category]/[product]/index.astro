@@ -17,7 +17,11 @@ import { Img } from "astro-imagetools/components";
 import NavigationJson from "@data/navigation.json";
 import ProductsJson from "@data/pages/products.json";
 //data types
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
@@ -25,65 +29,67 @@ changeLanguage("cn");
 const { product } = Astro.props as Props;
 var pageJson = `products:contents.${product.slug}`;
 export async function getStaticPaths() {
-    return (ProductsJson.list.flatMap((product) => {
-        return product.categories.map((category) => ({
-            params: {
-                category: category,
-                product: product.slug
-            },
-            props: {
-                //since the data of the produc is based on the translation file we just need to reference it using the slug instead
-                product: {
-                    name: t(`products:contents.${product.slug}.name`),
-                    slug: product.slug,
-                    category: category
-                }
-            }
-        }));
-    })).filter((product) => ["seal-series-for-pool-and-spa-pump", "seal-series-for-vertical-multi-stage-pump", "sealing-series-for-flypt-pump", "static-ring-series"].includes(product.props.product.category));
+  return ProductsJson.list.map((product) => {
+    return {
+      params: {
+        category: product.category,
+        product: product.slug,
+      },
+      props: {
+        //since the data of the produc is based on the translation file we just need to reference it using the slug instead
+        product: {
+          name: t(`products:contents.${product.slug}.name`),
+          slug: product.slug,
+          category: product.category,
+        },
+      },
+    };
+  });
 }
 const page: PageMetaTag = {
-    title: t(pageJson + ".pageTitle"),
-    description: t(pageJson + ".pageDescription"),
-    author: t(pageJson + ".pageAuthor"),
-    keywords: t(pageJson + ".pageKeywords"),
+  title: t(pageJson + ".pageTitle"),
+  description: t(pageJson + ".pageDescription"),
+  author: t(pageJson + ".pageAuthor"),
+  keywords: t(pageJson + ".pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ".openGraphTitle"),
-    type: t(pageJson + ".openGraphType"),
-    image: t(pageJson + ".openGraphImage"),
-    description: t(pageJson + ".openGraphDescription"),
+  title: t(pageJson + ".openGraphTitle"),
+  type: t(pageJson + ".openGraphType"),
+  image: t(pageJson + ".openGraphImage"),
+  description: t(pageJson + ".openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ".twitterCardType"),
-    title: t(pageJson + ".twitterTitle"),
-    description: t(pageJson + ".twitterDescription"),
-    image: t(pageJson + ".twitterImage"),
+  cardType: t(pageJson + ".twitterCardType"),
+  title: t(pageJson + ".twitterTitle"),
+  description: t(pageJson + ".twitterDescription"),
+  image: t(pageJson + ".twitterImage"),
 };
 const bannerImageSrc = t(pageJson + ".bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
 type Subnav = {
-    label: string;
-    href: string;
-    slug: string;
+  label: string;
+  href: string;
+  slug: string;
 };
 var subnavs = NavigationJson.links
-    .filter((link) => link.name === "products")[0]
-    .children.map((child: string) => {
+  .filter((link) => link.name === "products")[0]
+  .children.map((child: string) => {
     return {
-        label: t(`navigation:navbar.products.sublinks.${child}.name`),
-        href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(`navigation:navbar.products.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
+      label: t(`navigation:navbar.products.sublinks.${child}.name`),
+      href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(
+        `navigation:navbar.products.sublinks.${child}.slug`
+      )}/`,
+      slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
     };
-}) as Subnav[];
+  }) as Subnav[];
 type Props = {
-    product: {
-        slug: string;
-        name: string;
-        category: string;
-    };
+  product: {
+    slug: string;
+    name: string;
+    category: string;
+  };
 };
 let currNewsCategory: string = product.name; //current name of the product item
 ---
@@ -103,10 +109,26 @@ let currNewsCategory: string = product.name; //current name of the product item
       <BreadCrumbs label={currNewsCategory} />
     </div>
     <main class="">
-      {product.category === "seal-series-for-pool-and-spa-pump" && <SealSeriesForPoolAndSpaPumpLayout product={product}/>}
-      {product.category === "seal-series-for-vertical-multi-stage-pump" && <SealSeriesForVerticalMultiStagePumpLayout product={product}/>}
-      {product.category === "sealing-series-for-flypt-pump" && <SealingSeriesForFlyptPumpLayout product={product}/>}
-      {product.category === "static-ring-series" && <StaticRingSeriesLayout product={product}/>}
+      {
+        product.category === "seal-series-for-pool-and-spa-pump" && (
+          <SealSeriesForPoolAndSpaPumpLayout product={product} />
+        )
+      }
+      {
+        product.category === "seal-series-for-vertical-multi-stage-pump" && (
+          <SealSeriesForVerticalMultiStagePumpLayout product={product} />
+        )
+      }
+      {
+        product.category === "sealing-series-for-flypt-pump" && (
+          <SealingSeriesForFlyptPumpLayout product={product} />
+        )
+      }
+      {
+        product.category === "static-ring-series" && (
+          <StaticRingSeriesLayout product={product} />
+        )
+      }
     </main>
     <div class="mb-16 flex justify-center">
       <BackBtn />
