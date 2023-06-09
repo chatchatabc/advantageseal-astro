@@ -19,7 +19,7 @@ export default {
     "page-contact-sublink-contact-information",
     "page-contact-sublink-digital-map",
     "news-categories",
-    "products-categories",
+    "product-categories",
     "customer-center-categories",
     "footer",
   ],
