@@ -1,0 +1,38 @@
+{
+  "sealSeriesForPoolAndSpaPump": {
+    "slug": "seal-series-for-pool-and-spa-pump",
+    "name": "水池水疗泵用密封系列"
+  },
+  "sealSeriesForVerticalMultiStagePump": {
+    "slug": "seal-series-for-vertical-multi-stage-pump",
+    "name": "立式多级泵密封系列"
+  },
+  "sealSeriesForSanitaryPump": {
+    "slug": "seal-series-for-sanitary-pump",
+    "name": "卫生泵用机密封系列"
+  },
+  "sealSeriesForFlyptPump": {
+    "slug": "seal-series-for-flypt-pump",
+    "name": "飞力泵用密封系列"
+  },
+  "sealSeriesForRotorPump": {
+    "slug": "seal-series-for-rotor-pump",
+    "name": "转子泵用密封系列"
+  },
+  "modularMechanicalSealsSeries": {
+    "slug": "modular-mechanical-seals-series",
+    "name": "集装式机械密封系列"
+  },
+  "sealSeriesForMetalBellows": {
+    "slug": "seal-series-for-metal-bellows",
+    "name": "金属波纹管密封系列"
+  },
+  "universalStandardSealSeries": {
+    "slug": "universal-standard-seal-series",
+    "name": "通用标准密封系列"
+  },
+  "staticRingSeries": {
+    "slug": "static-ring-series",
+    "name": "静环系列"
+  }
+}

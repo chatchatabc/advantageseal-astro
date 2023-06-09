@@ -1,0 +1,38 @@
+{
+  "sealSeriesForPoolAndSpaPump": {
+    "slug": "seal-series-for-pool-and-spa-pump",
+    "name": "Seal Series for Pool and Spa Pump"
+  },
+  "sealSeriesForVerticalMultiStagePump": {
+    "slug": "seal-series-for-vertical-multi-stage-pump",
+    "name": "Seal Series for Vertical Multi-Stage Pump"
+  },
+  "sealSeriesForSanitaryPump": {
+    "slug": "seal-series-for-sanitary-pump",
+    "name": "Seal Series for Sanitary Pump"
+  },
+  "sealSeriesForFlyptPump": {
+    "slug": "seal-series-for-flypt-pump",
+    "name": "Seal Series for Flypt Pump"
+  },
+  "sealSeriesForRotorPump": {
+    "slug": "seal-series-for-rotor-pump",
+    "name": "Seal Series for Rotor Pump"
+  },
+  "modularMechanicalSealsSeries": {
+    "slug": "modular-mechanical-seals-series",
+    "name": "Modular Mechanical Seals Series"
+  },
+  "sealSeriesForMetalBellows": {
+    "slug": "seal-series-for-metal-bellows",
+    "name": "Seal Series for Metal Bellows"
+  },
+  "universalStandardSealSeries": {
+    "slug": "universal-standard-seal-series",
+    "name": "Universal Standard Seal Series"
+  },
+  "staticRingSeries": {
+    "slug": "static-ring-series",
+    "name": "Static Ring Series"
+  }
+}
