@@ -11,11 +11,11 @@ const { subnavs } = Astro.props as Props;
   class="bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid sticky top-0 z-[2]"
   style=""
 >
-  <ul class="p-2 bg-white ml-4 flex flex-row space-x-2">
+  <ul class="p-2 bg-white ml-4 flex flex-row flex-wrap">
     {
       subnavs.map((subnav: Subnav) => {
         return (
-          <li>
+          <li class="p-1">
             <a
               class={`px-4 py-2 text-[#777] rounded-[4px] text-[0.875rem] block font-semibold  
               hover:bg-[#009ce0] hover:text-white
