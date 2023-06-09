@@ -1,7 +1,96 @@
 ---
-import { changeLanguage } from "i18next";
+import astroI18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import { getCollection } from "astro:content";
+//components
+import Layout from "@layouts/Layout.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
+import { Img } from "astro-imagetools/components";
+//data
+import NavigationJson from "@data/navigation.json";
+import ProductsJson from "@data/pages/products.json";
+//data types
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
+
+let entry = await getCollection("misc", ({ data }) => {
+    return (data.lang === astroI18next.language &&
+        data.page === "product-substitution-form");
+});
+type Props = {
+    product: {
+        slug: string;
+        name: string;
+        category: string;
+    };
+};
+const { product } = Astro.props as Props;
+var pageJson = entry[0].data;
+const page: PageMetaTag = {
+    title: pageJson.pageTitle!,
+    description: pageJson.pageDescription!,
+    author: pageJson.pageAuthor!,
+    keywords: pageJson.pageKeywords!,
+};
+const openGraph: OpenGraphMetaTag = {
+    title: pageJson.ogTitle!,
+    type: pageJson.ogType!,
+    image: pageJson.ogImage!,
+    description: pageJson.ogDescription!,
+};
+const twitter: TwitterMetaTag = {
+    cardType: pageJson.twitterCardType!,
+    title: pageJson.twitterTitle!,
+    description: pageJson.twitterDescription!,
+    image: pageJson.twitterImage!,
+};
+const bannerImageSrc = pageJson.bannerImage!;
+const bannerHeight = "200px";
+const trueImage = false;
+const trueImageStyle = "";
+type Subnav = {
+    label: string;
+    href: string;
+    slug: string;
+};
+var subnavs = NavigationJson.links
+    .filter((link) => link.name === "products")[0]
+    .children.map((child: string) => {
+    return {
+        label: t(`navigation:navbar.products.sublinks.${child}.name`),
+        href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(`navigation:navbar.products.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
+    };
+}) as Subnav[];
+let currNewsCategory: string = entry[0].data.title; //current name of the product item
+const { Content } = await entry[0].render();
+console.log(page, openGraph, twitter);
 ---
 
-hi
+<Layout page={page} openGraph={openGraph} twitter={twitter}>
+  <Banner
+    bannerImageSrc={bannerImageSrc}
+    bannerHeight={bannerHeight}
+    trueImage={trueImage}
+    trueImageStyle={trueImageStyle}
+  />
+  <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
+    <div class="my-[1.125rem] sticky top-0 z-[2]">
+      <InnerSubNav subnavs={subnavs} />
+    </div>
+    <div class="mb-6">
+      <BreadCrumbs label={currNewsCategory} />
+    </div>
+    <main class="overflow-auto">
+      <Content />
+    </main>
+    <div class="mb-16 flex justify-center">
+      <BackBtn />
+    </div>
+  </div>
+</Layout>
