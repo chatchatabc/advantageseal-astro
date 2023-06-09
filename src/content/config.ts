@@ -103,6 +103,7 @@ const productCollection = defineCollection({
 });
 const miscCollection = defineCollection({
   schema: z.object({
+    page : z.string(),
     title : z.string(),
     lang : z.string(),
     pageTitle: z.string().nullable(),
@@ -126,5 +127,5 @@ export const collections = {
   'news': newsCollection,
   'news-categories': newsCategoryCollection,
   'solutions': solutionsCollection,
-  'seal-material-code': miscCollection,
+  'misc': miscCollection,
 };
