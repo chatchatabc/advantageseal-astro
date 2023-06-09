@@ -602,7 +602,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "511-12":{
+    "511-12": {
+      "name": "511-12",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -621,15 +622,13 @@
                 "src": "/images/products/511-12/section1-image1.jpg",
                 "alt": ""
               }
-             
             }
           }
         },
         "section2": {
           "cutawayDiagram": "/images/products/511-12/section2-diagram1.png",
           "tabLabel": "Product Details",
-          
-    
+
           "details": {
             "count": 1,
             "detail1": {
@@ -640,7 +639,6 @@
                 "item2": "Stationary Seal Face: Carbon/SiC/TC",
                 "item3": "Rubber Parts: NBR/EPDM/FKM",
                 "item4": "Spring and stamping parts：Stainless Steel"
-              
               }
             }
           },
@@ -650,7 +648,6 @@
             "items": {
               "item1": "CR1.3.5.10.15.20.32.45.64.90",
               "item2": "CRN1.3.5.10.15.20.32.45.64.90"
-             
             }
           }
         }
@@ -670,7 +667,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "511-16":{
+    "511-16": {
+      "name": "511-16",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -689,15 +687,13 @@
                 "src": "/images/products/511-16/section1-image1.jpg",
                 "alt": ""
               }
-             
             }
           }
         },
         "section2": {
           "cutawayDiagram": "/images/products/511-16/section2-diagram1.png",
           "tabLabel": "Product Details",
-          
-    
+
           "details": {
             "count": 1,
             "detail1": {
@@ -708,7 +704,6 @@
                 "item2": "Stationary Seal Face: Carbon/SiC/TC",
                 "item3": "Rubber Parts: NBR/EPDM/FKM",
                 "item4": "Spring and stamping parts：Stainless Steel"
-              
               }
             }
           },
@@ -718,7 +713,6 @@
             "items": {
               "item1": "CR1.3.5.10.15.20.32.45.64.90",
               "item2": "CRN1.3.5.10.15.20.32.45.64.90"
-             
             }
           }
         }
@@ -738,7 +732,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "511-22":{
+    "511-22": {
+      "name": "511-22",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -761,15 +756,13 @@
                 "src": "/images/products/511-22/section1-image2.jpg",
                 "alt": ""
               }
-             
             }
           }
         },
         "section2": {
           "cutawayDiagram": "/images/products/511-22/section2-diagram1.png",
           "tabLabel": "Product Details",
-          
-    
+
           "details": {
             "count": 1,
             "detail1": {
@@ -780,7 +773,6 @@
                 "item2": "Stationary Seal Face: Carbon/SiC/TC",
                 "item3": "Rubber Parts: NBR/EPDM/FKM",
                 "item4": "Spring and stamping parts：Stainless Steel"
-              
               }
             }
           },
@@ -790,7 +782,6 @@
             "items": {
               "item1": "CR1.3.5.10.15.20.32.45.64.90",
               "item2": "CRN1.3.5.10.15.20.32.45.64.90"
-             
             }
           }
         }
@@ -810,7 +801,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-20-25-35-45-60-90":{
+    "asi-20-25-35-45-60-90": {
+      "name": "ASI-20,25,35,45,60,90",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -828,7 +820,7 @@
               "image1": {
                 "src": "/images/products/asi-20-25-35-45-60-90/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -850,39 +842,39 @@
           },
           "table": {
             "cols": 3,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Seal Number"
             },
-            "tr":{
-              "count":6,
+            "tr": {
+              "count": 6,
               "tr1": {
                 "tc1": "2610 2620 2630 2640 4610 4620",
                 "tc2": "20mm",
                 "tc3": "ASI-20"
               },
-              "tr2":{
+              "tr2": {
                 "tc1": "2660 4630 4640",
                 "tc2": "25mm",
                 "tc3": "ASI-25"
               },
-              "tr3" : {
+              "tr3": {
                 "tc1": "2670 3153 5100-210 5100-211 5100-220 5100-221",
                 "tc2": "35mm",
                 "tc3": "ASI-35"
               },
-              "tr4" : {
+              "tr4": {
                 "tc1": "3171 4650 4660 5100-250 5100-251 5100-260 5100-261",
                 "tc2": "45mm",
                 "tc3": "ASI-45"
               },
-              "tr5" : {
+              "tr5": {
                 "tc1": "3202 4670 4680 5100-300 5100-310 5150-300 5150-310",
                 "tc2": "60mm",
                 "tc3": "ASI-60"
               },
-              "tr6" : {
+              "tr6": {
                 "tc1": "3301 5150-350 5150-360",
                 "tc2": "90mm",
                 "tc3": "ASI-90"
@@ -906,7 +898,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-a-l20":{
+    "asi-a-l20": {
+      "name": "ASI-A-L20",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -924,7 +917,7 @@
               "image1": {
                 "src": "/images/products/asi-a-l20/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -946,21 +939,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "Ready 24",
                 "tc2": "20mm",
                 "tc3": "ASI-A-U20",
                 "tc4": "ASI-A-L20"
               }
-              
             }
           }
         }
@@ -980,7 +972,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-a-u20":{
+    "asi-a-u20": {
+      "name": "ASI-A-U20",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -998,7 +991,7 @@
               "image1": {
                 "src": "/images/products/asi-a-u20/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1020,21 +1013,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "Ready 24",
                 "tc2": "20mm",
                 "tc3": "ASI-A-U20",
                 "tc4": "ASI-A-L20"
               }
-              
             }
           }
         }
@@ -1054,7 +1046,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-b-l28":{
+    "asi-b-l28": {
+      "name": "ASI-B-L28",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1072,7 +1065,7 @@
               "image1": {
                 "src": "/images/products/asi-b-l28/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1094,21 +1087,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3101",
                 "tc2": "28mm",
                 "tc3": "ASI-B-U28",
                 "tc4": "ASI-B-L28"
               }
-              
             }
           }
         }
@@ -1128,7 +1120,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-b-u28":{
+    "asi-b-u28": {
+      "name": "ASI-B-U28",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1146,7 +1139,7 @@
               "image1": {
                 "src": "/images/products/asi-b-u28/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1168,21 +1161,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3101",
                 "tc2": "28mm",
                 "tc3": "ASI-B-U28",
                 "tc4": "ASI-B-L28"
               }
-              
             }
           }
         }
@@ -1202,7 +1194,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-c-l22":{
+    "asi-c-l22": {
+      "name": "ASI-C-L22",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1220,7 +1213,7 @@
               "image1": {
                 "src": "/images/products/asi-c-l22/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1242,21 +1235,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "2040 2102-210 2102-041 2102-220 Ready40 Ready56",
                 "tc2": "22mm",
                 "tc3": "ASI-C-U22",
                 "tc4": "ASI-C-L22"
               }
-              
             }
           }
         }
@@ -1276,7 +1268,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-c-u22":{
+    "asi-c-u22": {
+      "name": "ASI-C-U22",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1294,7 +1287,7 @@
               "image1": {
                 "src": "/images/products/asi-c-u22/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1316,21 +1309,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "2040 2102-210 2102-041 2102-220 Ready40 Ready56",
                 "tc2": "22mm",
                 "tc3": "ASI-C-U22",
                 "tc4": "ASI-C-L22"
               }
-              
             }
           }
         }
@@ -1350,7 +1342,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-g-u20":{
+    "asi-g-u20": {
+      "name": "ASI-G-U20",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1368,7 +1361,7 @@
               "image1": {
                 "src": "/images/products/asi-g-u20/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1390,21 +1383,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3085-091 3085-120 3085-170 3085-171\n3085-181 3085-280 3082-290 3085-890",
                 "tc2": "20mm",
                 "tc3": "ASI-G-U20",
                 "tc4": "ASI-G-L20 or ASI-H-L20"
               }
-              
             }
           }
         }
@@ -1424,7 +1416,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-h-l20":{
+    "asi-h-l20": {
+      "name": "ASI-H-L20",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1442,7 +1435,7 @@
               "image1": {
                 "src": "/images/products/asi-h-l20/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1464,21 +1457,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3085-091 3085-120 3085-170 3085-171\n3085-181 3085-280 3082-290 3085-890",
                 "tc2": "20mm",
                 "tc3": "ASI-G-U20",
                 "tc4": "ASI-G-L20 or ASI-H-L20"
               }
-              
             }
           }
         }
@@ -1498,7 +1490,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-j-l25":{
+    "asi-j-l25": {
+      "name": "ASI-J-L25",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1516,7 +1509,7 @@
               "image1": {
                 "src": "/images/products/asi-j-l25/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1538,21 +1531,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3102",
                 "tc2": "25mm",
                 "tc3": "ASI-J-U25",
                 "tc4": "ASI-J-L25"
               }
-              
             }
           }
         }
@@ -1572,7 +1564,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-j-u25":{
+    "asi-j-u25": {
+      "name": "ASI-J-U25",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1590,7 +1583,7 @@
               "image1": {
                 "src": "/images/products/asi-j-u25/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1612,21 +1605,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3102",
                 "tc2": "25mm",
                 "tc3": "ASI-J-U25",
                 "tc4": "ASI-J-L25"
               }
-              
             }
           }
         }
@@ -1646,7 +1638,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-k-l35":{
+    "asi-k-l35": {
+      "name": "ASI-K-L35",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1664,7 +1657,7 @@
               "image1": {
                 "src": "/images/products/asi-k-l35/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1686,21 +1679,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3126-90 3126-180",
                 "tc2": "35mm",
                 "tc3": "ASI-K-U35",
                 "tc4": "ASI-K-L35"
               }
-              
             }
           }
         }
@@ -1720,7 +1712,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-k-u35":{
+    "asi-k-u35": {
+      "name": "ASI-K-U35",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1738,7 +1731,7 @@
               "image1": {
                 "src": "/images/products/asi-k-u35/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1760,21 +1753,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3126-90 3126-180",
                 "tc2": "35mm",
                 "tc3": "ASI-K-U35",
                 "tc4": "ASI-K-L35"
               }
-              
             }
           }
         }
@@ -1794,7 +1786,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-m-l35":{
+    "asi-m-l35": {
+      "name": "ASI-M-L35",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1812,7 +1805,7 @@
               "image1": {
                 "src": "/images/products/asi-m-l35/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1834,21 +1827,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3126-91 3126-280 3126-290",
                 "tc2": "35mm",
                 "tc3": "ASI-K-U35",
                 "tc4": "ASI-M-L35"
               }
-              
             }
           }
         }
@@ -1868,7 +1860,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-m-u35":{
+    "asi-m-u35": {
+      "name": "ASI-M-U35",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1886,7 +1879,7 @@
               "image1": {
                 "src": "/images/products/asi-m-u35/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1908,21 +1901,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3126-181 3127",
                 "tc2": "35mm",
                 "tc3": "ASI-M-U35",
                 "tc4": "ASI-M-L35"
               }
-              
             }
           }
         }
@@ -1942,7 +1934,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-n-u45":{
+    "asi-n-u45": {
+      "name": "ASI-N-U45",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -1960,7 +1953,7 @@
               "image1": {
                 "src": "/images/products/asi-n-u45/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -1982,21 +1975,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "Ready 24",
                 "tc2": "20mm",
                 "tc3": "ASI-N-U45",
                 "tc4": "ASI-N-L45"
               }
-              
             }
           }
         }
@@ -2016,7 +2008,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-o-l45":{
+    "asi-o-l45": {
+      "name": "ASI-O-L45",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2034,7 +2027,7 @@
               "image1": {
                 "src": "/images/products/asi-o-l45/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2056,21 +2049,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3140 3152",
                 "tc2": "45mm",
                 "tc3": "ASI-O-U45",
                 "tc4": "ASI-O-L45"
               }
-              
             }
           }
         }
@@ -2090,7 +2082,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-o-u45":{
+    "asi-o-u45": {
+      "name": "ASI-O-U45",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2108,7 +2101,7 @@
               "image1": {
                 "src": "/images/products/asi-o-u45/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2130,21 +2123,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3140 3152",
                 "tc2": "45mm",
                 "tc3": "ASI-O-U45",
                 "tc4": "ASI-O-L45"
               }
-              
             }
           }
         }
@@ -2164,7 +2156,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-p-l60":{
+    "asi-p-l60": {
+      "name": "ASI-P-L60",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2182,7 +2175,7 @@
               "image1": {
                 "src": "/images/products/asi-p-l60/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2204,21 +2197,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3200",
                 "tc2": "60mm",
                 "tc3": "ASI-P-U60",
                 "tc4": "ASI-P-L60s"
               }
-              
             }
           }
         }
@@ -2238,7 +2230,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-p-u60":{
+    "asi-p-u60": {
+      "name": "ASI-P-U60",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2256,7 +2249,7 @@
               "image1": {
                 "src": "/images/products/asi-p-u60/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2278,21 +2271,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3200",
                 "tc2": "60mm",
                 "tc3": "ASI-P-U60",
                 "tc4": "ASI-P-L60s"
               }
-              
             }
           }
         }
@@ -2312,7 +2304,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-q-u60":{
+    "asi-q-u60": {
+      "name": "ASI-Q-U60",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2330,7 +2323,7 @@
               "image1": {
                 "src": "/images/products/asi-q-u60/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2352,21 +2345,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3170 3201",
                 "tc2": "60mm",
                 "tc3": "ASI-Q-U60",
                 "tc4": "ASI-Q-L60"
               }
-              
             }
           }
         }
@@ -2386,7 +2378,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-q-l60":{
+    "asi-q-l60": {
+      "name": "ASI-Q-L60",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2404,7 +2397,7 @@
               "image1": {
                 "src": "/images/products/asi-q-l60/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2426,21 +2419,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "3170 3201",
                 "tc2": "60mm",
                 "tc3": "ASI-Q-U60",
                 "tc4": "ASI-Q-L60"
               }
-              
             }
           }
         }
@@ -2460,7 +2452,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-s-l80":{
+    "asi-s-l80": {
+      "name": "ASI-S-L80",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2478,7 +2471,7 @@
               "image1": {
                 "src": "/images/products/asi-s-l80/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2500,21 +2493,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "605 615 665 670 680",
                 "tc2": "90mm~80mm",
                 "tc3": "ASI-S-U90",
                 "tc4": "ASI-S-L80"
               }
-              
             }
           }
         }
@@ -2534,7 +2526,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-s-u90":{
+    "asi-s-u90": {
+      "name": "ASI-S-U90",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2552,7 +2545,7 @@
               "image1": {
                 "src": "/images/products/asi-s-u90/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2574,21 +2567,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "605 615 665 670 680",
                 "tc2": "90mm~80mm",
                 "tc3": "ASI-S-U90",
                 "tc4": "ASI-S-L80"
               }
-              
             }
           }
         }
@@ -2608,7 +2600,8 @@
       "trueImage": false,
       "trueImageStyle": "background-position:center"
     },
-    "asi-t-l120":{
+    "asi-t-l120": {
+      "name": "ASI-T-L120",
       "contents": {
         "section1": {
           "label": "Technical Parameters",
@@ -2626,7 +2619,7 @@
               "image1": {
                 "src": "/images/products/asi-t-l120/section1-image1.jpg",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2648,21 +2641,20 @@
           },
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Flypt Pump Number",
               "th2": "Shaft Size",
               "th3": "Up Seal Number",
               "th4": "Down Seal Number"
             },
-            "tr":{
-              "count":1,
+            "tr": {
+              "count": 1,
               "tr1": {
                 "tc1": "605 615 665 670 680",
                 "tc2": "90mm~80mm",
                 "tc3": "ASI-S-U90",
                 "tc4": "ASI-S-L80"
               }
-              
             }
           }
         }
@@ -2692,7 +2684,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-46-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -2700,15 +2692,15 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 5,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "d11",
               "th3": "d12",
               "th4": "L14",
               "th5": "L12"
             },
-            "tr":{
-              "count":37,
+            "tr": {
+              "count": 37,
               "tr1": {
                 "tc1": "10",
                 "tc2": "15.50",
@@ -2997,7 +2989,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-47-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -3005,15 +2997,15 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 5,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "h11",
               "th3": "h8",
               "th4": "L28",
               "th5": "L10"
             },
-            "tr":{
-              "count":34,
+            "tr": {
+              "count": 34,
               "tr1": {
                 "tc1": "10",
                 "tc2": "17.50",
@@ -3281,7 +3273,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-48-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -3289,15 +3281,15 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 5,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "d6",
               "th3": "d7",
               "th4": "L9",
               "th5": "L8"
             },
-            "tr":{
-              "count":34,
+            "tr": {
+              "count": 34,
               "tr1": {
                 "tc1": "10",
                 "tc2": "17.50",
@@ -3565,7 +3557,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-55-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -3573,15 +3565,15 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 5,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "d11",
               "th3": "d12",
               "th4": "L13",
               "th5": "L11"
             },
-            "tr":{
-              "count":37,
+            "tr": {
+              "count": 37,
               "tr1": {
                 "tc1": "10",
                 "tc2": "15.50",
@@ -3749,7 +3741,7 @@
                 "tc3": "72.30",
                 "tc4": "14.30",
                 "tc5": "17.00"
-              },              
+              },
               "tr25": {
                 "tc1": "55",
                 "tc2": "66.50",
@@ -3870,7 +3862,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-56-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -3878,15 +3870,15 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 5,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "d6",
               "th3": "d7",
               "th4": "L20",
               "th5": "L8"
             },
-            "tr":{
-              "count":30,
+            "tr": {
+              "count": 30,
               "tr1": {
                 "tc1": "18",
                 "tc2": "27.00",
@@ -4126,7 +4118,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-01-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -4134,14 +4126,14 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "d14",
               "th3": "d16",
               "th4": "L29"
             },
-            "tr":{
-              "count":36,
+            "tr": {
+              "count": 36,
               "tr1": {
                 "tc1": "10",
                 "tc2": "11.00",
@@ -4387,7 +4379,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-60-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -4395,14 +4387,14 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 4,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "d6",
               "th3": "d7",
               "th4": "L28"
             },
-            "tr":{
-              "count":34,
+            "tr": {
+              "count": 34,
               "tr1": {
                 "tc1": "10",
                 "tc2": "17",
@@ -4636,7 +4628,7 @@
               "image1": {
                 "src": "/images/products/10eb-xxxx-57-xxxx/section1-image1.png",
                 "alt": ""
-              }   
+              }
             }
           }
         },
@@ -4644,15 +4636,15 @@
           "tabLabel": "Product Details",
           "table": {
             "cols": 5,
-            "th":{
+            "th": {
               "th1": "Shaft size",
               "th2": "H11",
               "th3": "H8",
               "th4": "L28",
               "th5": "L10"
             },
-            "tr":{
-              "count":34,
+            "tr": {
+              "count": 34,
               "tr1": {
                 "tc1": "10",
                 "tc2": "17.00",
@@ -4911,8 +4903,8 @@
       "trueImageStyle": "background-position:center"
     }
   },
-  "QQchat":{
-    "btnLabel":"QQ Chat",
+  "QQchat": {
+    "btnLabel": "QQ Chat",
     "telephone": "Tel",
     "telephoneNumber": "+86 (574)87500883"
   }
