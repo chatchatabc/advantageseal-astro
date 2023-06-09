@@ -23,7 +23,7 @@
 </script>
 
 <div
-  class="sub-nav flex-1 absolute hidden border-b-[5px] border-b-[#0ba0e1] group-hover:flex group-hover:justify-stretch bg-white z-[2]"
+  class="sub-nav flex-1 absolute hidden border-b-[5px] border-b-[#0ba0e1] group-hover:flex group-hover:justify-stretch bg-white z-[3]"
 >
   <div
     class="sub-nav-list min-w-[300px] max-w-[300px] border-r-[1px] text-[#777]"
