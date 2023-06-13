@@ -4,46 +4,69 @@ import { getCollection } from "astro:content";
 import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import BackBtn from "@components/theme/BackBtn.astro";
 
 changeLanguage("cn");
 
 export async function getStaticPaths() {
-    const newsEntries = await getCollection("news", ({ data }) => {
-        return data.lang === i18next.language;
+    const language = i18next.language;
+    const newsEntries = await getCollection("news");
+    var groupedEntries: any[] = [];
+    newsEntries.forEach((entry) => {
+        const articleName = entry.data.articleName!.toString();
+        const existingEntry = groupedEntries.find((groupedEntry) => groupedEntry.articleName === articleName);
+        if (existingEntry) {
+            existingEntry.articles.push(entry);
+        }
+        else {
+            groupedEntries.push({
+                articleName: articleName,
+                articles: [entry],
+            });
+        }
     });
-    return newsEntries.map((entry) => ({
+    return groupedEntries.map((entry: any) => ({
         params: {
-            category: entry.data.newsCategory,
-            articleName: entry.data.articleName,
+            category: entry.articles[0].data.newsCategory,
+            articleName: entry.articleName,
         },
-        props: { entry },
+        props: { entry: entry.articles },
     }));
 }
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+let currentEntry = entry.filter((entryItem: any) => entryItem.data.lang === i18next.language)[0];
+const { Content } = await currentEntry.render();
 const pageMetaTag: PageMetaTag = {
-    title: entry.data.pageTitle,
-    description: entry.data.pageDescription,
-    keywords: entry.data.pageKeywords,
-    author: entry.data.pageAuthor,
+    title: currentEntry.data.pageTitle,
+    description: currentEntry.data.pageDescription,
+    keywords: currentEntry.data.pageKeywords,
+    author: currentEntry.data.pageAuthor,
 }, opengraphMetaTag: OpenGraphMetaTag = {
-    title: entry.data.ogTitle,
-    type: entry.data.ogType,
-    image: entry.data.ogImage,
-    description: entry.data.ogDescription,
+    title: currentEntry.data.ogTitle,
+    type: currentEntry.data.ogType,
+    image: currentEntry.data.ogImage,
+    description: currentEntry.data.ogDescription,
 }, twitterMetaTag: TwitterMetaTag = {
-    cardType: entry.data.twitterCardType,
-    title: entry.data.twitterTitle,
-    description: entry.data.twitterDescription,
-    image: entry.data.twitterImage,
+    cardType: currentEntry.data.twitterCardType,
+    title: currentEntry.data.twitterTitle,
+    description: currentEntry.data.twitterDescription,
+    image: currentEntry.data.twitterImage,
 };
+console.log(pageMetaTag, opengraphMetaTag, twitterMetaTag);
 ---
 
 <NewsLayout
   page={pageMetaTag}
   openGraph={opengraphMetaTag}
   twitter={twitterMetaTag}
-  bannerImage={entry.data.bannerImage}
+  bannerImage={currentEntry.data.bannerImage}
+  entry={currentEntry}
 >
-  <Content links={entry.data.links} />
+  <Content links={currentEntry.data.links} />
+  <!--Suggestion for articles here -->
+  <div class="border-t-[1px] border-solid border-[#ccc] mt-16"></div>
+  <div class="mb-16 flex justify-center">
+    <BackBtn />
+  </div>
 </NewsLayout>

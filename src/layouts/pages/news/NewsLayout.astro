@@ -5,8 +5,20 @@ import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import i18next, { t } from "i18next";
 import NavigationJson from "@data/navigation.json";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
-const { page, openGraph, twitter, bannerImage } = Astro.props;
-
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
+import type { CollectionEntry } from "astro:content";
+type Props = {
+  page: PageMetaTag;
+  openGraph: OpenGraphMetaTag;
+  twitter: TwitterMetaTag;
+  bannerImage: string;
+  entry: CollectionEntry<"news">;
+};
+const { page, openGraph, twitter, bannerImage, entry } = Astro.props as Props;
 const subnavs: { label: string; href: string; slug: string }[] = [];
 const newsRefs = NavigationJson.links.filter((link) => link.name === "news")[0];
 newsRefs.children.map((ref) => {
@@ -28,6 +40,16 @@ newsRefs.children.map((ref) => {
   </BackgroundImage>
   <section class="container p-4 w-full mx-auto md:w-11/12 lg:w-10/12">
     <InnerSubNav subnavs={subnavs} />
-    <slot />
+    <main>
+      <div class="my-8 text-center">
+        <h2 class="text-[1.875rem] text-text-primary">
+          {entry.data.title}
+        </h2>
+        <div class="text-[0.75rem] text-[#777]">
+          {t("common:publishedOn")}: {entry.data.pubDate}
+        </div>
+      </div>
+      <slot />
+    </main>
   </section>
 </Layout>
