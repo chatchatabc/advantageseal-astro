@@ -1,6 +1,6 @@
 ---
 import i18next, { changeLanguage } from "i18next";
-import { getCollection } from "astro:content";
+import { CollectionEntry, getCollection } from "astro:content";
 import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
@@ -34,24 +34,27 @@ export async function getStaticPaths() {
         props: { entry: entry.articles },
     }));
 }
-const { entry } = Astro.props;
+type Props = {
+    entry: CollectionEntry<"news">[];
+};
+const { entry } = Astro.props as Props;
 let currentEntry = entry.filter((entryItem: any) => entryItem.data.lang === i18next.language)[0];
 const { Content } = await currentEntry.render();
 const pageMetaTag: PageMetaTag = {
-    title: currentEntry.data.pageTitle,
-    description: currentEntry.data.pageDescription,
-    keywords: currentEntry.data.pageKeywords,
-    author: currentEntry.data.pageAuthor,
+    title: currentEntry.data.pageTitle!,
+    description: currentEntry.data.pageDescription!,
+    keywords: currentEntry.data.pageKeywords!,
+    author: currentEntry.data.pageAuthor!,
 }, opengraphMetaTag: OpenGraphMetaTag = {
-    title: currentEntry.data.ogTitle,
-    type: currentEntry.data.ogType,
-    image: currentEntry.data.ogImage,
-    description: currentEntry.data.ogDescription,
+    title: currentEntry.data.ogTitle!,
+    type: currentEntry.data.ogType!,
+    image: currentEntry.data.ogImage!,
+    description: currentEntry.data.ogDescription!,
 }, twitterMetaTag: TwitterMetaTag = {
-    cardType: currentEntry.data.twitterCardType,
-    title: currentEntry.data.twitterTitle,
-    description: currentEntry.data.twitterDescription,
-    image: currentEntry.data.twitterImage,
+    cardType: currentEntry.data.twitterCardType!,
+    title: currentEntry.data.twitterTitle!,
+    description: currentEntry.data.twitterDescription!,
+    image: currentEntry.data.twitterImage!,
 };
 ---
 
@@ -59,10 +62,10 @@ const pageMetaTag: PageMetaTag = {
   page={pageMetaTag}
   openGraph={opengraphMetaTag}
   twitter={twitterMetaTag}
-  bannerImage={currentEntry.data.bannerImage}
+  bannerImage={currentEntry.data.bannerImage!}
   entry={currentEntry}
 >
-  <Content links={currentEntry.data.links} />
+  <Content />
   <!--Suggestion for articles here -->
   <div class="border-t-[1px] border-solid border-[#ccc] mt-16"></div>
   <div class="mb-16 flex justify-center">

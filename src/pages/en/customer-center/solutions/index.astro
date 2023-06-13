@@ -80,7 +80,7 @@ let currNewsCategory: string = t(pageJson + ":name");
           return entries.map((entry) => (
             <div class="w-full md:w-6/12 p-2 ">
               <a
-                href={Astro.url.pathname + entry.data.articleSlug + "/"}
+                href={Astro.url.pathname + entry.data.articleName + "/"}
                 class="  block hover:bg-[#f5f5f5] p-3 group"
               >
                 <figure class="flex flex-row h-[120px]">
