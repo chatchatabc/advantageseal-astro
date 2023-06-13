@@ -74,7 +74,7 @@ const solutionsCollection = defineCollection({
     twitterDescription: z.string().nullable(),
     twitterImage: z.string().nullable(),
     bannerImage: z.string().nullable(),
-    articleSlug: z.string().nullable(),
+    articleName: z.string().nullable(),
     articleShortDescription: z.string().nullable(),
   })
 
