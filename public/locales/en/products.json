@@ -75,7 +75,7 @@
           "details": {
             "count": 6,
             "detail1": {
-              "labels": "Unitized Design:",
+              "label": "Unitized Design:",
               "count": 2,
               "items": {
                 "item1": "No-hassle handling",
@@ -83,7 +83,7 @@
               }
             },
             "detail2": {
-              "labels": "Hex Drive:",
+              "label": "Hex Drive:",
               "count": 2,
               "items": {
                 "item1": "Will not disengage during operation",
@@ -91,7 +91,7 @@
               }
             },
             "detail3": {
-              "labels": "Ideal or:",
+              "label": "Ideal or:",
               "count": 4,
               "items": {
                 "item1": "Pool Pumps",
@@ -101,7 +101,7 @@
               }
             },
             "detail4": {
-              "labels": "Advantage:",
+              "label": "Advantage:",
               "count": 4,
               "items": {
                 "item1": "Greatly simplifies installation",
@@ -111,14 +111,14 @@
               }
             },
             "detail5": {
-              "labels": "Single Coil Spring:",
+              "label": "Single Coil Spring:",
               "count": 1,
               "items": {
                 "item1": "Helps prevent clogging"
               }
             },
             "detail6": {
-              "labels": "A variety of Mating Rings:",
+              "label": "A variety of Mating Rings:",
               "count": 3,
               "items": {
                 "item1": "O-Ring Mount",
@@ -216,7 +216,7 @@
           "details": {
             "count": 6,
             "detail1": {
-              "labels": "Unitized Design:",
+              "label": "Unitized Design:",
               "count": 2,
               "items": {
                 "item1": "No-hassle handling",
@@ -224,7 +224,7 @@
               }
             },
             "detail2": {
-              "labels": "Hex Drive:",
+              "label": "Hex Drive:",
               "count": 2,
               "items": {
                 "item1": "Will not disengage during operation",
@@ -232,7 +232,7 @@
               }
             },
             "detail3": {
-              "labels": "Ideal or:",
+              "label": "Ideal or:",
               "count": 4,
               "items": {
                 "item1": "Pool Pumps",
@@ -242,7 +242,7 @@
               }
             },
             "detail4": {
-              "labels": "Advantage:",
+              "label": "Advantage:",
               "count": 4,
               "items": {
                 "item1": "Greatly simplifies installation",
@@ -252,14 +252,14 @@
               }
             },
             "detail5": {
-              "labels": "Single Coil Spring:",
+              "label": "Single Coil Spring:",
               "count": 1,
               "items": {
                 "item1": "Helps prevent clogging"
               }
             },
             "detail6": {
-              "labels": "A variety of Mating Rings:",
+              "label": "A variety of Mating Rings:",
               "count": 3,
               "items": {
                 "item1": "O-Ring Mount",
@@ -358,7 +358,7 @@
           "details": {
             "count": 7,
             "detail1": {
-              "labels": "The Solid Hex Drive Advantage:",
+              "label": "The Solid Hex Drive Advantage:",
               "count": 5,
               "items": {
                 "item1": "Standard in every Advantage Seal Type 201",
@@ -369,7 +369,7 @@
               }
             },
             "detail2": {
-              "labels": "Competitor's stamped designs:",
+              "label": "Competitor's stamped designs:",
               "count": 2,
               "items": {
                 "item1": "Sharp stampings can damage the seal bellows",
@@ -377,7 +377,7 @@
               }
             },
             "detail3": {
-              "labels": "Convoluted Bellows:",
+              "label": "Convoluted Bellows:",
               "count": 2,
               "items": {
                 "item1": "Greater self-aligning capability",
@@ -385,7 +385,7 @@
               }
             },
             "detail4": {
-              "labels": "Innovative Design",
+              "label": "Innovative Design",
               "count": 3,
               "items": {
                 "item1": "Fewer seal components than other designs",
@@ -394,7 +394,7 @@
               }
             },
             "detail5": {
-              "labels": "Cramping Process:",
+              "label": "Cramping Process:",
               "count": 4,
               "items": {
                 "item1": "Cushions rotary seal face without metal to seal face contact",
@@ -404,14 +404,14 @@
               }
             },
             "detail6": {
-              "labels": "Single Coil Spring:",
+              "label": "Single Coil Spring:",
               "count": 1,
               "items": {
                 "item1": "Helps prevent clogging"
               }
             },
             "detail7": {
-              "labels": "A variety of Mating Rings:",
+              "label": "A variety of Mating Rings:",
               "count": 3,
               "items": {
                 "item1": "O-Ring Mount",
@@ -511,7 +511,7 @@
           "details": {
             "count": 7,
             "detail1": {
-              "labels": "The Solid Hex Drive Advantage:",
+              "label": "The Solid Hex Drive Advantage:",
               "count": 5,
               "items": {
                 "item1": "Standard in every Advantage Seal Type 201",
@@ -522,7 +522,7 @@
               }
             },
             "detail2": {
-              "labels": "Competitor's stamped designs:",
+              "label": "Competitor's stamped designs:",
               "count": 2,
               "items": {
                 "item1": "Sharp stampings can damage the seal bellows",
@@ -530,7 +530,7 @@
               }
             },
             "detail3": {
-              "labels": "Convoluted Bellows:",
+              "label": "Convoluted Bellows:",
               "count": 2,
               "items": {
                 "item1": "Greater self-aligning capability",
@@ -538,7 +538,7 @@
               }
             },
             "detail4": {
-              "labels": "Innovative Design",
+              "label": "Innovative Design",
               "count": 3,
               "items": {
                 "item1": "Fewer seal components than other designs",
@@ -547,7 +547,7 @@
               }
             },
             "detail5": {
-              "labels": "Cramping Process:",
+              "label": "Cramping Process:",
               "count": 4,
               "items": {
                 "item1": "Cushions rotary seal face without metal to seal face contact",
@@ -557,14 +557,14 @@
               }
             },
             "detail6": {
-              "labels": "Single Coil Spring:",
+              "label": "Single Coil Spring:",
               "count": 1,
               "items": {
                 "item1": "Helps prevent clogging"
               }
             },
             "detail7": {
-              "labels": "A variety of Mating Rings:",
+              "label": "A variety of Mating Rings:",
               "count": 3,
               "items": {
                 "item1": "O-Ring Mount",

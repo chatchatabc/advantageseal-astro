@@ -102,7 +102,7 @@
       "image4": {
         "label": "Type 202",
         "src": "/images/products/type-202.jpg",
-        "href": "/products/seal-series-for-pool-and-spa-pump/type-20/",
+        "href": "/products/seal-series-for-pool-and-spa-pump/type-202/",
         "alt": "Type 202"
       },
       "image5": {
@@ -122,15 +122,15 @@
     "children": {
       "child1": {
         "text": "Videos",
-        "link": "/videos"
+        "link": "/news/videos/"
       },
       "child2": {
         "text": "Solutions",
-        "link": "/solutions"
+        "link": "/customer-center/solutions/"
       },
       "child3": {
         "text": "Concrete Case",
-        "link": "/concrete-case"
+        "link": "/customer-center/concrete-case/"
       }
     }
   },
