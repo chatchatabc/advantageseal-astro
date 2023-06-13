@@ -125,14 +125,22 @@ links.map((link: any) => {
             class="flex flex-row items-center overflow-hidden border border-[#009ce0] rounded-md w-[120px] h-[30px]"
           >
             <div
-              class="text-center text-xs w-[60px] h-[30px] text-white bg-[#009ce0] flex items-center justify-center overflow-hidden"
+              class={`text-center text-xs w-[60px] h-[30px]  ${
+                i18next.language === "cn"
+                  ? "bg-[#009ce0] text-white"
+                  : "bg-white text-[#009ce0]"
+              } flex items-center justify-center overflow-hidden`}
             >
               <a href="/" class="w-full h-full flex items-center justify-center"
                 >中文</a
               >
             </div>
             <div
-              class="text-center text-xs w-[60px] h-[30px] text-[#009ce0] bg-white flex items-center justify-center overflow-hidden"
+              class={`text-center text-xs w-[60px] h-[30px] text-[#009ce0] ${
+                i18next.language === "en"
+                  ? "bg-[#009ce0] text-white"
+                  : "bg-white text-[#009ce0]"
+              } flex items-center justify-center overflow-hidden`}
             >
               <a
                 href="/en/"
