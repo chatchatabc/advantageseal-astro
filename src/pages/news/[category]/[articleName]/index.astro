@@ -3,65 +3,56 @@ import i18next, { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import BackBtn from "@components/theme/BackBtn.astro";
 
 changeLanguage("cn");
 
 export async function getStaticPaths() {
-  const language = i18next.language;
-  const newsEntries = await getCollection("news");
-  var groupedEntries: any[] = [];
-  newsEntries.forEach((entry) => {
-    const articleName = entry.data.articleName!.toString();
-    const existingEntry = groupedEntries.find(
-      (groupedEntry) => groupedEntry.articleName === articleName
-    );
-    if (existingEntry) {
-      existingEntry.articles.push(entry);
-    } else {
-      groupedEntries.push({
-        articleName: articleName,
-        articles: [entry],
-      });
-    }
-  });
-  return groupedEntries.map((entry: any) => ({
-    params: {
-      category: entry.articles[0].data.newsCategory,
-      articleName: entry.articleName,
-    },
-    props: { entry: entry.articles },
-  }));
+    const language = i18next.language;
+    const newsEntries = await getCollection("news");
+    var groupedEntries: any[] = [];
+    newsEntries.forEach((entry) => {
+        const articleName = entry.data.articleName!.toString();
+        const existingEntry = groupedEntries.find((groupedEntry) => groupedEntry.articleName === articleName);
+        if (existingEntry) {
+            existingEntry.articles.push(entry);
+        }
+        else {
+            groupedEntries.push({
+                articleName: articleName,
+                articles: [entry],
+            });
+        }
+    });
+    return groupedEntries.map((entry: any) => ({
+        params: {
+            category: entry.articles[0].data.newsCategory,
+            articleName: entry.articleName,
+        },
+        props: { entry: entry.articles },
+    }));
 }
 const { entry } = Astro.props;
-let currentEntry = entry.filter(
-  (entryItem: any) => entryItem.data.lang === i18next.language
-)[0];
+let currentEntry = entry.filter((entryItem: any) => entryItem.data.lang === i18next.language)[0];
 const { Content } = await currentEntry.render();
 const pageMetaTag: PageMetaTag = {
     title: currentEntry.data.pageTitle,
     description: currentEntry.data.pageDescription,
     keywords: currentEntry.data.pageKeywords,
     author: currentEntry.data.pageAuthor,
-  },
-  opengraphMetaTag: OpenGraphMetaTag = {
+}, opengraphMetaTag: OpenGraphMetaTag = {
     title: currentEntry.data.ogTitle,
     type: currentEntry.data.ogType,
     image: currentEntry.data.ogImage,
     description: currentEntry.data.ogDescription,
-  },
-  twitterMetaTag: TwitterMetaTag = {
+}, twitterMetaTag: TwitterMetaTag = {
     cardType: currentEntry.data.twitterCardType,
     title: currentEntry.data.twitterTitle,
     description: currentEntry.data.twitterDescription,
     image: currentEntry.data.twitterImage,
-  };
+};
 ---
 
 <NewsLayout
