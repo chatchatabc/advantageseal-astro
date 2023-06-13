@@ -13,63 +13,70 @@ import { Img } from "astro-imagetools/components";
 import NavigationJson from "@data/navigation.json";
 import ProductsJson from "@data/pages/products.json";
 //data types
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
 
 let entry = await getCollection("misc", ({ data }) => {
-    return (data.lang === astroI18next.language &&
-        data.page === "product-substitution-form");
+  return (
+    data.lang === astroI18next.language &&
+    data.page === "product-substitution-form"
+  );
 });
 type Props = {
-    product: {
-        slug: string;
-        name: string;
-        category: string;
-    };
+  product: {
+    slug: string;
+    name: string;
+    category: string;
+  };
 };
 const { product } = Astro.props as Props;
 var pageJson = entry[0].data;
 const page: PageMetaTag = {
-    title: pageJson.pageTitle!,
-    description: pageJson.pageDescription!,
-    author: pageJson.pageAuthor!,
-    keywords: pageJson.pageKeywords!,
+  title: pageJson.pageTitle!,
+  description: pageJson.pageDescription!,
+  author: pageJson.pageAuthor!,
+  keywords: pageJson.pageKeywords!,
 };
 const openGraph: OpenGraphMetaTag = {
-    title: pageJson.ogTitle!,
-    type: pageJson.ogType!,
-    image: pageJson.ogImage!,
-    description: pageJson.ogDescription!,
+  title: pageJson.ogTitle!,
+  type: pageJson.ogType!,
+  image: pageJson.ogImage!,
+  description: pageJson.ogDescription!,
 };
 const twitter: TwitterMetaTag = {
-    cardType: pageJson.twitterCardType!,
-    title: pageJson.twitterTitle!,
-    description: pageJson.twitterDescription!,
-    image: pageJson.twitterImage!,
+  cardType: pageJson.twitterCardType!,
+  title: pageJson.twitterTitle!,
+  description: pageJson.twitterDescription!,
+  image: pageJson.twitterImage!,
 };
 const bannerImageSrc = pageJson.bannerImage!;
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
 type Subnav = {
-    label: string;
-    href: string;
-    slug: string;
+  label: string;
+  href: string;
+  slug: string;
 };
 var subnavs = NavigationJson.links
-    .filter((link) => link.name === "products")[0]
-    .children.map((child: string) => {
+  .filter((link) => link.name === "products")[0]
+  .children.map((child: string) => {
     return {
-        label: t(`navigation:navbar.products.sublinks.${child}.name`),
-        href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(`navigation:navbar.products.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
+      label: t(`navigation:navbar.products.sublinks.${child}.name`),
+      href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(
+        `navigation:navbar.products.sublinks.${child}.slug`
+      )}/`,
+      slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
     };
-}) as Subnav[];
+  }) as Subnav[];
 let currNewsCategory: string = entry[0].data.title; //current name of the product item
 const { Content } = await entry[0].render();
-console.log(page, openGraph, twitter);
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
