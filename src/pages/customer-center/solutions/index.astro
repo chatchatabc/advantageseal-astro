@@ -12,50 +12,58 @@ import { Img } from "astro-imagetools/components";
 //data
 import NavigationJson from "@data/navigation.json";
 //data types
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
 
 let pageJson = "page-customer-center-sublink-solutions";
 const page: PageMetaTag = {
-    title: t(pageJson + ":pageTitle"),
-    description: t(pageJson + ":pageDescription"),
-    author: t(pageJson + ":pageAuthor"),
-    keywords: t(pageJson + ":pageKeywords"),
+  title: t(pageJson + ":pageTitle"),
+  description: t(pageJson + ":pageDescription"),
+  author: t(pageJson + ":pageAuthor"),
+  keywords: t(pageJson + ":pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ":openGraphTitle"),
-    type: t(pageJson + ":openGraphType"),
-    image: t(pageJson + ":openGraphImage"),
-    description: t(pageJson + ":openGraphDescription"),
+  title: t(pageJson + ":openGraphTitle"),
+  type: t(pageJson + ":openGraphType"),
+  image: t(pageJson + ":openGraphImage"),
+  description: t(pageJson + ":openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ":twitterCardType"),
-    title: t(pageJson + ":twitterTitle"),
-    description: t(pageJson + ":twitterDescription"),
-    image: t(pageJson + ":twitterImage"),
+  cardType: t(pageJson + ":twitterCardType"),
+  title: t(pageJson + ":twitterTitle"),
+  description: t(pageJson + ":twitterDescription"),
+  image: t(pageJson + ":twitterImage"),
 };
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
 type Subnav = {
-    label: string;
-    href: string;
-    slug: string;
+  label: string;
+  href: string;
+  slug: string;
 };
 var subnavs = NavigationJson.links
-    .filter((link) => link.name === "customer-center")[0]
-    .children.map((child: string) => {
+  .filter((link) => link.name === "customer-center")[0]
+  .children.map((child: string) => {
     return {
-        label: t(`navigation:navbar.customer-center.sublinks.${child}.name`),
-        href: `${utilGetCurrentLanguage(Astro.url.toString())}/customer-center/${t(`navigation:navbar.customer-center.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.customer-center.sublinks.${child}.slug`),
+      label: t(`navigation:navbar.customer-center.sublinks.${child}.name`),
+      href: `${utilGetCurrentLanguage(
+        Astro.url.toString()
+      )}/customer-center/${t(
+        `navigation:navbar.customer-center.sublinks.${child}.slug`
+      )}/`,
+      slug: t(`navigation:navbar.customer-center.sublinks.${child}.slug`),
     };
-}) as Subnav[];
+  }) as Subnav[];
 let entries = await getCollection("solutions", ({ data }) => {
-    return data.lang === astroI18next.language;
+  return data.lang === astroI18next.language;
 });
 let currNewsCategory: string = t(pageJson + ":name");
 ---
@@ -80,7 +88,7 @@ let currNewsCategory: string = t(pageJson + ":name");
           return entries.map((entry) => (
             <div class="w-full md:w-6/12 p-2 ">
               <a
-                href={Astro.url.pathname + entry.data.articleSlug + "/"}
+                href={Astro.url.pathname + entry.data.articleName + "/"}
                 class="  block hover:bg-[#f5f5f5] p-3 group"
               >
                 <figure class="flex flex-row h-[120px]">
