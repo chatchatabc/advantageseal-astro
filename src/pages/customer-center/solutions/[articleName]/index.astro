@@ -1,0 +1,112 @@
+---
+import i18Next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import { getCollection } from "astro:content";
+//components
+
+import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
+import BackBtn from "@components/theme/BackBtn.astro";
+import { Img } from "astro-imagetools/components";
+//data
+import NavigationJson from "@data/navigation.json";
+import ProductsJson from "@data/pages/products.json";
+import ProductCategories from "@data/product-categories.json";
+//data types
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
+import type { CollectionEntry } from "astro:content";
+
+changeLanguage("cn");
+
+type Props = {
+  entry: CollectionEntry<"solutions">[];
+};
+
+var pageJson = `products:contents.type-16`; //TEMPORARY
+export async function getStaticPaths() {
+  let solutionsEntries = await getCollection("solutions");
+  //a unique list of categories
+  var groupedEntries: any[] = [];
+  solutionsEntries.forEach((entry) => {
+    const articleName = entry.data.articleName!.toString();
+    const existingEntry = groupedEntries.find(
+      (groupedEntry) => groupedEntry.articleName === articleName
+    );
+    if (existingEntry) {
+      existingEntry.articles.push(entry);
+    } else {
+      groupedEntries.push({
+        articleName: articleName,
+        articles: [entry],
+      });
+    }
+  });
+  return groupedEntries.map((entry: any) => ({
+    params: {
+      articleName: entry.articleName,
+    },
+    props: { entry: entry.articles },
+  }));
+}
+const page: PageMetaTag = {
+  title: t(pageJson + ".pageTitle"),
+  description: t(pageJson + ".pageDescription"),
+  author: t(pageJson + ".pageAuthor"),
+  keywords: t(pageJson + ".pageKeywords"),
+};
+const openGraph: OpenGraphMetaTag = {
+  title: t(pageJson + ".openGraphTitle"),
+  type: t(pageJson + ".openGraphType"),
+  image: t(pageJson + ".openGraphImage"),
+  description: t(pageJson + ".openGraphDescription"),
+};
+const twitter: TwitterMetaTag = {
+  cardType: t(pageJson + ".twitterCardType"),
+  title: t(pageJson + ".twitterTitle"),
+  description: t(pageJson + ".twitterDescription"),
+  image: t(pageJson + ".twitterImage"),
+};
+const bannerImageSrc = t(pageJson + ".bannerImageSrc");
+const bannerHeight = "200px";
+const trueImage = false;
+const trueImageStyle = "";
+type Subnav = {
+  label: string;
+  href: string;
+  slug: string;
+};
+var subnavs = NavigationJson.links
+  .filter((link) => link.name === "products")[0]
+  .children.map((child: string) => {
+    return {
+      label: t(`navigation:navbar.products.sublinks.${child}.name`),
+      href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(
+        `navigation:navbar.products.sublinks.${child}.slug`
+      )}/`,
+      slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
+    };
+  }) as Subnav[];
+const { entry } = Astro.props as Props;
+let currentEntry = entry.filter(
+  (entryItem) => entryItem.data.lang === i18Next.language
+)[0];
+const { Content } = await currentEntry.render();
+---
+
+<NewsLayout
+  page={page}
+  openGraph={openGraph}
+  twitter={twitter}
+  bannerImage={currentEntry.data.bannerImage!}
+  entry={currentEntry as unknown as CollectionEntry<"news">}
+>
+  <Content />
+  <!--Suggestion for articles here -->
+  <div class="border-t-[1px] border-solid border-[#ccc] mt-16"></div>
+  <div class="mb-16 flex justify-center">
+    <BackBtn />
+  </div>
+</NewsLayout>
