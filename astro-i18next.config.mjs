@@ -22,6 +22,7 @@ export default {
     "product-categories",
     "customer-center-categories",
     "footer",
+    "common",
   ],
   defaultNamespace: "navigation",
 };
