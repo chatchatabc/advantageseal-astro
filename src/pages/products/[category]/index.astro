@@ -118,13 +118,13 @@ let currNewsCategory: string = category.name; //current name of category
         {
           products.map((product) => {
             return (
-              <div class="w-full md:w-6/12 scale-[0.95] border-[1px] border-solid border-[#eee] transition shadow-lg hover:scale-[1] lg:w-4/12 h-fit">
-                <a
-                  class="block p-4"
-                  href={`${utilGetCurrentLanguage(
-                    Astro.url.toString()
-                  )}/products/${product.category}/${product.slug}/`}
-                >
+              <a
+                class="w-full md:w-6/12 scale-[0.95] border-[1px] border-solid border-[#eee] transition shadow-lg hover:scale-[1] lg:w-4/12 h-fit"
+                href={`${utilGetCurrentLanguage(
+                  Astro.url.toString()
+                )}/products/${product.category}/${product.slug}/`}
+              >
+                <div class="block p-4">
                   <Img
                     src={t(
                       `products:contents.${product.slug}.contents.section1.imageGallery.images.image1.src`
@@ -133,13 +133,13 @@ let currNewsCategory: string = category.name; //current name of category
                       `products:contents.${product.slug}.contents.section1.imageGallery.images.image1.alt`
                     )}
                   />
-                </a>
+                </div>
                 <div class="py-8">
                   <div class="text-[1.25rem] text-[#006699] py-1 px-4 font-semibold border-2 border-solid border-[#006699] rounded-[0.75rem] w-fit mx-auto">
                     {t(`products:contents.${product.slug}.name`)}
                   </div>
                 </div>
-              </div>
+              </a>
             );
           })
         }
