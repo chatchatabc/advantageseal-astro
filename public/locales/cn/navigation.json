@@ -12,7 +12,10 @@
           "name": "公司概况",
           "slug": "company-profile",
           "alt": "office spaces",
-          "subText": "爱得万以“创新”为使命，专注生产旋转轴用流体动密封系统，立足本土放眼世界",
+          "subText": {
+            "count": 1,
+            "text1": "爱得万以“创新”为使命，专注生产旋转轴用流体动密封系统，立足本土放眼世界"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-company-profile.jpg",
@@ -61,7 +64,10 @@
           "name": "研发创新",
           "slug": "research-and-innovation",
           "alt": "world-wide-web",
-          "subText": "卓越的研发创新能力一直是爱得万企业竞争力的重要部分。研发战略是以市场和客户需求为基础，不断投入，持续创新",
+          "subText": {
+            "count": 1,
+            "text1": "卓越的研发创新能力一直是爱得万企业竞争力的重要部分。研发战略是以市场和客户需求为基础，不断投入，持续创新"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-research-and-innovation.jpg",
@@ -84,7 +90,11 @@
           "name": "生产实力",
           "slug": "production-ability",
           "alt": "factory floor with machinery",
-          "subText": "公司实现了生产数控化、研发软件化、试验平台化，拥有成套数控加工、科研、质检设施和系统",
+          "subText": {
+            "count": 1,
+            "text1": "公司实现了生产数控化、研发软件化、试验平台化，拥有成套数控加工、科研、质检设施和系统"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-production-ability.jpg",
@@ -107,7 +117,10 @@
           "name": "资质荣誉",
           "slug": "qualification-honor",
           "alt": "golden trophy",
-          "subText": "依托强大的国际知名品牌Advantage Seal，引进先进的现代化技术，爱得万不断开拓创新，获得多项技术认证，引领密封件品牌",
+          "subText": {
+            "count": 1,
+            "text1": "依托强大的国际知名品牌Advantage Seal，引进先进的现代化技术，爱得万不断开拓创新，获得多项技术认证，引领密封件品牌"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-qualification-honor.jpg",
@@ -130,7 +143,10 @@
           "name": "企业文化",
           "slug": "enterprise-culture",
           "alt": "convoy of camels in the desert",
-          "subText": "“拼搏、奋进、开拓、创新”，我们坚守共同的人生观价值观，期待更高目标，实现理想未来",
+          "subText": {
+            "count": 1,
+            "text1": "“拼搏、奋进、开拓、创新”，我们坚守共同的人生观价值观，期待更高目标，实现理想未来"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-enterprise-culture.jpg",
@@ -175,7 +191,10 @@
           "name": "行业资讯",
           "alt": "world-wide-web",
           "slug": "industry-information",
-          "subText": "全面了解行业内动态及媒体报道,关注未来趋势走向",
+          "subText": {
+            "count": 1,
+            "text1": "全面了解行业内动态及媒体报道,关注未来趋势走向"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-industry-information.jpg",
@@ -196,7 +215,10 @@
           "name": "公司公告",
           "slug": "company-announcements",
           "alt": "megaphone",
-          "subText": "及时发布第一时效公司公告，关切了解公司动态",
+          "subText": {
+            "count": 1,
+            "text1": "及时发布第一时效公司公告，关切了解公司动态"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-company-announcements.jpg",
@@ -217,8 +239,10 @@
           "name": "新品发布",
           "slug": "new-product-releases",
           "alt": "conference",
-
-          "subText": "爱得万新品发布，见证不断创新的发展气息",
+          "subText": {
+            "count": 1,
+            "text1": "爱得万新品发布，见证不断创新的发展气息"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-new-product-releases.jpg",
@@ -239,7 +263,10 @@
           "name": "视频中心",
           "slug": "videos",
           "alt": "camera",
-          "subText": "关注爱得万生产加工等系列影像资料",
+          "subText": {
+            "count": 1,
+            "text1": "关注爱得万生产加工等系列影像资料"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-videos.jpg",
@@ -283,7 +310,11 @@
           "name": "水池水疗泵用密封系列",
           "slug": "seal-series-for-pool-and-spa-pump",
           "alt": "水池水疗泵用密封系列",
-          "subText": "水池、水疗用水泵用机械密封系列",
+          "subText": {
+            "count": 1,
+            "text1": "水池、水疗用水泵用机械密封系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-pool-and-spa-pump.jpg",
@@ -304,7 +335,11 @@
           "name": "立式多级泵密封系列",
           "slug": "seal-series-for-vertical-multi-stage-pump",
           "alt": "立式多级泵密封系列",
-          "subText": "立式多级泵机械密封系列",
+
+          "subText": {
+            "count": 1,
+            "text1": "立式多级泵机械密封系列"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-vertical-multi-stage-pump.jpg",
@@ -325,7 +360,11 @@
           "name": "卫生泵用机密封系列",
           "slug": "seal-series-for-sanitary-pump",
           "alt": "卫生泵用机密封系列",
-          "subText": "卫生泵用机密封系列",
+          "subText": {
+            "count": 1,
+            "text1": "卫生泵用机密封系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-sanitary-pump.jpg",
@@ -346,7 +385,11 @@
           "name": "飞力泵用密封系列",
           "slug": "seal-series-for-flypt-pump",
           "alt": "飞力泵用密封系列",
-          "subText": "飞力泵用机械密封系列",
+          "subText": {
+            "count": 1,
+            "text1": "飞力泵用机械密封系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-flypt-pump.jpg",
@@ -367,7 +410,11 @@
           "name": "转子泵用密封系列",
           "slug": "seal-series-for-rotor-pump",
           "alt": "转子泵用密封系列",
-          "subText": "转子泵用机械密封系列",
+          "subText": {
+            "count": 1,
+            "text1": "转子泵用机械密封系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-rotor-pump.jpg",
@@ -388,7 +435,11 @@
           "name": "集装式机械密封系列",
           "slug": "modular-mechanical-seals-series",
           "alt": "集装式机械密封系列",
-          "subText": "集装式机械密封系列",
+          "subText": {
+            "count": 1,
+            "text1": "集装式机械密封系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-modular-mechanical-seals-series.png",
@@ -409,7 +460,11 @@
           "name": "金属波纹管密封系列",
           "slug": "seal-series-for-metal-bellows",
           "alt": "金属波纹管密封系列",
-          "subText": "金属波纹管密封系列",
+          "subText": {
+            "count": 1,
+            "text1": "金属波纹管密封系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-metal-bellows.jpg",
@@ -430,7 +485,11 @@
           "name": "通用标准密封系列",
           "slug": "universal-standard-seal-series",
           "alt": "通用标准密封系列",
-          "subText": "通用标准密封系列",
+          "subText": {
+            "count": 1,
+            "text1": "通用标准密封系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-universal-standard-seal-series.jpg",
@@ -451,7 +510,11 @@
           "name": "静环系列",
           "slug": "static-ring-series",
           "alt": "静环系列",
-          "subText": "静环系列",
+          "subText": {
+            "count": 1,
+            "text1": "静环系列"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-static-ring-series.jpg",
@@ -472,7 +535,11 @@
           "name": "密封材料代码",
           "slug": "seal-material-code",
           "alt": "",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": ""
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "",
@@ -493,7 +560,10 @@
           "name": "产品替代表",
           "slug": "product-substitution-form",
           "alt": "",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": ""
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "",
@@ -537,7 +607,11 @@
           "name": "具体案例",
           "slug": "concrete-case",
           "alt": "解决方案",
-          "subText": "展示客户案例，遇有合作，请第一时间联系我们",
+          "subText": {
+            "count": 1,
+            "text1": "展示客户案例，遇有合作，请第一时间联系我们"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/customer-center-concrete-case.jpg",
@@ -558,7 +632,11 @@
           "name": "解决方案",
           "slug": "solutions",
           "alt": "maze solution",
-          "subText": "为适应各种复杂工况，爱得万有针对性的提出解决方案",
+          "subText": {
+            "count": 1,
+            "text1": "为适应各种复杂工况，爱得万有针对性的提出解决方案"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/customer-center-solutions.jpg",
@@ -602,7 +680,11 @@
           "name": "人才战略",
           "slug": "talent-strategy",
           "alt": "person building a group of people",
-          "subText": "为梦想者提供舞台，携手共进，共创未来",
+          "subText": {
+            "count": 1,
+            "text1": "为梦想者提供舞台，携手共进，共创未来"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/contact-talent-strategy.jpg",
@@ -623,7 +705,12 @@
           "name": "联系方式",
           "slug": "contact-information",
           "alt": "a group of people",
-          "subText": "电话:+086(574)87500883 \n 邮箱:admin@advantageseal.cn",
+          "subText": {
+            "count": 1,
+            "text1": "电话:+086(574)87500883",
+            "text2": "邮箱:admin@advantageseal.cn"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/contact-contact-information.jpg",
@@ -644,7 +731,11 @@
           "name": "电子地图",
           "slug": "digital-map",
           "alt": "digital map",
-          "subText": "一键导航，为您提供地图服务",
+          "subText": {
+            "count": 1,
+            "text1": "一键导航，为您提供地图服务"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/contact-digital-map.jpg",
@@ -683,7 +774,11 @@
     },
     "networkShare": {
       "name": "网络分享",
-      "subText": "网站二维码",
+      "subText": {
+        "count": 1,
+        "text1": "网站二维码"
+      },
+
       "alt": "网站二维码"
     }
   },

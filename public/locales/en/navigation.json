@@ -12,7 +12,10 @@
           "name": "Company Profile",
           "slug": "company-profile",
           "alt": "office spaces",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "With the mission of \"Innovation\", Advantage Seal focuses on the production of fluid dynamic sealing systems for rotating shafts, and looks at the world from a local perspective!"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-company-profile.jpg",
@@ -43,7 +46,7 @@
               },
               "section2": {
                 "label": "Serves China",
-                "text": "Advantage Seal is committed to designing and developing exceptional seals to meet the fluid handling requirements of both current and emerging markets.\n In 2006, Advantage Seals Ningbo operation commence and duplicate its US Manufacturing process. Since then Advantage Seal successfully merge American innovation to provide affordable and high quality seals a reality, to serve both domestic and international customers."
+                "text": "Advantage Seal is committed to designing and developing exceptional seals to meet the fluid handling requirements of both current and emerging markets.\n In 2006, Advantage Seal Ningbo operation commence and duplicate its US Manufacturing process. Since then Advantage Seal successfully merge American innovation to provide affordable and high quality seals a reality, to serve both domestic and international customers."
               },
               "section3": {
                 "label": "Start With Demand, Stop At The Best",
@@ -56,7 +59,11 @@
           "name": "Research And Innovation",
           "slug": "research-and-innovation",
           "alt": "world-wide-web",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "Excellent R&D and innovation capabilities have always been an important part of Advantage Seal's corporate competitiveness. R & D strategy is based on the market and customer needs, continuous investment, continuous innovation"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-research-and-innovation.jpg",
@@ -79,7 +86,11 @@
           "name": "Production Ability",
           "slug": "production-ability",
           "alt": "factory floor with machinery",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "The company has realized the production of numerical control, research and development software, and test platform, and has a complete set of numerical control processing, scientific research, quality inspection facilities and systems"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-production-ability.jpg",
@@ -102,7 +113,11 @@
           "name": "Qualification Honor",
           "slug": "qualification-honor",
           "alt": "golden trophy",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "Relying on the powerful international well-known brand Advantage Seal and introducing advanced modern technology, Advantage Seal continues to develop and innovate, and has obtained a number of technical certifications, leading the brand of seals"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-qualification-honor.jpg",
@@ -125,7 +140,11 @@
           "name": "Enterprise Culture",
           "slug": "enterprise-culture",
           "alt": "convoy of camels in the desert",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "\"Struggle, forge ahead, pioneer and innovate\", we adhere to the common outlook on life and values, look forward to higher goals, and achieve an ideal future"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/about-enterprise-culture.jpg",
@@ -172,7 +191,11 @@
           "name": "Industry Information",
           "slug": "industry-information",
           "alt": "world-wide-web",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "Fully understand the industry dynamics and media reports, and pay attention to future trends"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-industry-information.jpg",
@@ -193,7 +216,11 @@
           "name": "Company Announcements",
           "slug": "company-announcements",
           "alt": "megaphone",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "Timely release the first-time company announcement, pay attention to understand the company's dynamics"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-company-announcements.jpg",
@@ -214,7 +241,11 @@
           "name": "New Product Releases",
           "slug": "new-product-releases",
           "alt": "conference",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "The release of Advantage Seal's new products has witnessed the development of continuous innovation"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-new-product-releases.jpg",
@@ -235,7 +266,11 @@
           "name": "Videos",
           "slug": "videos",
           "alt": "camera",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "Pay attention to the series of video materials such as production and processing of Advantage Seal"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/news-videos.jpg",
@@ -280,7 +315,10 @@
           "name": "Seal Series for Pool and Spa Pump",
           "slug": "seal-series-for-pool-and-spa-pump",
           "alt": "Seal Series for Pool and Spa Pump",
-          "subText": "Seal Series for Pool and Spa Pump",
+          "subText": {
+            "count": 1,
+            "text1": "Seal Series for Pool and Spa Pump"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-pool-and-spa-pump.jpg",
@@ -301,7 +339,10 @@
           "name": "Seal Series for Vertical Multi-stage Pump",
           "slug": "seal-series-for-vertical-multi-stage-pump",
           "alt": "Seal Series for Vertical Multi-stage Pump",
-          "subText": "Seal Series for Vertical Multi-stage Pump",
+          "subText": {
+            "count": 1,
+            "text1": "Seal Series for Vertical Multi-stage Pump"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-vertical-multi-stage-pump.jpg",
@@ -322,7 +363,10 @@
           "name": "Seal Series for Sanitary Pump",
           "slug": "seal-series-for-sanitary-pump",
           "alt": "Seal Series for Sanitary Pump",
-          "subText": "Seal Series for Sanitary Pump",
+          "subText": {
+            "count": 1,
+            "text1": "Seal Series for Sanitary Pump"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-sanitary-pump.jpg",
@@ -343,7 +387,10 @@
           "name": "Seal Series for Flypt Pump",
           "slug": "seal-series-for-flypt-pump",
           "alt": "Seal Series for Flypt Pump",
-          "subText": "Seal Series for Flypt Pump",
+          "subText": {
+            "count": 1,
+            "text1": "Seal Series for Flypt Pump"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-flypt-pump.jpg",
@@ -364,7 +411,10 @@
           "name": "Seal Series for Rotor Pump",
           "slug": "seal-series-for-rotor-pump",
           "alt": "Seal Series for Rotor Pump",
-          "subText": "Seal Series for Rotor Pump",
+          "subText": {
+            "count": 1,
+            "text1": "Seal Series for Rotor Pump"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-rotor-pump.jpg",
@@ -385,7 +435,10 @@
           "name": "Modular Mechanical Seal Series",
           "slug": "modular-mechanical-seals-series",
           "alt": "Modular Mechanical Seal Series",
-          "subText": "Modular Mechanical Seal Series",
+          "subText": {
+            "count": 1,
+            "text1": "Modular Mechanical Seal Series"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-modular-mechanical-seals-series.png",
@@ -406,7 +459,10 @@
           "name": "Seal Series for Metal Bellows",
           "slug": "seal-series-for-metal-bellows",
           "alt": "Seal Series for Metal Bellows",
-          "subText": "Seal Series for Metal Bellows",
+          "subText": {
+            "count": 1,
+            "text1": "Seal Series for Metal Bellows"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-seal-series-for-metal-bellows.jpg",
@@ -427,7 +483,10 @@
           "name": "Universal Standard Seal Series",
           "slug": "universal-standard-seal-series",
           "alt": "Universal Standard Seal Series",
-          "subText": "Universal Standard Seal Series",
+          "subText": {
+            "count": 1,
+            "text1": "Universal Standard Seal Series"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-universal-standard-seal-series.jpg",
@@ -448,7 +507,10 @@
           "name": "Static Ring Series",
           "slug": "static-ring-series",
           "alt": "Static Ring Series",
-          "subText": "Static Ring Series",
+          "subText": {
+            "count": 1,
+            "text1": "Static Ring Series"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/products-static-ring-series.jpg",
@@ -469,7 +531,10 @@
           "name": "Seal Material Code",
           "slug": "seal-material-code",
           "alt": "",
-          "subText": "Seal Material Code",
+          "subText": {
+            "count": 1,
+            "text1": "Seal Material Code"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "",
@@ -490,7 +555,10 @@
           "name": "Product Substitution Form",
           "slug": "product-substitution-form",
           "alt": "",
-          "subText": "Product Substitution Form",
+          "subText": {
+            "count": 1,
+            "text1": "Product Substitution Form"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "",
@@ -535,7 +603,11 @@
           "name": "Concrete Case",
           "slug": "concrete-case",
           "alt": "jigsaw puzzle",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "Show customer cases, in case of cooperation, please contact us as soon as possible"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/customer-center-concrete-case.jpg",
@@ -556,7 +628,11 @@
           "name": "Solutions",
           "slug": "solutions",
           "alt": "maze solution",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "In order to adapt to various complex working conditions, Advantage Seal proposes targeted solutions"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/customer-center-solutions.jpg",
@@ -601,7 +677,11 @@
           "name": "Talent Strategy",
           "slug": "talent-strategy",
           "alt": "person building a group of people",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "Provide a stage for dreamers, work together to create a better future"
+          },
+
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/contact-talent-strategy.jpg",
@@ -622,7 +702,11 @@
           "name": "Contact Information",
           "slug": "contact-information",
           "alt": "a group of people",
-          "subText": "",
+          "subText": {
+            "count": 2,
+            "text1": "Tel: +086(574)87500883",
+            "text2": "Email: admin@advantageseal.cn"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/contact-contact-information.jpg",
@@ -643,7 +727,10 @@
           "name": "Digital Map",
           "slug": "digital-map",
           "alt": "digital map",
-          "subText": "",
+          "subText": {
+            "count": 1,
+            "text1": "One-key navigation, providing you with map services"
+          },
           "showNavBar": true,
           "showFooter": true,
           "imageRef": "/images/navbar/contact-digital-map.jpg",
@@ -683,7 +770,10 @@
     },
     "networkShare": {
       "name": "Network Share",
-      "subText": "QR Code",
+      "subText": {
+        "count": 1,
+        "text1": "QR Code"
+      },
       "alt": "QR Code"
     }
   },
