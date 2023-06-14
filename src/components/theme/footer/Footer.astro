@@ -106,9 +106,22 @@ links.map((link: any) => {
                 <Picture
                   src={footerLink.imageRef}
                   alt={t("navigation:navbar." + footerLink.name + ".alt")}
-                  
                 />
-                <p>{t("navigation:navbar." + footerLink.name + ".subText")}</p>
+                {Array.from({
+                  length: parseInt(
+                    t(`navigation:navbar.${footerLink.name}.subText.count`)
+                  ),
+                }).map((i: any, j: number) => {
+                  return (
+                    <p>
+                      {t(
+                        `navigation:navbar.${footerLink.name}.subText.text${
+                          1 + j
+                        }`
+                      )}
+                    </p>
+                  );
+                })}
               </div>
             )}
           </div>

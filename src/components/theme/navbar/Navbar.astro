@@ -13,7 +13,7 @@ type NavbarSublink = {
   link: string;
   imageRef: string;
   alt: string;
-  subText: string;
+  subText: string[];
 };
 const links = [...navigationJson.links];
 
@@ -41,7 +41,7 @@ links.map((link: any) => {
           link: "",
           imageRef: "",
           alt: "",
-          subText: "",
+          subText: [],
         };
 
         processedSublink.name = t(
@@ -59,13 +59,21 @@ links.map((link: any) => {
         processedSublink.alt = t(
           "navigation:navbar." + link.name + ".sublinks." + childRef + ".alt"
         );
-        processedSublink.subText = t(
-          "navigation:navbar." +
-            link.name +
-            ".sublinks." +
-            childRef +
-            ".subText"
-        );
+        Array.from({
+          length: parseInt(
+            t(
+              `navigation:navbar.${link.name}.sublinks.${childRef}.subText.count`
+            )
+          ),
+        }).forEach((el: any, index: number) => {
+          processedSublink.subText.push(
+            t(
+              `navigation:navbar.${
+                link.name
+              }.sublinks.${childRef}.subText.text${index + 1}`
+            )
+          );
+        });
         processedSublink.imageRef = t(
           "navigation:navbar." +
             link.name +
@@ -160,47 +168,71 @@ links.map((link: any) => {
         <div class="w-full mx-auto container lg:w-11/12 xl:w-9/12">
           <ul class="flex flex-row">
             {
-              processedLinks.map((processedLink: Link) => {
-                return (
-                  <>
-                    <li class="group border-t-[3px] border-t-[#019cdf00]  text-[14px] hover:border-t-[#019cdf]">
-                      <a
-                        class="block px-[42px] py-[18px] pb-[21px] group-hover:bg-white"
-                        href={processedLink.link}
-                      >
-                        {processedLink.name}
-                      </a>
+              processedLinks.map(
+                (processedLink: Link, processedLinkIndex: number) => {
+                  return (
+                    <>
+                      <li class="group border-t-[3px] border-t-[#019cdf00]  text-[14px] w-[125px] hover:border-t-[#019cdf]">
+                        <a
+                          class="block  text-center py-[18px] pb-[21px] group-hover:bg-white"
+                          href={processedLink.link}
+                        >
+                          {processedLink.name}
+                        </a>
 
-                      {processedLink.children.length > 0 && (
-                        <SubMenu client:load links={processedLink.children!}>
+                        {processedLink.children.length > 0 && (
                           <div
-                            slot="description"
-                            class="descriptionCollection p-[20px]"
+                            class={`${
+                              processedLinkIndex >
+                              Math.floor((processedLinks.length - 1) / 2)
+                                ? "ml-[-301px]"
+                                : ""
+                            }`}
                           >
-                            {processedLink.children.map((sublink) => {
-                              if (sublink.imageRef !== "") {
-                                return (
-                                  <div class="descriptionItem hidden">
-                                    <Picture
-                                      src={sublink.imageRef}
-                                      alt={sublink.alt}
-                                    />
-                                    <div class="mt-[20px]">
-                                      {sublink.subText}
-                                    </div>
-                                  </div>
-                                );
-                              } else {
-                                return <div class="descriptionItem hidden" />;
+                            <SubMenu
+                              client:load
+                              links={processedLink.children!}
+                              reversed={
+                                processedLinkIndex >
+                                Math.floor((processedLinks.length - 1) / 2)
                               }
-                            })}
+                            >
+                              <div
+                                slot="description"
+                                class="descriptionCollection p-[20px]"
+                              >
+                                {processedLink.children.map((sublink) => {
+                                  if (sublink.imageRef !== "") {
+                                    return (
+                                      <div class="descriptionItem hidden">
+                                        <Picture
+                                          src={sublink.imageRef}
+                                          alt={sublink.alt}
+                                        />
+                                        <div class="mt-[20px]">
+                                          {sublink.subText.map(
+                                            (el: any, index: number) => {
+                                              return <div>{el}</div>;
+                                            }
+                                          )}
+                                        </div>
+                                      </div>
+                                    );
+                                  } else {
+                                    return (
+                                      <div class="descriptionItem hidden" />
+                                    );
+                                  }
+                                })}
+                              </div>
+                            </SubMenu>
                           </div>
-                        </SubMenu>
-                      )}
-                    </li>
-                  </>
-                );
-              })
+                        )}
+                      </li>
+                    </>
+                  );
+                }
+              )
             }
           </ul>
         </div>
@@ -210,7 +242,7 @@ links.map((link: any) => {
         <button
           aria-label="menu button"
           id="nav-menu-btn"
-          class="p-[15px] w-[50px] h-[50px] lg:hidden"
+          class="p-[15px] w-[50px] h-[50px]"
         >
           <div id="burger" class="space-y-1">
             <div
