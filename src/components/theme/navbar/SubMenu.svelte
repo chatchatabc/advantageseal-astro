@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
 
   export let links: Sublink[] = [];
+  export let reversed: boolean = false;
 
   type Sublink = { name: string; link: string };
   var currentDescription: HTMLDivElement;
@@ -22,26 +23,32 @@
   });
 </script>
 
-<div
-  class="sub-nav flex-1 absolute hidden border-b-[5px] border-b-[#0ba0e1] group-hover:flex group-hover:justify-stretch bg-white z-[3]"
->
+<div class="relative">
   <div
-    class="sub-nav-list min-w-[300px] max-w-[300px] border-r-[1px] text-[#777]"
+    class={`sub-nav flex-1 absolute hidden border-b-[5px] border-b-[#0ba0e1] ${
+      reversed ? "flex-row-reverse" : "flex-row"
+    } group-hover:flex group-hover:justify-stretch bg-white z-[3]`}
   >
-    <ul class="subLinks divide-y-2 p-[0.5rem]">
-      {#each links as sublink}
-        <li class="block">
-          <a
-            class="py-[1rem] block text-[#777] hover:text-[#0ba0e1]"
-            href={sublink.link}
-          >
-            {sublink.name}
-          </a>
-        </li>
-      {/each}
-    </ul>
-  </div>
-  <div class="sub-nav-details min-w-[300px] max-w-[300px]">
-    <slot name="description" />
+    <div
+      class={`sub-nav-list min-w-[300px] max-w-[300px] ${
+        reversed ? "border-l-[1px]" : "border-r-[1px]"
+      } text-[#777]`}
+    >
+      <ul class="subLinks divide-y-2 p-[0.5rem]">
+        {#each links as sublink}
+          <li class="block">
+            <a
+              class="py-[1rem] block text-[#777] hover:text-[#0ba0e1]"
+              href={sublink.link}
+            >
+              {sublink.name}
+            </a>
+          </li>
+        {/each}
+      </ul>
+    </div>
+    <div class="sub-nav-details min-w-[300px] max-w-[300px]">
+      <slot name="description" />
+    </div>
   </div>
 </div>
