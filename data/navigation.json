@@ -77,7 +77,7 @@
       "type": "singleton",
       "showNavBar": false,
       "showFooter": true,
-      "imageRef": "/images/footer/qc.png",
+      "imageRef": "/images/footer/qc.jpg",
       "children": []
     }
   ]

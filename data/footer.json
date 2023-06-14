@@ -4,7 +4,7 @@
     "unique": [
       {
         "name": "networkShare",
-        "iamgeRef": "@images/footer/qc.png"
+        "iamgeRef": "@images/footer/qc.jpg"
       }
     ]
   }
