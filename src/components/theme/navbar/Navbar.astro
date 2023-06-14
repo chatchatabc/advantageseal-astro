@@ -181,21 +181,11 @@ links.map((link: any) => {
                         </a>
 
                         {processedLink.children.length > 0 && (
-                          <div
-                            class={`${
-                              processedLinkIndex >
-                              Math.floor((processedLinks.length - 1) / 2)
-                                ? "ml-[-301px]"
-                                : ""
-                            }`}
-                          >
+                          <div>
                             <SubMenu
                               client:load
                               links={processedLink.children!}
-                              reversed={
-                                processedLinkIndex >
-                                Math.floor((processedLinks.length - 1) / 2)
-                              }
+                              reversed={false}
                             >
                               <div
                                 slot="description"

@@ -30,7 +30,7 @@
     } group-hover:flex group-hover:justify-stretch bg-white z-[3]`}
   >
     <div
-      class={`sub-nav-list min-w-[300px] max-w-[300px] ${
+      class={`sub-nav-list min-w-[200px] max-w-[200px] ${
         reversed ? "border-l-[1px]" : "border-r-[1px]"
       } text-[#777]`}
     >

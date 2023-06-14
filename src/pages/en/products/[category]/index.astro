@@ -31,6 +31,7 @@ type Props = {
     }[];
 };
 const { category, products } = Astro.props as Props;
+console.log(products);
 var pageJson = `products:contents.type-16`; //TEMPORARY
 export async function getStaticPaths() {
     let uniqueCategories = [
@@ -125,6 +126,11 @@ let currNewsCategory: string = category.name; //current name of category
                 )}/products/${product.category}/${product.slug}/`}
               >
                 <div class="block p-4">
+                  <img
+                    src={t(
+                      `products:contents.${product.slug}.contents.section1.imageGallery.images.image1.src`
+                    )}
+                  />
                   <Img
                     src={t(
                       `products:contents.${product.slug}.contents.section1.imageGallery.images.image1.src`
