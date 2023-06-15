@@ -7,27 +7,30 @@
   type Sublink = { name: string; link: string };
   var currentDescription: HTMLDivElement;
   onMount(() => {
-    const subLinks = document.querySelectorAll(".subLinks li a");
-    const descriptionItems = document.querySelectorAll(
-      ".descriptionCollection .descriptionItem"
-    );
-    descriptionItems[0].classList.remove("hidden");
-    currentDescription = descriptionItems[0] as HTMLDivElement;
-    subLinks.forEach((link, index) => {
-      link.addEventListener("mouseover", (e) => {
-        currentDescription.classList.add("hidden");
-        currentDescription = descriptionItems[index] as HTMLDivElement;
-        currentDescription.classList.remove("hidden");
+    const subNavs = document.querySelectorAll(".sub-nav");
+    subNavs.forEach((subnav) => {
+      let subLinks = subnav.querySelectorAll(".subLinks li a");
+      let descriptionItems = subnav.querySelectorAll(
+        ".descriptionCollection .descriptionItem"
+      );
+      let currentDescription = descriptionItems[0] as HTMLDivElement;
+      currentDescription.classList.remove("hidden");
+      subLinks.forEach((link, index) => {
+        link.addEventListener("mouseover", (e) => {
+          currentDescription.classList.add("hidden");
+          currentDescription = descriptionItems[index] as HTMLDivElement;
+          currentDescription.classList.remove("hidden");
+        });
       });
     });
   });
 </script>
 
-<div class="relative">
+<div class={`relative ${reversed && "max-[1240px]:ml-[-375px]"}`}>
   <div
-    class={`sub-nav flex-1 absolute hidden border-b-[5px] border-b-[#0ba0e1] ${
-      reversed ? "flex-row-reverse" : "flex-row"
-    } group-hover:flex group-hover:justify-stretch bg-white z-[3]`}
+    class={`sub-nav flex-1 absolute hidden border-b-[5px] border-b-[#0ba0e1] 
+    ${reversed ? "max-[1240px]:flex-row-reverse" : "flex-row"} 
+    group-hover:flex group-hover:justify-stretch bg-white z-[3]`}
   >
     <div
       class={`sub-nav-list min-w-[200px] max-w-[200px] ${
