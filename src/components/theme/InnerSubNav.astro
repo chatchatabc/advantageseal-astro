@@ -7,31 +7,33 @@ type Props = {
 const { subnavs } = Astro.props as Props;
 ---
 
-<div
-  class="bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid sticky top-0 z-[2]"
-  style=""
->
-  <ul class="p-2 bg-white ml-4 flex flex-row flex-wrap">
-    {
-      subnavs.map((subnav: Subnav) => {
-        return (
-          <li class="p-1">
-            <a
-              class={`px-4 py-2 text-[#777] rounded-[4px] text-[0.875rem] block font-semibold  
-              hover:bg-[#009ce0] hover:text-white
-              
-              ${
-                utilCurrentPage(Astro.url.toString(), subnav.slug)
-                  ? " bg-[#009ce0] text-white"
-                  : " bg-white"
-              }`}
-              href={subnav.href}
-            >
-              {subnav.label}
-            </a>
-          </li>
-        );
-      })
-    }
-  </ul>
+<div class="my-[1.125rem] sticky top-0">
+  <div
+    class="bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid"
+    style=""
+  >
+    <ul class="p-2 bg-white ml-4 flex flex-row flex-wrap">
+      {
+        subnavs.map((subnav: Subnav) => {
+          return (
+            <li class="p-1">
+              <a
+                class={`px-4 py-2 text-[#777] rounded-[4px] text-[0.875rem] block font-semibold  
+                hover:bg-[#009ce0] hover:text-white
+                
+                ${
+                  utilCurrentPage(Astro.url.toString(), subnav.slug)
+                    ? " bg-[#009ce0] text-white"
+                    : " bg-white"
+                }`}
+                href={subnav.href}
+              >
+                {subnav.label}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
 </div>

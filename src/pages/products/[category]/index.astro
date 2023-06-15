@@ -14,96 +14,88 @@ import NavigationJson from "@data/navigation.json";
 import ProductsJson from "@data/pages/products.json";
 import ProductCategories from "@data/product-categories.json";
 //data types
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
 
 type Props = {
-  category: {
-    slug: string;
-    name: string;
-  };
-  products: {
-    slug: string;
-    name: string;
-    category: string;
-  }[];
+    category: {
+        slug: string;
+        name: string;
+    };
+    products: {
+        slug: string;
+        name: string;
+        category: string;
+    }[];
 };
 const { category, products } = Astro.props as Props;
 var pageJson = `products:contents.type-16`; //TEMPORARY
 export async function getStaticPaths() {
-  let uniqueCategories = [
-    ...new Set(ProductsJson.list.map((product) => product.category)),
-  ];
-  //a unique list of categories
-  let productsByCategory = ProductCategories.refs.map(
-    (category: string, index: number) => {
-      return {
-        category: {
-          slug: t(`product-categories:${category}.slug`),
-          name: t(`product-categories:${category}.name`),
-        },
-        products: ProductsJson.list.filter((product: any) => {
-          return product.category === t(`product-categories:${category}.slug`);
-        }),
-      };
-    }
-  );
-  return productsByCategory.map((el) => {
-    return {
-      params: {
-        category: el.category.slug,
-      },
-      props: {
-        category: el.category,
-        products: el.products,
-      },
-    };
-  });
+    let uniqueCategories = [
+        ...new Set(ProductsJson.list.map((product) => product.category)),
+    ];
+    //a unique list of categories
+    let productsByCategory = ProductCategories.refs.map((category: string, index: number) => {
+        return {
+            category: {
+                slug: t(`product-categories:${category}.slug`),
+                name: t(`product-categories:${category}.name`),
+            },
+            products: ProductsJson.list.filter((product: any) => {
+                return product.category === t(`product-categories:${category}.slug`);
+            }),
+        };
+    });
+    return productsByCategory.map((el) => {
+        return {
+            params: {
+                category: el.category.slug,
+            },
+            props: {
+                category: el.category,
+                products: el.products,
+            },
+        };
+    });
 }
 const page: PageMetaTag = {
-  title: t(pageJson + ".pageTitle"),
-  description: t(pageJson + ".pageDescription"),
-  author: t(pageJson + ".pageAuthor"),
-  keywords: t(pageJson + ".pageKeywords"),
+    title: t(pageJson + ".pageTitle"),
+    description: t(pageJson + ".pageDescription"),
+    author: t(pageJson + ".pageAuthor"),
+    keywords: t(pageJson + ".pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-  title: t(pageJson + ".openGraphTitle"),
-  type: t(pageJson + ".openGraphType"),
-  image: t(pageJson + ".openGraphImage"),
-  description: t(pageJson + ".openGraphDescription"),
+    title: t(pageJson + ".openGraphTitle"),
+    type: t(pageJson + ".openGraphType"),
+    image: t(pageJson + ".openGraphImage"),
+    description: t(pageJson + ".openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-  cardType: t(pageJson + ".twitterCardType"),
-  title: t(pageJson + ".twitterTitle"),
-  description: t(pageJson + ".twitterDescription"),
-  image: t(pageJson + ".twitterImage"),
+    cardType: t(pageJson + ".twitterCardType"),
+    title: t(pageJson + ".twitterTitle"),
+    description: t(pageJson + ".twitterDescription"),
+    image: t(pageJson + ".twitterImage"),
 };
 const bannerImageSrc = t(pageJson + ".bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
 type Subnav = {
-  label: string;
-  href: string;
-  slug: string;
+    label: string;
+    href: string;
+    slug: string;
 };
 var subnavs = NavigationJson.links
-  .filter((link) => link.name === "products")[0]
-  .children.map((child: string) => {
+    .filter((link) => link.name === "products")[0]
+    .children.map((child: string) => {
     return {
-      label: t(`navigation:navbar.products.sublinks.${child}.name`),
-      href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(
-        `navigation:navbar.products.sublinks.${child}.slug`
-      )}/`,
-      slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
+        label: t(`navigation:navbar.products.sublinks.${child}.name`),
+        href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(`navigation:navbar.products.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
     };
-  }) as Subnav[];
+}) as Subnav[];
 let currNewsCategory: string = category.name; //current name of category
 ---
 
@@ -115,9 +107,7 @@ let currNewsCategory: string = category.name; //current name of category
     trueImageStyle={trueImageStyle}
   />
   <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
-    <div class="my-[1.125rem] sticky top-0 z-[2]">
-      <InnerSubNav subnavs={subnavs} />
-    </div>
+    <InnerSubNav subnavs={subnavs} />
     <div class="mb-6">
       <BreadCrumbs label={currNewsCategory} />
     </div>
