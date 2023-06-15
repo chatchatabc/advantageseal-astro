@@ -185,7 +185,9 @@ links.map((link: any) => {
                             <SubMenu
                               client:load
                               links={processedLink.children!}
-                              reversed={false}
+                              reversed={
+                                processedLinks.length - 1 === processedLinkIndex
+                              }
                             >
                               <div
                                 slot="description"
