@@ -100,7 +100,9 @@ const pageMetaTag: PageMetaTag = {
               <>
                 <div class="w-full md:w-6/12 p-2 flex">
                   <a
-                    href={`${utilGetCurrentLanguage(Astro.url.toString())}/${pageName}/${t(
+                    href={`${utilGetCurrentLanguage(
+                      Astro.url.toString()
+                    )}/${pageName}/${t(
                       `navigation:navbar.${pageName}.sublinks.` + ref + ".slug"
                     )}/`}
                     class="group drop-shadow-sm transition duration-100 flex flex-grow
@@ -144,11 +146,23 @@ const pageMetaTag: PageMetaTag = {
                           )}
                         </h3>
                         <h4 class="text-[0.75rem] text-[#777]">
-                          {t(
-                            `navigation:navbar.${pageName}.sublinks.` +
-                              ref +
-                              ".subText"
-                          )}
+                          {Array.from({
+                            length: parseInt(
+                              t(
+                                `navigation:navbar.${pageName}.sublinks.${ref}.subText.count`
+                              )
+                            ),
+                          }).map((i: any, j: number) => {
+                            return (
+                              <div>
+                                {t(
+                                  `navigation:navbar.${pageName}.sublinks.${ref}.subText.text${
+                                    1 + j
+                                  }`
+                                )}
+                              </div>
+                            );
+                          })}
                         </h4>
                       </figcaption>
                     </figure>
