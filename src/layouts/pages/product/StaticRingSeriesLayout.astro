@@ -54,7 +54,7 @@ let tableCols =  parseInt(t(`${productContent}.section2.table.cols`))
                 <tbody>
                     {Array.from({length: parseInt(t(`${productContent}.section2.table.tr.count`))}).map((el:any, rowIndex:number) => {
                         return (
-                            <tr class="bg-[#f9f9f9]">
+                            <tr class="hover:bg-[#f9f9f9]">
                                 {
                                     Array.from({length: tableCols}).map((el2:any, colIndex:number) => {
                                         return (
