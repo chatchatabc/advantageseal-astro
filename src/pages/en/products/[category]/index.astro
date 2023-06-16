@@ -23,6 +23,7 @@ type Props = {
     category: {
         slug: string;
         name: string;
+        cat: string;
     };
     products: {
         slug: string;
@@ -40,8 +41,10 @@ export async function getStaticPaths() {
     let productsByCategory = ProductCategories.refs.map((category: string, index: number) => {
         return {
             category: {
+                //translation should not be done here. language it gets seems to be incorrect
+                cat: category,
+                //slugs are consistent so it's ok to use any language
                 slug: t(`product-categories:${category}.slug`),
-                name: t(`product-categories:${category}.name`),
             },
             products: ProductsJson.list.filter((product: any) => {
                 return product.category === t(`product-categories:${category}.slug`);
@@ -96,7 +99,8 @@ var subnavs = NavigationJson.links
         slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
     };
 }) as Subnav[];
-let currNewsCategory: string = category.name; //current name of category
+console.log(category);
+let currNewsCategory: string = t(`product-categories:${category.cat}.name`); //current name of category
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
