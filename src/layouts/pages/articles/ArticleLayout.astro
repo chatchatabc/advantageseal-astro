@@ -1,0 +1,60 @@
+---
+import Layout from "@layouts/Layout.astro";
+import { BackgroundImage } from "astro-imagetools/components";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import i18next, { t } from "i18next";
+import NavigationJson from "@data/navigation.json";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
+import type { CollectionEntry } from "astro:content";
+type Props = {
+  page: PageMetaTag;
+  openGraph: OpenGraphMetaTag;
+  twitter: TwitterMetaTag;
+  bannerImage: string;
+  entry: CollectionEntry<any>;
+  articleCategory: string; // if it is news or whatever
+};
+const { page, openGraph, twitter, bannerImage, entry, articleCategory } =
+  Astro.props as Props;
+const subnavs: { label: string; href: string; slug: string }[] = [];
+const articleRefs = NavigationJson.links.filter(
+  (link) => link.name === articleCategory
+)[0];
+articleRefs.children.map((ref) => {
+  subnavs.push({
+    label: t(`navigation:navbar.${articleCategory}.sublinks.` + ref + `.name`),
+    href:
+      utilGetCurrentLanguage(Astro.url.pathname) +
+      `/${articleCategory}/` +
+      t(`navigation:navbar.${articleCategory}.sublinks.` + ref + `.slug`) +
+      `/`,
+    slug: t(`navigation:navbar.${articleCategory}.sublinks.` + ref + `.slug`),
+  });
+});
+---
+
+<Layout page={page} openGraph={openGraph} twitter={twitter}>
+  <BackgroundImage src={bannerImage}>
+    <div class="h-[200px]"></div>
+  </BackgroundImage>
+  <section class="container p-4 w-full mx-auto md:w-11/12 lg:w-10/12">
+    <InnerSubNav subnavs={subnavs} />
+
+    <main>
+      <div class="my-8 text-center">
+        <h2 class="text-[1.5rem] text-text-primary">
+          {entry.data.title}
+        </h2>
+        <div class="text-[0.75rem] text-[#777]">
+          {t("common:publishedOn")}: {entry.data.pubDate}
+        </div>
+      </div>
+      <slot />
+    </main>
+  </section>
+</Layout>
