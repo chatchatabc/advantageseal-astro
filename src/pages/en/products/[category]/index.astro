@@ -8,7 +8,7 @@ import InnerSubNav from "@components/theme/InnerSubNav.astro";
 import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
-import { Img } from "astro-imagetools/components";
+import { Picture } from "astro-imagetools/components";
 //data
 import NavigationJson from "@data/navigation.json";
 import ProductsJson from "@data/pages/products.json";
@@ -127,7 +127,7 @@ let currNewsCategory: string = t(`product-categories:${category.cat}.name`); //c
                 )}/products/${product.category}/${product.slug}/`}
               >
                 <div class="block p-4">
-                  <Img
+                  <Picture
                     src={t(
                       `products:contents.${product.slug}.contents.section1.imageGallery.images.image1.src`
                     )}

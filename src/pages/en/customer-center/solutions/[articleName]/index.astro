@@ -4,6 +4,7 @@ import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import { getCollection } from "astro:content";
 //components
 import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
+import ArticleLayout from "@layouts/pages/articles/ArticleLayout.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Img } from "astro-imagetools/components";
 //data
@@ -62,35 +63,18 @@ const twitter: TwitterMetaTag = {
     description: t(pageJson + ".twitterDescription"),
     image: t(pageJson + ".twitterImage"),
 };
-const bannerImageSrc = t(pageJson + ".bannerImageSrc");
-const bannerHeight = "200px";
-const trueImage = false;
-const trueImageStyle = "";
-type Subnav = {
-    label: string;
-    href: string;
-    slug: string;
-};
-var subnavs = NavigationJson.links
-    .filter((link) => link.name === "products")[0]
-    .children.map((child: string) => {
-    return {
-        label: t(`navigation:navbar.products.sublinks.${child}.name`),
-        href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(`navigation:navbar.products.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
-    };
-}) as Subnav[];
 const { entry } = Astro.props as Props;
 let currentEntry = entry.filter((entryItem) => entryItem.data.lang === i18Next.language)[0];
 const { Content } = await currentEntry.render();
 ---
 
-<NewsLayout
+<ArticleLayout
   page={page}
   openGraph={openGraph}
   twitter={twitter}
   bannerImage={currentEntry.data.bannerImage!}
-  entry={currentEntry as unknown as CollectionEntry<"news">}
+  entry={currentEntry}
+  articleCategory="customer-center"
 >
   <Content />
   <!--Suggestion for articles here -->
@@ -98,4 +82,4 @@ const { Content } = await currentEntry.render();
   <div class="mb-16 flex justify-center">
     <BackBtn />
   </div>
-</NewsLayout>
+</ArticleLayout>
