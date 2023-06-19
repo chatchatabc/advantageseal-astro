@@ -8,6 +8,7 @@ import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Img } from "astro-imagetools/components";
+import BaiduMap from "@components/BaiduMaps";
 //data
 import NavigationJson from "@data/navigation.json";
 //data types
@@ -72,7 +73,13 @@ var subnavs = NavigationJson.links
       <BreadCrumbs label={t(pageJson + ":name")} />
     </div>
     <main>
-      <div></div>
+      <div>
+        <BaiduMap
+          header={t("common:digitalMapInfo.header")}
+          content={t("common:digitalMapInfo.content")}
+          client:only="react"
+        />
+      </div>
       <div class="mb-16 flex justify-center">
         <BackBtn />
       </div>
