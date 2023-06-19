@@ -79,12 +79,21 @@ links.map((link: any) => {
     class="block flex-row w-10/12 mx-auto py-[40px] space-y-8 lg:flex lg:space-y-0"
   >
     {
-      FooterProcessedLinks.map((footerLink: FooterLink) => {
+      FooterProcessedLinks.map((footerLink: FooterLink, index: number) => {
         return (
           <div class="w-full px-[15px] lg:w-2/12">
-            <h4 class="text-[18px] pt-[10px] lg:pb-[30px]">
-              {t("navigation:navbar." + footerLink.name + ".name")}
-            </h4>
+            {index != FooterProcessedLinks.length - 1 ? (
+              <a
+                href={footerLink.link + ""}
+                class="text-[18px] pt-[10px] block w-fit lg:pb-[30px] hover:text-[#009ce0]"
+              >
+                {t("navigation:navbar." + footerLink.name + ".name")}
+              </a>
+            ) : (
+              <div class="text-[18px] pt-[10px] lg:pb-[30px]">
+                {t("navigation:navbar." + footerLink.name + ".name")}
+              </div>
+            )}
 
             {footerLink.type === "navigationSet" ? (
               <ul>

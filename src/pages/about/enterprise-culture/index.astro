@@ -61,9 +61,7 @@ var subnavs = NavigationJson.links
     trueImageStyle={trueImageStyle}
   />
   <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
-    <div class="my-[1.125rem] sticky top-0">
-      <InnerSubNav subnavs={subnavs} />
-    </div>
+    <InnerSubNav subnavs={subnavs} />
     <div class="mb-6">
       <BreadCrumbs label={t(pageJson + ":name")} />
     </div>
@@ -89,7 +87,7 @@ var subnavs = NavigationJson.links
               >
             </p>
           </div>
-          <div class="w-4/12">
+          <div class="w-4/12 scale-[1] duration-300 z-[1] hover:scale-[0.90]">
             <Img
               src={t(pageJson + ":contents.image1.src")}
               alt={t(pageJson + ":contents.image1.alt")}

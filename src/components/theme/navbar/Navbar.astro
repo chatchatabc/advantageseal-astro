@@ -3,7 +3,10 @@ import { Picture } from "astro-imagetools/components";
 import i18next, { t } from "i18next";
 import navigationJson from "@data/navigation.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
-import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import {
+  utilGetCurrentLanguage,
+  trimLanguageFromLink,
+} from "@helpers/commonUtils";
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
 
@@ -139,8 +142,9 @@ links.map((link: any) => {
                   : "bg-white text-[#009ce0]"
               } flex items-center justify-center overflow-hidden`}
             >
-              <a href="/" class="w-full h-full flex items-center justify-center"
-                >中文</a
+              <a
+                href={"/" + trimLanguageFromLink(Astro.url.pathname) + "/"}
+                class="w-full h-full flex items-center justify-center">中文</a
               >
             </div>
             <div
@@ -151,7 +155,7 @@ links.map((link: any) => {
               } flex items-center justify-center overflow-hidden`}
             >
               <a
-                href="/en/"
+                href={"/en/" + trimLanguageFromLink(Astro.url.pathname) + "/"}
                 class="w-full h-full flex items-center justify-center">EN</a
               >
             </div>

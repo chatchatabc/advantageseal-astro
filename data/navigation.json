@@ -15,11 +15,11 @@
       "showNavBar": true,
       "showFooter": true,
       "children": [
-        "companyProfile",
-        "researchAndInnovation",
-        "productionAbility",
-        "qualificationHonor",
-        "enterpriseCulture"
+        "company-profile",
+        "research-and-innovation",
+        "production-ability",
+        "qualification-honor",
+        "enterprise-culture"
       ]
     },
     {
@@ -29,9 +29,9 @@
       "showNavBar": true,
       "showFooter": true,
       "children": [
-        "industryInformation",
-        "companyAnnouncements",
-        "newProductReleases",
+        "industry-information",
+        "company-announcements",
+        "new-product-releases",
         "videos"
       ]
     },
@@ -42,17 +42,17 @@
       "showNavBar": true,
       "showFooter": true,
       "children": [
-        "sealSeriesForPoolAndSpaPump",
-        "sealSeriesForVerticalMultiStagePump",
-        "sealSeriesForSanitaryPump",
-        "sealSeriesForFlyptPump",
-        "sealSeriesForRotorPump",
-        "modularMechanicalSealsSeries",
-        "sealSeriesForMetalBellows",
-        "universalStandardSealSeries",
-        "staticRingSeries",
-        "sealMaterialCode",
-        "productSubstitutionForm"
+        "seal-series-for-pool-and-spa-pump",
+        "seal-series-for-vertical-multi-stage-pump",
+        "seal-series-for-sanitary-pump",
+        "seal-series-for-flypt-pump",
+        "seal-series-for-rotor-pump",
+        "modular-mechanical-seals-series",
+        "seal-series-for-metal-bellows",
+        "universal-standard-seal-series",
+        "static-ring-series",
+        "seal-material-code",
+        "product-substitution-form"
       ]
     },
     {
@@ -61,7 +61,7 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": ["concreteCase", "solutions"]
+      "children": ["concrete-case", "solutions"]
     },
     {
       "name": "contact",
@@ -69,7 +69,7 @@
       "type": "navigationSet",
       "showNavBar": true,
       "showFooter": true,
-      "children": ["talentStrategy", "contactInformation", "digitalMap"]
+      "children": ["talent-strategy", "contact-information", "digital-map"]
     },
     {
       "name": "networkShare",

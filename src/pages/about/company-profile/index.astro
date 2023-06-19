@@ -15,27 +15,27 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 changeLanguage("cn");
 
 const page: PageMetaTag = {
-    title: t("navigation:navbar.about.sublinks.companyProfile.pageTitle"),
-    description: t("navigation:navbar.about.sublinks.companyProfile.pageDescription"),
-    author: t("navigation:navbar.about.sublinks.companyProfile.pageAuthor"),
-    keywords: t("navigation:navbar.about.sublinks.companyProfile.pageKeywords"),
+    title: t("navigation:navbar.about.sublinks.company-profile.pageTitle"),
+    description: t("navigation:navbar.about.sublinks.company-profile.pageDescription"),
+    author: t("navigation:navbar.about.sublinks.company-profile.pageAuthor"),
+    keywords: t("navigation:navbar.about.sublinks.company-profile.pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t("navigation:navbar.about.sublinks.companyProfile.openGraphTitle"),
-    type: t("navigation:navbar.about.sublinks.companyProfile.openGraphType"),
-    image: t("navigation:navbar.about.sublinks.companyProfile.openGraphImage"),
-    description: t("navigation:navbar.about.sublinks.companyProfile.openGraphDescription"),
+    title: t("navigation:navbar.about.sublinks.company-profile.openGraphTitle"),
+    type: t("navigation:navbar.about.sublinks.company-profile.openGraphType"),
+    image: t("navigation:navbar.about.sublinks.company-profile.openGraphImage"),
+    description: t("navigation:navbar.about.sublinks.company-profile.openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t("navigation:navbar.about.sublinks.companyProfile.twitterCardType"),
-    title: t("navigation:navbar.about.sublinks.companyProfile.twitterTitle"),
-    description: t("navigation:navbar.about.sublinks.companyProfile.twitterDescription"),
-    image: t("navigation:navbar.about.sublinks.companyProfile.twitterImage"),
+    cardType: t("navigation:navbar.about.sublinks.company-profile.twitterCardType"),
+    title: t("navigation:navbar.about.sublinks.company-profile.twitterTitle"),
+    description: t("navigation:navbar.about.sublinks.company-profile.twitterDescription"),
+    image: t("navigation:navbar.about.sublinks.company-profile.twitterImage"),
 };
-const bannerImageSrc = t("navigation:navbar.about.sublinks.companyProfile.bannerImageSrc");
+const bannerImageSrc = t("navigation:navbar.about.sublinks.company-profile.bannerImageSrc");
 const bannerHeight = "200px";
-const trueImage = t("navigation:navbar.about.sublinks.companyProfile.trueImage") as unknown as boolean;
-const trueImageStyle = t("navigation:navbar.about.sublinks.companyProfile.trueImageStyle");
+const trueImage = t("navigation:navbar.about.sublinks.company-profile.trueImage") as unknown as boolean;
+const trueImageStyle = t("navigation:navbar.about.sublinks.company-profile.trueImageStyle");
 type Subnav = {
     label: string;
     href: string;
@@ -60,12 +60,11 @@ var subnavs = NavigationJson.links
     trueImageStyle={trueImageStyle}
   />
   <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
-    <div class="my-[1.125rem] sticky top-0">
-      <InnerSubNav subnavs={subnavs} />
-    </div>
+    <InnerSubNav subnavs={subnavs} />
+
     <div class="mb-6">
       <BreadCrumbs
-        label={t("navigation:navbar.about.sublinks.companyProfile.name")}
+        label={t("navigation:navbar.about.sublinks.company-profile.name")}
       />
     </div>
     <main>
@@ -75,10 +74,10 @@ var subnavs = NavigationJson.links
         >
           <Img
             src={t(
-              "navigation:navbar.about.sublinks.companyProfile.contents.image.src"
+              "navigation:navbar.about.sublinks.company-profile.contents.image.src"
             )}
             alt={t(
-              "navigation:navbar.about.sublinks.companyProfile.contents.image.alt"
+              "navigation:navbar.about.sublinks.company-profile.contents.image.alt"
             )}
           />
         </div>
@@ -88,7 +87,7 @@ var subnavs = NavigationJson.links
           {
             length: parseInt(
               t(
-                "navigation:navbar.about.sublinks.companyProfile.contents.sections.count"
+                "navigation:navbar.about.sublinks.company-profile.contents.sections.count"
               )
             ),
           },
@@ -98,14 +97,14 @@ var subnavs = NavigationJson.links
             <>
               <h2 class="text-lg font-semibold">
                 {t(
-                  "navigation:navbar.about.sublinks.companyProfile.contents.sections.section" +
+                  "navigation:navbar.about.sublinks.company-profile.contents.sections.section" +
                     i +
                     ".label"
                 )}
               </h2>
               <p class="mb-6 mt-4">
                 {t(
-                  "navigation:navbar.about.sublinks.companyProfile.contents.sections.section" +
+                  "navigation:navbar.about.sublinks.company-profile.contents.sections.section" +
                     i +
                     ".text"
                 )}

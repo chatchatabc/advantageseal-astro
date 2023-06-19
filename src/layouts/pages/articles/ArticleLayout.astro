@@ -16,20 +16,24 @@ type Props = {
   openGraph: OpenGraphMetaTag;
   twitter: TwitterMetaTag;
   bannerImage: string;
-  entry: CollectionEntry<"news">;
+  entry: CollectionEntry<any>;
+  articleCategory: string; // if it is news or whatever
 };
-const { page, openGraph, twitter, bannerImage, entry } = Astro.props as Props;
+const { page, openGraph, twitter, bannerImage, entry, articleCategory } =
+  Astro.props as Props;
 const subnavs: { label: string; href: string; slug: string }[] = [];
-const newsRefs = NavigationJson.links.filter((link) => link.name === "news")[0];
-newsRefs.children.map((ref) => {
+const articleRefs = NavigationJson.links.filter(
+  (link) => link.name === articleCategory
+)[0];
+articleRefs.children.map((ref) => {
   subnavs.push({
-    label: t("navigation:navbar.news.sublinks." + ref + ".name"),
+    label: t(`navigation:navbar.${articleCategory}.sublinks.` + ref + `.name`),
     href:
       utilGetCurrentLanguage(Astro.url.pathname) +
-      "/news/" +
-      t("navigation:navbar.news.sublinks." + ref + ".slug") +
-      "/",
-    slug: t("navigation:navbar.news.sublinks." + ref + ".slug"),
+      `/${articleCategory}/` +
+      t(`navigation:navbar.${articleCategory}.sublinks.` + ref + `.slug`) +
+      `/`,
+    slug: t(`navigation:navbar.${articleCategory}.sublinks.` + ref + `.slug`),
   });
 });
 ---

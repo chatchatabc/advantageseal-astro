@@ -8,7 +8,7 @@
     "about": {
       "name": "关于我们",
       "sublinks": {
-        "companyProfile": {
+        "company-profile": {
           "name": "公司概况",
           "slug": "company-profile",
           "alt": "office spaces",
@@ -60,7 +60,7 @@
             }
           }
         },
-        "researchAndInnovation": {
+        "research-and-innovation": {
           "name": "研发创新",
           "slug": "research-and-innovation",
           "alt": "world-wide-web",
@@ -86,7 +86,7 @@
           "trueImage": true,
           "trueImageStyle": ""
         },
-        "productionAbility": {
+        "production-ability": {
           "name": "生产实力",
           "slug": "production-ability",
           "alt": "factory floor with machinery",
@@ -113,7 +113,7 @@
           "trueImage": true,
           "trueImageStyle": ""
         },
-        "qualificationHonor": {
+        "qualification-honor": {
           "name": "资质荣誉",
           "slug": "qualification-honor",
           "alt": "golden trophy",
@@ -139,7 +139,7 @@
           "trueImage": true,
           "trueImageStyle": ""
         },
-        "enterpriseCulture": {
+        "enterprise-culture": {
           "name": "企业文化",
           "slug": "enterprise-culture",
           "alt": "convoy of camels in the desert",
@@ -187,7 +187,7 @@
     "news": {
       "name": "新闻资讯",
       "sublinks": {
-        "industryInformation": {
+        "industry-information": {
           "name": "行业资讯",
           "alt": "world-wide-web",
           "slug": "industry-information",
@@ -211,7 +211,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "companyAnnouncements": {
+        "company-announcements": {
           "name": "公司公告",
           "slug": "company-announcements",
           "alt": "megaphone",
@@ -235,7 +235,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "newProductReleases": {
+        "new-product-releases": {
           "name": "新品发布",
           "slug": "new-product-releases",
           "alt": "conference",
@@ -306,7 +306,7 @@
     "products": {
       "name": "产品展示",
       "sublinks": {
-        "sealSeriesForPoolAndSpaPump": {
+        "seal-series-for-pool-and-spa-pump": {
           "name": "水池水疗泵用密封系列",
           "slug": "seal-series-for-pool-and-spa-pump",
           "alt": "水池水疗泵用密封系列",
@@ -331,7 +331,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForVerticalMultiStagePump": {
+        "seal-series-for-vertical-multi-stage-pump": {
           "name": "立式多级泵密封系列",
           "slug": "seal-series-for-vertical-multi-stage-pump",
           "alt": "立式多级泵密封系列",
@@ -356,7 +356,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForSanitaryPump": {
+        "seal-series-for-sanitary-pump": {
           "name": "卫生泵用机密封系列",
           "slug": "seal-series-for-sanitary-pump",
           "alt": "卫生泵用机密封系列",
@@ -381,7 +381,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForFlyptPump": {
+        "seal-series-for-flypt-pump": {
           "name": "飞力泵用密封系列",
           "slug": "seal-series-for-flypt-pump",
           "alt": "飞力泵用密封系列",
@@ -406,7 +406,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForRotorPump": {
+        "seal-series-for-rotor-pump": {
           "name": "转子泵用密封系列",
           "slug": "seal-series-for-rotor-pump",
           "alt": "转子泵用密封系列",
@@ -431,7 +431,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "modularMechanicalSealsSeries": {
+        "modular-mechanical-seals-series": {
           "name": "集装式机械密封系列",
           "slug": "modular-mechanical-seals-series",
           "alt": "集装式机械密封系列",
@@ -456,7 +456,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForMetalBellows": {
+        "seal-series-for-metal-bellows": {
           "name": "金属波纹管密封系列",
           "slug": "seal-series-for-metal-bellows",
           "alt": "金属波纹管密封系列",
@@ -481,7 +481,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "universalStandardSealSeries": {
+        "universal-standard-seal-series": {
           "name": "通用标准密封系列",
           "slug": "universal-standard-seal-series",
           "alt": "通用标准密封系列",
@@ -506,7 +506,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "staticRingSeries": {
+        "static-ring-series": {
           "name": "静环系列",
           "slug": "static-ring-series",
           "alt": "静环系列",
@@ -531,7 +531,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealMaterialCode": {
+        "seal-material-code": {
           "name": "密封材料代码",
           "slug": "seal-material-code",
           "alt": "",
@@ -556,7 +556,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "productSubstitutionForm": {
+        "product-substitution-form": {
           "name": "产品替代表",
           "slug": "product-substitution-form",
           "alt": "",
@@ -603,7 +603,7 @@
     "customer-center": {
       "name": "客户中心",
       "sublinks": {
-        "concreteCase": {
+        "concrete-case": {
           "name": "具体案例",
           "slug": "concrete-case",
           "alt": "解决方案",
@@ -676,7 +676,7 @@
     "contact": {
       "name": "联系我们",
       "sublinks": {
-        "talentStrategy": {
+        "talent-strategy": {
           "name": "人才战略",
           "slug": "talent-strategy",
           "alt": "person building a group of people",
@@ -701,7 +701,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "contactInformation": {
+        "contact-information": {
           "name": "联系方式",
           "slug": "contact-information",
           "alt": "a group of people",
@@ -727,7 +727,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "digitalMap": {
+        "digital-map": {
           "name": "电子地图",
           "slug": "digital-map",
           "alt": "digital map",

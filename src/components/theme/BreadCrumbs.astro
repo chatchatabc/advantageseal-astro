@@ -1,13 +1,68 @@
 ---
+import { trimLanguageFromLink } from "@helpers/commonUtils";
+import ProductsJson from "@data/pages/products.json";
+import i18next, { t } from "i18next";
 type Props = {
   label: string | null;
 };
+type BreadCrumb = {
+  link: string;
+  label: string;
+};
+
 const { label } = Astro.props;
+let links = trimLanguageFromLink(Astro.url.pathname)
+  .split("/")
+  .filter((x) => x !== "");
+let breadCrumbsCollection: Array<BreadCrumb> = [];
+links.forEach((link: string, linkIndex: number) => {
+  if (!ProductsJson.list.some((product) => product.slug === link)) {
+    breadCrumbsCollection.push({
+      link: `/${links.slice(0, linkIndex + 1).join("/")}/`,
+      label: t(
+        `navigation:navbar.${
+          links.slice(0, linkIndex + 1).join(".sublinks.") + ".name"
+        }`
+      ),
+    });
+  }
+});
+
+breadCrumbsCollection.unshift({
+  link: "/",
+  label: t("navigation:navbar.home.name"),
+});
 ---
 
 <div
   class="border-b-[1px] border-dashed border-b-[#ccc] flex justify-between w-full p-4"
 >
   <h3 class="block text-[1.5rem] text-[#434343]">{label}</h3>
-  <div><!--Breadcrums supposed to be here--></div>
+  <!--Breadcrums supposed to be here-->
+  <div class="flex flex-row space-x-2">
+    <div>{t("common:location")}:</div>
+    {
+      breadCrumbsCollection.map(
+        (breadCrumb: BreadCrumb, breadCrumbIndex: number) => {
+          return (
+            <div class="space-x-2">
+              <a
+                class={`text-[0.875rem] ${
+                  breadCrumbIndex === breadCrumbsCollection.length - 1
+                    ? "text-[#009CE0]"
+                    : "hover:text-red-primary"
+                } `}
+                href={breadCrumb.link}
+              >
+                {breadCrumb.label}
+              </a>
+              {breadCrumbIndex !== breadCrumbsCollection.length - 1 && (
+                <span>&gt;</span>
+              )}
+            </div>
+          );
+        }
+      )
+    }
+  </div>
 </div>

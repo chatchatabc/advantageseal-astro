@@ -17,7 +17,8 @@ import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
 
-const currentEntry = (Astro.props.entry as CollectionEntry<"news-categories">).data;
+const currentEntry = (Astro.props.entry as CollectionEntry<"news-categories">)
+    .data;
 export async function getStaticPaths() {
     const newsEntries = await getCollection("news-categories", ({ data }) => {
         return data.lang === astroI18next.language;
@@ -39,13 +40,13 @@ const openGraph: OpenGraphMetaTag = {
     title: currentEntry.ogTitle!,
     type: currentEntry.ogType!,
     image: currentEntry.ogImage!,
-    description: currentEntry.ogDescription!
+    description: currentEntry.ogDescription!,
 };
 const twitter: TwitterMetaTag = {
     cardType: currentEntry.twitterCardType!,
     title: currentEntry.twitterTitle!,
     description: currentEntry.twitterDescription!,
-    image: currentEntry.twitterImage!
+    image: currentEntry.twitterImage!,
 };
 const bannerImageSrc = currentEntry.bannerImage;
 const bannerHeight = "200px";
@@ -80,13 +81,9 @@ let currNewsCategory: string = Astro.props.entry.data.name;
     trueImageStyle={trueImageStyle}
   />
   <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
-    <div class="my-[1.125rem] sticky top-0">
-      <InnerSubNav subnavs={subnavs} />
-    </div>
+    <InnerSubNav subnavs={subnavs} />
     <div class="mb-6">
-      <BreadCrumbs
-        label={currNewsCategory}
-      />
+      <BreadCrumbs label={currNewsCategory} />
     </div>
     <main class="flex flex-wrap">
       {
@@ -99,11 +96,7 @@ let currNewsCategory: string = Astro.props.entry.data.name;
               return entries.map((entry) => (
                 <div class="w-full md:w-6/12 p-2 ">
                   <a
-                    href={
-                      Astro.url.pathname+
-                      entry.data.articleName +
-                      "/"
-                    }
+                    href={Astro.url.pathname + entry.data.articleName + "/"}
                     class="  block hover:bg-[#f5f5f5] p-3 group"
                   >
                     <figure class="flex flex-row h-[120px]">
@@ -117,7 +110,7 @@ let currNewsCategory: string = Astro.props.entry.data.name;
                         <h4 class="text-[15px] text-[#337ab7] pb-2 font-semibold group-hover:text-red-primary">
                           {entry.data.title}
                         </h4>
-                        <p class="text-[0.75rem] text-[#999]">
+                        <p class="text-[0.75rem] text-[#999] line-clamp-2">
                           {entry.data.articleShortDescription}
                         </p>
                       </figcaption>
@@ -127,50 +120,63 @@ let currNewsCategory: string = Astro.props.entry.data.name;
               ));
             }
           } else if (
-          entries.length > 0 &&
+            entries.length > 0 &&
             entries[0].data.newsCategory == "company-announcements"
-          ){
-            return(
+          ) {
+            return (
               <ul class="w-full">
-                {entries.map((entry)=>{
-                  return <li class=" border-b-[1px] border-dotted border-[#ccc] w-full pl-[1.125rem] py-4">
-                      <a href={Astro.url.pathname+entry.data.articleName+"/"} class=" list-disc list-item group">
+                {entries.map((entry) => {
+                  return (
+                    <li class=" border-b-[1px] border-dotted border-[#ccc] w-full pl-[1.125rem] py-4">
+                      <a
+                        href={Astro.url.pathname + entry.data.articleName + "/"}
+                        class=" list-disc list-item group"
+                      >
                         <div class="flex flex-row">
                           <div class="font-semibold">[{currNewsCategory}]</div>
-                          <div class="pl-4 text-[#337ab7] group-hover:text-red-primary">{entry.data.title}</div>
+                          <div class="pl-4 text-[#337ab7] group-hover:text-red-primary">
+                            {entry.data.title}
                           </div>
+                        </div>
                       </a>
                     </li>
+                  );
                 })}
               </ul>
-            )
-          }else if(
-            entries.length > 0 && entries[0].data.newsCategory === "new-product-releases"
-          ){
-            return entries.map((entry)=>(
+            );
+          } else if (
+            entries.length > 0 &&
+            entries[0].data.newsCategory === "new-product-releases"
+          ) {
+            return entries.map((entry) => (
               <div class="w-full md:w-6/12 p-2">
-                  <a href={Astro.url.pathname+entry.data.articleName+"/"} class="block hover:bg-[#f5f5f5] p-3 group">
-                    <figure class="flex flex-row h-[120px]">
-                      <div class="w-[200px] flex-shrink-0">
-                        <Img
-                          src={entry.data.image.src}
-                          alt={entry.data.image.alt}
-                        />
-                      </div>
-                      <figcaption class="flex-grow py-2 pl-[0.625rem] pr-2">
-                        <h4 class="text-[15px] text-[#337ab7] pb-2 font-semibold group-hover:text-red-primary">
-                          {entry.data.title}
-                        </h4>
-                        <p class="text-[0.75rem] text-[#999]">
-                          {entry.data.articleShortDescription}
-                        </p>
-                      </figcaption>
-                    </figure>
-                  </a>
+                <a
+                  href={Astro.url.pathname + entry.data.articleName + "/"}
+                  class="block hover:bg-[#f5f5f5] p-3 group"
+                >
+                  <figure class="flex flex-row h-[120px]">
+                    <div class="w-[200px] flex-shrink-0">
+                      <Img
+                        src={entry.data.image.src}
+                        alt={entry.data.image.alt}
+                      />
+                    </div>
+                    <figcaption class="flex-grow py-2 pl-[0.625rem] pr-2">
+                      <h4 class="text-[15px] text-[#337ab7] pb-2 font-semibold group-hover:text-red-primary">
+                        {entry.data.title}
+                      </h4>
+                      <p class="text-[0.75rem] text-[#999]">
+                        {entry.data.articleShortDescription}
+                      </p>
+                    </figcaption>
+                  </figure>
+                </a>
               </div>
-            ))
-          }else if( entries.length > 0 && entries[0].data.newsCategory === "videos"){
-
+            ));
+          } else if (
+            entries.length > 0 &&
+            entries[0].data.newsCategory === "videos"
+          ) {
           }
         }
       }
@@ -179,4 +185,4 @@ let currNewsCategory: string = Astro.props.entry.data.name;
       <BackBtn />
     </div>
   </div>
-</Layout> 
+</Layout>

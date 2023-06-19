@@ -2,6 +2,7 @@
 const {product} = Astro.props
 import i18next, { t, changeLanguage } from "i18next";
 import { Img, Picture } from "astro-imagetools/components";
+import ImageGallery from "@components/products/ImageGallery.astro";
 let productContent = `products:contents.${product.slug}.contents`;
 
 let detailsCount = parseInt(t(`${productContent}.section2.details.count`));
@@ -9,33 +10,7 @@ let tableCols =  parseInt(t(`${productContent}.section2.table.cols`))
 ---
 <section class="text-[0.875rem] text-text-primary md:flex md:flex-row">
     <div class="w-full md:w-6/12 ">
-        <!--Image Gallery -->
-        <div>
-            <!--Feature -->
-            <div class="border-[1px] border-solid border-[#cccccc] ">
-            {
-                Array.from({length:parseInt(t(`${productContent}.section1.imageGallery.count`))}).map((el:any, index:number)=>{
-                    return(
-
-                        <div class={`${index !== 0 && "hidden"}  transition-all duration-300 scale-[0.95] hover:scale-[1.0]`}>
-                            <Picture src={t(`${productContent}.section1.imageGallery.images.image${index+1}.src`)} alt={t(`${productContent}.section1.imageGallery.images.image${index+1}.alt`)}/>
-                        </div>
-                    )
-                })
-            }
-            </div>
-            <!--image selection -->
-            <div class="flex flex-row flex-wrap mt-4 space-x-2">
-                {Array.from({length:parseInt(t(`${productContent}.section1.imageGallery.count`))}).map((el:any, index:number)=>{
-                     return(
-
-                         <div class="w-[80px] border-[1px] border-solid border-[#cccccc] hover:border-red-primary">
-                            <Picture src={t(`${productContent}.section1.imageGallery.images.image${index+1}.src`)} alt={t(`${productContent}.section1.imageGallery.images.image${index+1}.alt`)}/>
-                        </div>
-                     )
-                })}
-            </div>
-        </div>
+      <ImageGallery productContent={productContent} />
     </div>
     <div class="w-full  text-text-primary px-6 md:w-6/12">
         
@@ -79,7 +54,7 @@ let tableCols =  parseInt(t(`${productContent}.section2.table.cols`))
                 <tbody>
                     {Array.from({length: parseInt(t(`${productContent}.section2.table.tr.count`))}).map((el:any, rowIndex:number) => {
                         return (
-                            <tr class="bg-[#f9f9f9]">
+                            <tr class="hover:bg-[#f9f9f9]">
                                 {
                                     Array.from({length: tableCols}).map((el2:any, colIndex:number) => {
                                         return (

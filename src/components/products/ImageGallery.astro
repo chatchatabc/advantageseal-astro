@@ -1,0 +1,91 @@
+---
+import i18next, { t } from "i18next";
+import { Picture } from "astro-imagetools/components";
+const { productContent } = Astro.props;
+---
+
+<!--Image Gallery -->
+<div>
+  <!--Feature -->
+  <div class="border-[1px] border-solid border-[#cccccc]">
+    {
+      Array.from({
+        length: parseInt(t(`${productContent}.section1.imageGallery.count`)),
+      }).map((el: any, index: number) => {
+        return (
+          <div
+            class={`previewImage ${
+              index !== 0 ? "hidden" : ""
+            }  transition-all duration-300 scale-[0.95] hover:scale-[1.0]`}
+          >
+            <Picture
+              src={t(
+                `${productContent}.section1.imageGallery.images.image${
+                  index + 1
+                }.src`
+              )}
+              alt={t(
+                `${productContent}.section1.imageGallery.images.image${
+                  index + 1
+                }.alt`
+              )}
+            />
+          </div>
+        );
+      })
+    }
+  </div>
+  <!--image selection -->
+  <div class="flex flex-row flex-wrap mt-4 space-x-2">
+    {
+      Array.from({
+        length: parseInt(t(`${productContent}.section1.imageGallery.count`)),
+      }).map((el: any, index: number) => {
+        return (
+          <button
+            aria-label="select image"
+            class="imageSelection w-[80px] border-[1px] border-solid border-[#cccccc] hover:border-red-primary"
+          >
+            <Picture
+              src={t(
+                `${productContent}.section1.imageGallery.images.image${
+                  index + 1
+                }.src`
+              )}
+              alt={t(
+                `${productContent}.section1.imageGallery.images.image${
+                  index + 1
+                }.alt`
+              )}
+            />
+          </button>
+        );
+      })
+    }
+  </div>
+</div>
+<script>
+  //image selection
+  let previewImages = document.querySelectorAll(".previewImage");
+  let imageSelections = document.querySelectorAll(".imageSelection");
+
+  var currentIndex = 0;
+  imageSelections.forEach(
+    (imageSelection: any, imageSelectionIndex: number) => {
+      imageSelection.addEventListener("click", () => {
+        changeImage(previewImages, imageSelectionIndex);
+      });
+      imageSelection.addEventListener("mouseover", () => {
+        changeImage(previewImages, imageSelectionIndex);
+      });
+    }
+  );
+  function changeImage(previewImages: any, targetIndex: number) {
+    //add
+    previewImages[currentIndex].classList.toggle("hidden");
+    //remove
+    previewImages[targetIndex].classList.toggle("hidden");
+
+    currentIndex = targetIndex;
+  }
+</script>

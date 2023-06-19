@@ -80,6 +80,7 @@ var articles = newsEntries.slice(0, maxArticles);
                   <a
                     href={
                       utilGetCurrentLanguage(Astro.url.pathname) +
+                      "/" +
                       entry.collection +
                       "/" +
                       entry.data.newsCategory +

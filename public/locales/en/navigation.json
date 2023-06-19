@@ -8,7 +8,7 @@
     "about": {
       "name": "About",
       "sublinks": {
-        "companyProfile": {
+        "company-profile": {
           "name": "Company Profile",
           "slug": "company-profile",
           "alt": "office spaces",
@@ -55,7 +55,7 @@
             }
           }
         },
-        "researchAndInnovation": {
+        "research-and-innovation": {
           "name": "Research And Innovation",
           "slug": "research-and-innovation",
           "alt": "world-wide-web",
@@ -82,7 +82,7 @@
           "trueImage": false,
           "trueImageStyle": "background-position:center"
         },
-        "productionAbility": {
+        "production-ability": {
           "name": "Production Ability",
           "slug": "production-ability",
           "alt": "factory floor with machinery",
@@ -109,7 +109,7 @@
           "trueImage": false,
           "trueImageStyle": "background-position:center"
         },
-        "qualificationHonor": {
+        "qualification-honor": {
           "name": "Qualification Honor",
           "slug": "qualification-honor",
           "alt": "golden trophy",
@@ -136,7 +136,7 @@
           "trueImage": false,
           "trueImageStyle": "background-position:center"
         },
-        "enterpriseCulture": {
+        "enterprise-culture": {
           "name": "Enterprise Culture",
           "slug": "enterprise-culture",
           "alt": "convoy of camels in the desert",
@@ -187,7 +187,7 @@
     "news": {
       "name": "News",
       "sublinks": {
-        "industryInformation": {
+        "industry-information": {
           "name": "Industry Information",
           "slug": "industry-information",
           "alt": "world-wide-web",
@@ -212,7 +212,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "companyAnnouncements": {
+        "company-announcements": {
           "name": "Company Announcements",
           "slug": "company-announcements",
           "alt": "megaphone",
@@ -237,7 +237,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "newProductReleases": {
+        "new-product-releases": {
           "name": "New Product Releases",
           "slug": "new-product-releases",
           "alt": "conference",
@@ -311,7 +311,7 @@
     "products": {
       "name": "Products",
       "sublinks": {
-        "sealSeriesForPoolAndSpaPump": {
+        "seal-series-for-pool-and-spa-pump": {
           "name": "Seal Series for Pool and Spa Pump",
           "slug": "seal-series-for-pool-and-spa-pump",
           "alt": "Seal Series for Pool and Spa Pump",
@@ -335,7 +335,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForVerticalMultiStagePump": {
+        "seal-series-for-vertical-multi-stage-pump": {
           "name": "Seal Series for Vertical Multi-stage Pump",
           "slug": "seal-series-for-vertical-multi-stage-pump",
           "alt": "Seal Series for Vertical Multi-stage Pump",
@@ -359,7 +359,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForSanitaryPump": {
+        "seal-series-for-sanitary-pump": {
           "name": "Seal Series for Sanitary Pump",
           "slug": "seal-series-for-sanitary-pump",
           "alt": "Seal Series for Sanitary Pump",
@@ -383,7 +383,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForFlyptPump": {
+        "seal-series-for-flypt-pump": {
           "name": "Seal Series for Flypt Pump",
           "slug": "seal-series-for-flypt-pump",
           "alt": "Seal Series for Flypt Pump",
@@ -407,7 +407,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForRotorPump": {
+        "seal-series-for-rotor-pump": {
           "name": "Seal Series for Rotor Pump",
           "slug": "seal-series-for-rotor-pump",
           "alt": "Seal Series for Rotor Pump",
@@ -431,7 +431,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "modularMechanicalSealsSeries": {
+        "modular-mechanical-seals-series": {
           "name": "Modular Mechanical Seal Series",
           "slug": "modular-mechanical-seals-series",
           "alt": "Modular Mechanical Seal Series",
@@ -455,7 +455,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealSeriesForMetalBellows": {
+        "seal-series-for-metal-bellows": {
           "name": "Seal Series for Metal Bellows",
           "slug": "seal-series-for-metal-bellows",
           "alt": "Seal Series for Metal Bellows",
@@ -479,7 +479,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "universalStandardSealSeries": {
+        "universal-standard-seal-series": {
           "name": "Universal Standard Seal Series",
           "slug": "universal-standard-seal-series",
           "alt": "Universal Standard Seal Series",
@@ -503,7 +503,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "staticRingSeries": {
+        "static-ring-series": {
           "name": "Static Ring Series",
           "slug": "static-ring-series",
           "alt": "Static Ring Series",
@@ -527,7 +527,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "sealMaterialCode": {
+        "seal-material-code": {
           "name": "Seal Material Code",
           "slug": "seal-material-code",
           "alt": "",
@@ -551,7 +551,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "productSubstitutionForm": {
+        "product-substitution-form": {
           "name": "Product Substitution Form",
           "slug": "product-substitution-form",
           "alt": "",
@@ -599,7 +599,7 @@
     "customer-center": {
       "name": "Customer Center",
       "sublinks": {
-        "concreteCase": {
+        "concrete-case": {
           "name": "Concrete Case",
           "slug": "concrete-case",
           "alt": "jigsaw puzzle",
@@ -673,7 +673,7 @@
     "contact": {
       "name": "Contact",
       "sublinks": {
-        "talentStrategy": {
+        "talent-strategy": {
           "name": "Talent Strategy",
           "slug": "talent-strategy",
           "alt": "person building a group of people",
@@ -698,7 +698,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "contactInformation": {
+        "contact-information": {
           "name": "Contact Information",
           "slug": "contact-information",
           "alt": "a group of people",
@@ -723,7 +723,7 @@
           "twitterImage": null,
           "bannerImageSrc": ""
         },
-        "digitalMap": {
+        "digital-map": {
           "name": "Digital Map",
           "slug": "digital-map",
           "alt": "digital map",
