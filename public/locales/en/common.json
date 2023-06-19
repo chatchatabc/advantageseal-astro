@@ -1,4 +1,8 @@
 {
   "publishedOn": "Publication Date",
-  "location": "Location"
+  "location": "Location",
+  "digitalMapInfo": {
+    "header": "Advantage Seal (Ningbo) Co., Ltd.",
+    "content": "Tel：+86 (574)87500883<br>Address：No.90, 655 Qiming Road, Yinzhou, Ningbo"
+  }
 }

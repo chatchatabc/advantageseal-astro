@@ -1,4 +1,8 @@
 {
   "publishedOn": "发布时间",
-  "location": "当前位置"
+  "location": "当前位置",
+  "digitalMapInfo": {
+    "header": "爱得万（宁波）密封技术有限公司",
+    "content": "电话：+86 (574)87500883<br>地址：宁波市鄞州区启明路655弄90号"
+  }
 }
