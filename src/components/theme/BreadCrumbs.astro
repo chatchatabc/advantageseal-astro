@@ -1,5 +1,6 @@
 ---
 import { trimLanguageFromLink } from "@helpers/commonUtils";
+import ProductsJson from "@data/pages/products.json";
 import i18next, { t } from "i18next";
 type Props = {
   label: string | null;
@@ -15,14 +16,16 @@ let links = trimLanguageFromLink(Astro.url.pathname)
   .filter((x) => x !== "");
 let breadCrumbsCollection: Array<BreadCrumb> = [];
 links.forEach((link: string, linkIndex: number) => {
-  breadCrumbsCollection.push({
-    link: `/${links.slice(0, linkIndex + 1).join("/")}/`,
-    label: t(
-      `navigation:navbar.${
-        links.slice(0, linkIndex + 1).join(".sublinks.") + ".name"
-      }`
-    ),
-  });
+  if (!ProductsJson.list.some((product) => product.slug === link)) {
+    breadCrumbsCollection.push({
+      link: `/${links.slice(0, linkIndex + 1).join("/")}/`,
+      label: t(
+        `navigation:navbar.${
+          links.slice(0, linkIndex + 1).join(".sublinks.") + ".name"
+        }`
+      ),
+    });
+  }
 });
 
 breadCrumbsCollection.unshift({
