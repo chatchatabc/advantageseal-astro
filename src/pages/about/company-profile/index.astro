@@ -10,64 +10,46 @@ import { Img } from "astro-imagetools/components";
 //data
 import NavigationJson from "@data/navigation.json";
 //data types
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 
 changeLanguage("cn");
 
 const page: PageMetaTag = {
-  title: t("navigation:navbar.about.sublinks.company-profile.pageTitle"),
-  description: t(
-    "navigation:navbar.about.sublinks.company-profile.pageDescription"
-  ),
-  author: t("navigation:navbar.about.sublinks.company-profile.pageAuthor"),
-  keywords: t("navigation:navbar.about.sublinks.company-profile.pageKeywords"),
+    title: t("navigation:navbar.about.sublinks.company-profile.pageTitle"),
+    description: t("navigation:navbar.about.sublinks.company-profile.pageDescription"),
+    author: t("navigation:navbar.about.sublinks.company-profile.pageAuthor"),
+    keywords: t("navigation:navbar.about.sublinks.company-profile.pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-  title: t("navigation:navbar.about.sublinks.company-profile.openGraphTitle"),
-  type: t("navigation:navbar.about.sublinks.company-profile.openGraphType"),
-  image: t("navigation:navbar.about.sublinks.company-profile.openGraphImage"),
-  description: t(
-    "navigation:navbar.about.sublinks.company-profile.openGraphDescription"
-  ),
+    title: t("navigation:navbar.about.sublinks.company-profile.openGraphTitle"),
+    type: t("navigation:navbar.about.sublinks.company-profile.openGraphType"),
+    image: t("navigation:navbar.about.sublinks.company-profile.openGraphImage"),
+    description: t("navigation:navbar.about.sublinks.company-profile.openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-  cardType: t(
-    "navigation:navbar.about.sublinks.company-profile.twitterCardType"
-  ),
-  title: t("navigation:navbar.about.sublinks.company-profile.twitterTitle"),
-  description: t(
-    "navigation:navbar.about.sublinks.company-profile.twitterDescription"
-  ),
-  image: t("navigation:navbar.about.sublinks.company-profile.twitterImage"),
+    cardType: t("navigation:navbar.about.sublinks.company-profile.twitterCardType"),
+    title: t("navigation:navbar.about.sublinks.company-profile.twitterTitle"),
+    description: t("navigation:navbar.about.sublinks.company-profile.twitterDescription"),
+    image: t("navigation:navbar.about.sublinks.company-profile.twitterImage"),
 };
-const bannerImageSrc = t(
-  "navigation:navbar.about.sublinks.company-profile.bannerImageSrc"
-);
+const bannerImageSrc = t("navigation:navbar.about.sublinks.company-profile.bannerImageSrc");
 const bannerHeight = "200px";
-const trueImage = t(
-  "navigation:navbar.about.sublinks.company-profile.trueImage"
-) as unknown as boolean;
-const trueImageStyle = t(
-  "navigation:navbar.about.sublinks.company-profile.trueImageStyle"
-);
+const trueImage = t("navigation:navbar.about.sublinks.company-profile.trueImage") as unknown as boolean;
+const trueImageStyle = t("navigation:navbar.about.sublinks.company-profile.trueImageStyle");
 type Subnav = {
-  label: string;
-  href: string;
-  slug: string;
+    label: string;
+    href: string;
+    slug: string;
 };
 var subnavs = NavigationJson.links
-  .filter((link) => link.name === "about")[0]
-  .children.map((child: string) => {
+    .filter((link) => link.name === "about")[0]
+    .children.map((child: string) => {
     return {
-      label: t(`navigation:navbar.about.sublinks.${child}.name`),
-      href: `/about/${t(`navigation:navbar.about.sublinks.${child}.slug`)}/`,
-      slug: t(`navigation:navbar.about.sublinks.${child}.slug`),
+        label: t(`navigation:navbar.about.sublinks.${child}.name`),
+        href: `/about/${t(`navigation:navbar.about.sublinks.${child}.slug`)}/`,
+        slug: t(`navigation:navbar.about.sublinks.${child}.slug`),
     };
-  }) as Subnav[];
+}) as Subnav[];
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
