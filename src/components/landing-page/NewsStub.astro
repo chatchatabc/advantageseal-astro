@@ -22,7 +22,11 @@ var articles = newsEntries.slice(0, maxArticles);
     class="bg-[#0b4a75] text-white px-[15px] py-[10px] flex flex-row justify-between"
   >
     <h3 class="text-lg font-semibold">{t("page-home:stubs.news.label")}</h3>
-    <a href={t("page-home:stubs.news.more.href")}>
+    <a
+      href={utilGetCurrentLanguage(Astro.url.pathname) +
+        t("page-home:stubs.news.more.href") +
+        "/"}
+    >
       {t("page-home:stubs.news.more.label")}
     </a>
   </div>
