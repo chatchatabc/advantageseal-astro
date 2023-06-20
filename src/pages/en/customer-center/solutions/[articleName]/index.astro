@@ -24,7 +24,10 @@ var pageJson = `products:contents.type-16`; //TEMPORARY
 export async function getStaticPaths() {
     let solutionsEntries = await getCollection("solutions");
     //a unique list of categories
-    var groupedEntries: any[] = [];
+    var groupedEntries: {
+        articleName: string;
+        articles: CollectionEntry<"solutions">[];
+    }[] = [];
     solutionsEntries.forEach((entry) => {
         const articleName = entry.data.articleName!.toString();
         const existingEntry = groupedEntries.find((groupedEntry) => groupedEntry.articleName === articleName);
