@@ -1,5 +1,5 @@
 ---
-import astroI18next, { t, changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import { getCollection } from "astro:content";
 //components
@@ -17,18 +17,41 @@ import type { CollectionEntry } from "astro:content";
 
 changeLanguage("en");
 
-const currentEntry = (Astro.props.entry as CollectionEntry<"news-categories">)
-    .data;
+const currentEntry = Astro.props.entry.filter((categoryEntry: CollectionEntry<"news-categories">) => categoryEntry.data.lang === i18next.language)[0].data;
+console.log(currentEntry);
 export async function getStaticPaths() {
-    const newsEntries = await getCollection("news-categories", ({ data }) => {
-        return data.lang === astroI18next.language;
+    const categoryEntries = await getCollection("news-categories");
+    var groupedEntries: {
+        categoryTitle: string;
+        newsCategories: CollectionEntry<"news-categories">[];
+    }[] = [];
+    categoryEntries.forEach((entry) => {
+        let categoryTitle = entry.data.title;
+        let existingEntry = groupedEntries.find((groupedEntry) => groupedEntry.categoryTitle === categoryTitle);
+        if (existingEntry) {
+            existingEntry.newsCategories.push(entry);
+        }
+        else {
+            groupedEntries.push({
+                categoryTitle: categoryTitle,
+                newsCategories: [entry],
+            });
+        }
     });
-    return newsEntries.map((entry) => ({
+    return groupedEntries.map((groupedEntry) => ({
         params: {
-            category: entry.data.title,
+            category: groupedEntry.categoryTitle,
         },
-        props: { entry },
+        props: {
+            entry: groupedEntry.newsCategories,
+        },
     }));
+    // newsEntries.map((entry) => ({
+    //   params: {
+    //     category: entry.data.title,
+    //   },
+    //   props: { entry },
+    // }));
 }
 const page: PageMetaTag = {
     title: currentEntry.pageTitle!,
@@ -66,11 +89,15 @@ var subnavs = NavigationJson.links
         slug: t(`navigation:navbar.news.sublinks.${child}.slug`),
     };
 }) as Subnav[];
-let entries = await getCollection("news", ({ data }) => {
-    return (data.lang === astroI18next.language &&
-        data.newsCategory === Astro.props.entry.data.title);
+let entries = (await getCollection("news", ({ data }) => {
+    return (data.lang === i18next.language && data.newsCategory === currentEntry.title);
+})).sort((entry1, entry2) => {
+    const date1 = new Date(entry1.data.pubDate) as any;
+    const date2 = new Date(entry2.data.pubDate) as any;
+    return date2 - date1;
 });
-let currNewsCategory: string = Astro.props.entry.data.name;
+let currNewsCategory: string = currentEntry.name;
+console.log(currNewsCategory);
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
