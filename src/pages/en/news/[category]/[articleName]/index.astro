@@ -1,5 +1,5 @@
 ---
-import i18next, { changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 import { CollectionEntry, getCollection } from "astro:content";
 import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
@@ -9,11 +9,25 @@ import BackBtn from "@components/theme/BackBtn.astro";
 
 changeLanguage("en");
 
+type PreviewEntry = {
+    articleName: string;
+    articleTitle: string;
+    articleLang: string;
+    articleCategory: string;
+};
+type GroupedEntry = {
+    articleName: string;
+    articles: CollectionEntry<"news">[];
+};
 export async function getStaticPaths() {
     const language = i18next.language;
-    const newsEntries = await getCollection("news");
-    var groupedEntries: any[] = [];
-    newsEntries.forEach((entry) => {
+    const newsEntries = (await getCollection("news")).sort((entry1, entry2) => {
+        const date1 = new Date(entry1.data.pubDate) as any;
+        const date2 = new Date(entry2.data.pubDate) as any;
+        return date1 - date2;
+    });
+    var groupedEntries: GroupedEntry[] = [];
+    newsEntries.forEach((entry: CollectionEntry<"news">, entryIndex: number) => {
         const articleName = entry.data.articleName!.toString();
         const existingEntry = groupedEntries.find((groupedEntry) => groupedEntry.articleName === articleName);
         if (existingEntry) {
@@ -31,14 +45,32 @@ export async function getStaticPaths() {
             category: entry.articles[0].data.newsCategory,
             articleName: entry.articleName,
         },
-        props: { entry: entry.articles },
+        props: {
+            article: entry.articles,
+        },
     }));
 }
 type Props = {
-    entry: CollectionEntry<"news">[];
+    article: CollectionEntry<"news">[];
+    previousArticle: PreviewEntry[];
+    nextArticle: PreviewEntry[];
 };
-const { entry } = Astro.props as Props;
-let currentEntry = entry.filter((entryItem: any) => entryItem.data.lang === i18next.language)[0];
+const { article } = Astro.props as Props;
+let currentEntry = article.filter((entryItem: any) => entryItem.data.lang === i18next.language)[0];
+let newsCollections = (await getCollection("news"))
+    .filter((newsEntry: CollectionEntry<"news">) => newsEntry.data.lang === i18next.language &&
+    newsEntry.data.newsCategory === currentEntry.data.newsCategory)
+    .sort((entry1, entry2) => {
+    const date1 = new Date(entry1.data.pubDate) as any;
+    const date2 = new Date(entry2.data.pubDate) as any;
+    return date1 - date2;
+});
+let currentEntryIndex = newsCollections.findIndex((newsEntry) => newsEntry.data.articleName === currentEntry.data.articleName);
+let previousEntry = currentEntryIndex - 1 > -1 ? [newsCollections[currentEntryIndex - 1]] : [];
+let nextEntry = currentEntryIndex + 1 < newsCollections.length
+    ? [newsCollections[currentEntryIndex + 1]]
+    : [];
+//console.log(previousEntry[0]);
 const { Content } = await currentEntry.render();
 const pageMetaTag: PageMetaTag = {
     title: currentEntry.data.pageTitle!,
@@ -68,6 +100,52 @@ const pageMetaTag: PageMetaTag = {
   <Content />
   <!--Suggestion for articles here -->
   <div class="border-t-[1px] border-solid border-[#ccc] mt-16"></div>
+  <div class="flex flex-row justify-between mt-10">
+    <div class="flex flex-row">
+      {
+        () => {
+          if (previousEntry.length == 1)
+            return (
+              <>
+                <div class="h-fit text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full py-[0.3125rem] px-[0.875rem]">
+                  {t("common:previous")}:
+                </div>
+                <a
+                  href={`${utilGetCurrentLanguage(Astro.url.pathname)}/news/${
+                    previousEntry[0].data.newsCategory
+                  }/${previousEntry[0].data.articleName}/`}
+                  class="h-fit max-w-[400px] text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full text-[#337ab7] py-[0.3125rem] px-[0.875rem] hover:bg-[#eee] hover:text-[#23527c] focus:text-[#23527c]"
+                >
+                  {previousEntry[0].data.title}
+                </a>
+              </>
+            );
+        }
+      }
+    </div>
+    <div class="flex flex-row">
+      {
+        () => {
+          if (nextEntry.length == 1)
+            return (
+              <>
+                <a
+                  href={`${utilGetCurrentLanguage(Astro.url.pathname)}/news/${
+                    nextEntry[0].data.newsCategory
+                  }/${nextEntry[0].data.articleName}/`}
+                  class="h-fit max-w-[400px] text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full text-[#337ab7] py-[0.3125rem] px-[0.875rem] hover:bg-[#eee] hover:text-[#23527c] focus:text-[#23527c]"
+                >
+                  {nextEntry[0].data.title}
+                </a>
+                <div class="h-fit text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full py-[0.3125rem] px-[0.875rem]">
+                  {t("common:next")}:
+                </div>
+              </>
+            );
+        }
+      }
+    </div>
+  </div>
   <div class="mb-16 flex justify-center">
     <BackBtn />
   </div>
