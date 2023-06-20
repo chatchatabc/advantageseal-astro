@@ -69,6 +69,18 @@ const twitter: TwitterMetaTag = {
 const { entry } = Astro.props as Props;
 let currentEntry = entry.filter((entryItem) => entryItem.data.lang === i18Next.language)[0];
 const { Content } = await currentEntry.render();
+let solutionsEntries = (await getCollection("solutions"))
+    .filter((solutionEntry: CollectionEntry<"solutions">) => solutionEntry.data.lang == i18Next.language)
+    .sort((entry1, entry2) => {
+    const date1 = new Date(entry1.data.pubDate) as any;
+    const date2 = new Date(entry2.data.pubDate) as any;
+    return date1 - date2;
+});
+let currentEntryIndex = solutionsEntries.findIndex((solutionEntry) => solutionEntry.data.articleName == currentEntry.data.articleName);
+let previousEntry = currentEntryIndex - 1 > -1 ? [solutionsEntries[currentEntryIndex - 1]] : [];
+let nextEntry = currentEntryIndex + 1 < solutionsEntries.length
+    ? [solutionsEntries[currentEntryIndex + 1]]
+    : [];
 ---
 
 <ArticleLayout
@@ -82,6 +94,56 @@ const { Content } = await currentEntry.render();
   <Content />
   <!--Suggestion for articles here -->
   <div class="border-t-[1px] border-solid border-[#ccc] mt-16"></div>
+  <div class="flex flex-row justify-between mt-10">
+    <div class="flex flex-row">
+      {
+        () => {
+          if (previousEntry.length == 1)
+            return (
+              <>
+                <div class="h-fit text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full py-[0.3125rem] px-[0.875rem]">
+                  {t("common:previous")}:
+                </div>
+                <a
+                  href={`${utilGetCurrentLanguage(
+                    Astro.url.pathname
+                  )}/customer-center/solutions/${
+                    previousEntry[0].data.articleName
+                  }/`}
+                  class="h-fit max-w-[400px] text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full text-[#337ab7] py-[0.3125rem] px-[0.875rem] hover:bg-[#eee] hover:text-[#23527c] focus:text-[#23527c]"
+                >
+                  {previousEntry[0].data.title}
+                </a>
+              </>
+            );
+        }
+      }
+    </div>
+    <div class="flex flex-row">
+      {
+        () => {
+          if (nextEntry.length == 1)
+            return (
+              <>
+                <a
+                  href={`${utilGetCurrentLanguage(
+                    Astro.url.pathname
+                  )}/customer-center/solutions/${
+                    nextEntry[0].data.articleName
+                  }/`}
+                  class="h-fit max-w-[400px] text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full text-[#337ab7] py-[0.3125rem] px-[0.875rem] hover:bg-[#eee] hover:text-[#23527c] focus:text-[#23527c]"
+                >
+                  {nextEntry[0].data.title}
+                </a>
+                <div class="h-fit text-[0.875rem] border-[1px] border-solid border-[#ddd] rounded-full py-[0.3125rem] px-[0.875rem]">
+                  {t("common:next")}:
+                </div>
+              </>
+            );
+        }
+      }
+    </div>
+  </div>
   <div class="mb-16 flex justify-center">
     <BackBtn />
   </div>
