@@ -1,5 +1,6 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
+import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 //components
 import Layout from "@layouts/Layout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
@@ -47,7 +48,7 @@ var subnavs = NavigationJson.links
     .children.map((child: string) => {
     return {
         label: t(`navigation:navbar.customer-center.sublinks.${child}.name`),
-        href: `/customer-center/${t(`navigation:navbar.customer-center.sublinks.${child}.slug`)}/`,
+        href: `${utilGetCurrentLanguage(Astro.url.pathname)}/customer-center/${t(`navigation:navbar.customer-center.sublinks.${child}.slug`)}/`,
         slug: t(`navigation:navbar.customer-center.sublinks.${child}.slug`),
     };
 }) as Subnav[];
