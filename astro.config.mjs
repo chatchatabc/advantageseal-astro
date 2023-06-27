@@ -5,10 +5,9 @@ import astroI18next from "astro-i18next";
 import svelte from "@astrojs/svelte";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
-
 import react from "@astrojs/react";
+import robotsTxt from "astro-robots-txt";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://advantage-seals.pages.dev",
   integrations: [
@@ -19,5 +18,6 @@ export default defineConfig({
     sitemap(),
     mdx(),
     react(),
+    robotsTxt(),
   ],
 });
