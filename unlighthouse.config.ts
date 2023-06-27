@@ -1,11 +1,11 @@
 /// <reference types="unlighthouse" />
-import {defineConfig} from 'unlighthouse'
+import { defineConfig } from "unlighthouse";
 
 export default defineConfig({
-  site: 'https://05d4dddd.advantageseals-astro.pages.dev',
+  site: "https://advantage-seals.pages.dev",
   scanner: {
-    device : 'desktop',
-    sitemap : true,
+    device: "desktop",
+    sitemap: true,
   },
   debug: true,
-})
+});

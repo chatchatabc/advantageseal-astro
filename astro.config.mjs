@@ -10,7 +10,7 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://advantageseals-astro.pages.dev",
+  site: "https://advantage-seals.pages.dev",
   integrations: [
     tailwind(),
     astroI18next(),
