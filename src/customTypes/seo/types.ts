@@ -1,25 +1,24 @@
-
 export type PageMetaTag = {
-  title: string;
-  description: string;
-  keywords: string;
-  author: string;
-}
+  title?: string | null;
+  description?: string | null;
+  keywords?: string | null;
+  author?: string | null;
+};
 export type OpenGraphMetaTag = {
-  title: string;
-  type: string;
-  image: string;
-  description: string;
-}
+  title?: string | null;
+  type?: string | null;
+  image?: string | null;
+  description?: string | null;
+};
 
 export type TwitterMetaTag = {
-  cardType: string,
-  title: string,
-  description: string,
-  image: string,
-}
+  cardType?: string | null;
+  title?: string | null;
+  description?: string | null;
+  image?: string | null;
+};
 export type MetaTag = {
-  page: PageMetaTag
-  openGraph : OpenGraphMetaTag
-  twitter: TwitterMetaTag
-}
+  page: PageMetaTag;
+  openGraph: OpenGraphMetaTag;
+  twitter: TwitterMetaTag;
+};
