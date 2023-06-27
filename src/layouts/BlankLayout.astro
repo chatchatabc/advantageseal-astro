@@ -1,10 +1,43 @@
 ---
 import { SEO } from "astro-seo";
 import type { MetaTag } from "@customTypes/seo/types";
+import { t } from "i18next";
 //REQUIRED
 import { ImageSupportDetection } from "astro-imagetools/components";
 
 const { page, openGraph, twitter } = Astro.props as MetaTag;
+
+// Fallbacks
+page.title = page.title ?? t("site-info:pageTitle") ?? "Translation Missing";
+page.description =
+  page.description ?? t("site-info:pageDescription") ?? "Translation Missing";
+page.author = page.author ?? t("site-info:author") ?? "Translation Missing";
+page.keywords =
+  page.keywords ?? t("site-info:keywords") ?? "Translation Missing";
+
+// Open Graph
+openGraph.title =
+  openGraph.title ?? t("site-info:ogTitle") ?? "Translation Missing";
+openGraph.type =
+  openGraph.type ?? t("site-info:ogType") ?? "Translation Missing";
+openGraph.image =
+  openGraph.image ?? t("site-info:ogImage") ?? "Translation Missing";
+openGraph.description =
+  openGraph.description ??
+  t("site-info:ogDescription") ??
+  "Translation Missing";
+
+// Twitter
+twitter.cardType =
+  twitter.cardType ?? t("site-info:twitterCardType") ?? "Translation Missing";
+twitter.description =
+  twitter.description ??
+  t("site-info:twitterDescription") ??
+  "Translation Missing";
+twitter.image =
+  twitter.image ?? t("site-info:twitterImage") ?? "Translation Missing";
+twitter.title =
+  twitter.title ?? t("site-info:twitterTitle") ?? "Translation Missing";
 ---
 
 <html lang="en" class="h-fit">

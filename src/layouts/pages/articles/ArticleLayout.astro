@@ -9,6 +9,7 @@ import type {
   TwitterMetaTag,
 } from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
+
 type Props = {
   page: PageMetaTag;
   openGraph: OpenGraphMetaTag;
@@ -17,6 +18,7 @@ type Props = {
   entry: CollectionEntry<any>;
   articleCategory: string; // if it is news or whatever
 };
+
 const { page, openGraph, twitter, bannerImage, entry, articleCategory } =
   Astro.props as Props;
 ---
