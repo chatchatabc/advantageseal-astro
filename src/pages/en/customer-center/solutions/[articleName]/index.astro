@@ -1,82 +1,61 @@
 ---
-import i18Next, { t, changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
-import { getCollection } from "astro:content";
+import { getCollection, getEntryBySlug } from "astro:content";
 //components
-import NewsLayout from "@layouts/pages/news/NewsLayout.astro";
 import ArticleLayout from "@layouts/pages/articles/ArticleLayout.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
-import { Img } from "astro-imagetools/components";
-//data
-import NavigationJson from "@data/navigation.json";
-import ProductsJson from "@data/pages/products.json";
-import ProductCategories from "@data/product-categories.json";
 //data types
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
 
 changeLanguage("en");
 
-type Props = {
-    entry: CollectionEntry<"solutions">[];
-};
-var pageJson = `products:contents.type-16`; //TEMPORARY
 export async function getStaticPaths() {
     let solutionsEntries = await getCollection("solutions");
-    //a unique list of categories
-    var groupedEntries: {
-        articleName: string;
-        articles: CollectionEntry<"solutions">[];
-    }[] = [];
-    solutionsEntries.forEach((entry) => {
-        const articleName = entry.data.articleName!.toString();
-        const existingEntry = groupedEntries.find((groupedEntry) => groupedEntry.articleName === articleName);
-        if (existingEntry) {
-            existingEntry.articles.push(entry);
-        }
-        else {
-            groupedEntries.push({
-                articleName: articleName,
-                articles: [entry],
-            });
-        }
+    solutionsEntries = solutionsEntries.filter((solutionEntry) => solutionEntry.slug.includes(i18next.language));
+    return solutionsEntries.map((solution) => {
+        const solutionSlug = solution.slug.split("/").pop();
+        return {
+            params: {
+                articleName: solutionSlug,
+            },
+            props: { solutionSlug },
+        };
     });
-    return groupedEntries.map((entry: any) => ({
-        params: {
-            articleName: entry.articleName,
-        },
-        props: { entry: entry.articles },
-    }));
 }
+type Props = {
+    solutionSlug: string;
+};
+const { solutionSlug } = Astro.props as Props;
+const solution = (await getEntryBySlug("solutions", `${i18next.language}/${solutionSlug}`)) as CollectionEntry<"solutions">;
 const page: PageMetaTag = {
-    title: t(pageJson + ".pageTitle"),
-    description: t(pageJson + ".pageDescription"),
-    author: t(pageJson + ".pageAuthor"),
-    keywords: t(pageJson + ".pageKeywords"),
+    title: solution.data.title,
+    description: solution.data.pageDescription,
+    author: solution.data.pageAuthor,
+    keywords: solution.data.pageKeywords,
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ".openGraphTitle"),
-    type: t(pageJson + ".openGraphType"),
-    image: t(pageJson + ".openGraphImage"),
-    description: t(pageJson + ".openGraphDescription"),
+    title: solution.data.ogTitle,
+    type: solution.data.ogType,
+    image: solution.data.ogImage,
+    description: solution.data.ogDescription,
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ".twitterCardType"),
-    title: t(pageJson + ".twitterTitle"),
-    description: t(pageJson + ".twitterDescription"),
-    image: t(pageJson + ".twitterImage"),
+    cardType: solution.data.twitterCardType,
+    title: solution.data.twitterTitle,
+    description: solution.data.twitterDescription,
+    image: solution.data.twitterImage,
 };
-const { entry } = Astro.props as Props;
-let currentEntry = entry.filter((entryItem) => entryItem.data.lang === i18Next.language)[0];
-const { Content } = await currentEntry.render();
+const { Content } = await solution.render();
 let solutionsEntries = (await getCollection("solutions"))
-    .filter((solutionEntry: CollectionEntry<"solutions">) => solutionEntry.data.lang == i18Next.language)
+    .filter((solutionEntry: CollectionEntry<"solutions">) => solutionEntry.data.lang == i18next.language)
     .sort((entry1, entry2) => {
     const date1 = new Date(entry1.data.pubDate) as any;
     const date2 = new Date(entry2.data.pubDate) as any;
     return date1 - date2;
 });
-let currentEntryIndex = solutionsEntries.findIndex((solutionEntry) => solutionEntry.data.articleName == currentEntry.data.articleName);
+let currentEntryIndex = solutionsEntries.findIndex((solutionEntry) => solutionEntry.data.articleName == solution.data.articleName);
 let previousEntry = currentEntryIndex - 1 > -1 ? [solutionsEntries[currentEntryIndex - 1]] : [];
 let nextEntry = currentEntryIndex + 1 < solutionsEntries.length
     ? [solutionsEntries[currentEntryIndex + 1]]
@@ -87,8 +66,8 @@ let nextEntry = currentEntryIndex + 1 < solutionsEntries.length
   page={page}
   openGraph={openGraph}
   twitter={twitter}
-  bannerImage={currentEntry.data.bannerImage!}
-  entry={currentEntry}
+  bannerImage={solution.data.bannerImage!}
+  entry={solution}
   articleCategory="customer-center"
 >
   <Content />
