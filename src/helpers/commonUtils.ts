@@ -42,17 +42,11 @@ export const trimLanguageFromLink = (url: string) => {
   return joinedLink;
 };
 
-export function utilChangeLanguageUrl(url: string, language: string) {
-  const languages = i18next.languages;
-  let links = url.split("/");
-  links.pop();
-  links.shift();
-  if (links.length && languages.includes(links[0])) {
-    links.shift();
+export function utilAddLanguageToUrl(url: string) {
+  if (i18next.language !== defaultLanguage) {
+    url = "/" + i18next.language + url;
   }
-  links.unshift(language);
-  let joinedLink = links.join("/");
-  return joinedLink;
+  return url;
 }
 
 export function utilNormalizeUrl(url: string) {

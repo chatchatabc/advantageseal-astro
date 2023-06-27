@@ -6,6 +6,7 @@ import SubMenu from "@components/theme/navbar/SubMenu.svelte";
 import {
   utilGetCurrentLanguage,
   trimLanguageFromLink,
+  utilAddLanguageToUrl,
 } from "@helpers/commonUtils";
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
@@ -101,7 +102,7 @@ links.map((link: any) => {
       class="w-full px-4 flex justify-between mx-auto container lg:w-11/12 xl:w-9/12"
     >
       <div class="company-logo">
-        <a href="/">
+        <a href={utilAddLanguageToUrl("/")}>
           <Picture
             src="/images/logo/company-logo.png"
             alt="AdvantageSeal logo"
