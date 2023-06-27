@@ -1,7 +1,7 @@
 ---
 import navigationJson from "@data/navigation.json";
 import { utilNormalizeUrl } from "@helpers/commonUtils";
-import { t } from "i18next";
+import i18next, { t } from "i18next";
 
 type Props = {
   name: string;
@@ -9,11 +9,7 @@ type Props = {
 const { name } = Astro.props as Props;
 
 const url = utilNormalizeUrl(Astro.url.pathname);
-const pathname = url.split("/");
-if (pathname.length > 2) {
-  pathname.pop();
-  pathname.pop();
-}
+const pathname = url.split("/").splice(0, i18next.language !== "cn" ? 3 : 2);
 
 const subLinks =
   navigationJson.links.find((link) => link.name === name)?.children ?? [];
