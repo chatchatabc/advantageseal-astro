@@ -10,7 +10,14 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  trailingSlash: "always",
   site: "https://advantageseals-astro.pages.dev",
-  integrations: [tailwind(), astroI18next(), astroImageTools, svelte(), sitemap(), mdx(), react()]
+  integrations: [
+    tailwind(),
+    astroI18next(),
+    astroImageTools,
+    svelte(),
+    sitemap(),
+    mdx(),
+    react(),
+  ],
 });
