@@ -1,10 +1,28 @@
 ---
-import { utilCurrentPage } from "@helpers/commonUtils";
-type Subnav = { label: string; href: string; slug: string };
+import navigationJson from "@data/navigation.json";
+import { utilNormalizeUrl } from "@helpers/commonUtils";
+import { t } from "i18next";
+
 type Props = {
-  subnavs: Subnav[];
+  name: string;
 };
-const { subnavs } = Astro.props as Props;
+const { name } = Astro.props as Props;
+
+const url = utilNormalizeUrl(Astro.url.pathname);
+const pathname = url.split("/");
+if (pathname.length > 2) {
+  pathname.pop();
+  pathname.pop();
+}
+
+const subLinks =
+  navigationJson.links.find((link) => link.name === name)?.children ?? [];
+const subNavs = subLinks.map((link) => {
+  return {
+    label: t(`links:${link}`),
+    href: `${pathname.join("/")}/${link}`,
+  };
+});
 ---
 
 <div class="mt-[1.125rem]"></div>
@@ -15,21 +33,18 @@ const { subnavs } = Astro.props as Props;
   >
     <ul class="p-2 bg-white ml-4 flex flex-row flex-wrap">
       {
-        subnavs.map((subnav: Subnav) => {
+        subNavs.map((subNav) => {
           return (
             <li class="p-1">
               <a
-                class={`px-4 py-2 text-[#777] rounded-[4px] text-[0.875rem] block font-semibold  
-                hover:bg-[#009ce0] hover:text-white
-                
-                ${
-                  utilCurrentPage(Astro.url.toString(), subnav.slug)
-                    ? " bg-[#009ce0] text-white"
-                    : " bg-white"
-                }`}
-                href={subnav.href}
+                class={`px-4 py-2 text-[#777] rounded-[4px] text-[0.875rem] ${
+                  url.includes(subNav.href)
+                    ? "bg-[#009ce0] text-white"
+                    : "bg-white"
+                } block font-semibold hover:bg-[#009ce0] hover:text-white`}
+                href={subNav.href}
               >
-                {subnav.label}
+                {subNav.label}
               </a>
             </li>
           );
