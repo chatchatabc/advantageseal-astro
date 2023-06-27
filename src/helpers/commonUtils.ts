@@ -85,7 +85,5 @@ export function utilBreadcrumbsFromUrl(url: string) {
     };
   });
 
-  console.log(breadcrumbs);
-
   return breadcrumbs;
 }
