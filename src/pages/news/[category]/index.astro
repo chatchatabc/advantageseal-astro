@@ -1,6 +1,5 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
-import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import i18next, { changeLanguage } from "i18next";
 import { getCollection } from "astro:content";
 //components
 import Layout from "@layouts/Layout.astro";
@@ -9,8 +8,6 @@ import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Img } from "astro-imagetools/components";
-//data
-import NavigationJson from "@data/navigation.json";
 //data types
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 import type { CollectionEntry } from "astro:content";
@@ -75,20 +72,6 @@ const bannerImageSrc = currentEntry.bannerImage;
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
-type Subnav = {
-    label: string;
-    href: string;
-    slug: string;
-};
-var subnavs = NavigationJson.links
-    .filter((link) => link.name === "news")[0]
-    .children.map((child: string) => {
-    return {
-        label: t(`navigation:navbar.news.sublinks.${child}.name`),
-        href: `${utilGetCurrentLanguage(Astro.url.toString())}/news/${t(`navigation:navbar.news.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.news.sublinks.${child}.slug`),
-    };
-}) as Subnav[];
 let entries = (await getCollection("news", ({ data }) => {
     return (data.lang === i18next.language && data.newsCategory === currentEntry.title);
 })).sort((entry1, entry2) => {
@@ -108,7 +91,7 @@ console.log(currNewsCategory);
     trueImageStyle={trueImageStyle}
   />
   <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
-    <InnerSubNav subnavs={subnavs} />
+    <InnerSubNav name="news" />
     <div class="mb-6">
       <BreadCrumbs label={currNewsCategory} />
     </div>

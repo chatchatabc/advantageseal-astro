@@ -7,8 +7,6 @@ import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Img } from "astro-imagetools/components";
-//data
-import NavigationJson from "@data/navigation.json";
 //data types
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 
@@ -36,20 +34,6 @@ const bannerImageSrc = t("navigation:navbar.about.sublinks.company-profile.banne
 const bannerHeight = "200px";
 const trueImage = t("navigation:navbar.about.sublinks.company-profile.trueImage") as unknown as boolean;
 const trueImageStyle = t("navigation:navbar.about.sublinks.company-profile.trueImageStyle");
-type Subnav = {
-    label: string;
-    href: string;
-    slug: string;
-};
-var subnavs = NavigationJson.links
-    .filter((link) => link.name === "about")[0]
-    .children.map((child: string) => {
-    return {
-        label: t(`navigation:navbar.about.sublinks.${child}.name`),
-        href: `/about/${t(`navigation:navbar.about.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.about.sublinks.${child}.slug`),
-    };
-}) as Subnav[];
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
@@ -60,7 +44,7 @@ var subnavs = NavigationJson.links
     trueImageStyle={trueImageStyle}
   />
   <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
-    <InnerSubNav subnavs={subnavs} />
+    <InnerSubNav name="about" />
 
     <div class="mb-6">
       <BreadCrumbs

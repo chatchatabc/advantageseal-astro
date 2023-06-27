@@ -1,7 +1,6 @@
 ---
-import astroI18next, { t, changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
-import { getCollection } from "astro:content";
 //components
 import Layout from "@layouts/Layout.astro";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
@@ -9,13 +8,10 @@ import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Picture } from "astro-imagetools/components";
-//data
-import NavigationJson from "@data/navigation.json";
 import ProductsJson from "@data/pages/products.json";
 import ProductCategories from "@data/product-categories.json";
 //data types
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
-import type { CollectionEntry } from "astro:content";
 
 changeLanguage("cn");
 
@@ -85,20 +81,6 @@ const bannerImageSrc = t(pageJson + ".bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
-type Subnav = {
-    label: string;
-    href: string;
-    slug: string;
-};
-var subnavs = NavigationJson.links
-    .filter((link) => link.name === "products")[0]
-    .children.map((child: string) => {
-    return {
-        label: t(`navigation:navbar.products.sublinks.${child}.name`),
-        href: `${utilGetCurrentLanguage(Astro.url.toString())}/products/${t(`navigation:navbar.products.sublinks.${child}.slug`)}/`,
-        slug: t(`navigation:navbar.products.sublinks.${child}.slug`),
-    };
-}) as Subnav[];
 let currNewsCategory: string = t(`product-categories:${category.cat}.name`); //current name of category
 ---
 
@@ -110,7 +92,7 @@ let currNewsCategory: string = t(`product-categories:${category.cat}.name`); //c
     trueImageStyle={trueImageStyle}
   />
   <div class="container mx-auto w-full md:w-11/12 lg:w-10/12">
-    <InnerSubNav subnavs={subnavs} />
+    <InnerSubNav name="products" />
     <div class="mb-6">
       <BreadCrumbs label={currNewsCategory} />
     </div>
