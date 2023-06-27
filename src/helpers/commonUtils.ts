@@ -74,7 +74,7 @@ export function utilBreadcrumbsFromUrl(url: string) {
   let breadcrumbs = links.map((link) => {
     if (link === "") {
       return {
-        name: "Home",
+        name: "home",
         href: combinedLink === "" ? "/" : combinedLink,
       };
     }
