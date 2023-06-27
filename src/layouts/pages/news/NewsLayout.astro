@@ -2,9 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import { BackgroundImage } from "astro-imagetools/components";
 import InnerSubNav from "@components/theme/InnerSubNav.astro";
-import i18next, { t } from "i18next";
-import NavigationJson from "@data/navigation.json";
-import { utilGetCurrentLanguage } from "@helpers/commonUtils";
+import { t } from "i18next";
 import type {
   PageMetaTag,
   OpenGraphMetaTag,
@@ -19,19 +17,6 @@ type Props = {
   entry: CollectionEntry<"news">;
 };
 const { page, openGraph, twitter, bannerImage, entry } = Astro.props as Props;
-const subnavs: { label: string; href: string; slug: string }[] = [];
-const newsRefs = NavigationJson.links.filter((link) => link.name === "news")[0];
-newsRefs.children.map((ref) => {
-  subnavs.push({
-    label: t("navigation:navbar.news.sublinks." + ref + ".name"),
-    href:
-      utilGetCurrentLanguage(Astro.url.pathname) +
-      "/news/" +
-      t("navigation:navbar.news.sublinks." + ref + ".slug") +
-      "/",
-    slug: t("navigation:navbar.news.sublinks." + ref + ".slug"),
-  });
-});
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
@@ -39,7 +24,7 @@ newsRefs.children.map((ref) => {
     <div class="h-[200px]"></div>
   </BackgroundImage>
   <section class="container p-4 w-full mx-auto md:w-11/12 lg:w-10/12">
-    <InnerSubNav subnavs={subnavs} />
+    <InnerSubNav name="news" />
 
     <main>
       <div class="my-8 text-center">
