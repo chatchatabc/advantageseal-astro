@@ -16,8 +16,6 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 
 changeLanguage("cn");
 
-const { product } = Astro.props as Props;
-var pageJson = `products:contents.${product.slug}`;
 export async function getStaticPaths() {
     return ProductsJson.list.map((product) => {
         return {
@@ -31,40 +29,44 @@ export async function getStaticPaths() {
                     name: t(`products:contents.${product.slug}.name`),
                     slug: product.slug,
                     category: product.category,
+                    ogImage: product.ogImage,
                 },
             },
         };
     });
 }
+type Props = {
+    product: {
+        name: string;
+        slug: string;
+        category: string;
+        ogImage: string;
+    };
+};
+const { product } = Astro.props as Props;
+var pageJson = `products:contents.${product.slug}`;
 const page: PageMetaTag = {
-    title: t(pageJson + ".pageTitle"),
+    title: `${t(pageJson + ".name")} - ${t(`links:${product.category}`)} | ${t("site-info:pageTitle")}`,
     description: t(pageJson + ".pageDescription"),
     author: t(pageJson + ".pageAuthor"),
     keywords: t(pageJson + ".pageKeywords"),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ".openGraphTitle"),
-    type: t(pageJson + ".openGraphType"),
-    image: t(pageJson + ".openGraphImage"),
+    title: `${t(pageJson + ".name")} - ${t(`links:${product.category}`)} | ${t("site-info:pageTitle")}`,
+    type: "website",
+    image: product.ogImage,
     description: t(pageJson + ".openGraphDescription"),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ".twitterCardType"),
-    title: t(pageJson + ".twitterTitle"),
+    cardType: "summary_large_image",
+    title: `${t(pageJson + ".name")} - ${t(`links:${product.category}`)} | ${t("site-info:pageTitle")}`,
     description: t(pageJson + ".twitterDescription"),
-    image: t(pageJson + ".twitterImage"),
+    image: product.ogImage,
 };
 const bannerImageSrc = t(pageJson + ".bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
-type Props = {
-    product: {
-        slug: string;
-        name: string;
-        category: string;
-    };
-};
 let currNewsCategory: string = product.name; //current name of the product item
 ---
 
