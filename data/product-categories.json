@@ -1,13 +1,31 @@
 {
-  "refs": [
-    "sealSeriesForPoolAndSpaPump",
-    "sealSeriesForVerticalMultiStagePump",
-    "sealSeriesForSanitaryPump",
-    "sealSeriesForFlyptPump",
-    "sealSeriesForRotorPump",
-    "modularMechanicalSealsSeries",
-    "sealSeriesForMetalBellows",
-    "universalStandardSealSeries",
-    "staticRingSeries"
+  "contents": [
+    {
+      "slug": "seal-series-for-pool-and-spa-pump"
+    },
+    {
+      "slug": "seal-series-for-vertical-multi-stage-pump"
+    },
+    {
+      "slug": "seal-series-for-sanitary-pump"
+    },
+    {
+      "slug": "seal-series-for-flypt-pump"
+    },
+    {
+      "slug": "seal-series-for-rotor-pump"
+    },
+    {
+      "slug": "modular-mechanical-seals-series"
+    },
+    {
+      "slug": "seal-series-for-metal-bellows"
+    },
+    {
+      "slug": "universal-standard-seal-series"
+    },
+    {
+      "slug": "static-ring-series"
+    }
   ]
 }

@@ -8,80 +8,52 @@ import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Picture } from "astro-imagetools/components";
-import ProductsJson from "@data/pages/products.json";
-import ProductCategories from "@data/product-categories.json";
+import productsJson from "@data/pages/products.json";
+import productCategoriesJson from "@data/product-categories.json";
 //data types
 import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 
 changeLanguage("en");
 
-type Props = {
-    category: {
-        slug: string;
-        name: string;
-        cat: string;
-    };
-    products: {
-        slug: string;
-        name: string;
-        category: string;
-    }[];
-};
-const { category, products } = Astro.props as Props;
-var pageJson = `products:contents.type-16`; //TEMPORARY
 export async function getStaticPaths() {
-    let uniqueCategories = [
-        ...new Set(ProductsJson.list.map((product) => product.category)),
-    ];
-    //a unique list of categories
-    let productsByCategory = ProductCategories.refs.map((category: string, index: number) => {
-        return {
-            category: {
-                //translation should not be done here. language it gets seems to be incorrect
-                cat: category,
-                //slugs are consistent so it's ok to use any language
-                slug: t(`product-categories:${category}.slug`),
-            },
-            products: ProductsJson.list.filter((product: any) => {
-                return product.category === t(`product-categories:${category}.slug`);
-            }),
-        };
-    });
-    return productsByCategory.map((el) => {
+    return productCategoriesJson.contents.map((category) => {
         return {
             params: {
-                category: el.category.slug,
+                category: category.slug,
             },
             props: {
-                category: el.category,
-                products: el.products,
+                category: category.slug,
+                products: productsJson.list.filter((product) => product.category === category.slug),
             },
         };
     });
 }
+type Props = {
+    category: string;
+    products: {
+        slug: string;
+        name: string;
+        category: string;
+        ogImage: string;
+    }[];
+};
+const { category, products } = Astro.props as Props;
 const page: PageMetaTag = {
-    title: t(pageJson + ".pageTitle"),
-    description: t(pageJson + ".pageDescription"),
-    author: t(pageJson + ".pageAuthor"),
-    keywords: t(pageJson + ".pageKeywords"),
+    title: `${t(`links:${category}`)} | ${t("site-info:pageTitle")}`,
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ".openGraphTitle"),
-    type: t(pageJson + ".openGraphType"),
-    image: t(pageJson + ".openGraphImage"),
-    description: t(pageJson + ".openGraphDescription"),
+    title: `${t(`links:${category}`)} | ${t("site-info:pageTitle")}`,
+    image: t("products:contents.type-16" + ".bannerImageSrc"),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ".twitterCardType"),
-    title: t(pageJson + ".twitterTitle"),
-    description: t(pageJson + ".twitterDescription"),
-    image: t(pageJson + ".twitterImage"),
+    title: `${t(`links:${category}`)} | ${t("site-info:pageTitle")}`,
+    image: t("products:contents.type-16" + ".bannerImageSrc"),
 };
-const bannerImageSrc = t(pageJson + ".bannerImageSrc");
+const bannerImageSrc = t("products:contents.type-16" + ".bannerImageSrc");
 const bannerHeight = "200px";
 const trueImage = false;
 const trueImageStyle = "";
-let currNewsCategory: string = t(`product-categories:${category.cat}.name`); //current name of category
+let currNewsCategory: string = t(`links:${category}`); //current name of category
 ---
 
 <Layout page={page} openGraph={openGraph} twitter={twitter}>
