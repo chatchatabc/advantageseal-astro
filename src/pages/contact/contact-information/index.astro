@@ -8,28 +8,27 @@ import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Img } from "astro-imagetools/components";
 //data types
-import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
+import type {
+  PageMetaTag,
+  OpenGraphMetaTag,
+  TwitterMetaTag,
+} from "@customTypes/seo/types";
 
 changeLanguage("cn");
 
-let pageJson = "page-contact-sublink-contact-information";
+const metaTagRef = "meta-tags:contact-information";
+const pageJson = "page-contact-sublink-contact-information";
 const page: PageMetaTag = {
-    title: t(pageJson + ":pageTitle"),
-    description: t(pageJson + ":pageDescription"),
-    author: t(pageJson + ":pageAuthor"),
-    keywords: t(pageJson + ":pageKeywords"),
+  title: t(`${metaTagRef}.pageTitle`),
+  description: t(`${metaTagRef}.pageDescription`),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ":openGraphTitle"),
-    type: t(pageJson + ":openGraphType"),
-    image: t(pageJson + ":openGraphImage"),
-    description: t(pageJson + ":openGraphDescription"),
+  title: t(`${metaTagRef}.ogTitle`),
+  description: t(`${metaTagRef}.ogDescription`),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ":twitterCardType"),
-    title: t(pageJson + ":twitterTitle"),
-    description: t(pageJson + ":twitterDescription"),
-    image: t(pageJson + ":twitterImage"),
+  title: t(`${metaTagRef}.twitterTitle`),
+  description: t(`${metaTagRef}.twitterDescription}`),
 };
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";
