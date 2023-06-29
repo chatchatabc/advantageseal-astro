@@ -34,7 +34,7 @@ breadcrumbs.forEach((breadcrumb) => {
 >
   <h3 class="block text-[1.5rem] text-[#434343]">{label}</h3>
   <!--Breadcrums supposed to be here-->
-  <div class="flex flex-row space-x-2">
+  <div class="hidden flex-row space-x-2 md:flex">
     <div>{t("common:location")}:</div>
     {
       breadcrumbs.map((breadcrumb, index) => {
