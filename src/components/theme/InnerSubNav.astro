@@ -21,10 +21,51 @@ const subNavs = subLinks.map((link) => {
 });
 ---
 
-<div class="mt-[1.125rem]"></div>
-<div class="mb-[1.125rem] sticky top-0 z-[2]">
+<inner-sub-nav class="sticky top-0 z-[2]">
+  <!-- Mobile -->
+  <div>
+    <header
+      class="relative z-[1] bg-p600 justify-between flex py-2 px-4 md:hidden"
+    >
+      <h2 class="text-white">Column Categories</h2>
+      <button
+        aria-label="Show/Hide Inner Navigation"
+        class="relative w-4 justify-center items-center"
+      >
+        <div
+          data-inner-sub-nav-icon
+          class="h-4 w-1 rounded-lg bg-white mx-auto duration-500 rotate-90"
+        >
+        </div>
+        <div
+          class="h-1 rounded-lg bg-white absolute w-full top-1/2 -translate-y-1/2"
+        >
+        </div>
+      </button>
+    </header>
+    <section
+      data-inner-sub-nav-mobile
+      class="grid grid-rows-[1fr] duration-500 px-4 py-4 border-b-2 rounded-b-md"
+    >
+      <ul class="list-disc list-inside overflow-hidden">
+        {
+          subNavs.map((link) => {
+            return (
+              <li>
+                <a class="text-p600" href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </section>
+  </div>
+
+  <!-- Desktop -->
   <div
-    class="bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid"
+    class="hidden bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid md:block"
     style=""
   >
     <ul class="p-2 bg-white ml-4 flex flex-row flex-wrap">
@@ -48,4 +89,26 @@ const subNavs = subLinks.map((link) => {
       }
     </ul>
   </div>
-</div>
+</inner-sub-nav>
+
+<script>
+  class InnerSubNav extends HTMLElement {
+    constructor() {
+      super();
+
+      const mobileIcon = this.querySelector("[data-inner-sub-nav-icon]")!;
+      const button = this.querySelector("button")!;
+      const section = this.querySelector("[data-inner-sub-nav-mobile]")!;
+
+      button.addEventListener("click", () => {
+        mobileIcon.classList.toggle("rotate-90");
+        section.classList.toggle("py-4");
+        section.classList.toggle("-translate-y-2");
+        section.classList.toggle("grid-rows-[1fr]");
+        section.classList.toggle("grid-rows-[0fr]");
+      });
+    }
+  }
+
+  customElements.define("inner-sub-nav", InnerSubNav);
+</script>
