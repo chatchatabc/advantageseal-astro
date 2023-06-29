@@ -23,10 +23,8 @@ const subNavs = subLinks.map((link) => {
 
 <inner-sub-nav class="sticky top-0 z-[2]">
   <!-- Mobile -->
-  <div>
-    <header
-      class="relative z-[1] bg-p600 justify-between flex py-2 px-4 md:hidden"
-    >
+  <div class="md:hidden">
+    <header class="relative z-[1] bg-p600 justify-between flex py-2 px-4">
       <h2 class="text-white">Column Categories</h2>
       <button
         aria-label="Show/Hide Inner Navigation"
@@ -65,7 +63,7 @@ const subNavs = subLinks.map((link) => {
 
   <!-- Desktop -->
   <div
-    class="hidden bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid md:block"
+    class="hidden mt-4 bg-[url('/images/inner-subnav/e2.jpg')] border-[1px] border-[#009ce0] border-solid md:block"
     style=""
   >
     <ul class="p-2 bg-white ml-4 flex flex-row flex-wrap">
