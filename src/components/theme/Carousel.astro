@@ -13,7 +13,8 @@ var interval = parseInt(t("page-home:carousel.interval"));
     class="btn-container flex flex-row justify-between text-white absolute w-full h-full top-0 items-center"
   >
     <button
-      class="left-button bg-black p-4 text-white h-fit opacity-30 hover:opacity-100"
+      aria-label="previous"
+      class="left-button hidden bg-black p-4 text-white h-fit opacity-30 md:block hover:opacity-100"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"
@@ -26,7 +27,8 @@ var interval = parseInt(t("page-home:carousel.interval"));
       ></button
     >
     <button
-      class="right-button bg-black p-4 text-white h-fit opacity-30 hover:opacity-100"
+      aria-label="next"
+      class="right-button hidden bg-black p-4 text-white h-fit opacity-30 md:block hover:opacity-100"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
         width="30"

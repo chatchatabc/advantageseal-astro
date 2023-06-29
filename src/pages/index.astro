@@ -69,15 +69,16 @@ Array.from({ length: parseInt(t("page-home:marquee.count")) }, (_, i) => i + 1).
   <main class="flex-grow relative">
     <section>
       <Carousel>
-        <div class="relative h-0 pb-[26.07%]">
+        <div class="relative h-56 md:h-[unset] md:pb-[26.07%]">
           {
             Array.from(
               { length: parseInt(t("page-home:carousel.count")) },
               (_, i) => i + 1
             ).map((index) => {
               return (
-                <div class="image-element absolute top-0 opacity-0 transition-all duration-300 w-full flex justify-center">
+                <div class="image-element absolute top-0 h-full opacity-0 transition-all duration-300 w-full flex justify-center">
                   <Img
+                    breakpoints={[1920]}
                     src={t(
                       "page-home:carousel." +
                         i18next.language +
@@ -85,7 +86,7 @@ Array.from({ length: parseInt(t("page-home:marquee.count")) }, (_, i) => i + 1).
                         index
                     )}
                     alt={"image" + index}
-                    layout="fullWidth"
+                    layout="fill"
                   />
                 </div>
               );
