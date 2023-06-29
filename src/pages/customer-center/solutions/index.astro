@@ -13,29 +13,24 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 
 changeLanguage("cn");
 
-let pageJson = "page-customer-center-sublink-solutions";
+const metaTagRef = "meta-tags:solutions";
+const pageJson = "page-customer-center-sublink-solutions";
 const page: PageMetaTag = {
-    title: t(pageJson + ":pageTitle"),
-    description: t(pageJson + ":pageDescription"),
-    author: t(pageJson + ":pageAuthor"),
-    keywords: t(pageJson + ":pageKeywords"),
+    title: t(`${metaTagRef}.pageTitle`),
+    description: t(`${metaTagRef}.pageDescription`),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ":openGraphTitle"),
-    type: t(pageJson + ":openGraphType"),
-    image: t(pageJson + ":openGraphImage"),
-    description: t(pageJson + ":openGraphDescription"),
+    title: t(`${metaTagRef}.ogTitle`),
+    description: t(`${metaTagRef}.ogDescription`),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ":twitterCardType"),
-    title: t(pageJson + ":twitterTitle"),
-    description: t(pageJson + ":twitterDescription"),
-    image: t(pageJson + ":twitterImage"),
+    title: t(`${metaTagRef}.twitterTitle`),
+    description: t(`${metaTagRef}.twitterDescription}`),
 };
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";
-const trueImage = false;
-const trueImageStyle = "";
+const trueImage = Boolean(t(pageJson + ":trueImage"));
+const trueImageStyle = t(pageJson + ":trueImageStyle");
 let entries = await getCollection("solutions", ({ data }) => {
     return data.lang === astroI18next.language;
 });
