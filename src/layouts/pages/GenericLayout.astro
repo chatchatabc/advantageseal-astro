@@ -21,8 +21,8 @@ const { pageName } = Astro.props as Props;
 const trueImage = Boolean(t("navigation:navbar." + pageName + ".trueImage"));
 const trueImageStyle = t("navigation:navbar." + pageName + ".trueImageStyle");
 
-let refs = navigationJson.links.filter((link) => link.name === pageName)[0];
-let metaTagRef = `navigation:navbar.${pageName}.metaTag`;
+const refs = navigationJson.links.filter((link) => link.name === pageName)[0];
+const metaTagRef = `meta-tags:${pageName}`;
 
 const pageMetaTag: PageMetaTag = {
   title: t(metaTagRef + ".pageTitle"),
@@ -31,28 +31,12 @@ const pageMetaTag: PageMetaTag = {
   author: t(metaTagRef + ".pageAuthor"),
 };
 const opengraphMetaTag: OpenGraphMetaTag = {
-  title:
-    t(metaTagRef + ".ogTitle") ??
-    t(metaTagRef + ".twitterTitle") ??
-    t(metaTagRef + ".pageTitle"),
-  type: t(metaTagRef + ".ogType"),
-  image: t(metaTagRef + ".ogImage") ?? t(metaTagRef + ".twitterImage"),
-  description:
-    t(metaTagRef + ".ogDescription") ??
-    t(metaTagRef + ".twitterDescription") ??
-    t(metaTagRef + ".pageDescription"),
+  title: t(metaTagRef + ".ogTitle"),
+  description: t(metaTagRef + ".ogDescription"),
 };
 const twitterMetaTag: TwitterMetaTag = {
-  cardType: t(metaTagRef + ".twitterCardType"),
-  title:
-    t(metaTagRef + ".twitterTitle") ??
-    t(metaTagRef + ".ogTitle") ??
-    t(metaTagRef + ".pageTitle"),
-  description:
-    t(metaTagRef + ".twitterDescription") ??
-    t(metaTagRef + ".ogDescription") ??
-    t(metaTagRef + ".pageDescription"),
-  image: t(metaTagRef + ".twitterImage") ?? t(metaTagRef + ".ogImage"),
+  title: t(metaTagRef + ".twitterTitle"),
+  description: t(metaTagRef + ".twitterDescription"),
 };
 ---
 
