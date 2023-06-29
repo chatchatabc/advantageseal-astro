@@ -1,5 +1,5 @@
 ---
-import { BackgroundImage } from "astro-imagetools/components";
+import { Img } from "astro-imagetools/components";
 type Props = {
   bannerImageSrc: string;
   bannerHeight: string;
@@ -10,11 +10,11 @@ type Props = {
 const { bannerImageSrc, bannerHeight, trueImage, trueImageStyle } = Astro.props;
 ---
 
-{
+<!-- {
   () => {
     if (!trueImage) {
       return (
-        <BackgroundImage src={bannerImageSrc} format={["webp"]}>
+        <BackgroundImage format={["webp"]}>
           <div style={`height:${bannerHeight};`} />
         </BackgroundImage>
       );
@@ -26,4 +26,7 @@ const { bannerImageSrc, bannerHeight, trueImage, trueImageStyle } = Astro.props;
       );
     }
   }
-}
+} -->
+<div class="h-32 md:h-48">
+  <Img breakpoints={[1920]} layout="fill" src={bannerImageSrc} alt="" />
+</div>
