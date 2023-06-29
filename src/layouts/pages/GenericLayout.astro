@@ -1,13 +1,12 @@
 ---
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
-
 import { Img } from "astro-imagetools/components";
 import { t } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
-
+import navigationJson from "@data/navigation.json";
 import type {
   PageMetaTag,
   OpenGraphMetaTag,
@@ -19,53 +18,42 @@ type Props = {
 };
 
 const { pageName } = Astro.props as Props;
-const trueImage = t(
-  "navigation:navbar." + pageName + ".trueImage"
-) as unknown as boolean;
+const trueImage = Boolean(t("navigation:navbar." + pageName + ".trueImage"));
 const trueImageStyle = t("navigation:navbar." + pageName + ".trueImageStyle");
-import navigationJson from "@data/navigation.json";
 
-var refs = navigationJson.links.filter((link) => link.name === pageName)[0];
-var metaTagRef = `navigation:navbar.${pageName}.metaTag`;
+let refs = navigationJson.links.filter((link) => link.name === pageName)[0];
+let metaTagRef = `navigation:navbar.${pageName}.metaTag`;
+
 const pageMetaTag: PageMetaTag = {
-    title: t(metaTagRef + ".pageTitle") ?? t("site-info.pageTitle"),
-    description: t(metaTagRef + ".pageDescription") ?? t("site-info.pageTitle"),
-    keywords: t(metaTagRef + ".pageKeywords") ?? t("site-info:pageKeywords"),
-    author: t(metaTagRef + ".pageAuthor") ?? t("site-info:pageAuthor"),
-  },
-  opengraphMetaTag: OpenGraphMetaTag = {
-    title:
-      t(metaTagRef + ".ogTitle") ??
-      t(metaTagRef + ".pageTitle") ??
-      t(metaTagRef + ".twitterTitle") ??
-      t("site-info:ogTitle"),
-    type: t(metaTagRef + ".ogType") ?? t("site-info:ogType"),
-    image:
-      t(metaTagRef + ".ogImage") ??
-      t(metaTagRef + ".twitterImage") ??
-      t("site-info:ogImage"),
-    description:
-      t(metaTagRef + ".ogDescription") ??
-      t(metaTagRef + ".twitterDescription") ??
-      t(metaTagRef + ".pageDescription") ??
-      t("site-info:ogDescription"),
-  },
-  twitterMetaTag: TwitterMetaTag = {
-    cardType:
-      t(metaTagRef + ".twitterCardType") ?? t("site-info:twitterCardType"),
-    title:
-      t(metaTagRef + ".twitterTitle") ??
-      t(metaTagRef + ".ogTitle") ??
-      t("site-info:twitterTitle"),
-    description:
-      t(metaTagRef + ".description") ??
-      t(metaTagRef + ".ogDescription") ??
-      t("site-info:pageDescription"),
-    image:
-      t(metaTagRef + ".twitterImage") ??
-      t(metaTagRef + ".ogImage") ??
-      t("site-info:twitterImage"),
-  };
+  title: t(metaTagRef + ".pageTitle"),
+  description: t(metaTagRef + ".pageDescription"),
+  keywords: t(metaTagRef + ".pageKeywords"),
+  author: t(metaTagRef + ".pageAuthor"),
+};
+const opengraphMetaTag: OpenGraphMetaTag = {
+  title:
+    t(metaTagRef + ".ogTitle") ??
+    t(metaTagRef + ".twitterTitle") ??
+    t(metaTagRef + ".pageTitle"),
+  type: t(metaTagRef + ".ogType"),
+  image: t(metaTagRef + ".ogImage") ?? t(metaTagRef + ".twitterImage"),
+  description:
+    t(metaTagRef + ".ogDescription") ??
+    t(metaTagRef + ".twitterDescription") ??
+    t(metaTagRef + ".pageDescription"),
+};
+const twitterMetaTag: TwitterMetaTag = {
+  cardType: t(metaTagRef + ".twitterCardType"),
+  title:
+    t(metaTagRef + ".twitterTitle") ??
+    t(metaTagRef + ".ogTitle") ??
+    t(metaTagRef + ".pageTitle"),
+  description:
+    t(metaTagRef + ".twitterDescription") ??
+    t(metaTagRef + ".ogDescription") ??
+    t(metaTagRef + ".pageDescription"),
+  image: t(metaTagRef + ".twitterImage") ?? t(metaTagRef + ".ogImage"),
+};
 ---
 
 <Layout
