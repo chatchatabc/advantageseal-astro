@@ -3,6 +3,7 @@ export default {
   defaultLocale: "cn",
   locales: ["cn", "en"],
   namespaces: [
+    "meta-tags",
     "site-info",
     "navigation",
     "page-home",
