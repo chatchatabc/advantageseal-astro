@@ -8,27 +8,23 @@ import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import BaiduMap from "@components/BaiduMaps";
 //data types
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 
 changeLanguage("cn");
 
 const metaTagRef = "meta-tags:digital-map";
 const pageJson = "page-contact-sublink-digital-map";
 const page: PageMetaTag = {
-  title: t(`${metaTagRef}.pageTitle`),
-  description: t(`${metaTagRef}.pageDescription`),
+    title: t(`${metaTagRef}.pageTitle`),
+    description: t(`${metaTagRef}.pageDescription`),
 };
 const openGraph: OpenGraphMetaTag = {
-  title: t(`${metaTagRef}.ogTitle`),
-  description: t(`${metaTagRef}.ogDescription`),
+    title: t(`${metaTagRef}.ogTitle`),
+    description: t(`${metaTagRef}.ogDescription`),
 };
 const twitter: TwitterMetaTag = {
-  title: t(`${metaTagRef}.twitterTitle`),
-  description: t(`${metaTagRef}.twitterDescription}`),
+    title: t(`${metaTagRef}.twitterTitle`),
+    description: t(`${metaTagRef}.twitterDescription}`),
 };
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";

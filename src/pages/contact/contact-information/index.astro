@@ -8,31 +8,27 @@ import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
 import BackBtn from "@components/theme/BackBtn.astro";
 import { Img } from "astro-imagetools/components";
 //data types
-import type {
-  PageMetaTag,
-  OpenGraphMetaTag,
-  TwitterMetaTag,
-} from "@customTypes/seo/types";
+import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customTypes/seo/types";
 
 changeLanguage("cn");
 
 const metaTagRef = "meta-tags:contact-information";
 const pageJson = "page-contact-sublink-contact-information";
 const page: PageMetaTag = {
-  title: t(`${metaTagRef}.pageTitle`),
-  description: t(`${metaTagRef}.pageDescription`),
+    title: t(`${metaTagRef}.pageTitle`),
+    description: t(`${metaTagRef}.pageDescription`),
 };
 const openGraph: OpenGraphMetaTag = {
-  title: t(`${metaTagRef}.ogTitle`),
-  description: t(`${metaTagRef}.ogDescription`),
+    title: t(`${metaTagRef}.ogTitle`),
+    description: t(`${metaTagRef}.ogDescription`),
 };
 const twitter: TwitterMetaTag = {
-  title: t(`${metaTagRef}.twitterTitle`),
-  description: t(`${metaTagRef}.twitterDescription}`),
+    title: t(`${metaTagRef}.twitterTitle`),
+    description: t(`${metaTagRef}.twitterDescription}`),
 };
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";
-const trueImage = t(pageJson + ":trueImage") as unknown as boolean;
+const trueImage = Boolean(t(pageJson + ":trueImage"));
 const trueImageStyle = t(pageJson + ":trueImageStyle");
 ---
 

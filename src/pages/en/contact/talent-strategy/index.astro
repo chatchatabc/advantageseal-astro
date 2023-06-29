@@ -11,24 +11,19 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 
 changeLanguage("en");
 
-let pageJson = "page-contact-sublink-talent-strategy";
+const metaTagRef = "meta-tags:talent-strategy";
+const pageJson = "page-contact-sublink-talent-strategy";
 const page: PageMetaTag = {
-    title: t(pageJson + ":pageTitle"),
-    description: t(pageJson + ":pageDescription"),
-    author: t(pageJson + ":pageAuthor"),
-    keywords: t(pageJson + ":pageKeywords"),
+    title: t(`${metaTagRef}.pageTitle`),
+    description: t(`${metaTagRef}.pageDescription`),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t(pageJson + ":openGraphTitle"),
-    type: t(pageJson + ":openGraphType"),
-    image: t(pageJson + ":openGraphImage"),
-    description: t(pageJson + ":openGraphDescription"),
+    title: t(`${metaTagRef}.ogTitle`),
+    description: t(`${metaTagRef}.ogDescription`),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t(pageJson + ":twitterCardType"),
-    title: t(pageJson + ":twitterTitle"),
-    description: t(pageJson + ":twitterDescription"),
-    image: t(pageJson + ":twitterImage"),
+    title: t(`${metaTagRef}.twitterTitle`),
+    description: t(`${metaTagRef}.twitterDescription}`),
 };
 const bannerImageSrc = t(pageJson + ":bannerImageSrc");
 const bannerHeight = "200px";
