@@ -12,27 +12,22 @@ import type { PageMetaTag, OpenGraphMetaTag, TwitterMetaTag, } from "@customType
 
 changeLanguage("en");
 
+const metaTagRef = "meta-tags:company-profile";
 const page: PageMetaTag = {
-    title: t("navigation:navbar.about.sublinks.company-profile.pageTitle"),
-    description: t("navigation:navbar.about.sublinks.company-profile.pageDescription"),
-    author: t("navigation:navbar.about.sublinks.company-profile.pageAuthor"),
-    keywords: t("navigation:navbar.about.sublinks.company-profile.pageKeywords"),
+    title: t(`${metaTagRef}.pageTitle`),
+    description: t(`${metaTagRef}.pageDescription`),
 };
 const openGraph: OpenGraphMetaTag = {
-    title: t("navigation:navbar.about.sublinks.company-profile.openGraphTitle"),
-    type: t("navigation:navbar.about.sublinks.company-profile.openGraphType"),
-    image: t("navigation:navbar.about.sublinks.company-profile.openGraphImage"),
-    description: t("navigation:navbar.about.sublinks.company-profile.openGraphDescription"),
+    title: t(`${metaTagRef}.ogTitle`),
+    description: t(`${metaTagRef}.ogDescription`),
 };
 const twitter: TwitterMetaTag = {
-    cardType: t("navigation:navbar.about.sublinks.company-profile.twitterCardType"),
-    title: t("navigation:navbar.about.sublinks.company-profile.twitterTitle"),
-    description: t("navigation:navbar.about.sublinks.company-profile.twitterDescription"),
-    image: t("navigation:navbar.about.sublinks.company-profile.twitterImage"),
+    title: t(`${metaTagRef}.twitterTitle`),
+    description: t(`${metaTagRef}.twitterDescription}`),
 };
 const bannerImageSrc = t("navigation:navbar.about.sublinks.company-profile.bannerImageSrc");
 const bannerHeight = "200px";
-const trueImage = t("navigation:navbar.about.sublinks.company-profile.trueImage") as unknown as boolean;
+const trueImage = Boolean(t("navigation:navbar.about.sublinks.company-profile.trueImage"));
 const trueImageStyle = t("navigation:navbar.about.sublinks.company-profile.trueImageStyle");
 ---
 
