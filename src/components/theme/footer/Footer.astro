@@ -1,9 +1,10 @@
 ---
 import { Picture } from "astro-imagetools/components";
-import i18next, { t } from "i18next";
+import { t } from "i18next";
 import { Img } from "astro-imagetools/components";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 import navigationJson from "@data/navigation.json";
+
 const { links } = navigationJson;
 const { pathname } = Astro.url;
 const currentLanguage = utilGetCurrentLanguage(pathname);
@@ -120,7 +121,7 @@ links.map((link: any) => {
                   length: parseInt(
                     t(`navigation:navbar.${footerLink.name}.subText.count`)
                   ),
-                }).map((i: any, j: number) => {
+                }).map((_: any, j: number) => {
                   return (
                     <p>
                       {t(

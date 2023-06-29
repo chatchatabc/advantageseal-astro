@@ -55,7 +55,7 @@ const trueImageStyle = t(pageJson + ":trueImageStyle");
       <section class="mb-16">
         <div class="w-full flex flex-row space-x-4 flex-wrap lg:flex-nowrap">
           {
-            Array.from({ length: 3 }).map((el: any, i: number) => {
+            Array.from({ length: 3 }).map((_: any, i: number) => {
               return (
                 <div class=" flex-shrink scale-[1] duration-300 z-[1] hover:scale-[0.90]">
                   <Img
@@ -73,7 +73,7 @@ const trueImageStyle = t(pageJson + ":trueImageStyle");
         </div>
         <div class="mt-8 text-[0.875rem]">
           {
-            Array.from({ length: 3 }).map((el: any, i: number) => {
+            Array.from({ length: 3 }).map((_: any, i: number) => {
               return (
                 <p class="text-text-primary">
                   {t(pageJson + ":contents.texts.text" + (1 + i))}

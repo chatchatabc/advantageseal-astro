@@ -2,7 +2,7 @@
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 
 import { Img } from "astro-imagetools/components";
-import i18next, { t, changeLanguage } from "i18next";
+import { t } from "i18next";
 import Layout from "@layouts/Layout.astro";
 import Banner from "@components/theme/Banner.astro";
 import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
@@ -152,7 +152,7 @@ const pageMetaTag: PageMetaTag = {
                                 `navigation:navbar.${pageName}.sublinks.${ref}.subText.count`
                               )
                             ),
-                          }).map((i: any, j: number) => {
+                          }).map((_: any, j: number) => {
                             return (
                               <div>
                                 {t(

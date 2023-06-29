@@ -1,11 +1,10 @@
 ---
 const {product} = Astro.props
-import i18next, { t, changeLanguage } from "i18next";
-import { Img, Picture } from "astro-imagetools/components";
+import { t } from "i18next";
 import ImageGallery from "@components/products/ImageGallery.astro";
 let productContent = `products:contents.${product.slug}.contents`;
 
-let detailsCount = parseInt(t(`${productContent}.section2.details.count`));
+
 let tableCols =  parseInt(t(`${productContent}.section2.table.cols`))
 ---
 <section class="text-[0.875rem] text-text-primary md:flex md:flex-row">
@@ -43,7 +42,7 @@ let tableCols =  parseInt(t(`${productContent}.section2.table.cols`))
                 <thead>
                     <tr class="bg-[#99cdff]">
                         {
-                            Array.from({length: tableCols}).map((el:any, colIndex:number) => {
+                            Array.from({length: tableCols}).map((_:any, colIndex:number) => {
                                 return (
                                     <th class="text-left text-black p-2 border-[1px] border-solid border-[#ddd]">{t(`${productContent}.section2.table.th.th${1+colIndex}`)}</th>
                                 )
@@ -52,17 +51,17 @@ let tableCols =  parseInt(t(`${productContent}.section2.table.cols`))
                     </tr>
                 </thead>
                 <tbody>
-                    {Array.from({length: parseInt(t(`${productContent}.section2.table.tr.count`))}).map((el:any, rowIndex:number) => {
+                    {Array.from({length: parseInt(t(`${productContent}.section2.table.tr.count`))}).map((_:any, rowIndex:number) => {
                         return (
                             <tr class="hover:bg-[#f9f9f9]">
                                 {
-                                    Array.from({length: tableCols}).map((el2:any, colIndex:number) => {
+                                    Array.from({length: tableCols}).map((_:any, colIndex:number) => {
                                         return (
                                             <td class="p-2 border-[1px] border-solid border-[#ddd]">
                                             {
                                                 t(`${productContent}.section2.table.tr.tr${1+rowIndex}.tc${1+colIndex}`).split("\n").map((el3:string, splitIndex:number) => {
                                                     return splitIndex == 0 ?
-                                                     (
+                                                    (
                                                         <span>
                                                             {el3}
                                                         </span>

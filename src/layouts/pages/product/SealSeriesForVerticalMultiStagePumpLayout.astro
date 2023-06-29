@@ -1,8 +1,10 @@
 ---
-const { product } = Astro.props;
-import i18next, { t, changeLanguage } from "i18next";
-import { Img, Picture } from "astro-imagetools/components";
+import { t } from "i18next";
+import { Picture } from "astro-imagetools/components";
 import ImageGallery from "@components/products/ImageGallery.astro";
+
+const { product } = Astro.props;
+
 let productContent = `products:contents.${product.slug}.contents`;
 
 let detailsCount = parseInt(t(`${productContent}.section2.details.count`));
@@ -21,7 +23,7 @@ let detailsCount = parseInt(t(`${productContent}.section2.details.count`));
       {
         Array.from({
           length: parseInt(t(`${productContent}.section1.parameters.count`)),
-        }).map((el: any, index: number) => {
+        }).map((_: any, index: number) => {
           return (
             <li class="list-disc list-inside ">
               {t(
@@ -81,7 +83,7 @@ let detailsCount = parseInt(t(`${productContent}.section2.details.count`));
     <div class="my-4 flex flex-row">
       <div class="w-full md:w-6/12 lg:w-6/12">
         {
-          Array.from({ length: detailsCount }).map((el: any, index: number) => {
+          Array.from({ length: detailsCount }).map((_: any, index: number) => {
             return (
               <div>
                 <h4 class="mb-2">
@@ -100,7 +102,7 @@ let detailsCount = parseInt(t(`${productContent}.section2.details.count`));
                         }.count`
                       )
                     ),
-                  }).map((item: any, itemIndex: number) => {
+                  }).map((_: any, itemIndex: number) => {
                     return (
                       <li class="text-[0.875rem]">
                         {t(
@@ -127,7 +129,7 @@ let detailsCount = parseInt(t(`${productContent}.section2.details.count`));
         {
           Array.from({
             length: parseInt(t(`${productContent}.section2.replaces.count`)),
-          }).map((el: any, index: number) => {
+          }).map((_: any, index: number) => {
             return (
               <li class="text-[0.875rem]">
                 {t(

@@ -19,14 +19,13 @@ type GroupedEntry = {
     articles: CollectionEntry<"news">[];
 };
 export async function getStaticPaths() {
-    const language = i18next.language;
     const newsEntries = (await getCollection("news")).sort((entry1, entry2) => {
         const date1 = new Date(entry1.data.pubDate) as any;
         const date2 = new Date(entry2.data.pubDate) as any;
         return date1 - date2;
     });
     var groupedEntries: GroupedEntry[] = [];
-    newsEntries.forEach((entry: CollectionEntry<"news">, entryIndex: number) => {
+    newsEntries.forEach((entry: CollectionEntry<"news">) => {
         const articleName = entry.data.articleName!.toString();
         const existingEntry = groupedEntries.find((groupedEntry) => groupedEntry.articleName === articleName);
         if (existingEntry) {

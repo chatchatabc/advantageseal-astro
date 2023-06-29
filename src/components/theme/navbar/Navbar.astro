@@ -69,7 +69,7 @@ links.map((link: any) => {
               `navigation:navbar.${link.name}.sublinks.${childRef}.subText.count`
             )
           ),
-        }).forEach((el: any, index: number) => {
+        }).forEach((_: any, index: number) => {
           processedSublink.subText.push(
             t(
               `navigation:navbar.${
@@ -213,11 +213,9 @@ links.map((link: any) => {
                                           alt={sublink.alt}
                                         />
                                         <div class="mt-[20px]">
-                                          {sublink.subText.map(
-                                            (el: any, index: number) => {
-                                              return <div>{el}</div>;
-                                            }
-                                          )}
+                                          {sublink.subText.map((el: any) => {
+                                            return <div>{el}</div>;
+                                          })}
                                         </div>
                                       </div>
                                     );

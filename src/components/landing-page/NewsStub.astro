@@ -1,7 +1,7 @@
 ---
 import { Img } from "astro-imagetools/components";
-import i18next, { t } from "i18next";
-import { getCollection, getEntries } from "astro:content";
+import { t } from "i18next";
+import { getCollection } from "astro:content";
 import { utilGetCurrentLanguage } from "@helpers/commonUtils";
 const { lang } = Astro.props;
 const newsEntries = await getCollection("news", ({ data }) => {
