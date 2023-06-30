@@ -42,10 +42,22 @@ export const trimLanguageFromLink = (url: string) => {
   return joinedLink;
 };
 
-export function utilAddLanguageToUrl(url: string) {
-  if (i18next.language !== defaultLanguage) {
-    url = "/" + i18next.language + url;
+export function utilAddLanguageToUrl(
+  url: string,
+  language: string = i18next.language
+) {
+  if (language !== defaultLanguage) {
+    url = "/" + language + url;
   }
+  return url;
+}
+
+export function utilChangeLanguageInUrl(url: string, language: string) {
+  const currentLanguage = i18next.language;
+  if (currentLanguage !== defaultLanguage) {
+    url = url.replace("/" + currentLanguage + "/", "/");
+  }
+  url = utilAddLanguageToUrl(url, language);
   return url;
 }
 
