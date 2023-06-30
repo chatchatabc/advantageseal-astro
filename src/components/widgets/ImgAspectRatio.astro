@@ -1,0 +1,16 @@
+---
+type Props = {
+  aspectHeight: number;
+  aspectWidth: number;
+};
+
+const { aspectHeight, aspectWidth } = Astro.props as Props;
+
+const aspectRatio = (aspectWidth / aspectHeight) * 100;
+---
+
+<div class="relative" style={{ padding: `${aspectRatio}%` }}>
+  <div class="absolute top-0 w-full h-full">
+    <slot />
+  </div>
+</div>
