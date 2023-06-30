@@ -5,10 +5,12 @@ import navigationJson from "@data/navigation.json";
 import SubMenu from "@components/theme/navbar/SubMenu.svelte";
 import {
   utilGetCurrentLanguage,
-  trimLanguageFromLink,
+  utilChangeLanguageInUrl,
   utilAddLanguageToUrl,
+  utilNormalizeUrl,
 } from "@helpers/commonUtils";
 const { pathname } = Astro.url;
+const url = utilNormalizeUrl(pathname);
 const currentLanguage = utilGetCurrentLanguage(pathname);
 
 type Link = { name: string; link: string; children: NavbarSublink[] };
@@ -95,7 +97,7 @@ links.map((link: any) => {
 });
 ---
 
-<header class="">
+<header>
   <!--logo section -->
   <section class="w-full bg-white py-[1.25rem]">
     <div
@@ -143,10 +145,7 @@ links.map((link: any) => {
               } flex items-center justify-center overflow-hidden`}
             >
               <a
-                href={"/" +
-                  (trimLanguageFromLink(Astro.url.pathname) != ""
-                    ? trimLanguageFromLink(Astro.url.pathname) + "/"
-                    : "")}
+                href={utilChangeLanguageInUrl(url, "cn")}
                 class="w-full h-full flex items-center justify-center">中文</a
               >
             </div>
@@ -158,10 +157,7 @@ links.map((link: any) => {
               } flex items-center justify-center overflow-hidden`}
             >
               <a
-                href={"/en/" +
-                  (trimLanguageFromLink(Astro.url.pathname) != ""
-                    ? trimLanguageFromLink(Astro.url.pathname) + "/"
-                    : "")}
+                href={utilChangeLanguageInUrl(url, "en")}
                 class="w-full h-full flex items-center justify-center">EN</a
               >
             </div>
