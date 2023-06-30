@@ -1,16 +1,16 @@
 // 1. Import utilities from `astro:content`
-import { z, defineCollection } from 'astro:content';
-import i18next from 'astro-i18next';
+import { z, defineCollection } from "astro:content";
+import i18next from "astro-i18next";
 // 2. Define your collection(s)
 const newsCollection = defineCollection({
   schema: z.object({
-    title : z.string(),
-    newsCategory : z.string(),
-    pubDate : z.string(),
+    title: z.string(),
+    newsCategory: z.string(),
+    pubDate: z.string(),
     lang: z.string(),
     image: z.object({
-      src : z.string(),
-      alt : z.string()
+      src: z.string(),
+      alt: z.string(),
     }),
     headline: z.string(),
     pageTitle: z.string().nullable(),
@@ -28,14 +28,13 @@ const newsCollection = defineCollection({
     bannerImage: z.string().nullable(),
     articleName: z.string().nullable(),
     articleShortDescription: z.string().nullable(),
-  })
-
+  }),
 });
 const newsCategoryCollection = defineCollection({
   schema: z.object({
-    name:z.string(),
+    name: z.string(),
     title: z.string(),
-    lang:z.string(),
+    lang: z.string(),
     pageTitle: z.string().nullable(),
     pageDescription: z.string().nullable(),
     pageKeywords: z.string().nullable(),
@@ -50,16 +49,15 @@ const newsCategoryCollection = defineCollection({
     twitterImage: z.string().nullable(),
     bannerImage: z.string(),
   }),
-
 });
 const solutionsCollection = defineCollection({
   schema: z.object({
-    title : z.string(),
-    pubDate : z.string(),
+    title: z.string(),
+    pubDate: z.string(),
     lang: z.string(),
     image: z.object({
-      src : z.string(),
-      alt : z.string()
+      src: z.string(),
+      alt: z.string(),
     }),
     pageTitle: z.string().nullable(),
     pageDescription: z.string().nullable(),
@@ -76,12 +74,11 @@ const solutionsCollection = defineCollection({
     bannerImage: z.string().nullable(),
     articleName: z.string().nullable(),
     articleShortDescription: z.string().nullable(),
-  })
-
+  }),
 });
 const productCollection = defineCollection({
   schema: z.object({
-    title : z.string(),
+    title: z.string(),
     lang: z.string(),
     pageTitle: z.string().nullable(),
     pageDescription: z.string().nullable(),
@@ -97,15 +94,14 @@ const productCollection = defineCollection({
     twitterImage: z.string().nullable(),
     bannerImage: z.string().nullable(),
     productSlug: z.string().nullable(),
-    productCategory: z.string()
-  })
-
+    productCategory: z.string(),
+  }),
 });
 const miscCollection = defineCollection({
   schema: z.object({
-    page : z.string(),
-    title : z.string(),
-    lang : z.string(),
+    page: z.string(),
+    title: z.string(),
+    lang: z.string(),
     pageTitle: z.string().nullable(),
     pageDescription: z.string().nullable(),
     pageKeywords: z.string().nullable(),
@@ -119,13 +115,22 @@ const miscCollection = defineCollection({
     twitterDescription: z.string().nullable(),
     twitterImage: z.string().nullable(),
     bannerImage: z.string().nullable(),
-  })
+  }),
 });
 // 3. Export a single `collections` object to register your collection(s)
 //    This key should match your collection directory name in "src/content"
+
+const aboutCollection = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
 export const collections = {
-  'news': newsCollection,
-  'news-categories': newsCategoryCollection,
-  'solutions': solutionsCollection,
-  'misc': miscCollection,
+  news: newsCollection,
+  "news-categories": newsCategoryCollection,
+  solutions: solutionsCollection,
+  misc: miscCollection,
+  about: aboutCollection,
 };
