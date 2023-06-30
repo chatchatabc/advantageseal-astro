@@ -1,54 +1,70 @@
 ---
+import i18next from "i18next";
 import { SEO } from "astro-seo";
 import type { MetaTag } from "@customTypes/seo/types";
 import { t } from "i18next";
-//REQUIRED
 import { ImageSupportDetection } from "astro-imagetools/components";
 
-const { page, openGraph, twitter } = Astro.props as MetaTag;
+type Props = MetaTag;
+
+const { page, openGraph, twitter } = Astro.props as Props;
 
 // Fallbacks
-page.title = page.title ?? t("site-info:pageTitle") ?? "Translation Missing";
+page.title = page.title ?? t("site-info:pageTitle") ?? "Missing Translation";
 page.description =
-  page.description ?? t("site-info:pageDescription") ?? "Translation Missing";
-page.author = page.author ?? t("site-info:author") ?? "Translation Missing";
+  page.description ?? t("site-info:pageDescription") ?? "Missing Translation";
+page.author = page.author ?? t("site-info:author") ?? "Missing Translation";
 page.keywords =
-  page.keywords ?? t("site-info:keywords") ?? "Translation Missing";
+  page.keywords ?? t("site-info:keywords") ?? "Missing Translation";
 
 // Open Graph
 openGraph.title =
-  openGraph.title ?? t("site-info:ogTitle") ?? "Translation Missing";
+  openGraph.title ??
+  twitter.title ??
+  page.title ??
+  t("site-info:ogTitle") ??
+  "Missing Translation";
 openGraph.type =
-  openGraph.type ?? t("site-info:ogType") ?? "Translation Missing";
+  openGraph.type ?? t("site-info:ogType") ?? "Missing Translation";
 openGraph.image =
-  openGraph.image ?? t("site-info:ogImage") ?? "Translation Missing";
+  openGraph.image ??
+  twitter.image ??
+  t("site-info:ogImage") ??
+  "Missing Translation";
 openGraph.description =
   openGraph.description ??
+  twitter.description ??
+  page.description ??
   t("site-info:ogDescription") ??
-  "Translation Missing";
-
+  "Missing Translation";
 // Twitter
 twitter.cardType =
-  twitter.cardType ?? t("site-info:twitterCardType") ?? "Translation Missing";
+  twitter.cardType ?? t("site-info:twitterCardType") ?? "Missing Translation";
 twitter.description =
   twitter.description ??
+  openGraph.description ??
+  page.description ??
   t("site-info:twitterDescription") ??
-  "Translation Missing";
+  "Missing Translation";
 twitter.image =
-  twitter.image ?? t("site-info:twitterImage") ?? "Translation Missing";
+  twitter.image ??
+  openGraph.image ??
+  t("site-info:twitterImage") ??
+  "Missing Translation";
 twitter.title =
-  twitter.title ?? t("site-info:twitterTitle") ?? "Translation Missing";
+  twitter.title ??
+  openGraph.title ??
+  page.title ??
+  t("site-info:twitterTitle") ??
+  "Missing Translation";
 ---
 
-<html lang="en" class="h-fit">
+<html lang={i18next.language}>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <!-- Site Information -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <SEO
       title={page.title}
       description={page.description}
@@ -76,7 +92,7 @@ twitter.title =
     />
     <ImageSupportDetection />
   </head>
-  <body class="flex flex-col h-full">
+  <body class="min-h-screen flex flex-col">
     <slot />
   </body>
 </html>
