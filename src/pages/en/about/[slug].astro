@@ -1,0 +1,57 @@
+---
+import BackBtn from "@components/theme/BackBtn.astro";
+import Banner from "@components/theme/Banner.astro";
+import BreadCrumbs from "@components/theme/BreadCrumbs.astro";
+import InnerSubNav from "@components/theme/InnerSubNav.astro";
+import Layout from "@layouts/Layout.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+import i18next, { changeLanguage } from "i18next";
+
+changeLanguage("en");
+
+export async function getStaticPaths() {
+    const collection = await getCollection("about", (page) => {
+        return page.slug.startsWith(i18next.language);
+    });
+    return collection.map((page) => {
+        const slug = page.slug.split("/").pop();
+        return {
+            params: {
+                slug,
+            },
+            props: {
+                slug,
+            },
+        };
+    });
+}
+type Props = {
+    slug: string;
+};
+const { slug } = Astro.props as Props;
+const entry = await getEntryBySlug("about", `${i18next.language}/${slug}`);
+const { Content } = await entry!.render();
+---
+
+<Layout page={{}} openGraph={{}} twitter={{}}>
+  <Banner
+    bannerImageSrc={"/images/about/banners/about-tinified.webp"}
+    bannerHeight=""
+    trueImage={true}
+    trueImageStyle=""
+  />
+  <section class="max-w-7xl w-full mx-auto">
+    <InnerSubNav name="about" />
+    <BreadCrumbs label={entry!.data.title} />
+  </section>
+
+  <main class="max-w-7xl mx-auto px-2">
+    <div class="prose max-w-none pt-2 lg:pt-8">
+      <Content />
+    </div>
+  </main>
+
+  <div class="flex justify-center mb-8">
+    <BackBtn />
+  </div>
+</Layout>

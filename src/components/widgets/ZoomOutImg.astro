@@ -1,0 +1,28 @@
+---
+import { Img } from "astro-imagetools/components";
+import ImgAspectRatio from "./ImgAspectRatio.astro";
+
+type Props = {
+  src: string;
+  alt: string;
+  breakpoints?: number[];
+  className?: string;
+  aspectHeight?: number;
+  aspectWidth?: number;
+};
+
+const { src, alt, breakpoints, className, aspectHeight, aspectWidth } =
+  Astro.props as Props;
+---
+
+<div class={`${className} transition lg:hover:scale-90`}>
+  {
+    aspectHeight && aspectWidth ? (
+      <ImgAspectRatio aspectHeight={aspectHeight} aspectWidth={aspectWidth}>
+        <Img layout="fill" breakpoints={breakpoints} src={src} alt={alt} />
+      </ImgAspectRatio>
+    ) : (
+      <Img layout="fill" breakpoints={breakpoints} src={src} alt={alt} />
+    )
+  }
+</div>
