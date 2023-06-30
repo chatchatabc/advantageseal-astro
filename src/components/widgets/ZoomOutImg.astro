@@ -15,16 +15,14 @@ const { src, alt, breakpoints, className, aspectHeight, aspectWidth } =
   Astro.props as Props;
 ---
 
-<div class="transition hover:scale-90">
+<div class={`${className} transition lg:hover:scale-90`}>
   {
     aspectHeight && aspectWidth ? (
       <ImgAspectRatio aspectHeight={aspectHeight} aspectWidth={aspectWidth}>
         <Img layout="fill" breakpoints={breakpoints} src={src} alt={alt} />
       </ImgAspectRatio>
     ) : (
-      <div class={className}>
-        <Img layout="fill" breakpoints={breakpoints} src={src} alt={alt} />
-      </div>
+      <Img layout="fill" breakpoints={breakpoints} src={src} alt={alt} />
     )
   }
 </div>
