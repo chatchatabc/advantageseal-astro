@@ -2,7 +2,7 @@
 import { defineConfig } from "unlighthouse";
 
 export default defineConfig({
-  site: "https://advantage-seals.pages.dev",
+  site: "https://asiseals.cn",
   scanner: {
     device: "desktop",
     sitemap: true,

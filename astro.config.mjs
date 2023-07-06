@@ -9,7 +9,7 @@ import react from "@astrojs/react";
 import robotsTxt from "astro-robots-txt";
 
 export default defineConfig({
-  site: "https://advantage-seals.pages.dev",
+  site: "https://asiseals.cn",
   integrations: [
     tailwind(),
     astroI18next(),
